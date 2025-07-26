@@ -1,0 +1,196 @@
+{
+  "active": false,
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T22:37:32.968Z",
+  "id": "TDonCSIGweInwnSs",
+  "isArchived": false,
+  "meta": null,
+  "name": "MAil agent mini",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "87fc83bf-0674-4d1c-99a3-864c3566c888",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "id": "0cc0554d-fabd-4581-a40a-ea1c6c934596",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        240,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "= {{ $fromAI('emailAddress', \"The receipient's email address\") }}",
+        "subject": "={{ $fromAI('emailSubject') }}",
+        "emailType": "text",
+        "message": "={{ $fromAI('emailBody') }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Cenk Tokgöz"
+        }
+      },
+      "id": "b10599a1-4a92-4f90-bee6-cd32d390beb1",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        288
+      ],
+      "webhookId": "cdf99f78-855f-4e09-af2f-637ab9981f40"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ $fromAI('limit') }}",
+        "simple": false,
+        "filters": {
+          "sender": " {{ $fromAI('senderEmail') }}"
+        },
+        "options": {}
+      },
+      "id": "ebf3ae75-3c6d-4c8c-a698-4c7e6d895da9",
+      "name": "Gmail1",
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        592,
+        288
+      ],
+      "webhookId": "9cb5abf2-f0e4-47ab-a965-0a4a0b9efe7e"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9cf98450-ed76-4877-b306-35351fae6ae8",
+              "name": "response",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4082c3e5-c31f-4041-aff0-fb783a6f0ea1",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}{{ $json.chatInput }}\n",
+        "options": {
+          "systemMessage": "=Rol: E-posta otomasyon asistanı\nAraçlar:\n- Gmail Gönder: Belirtilen alıcı, konu ve içerikle e-posta gönder.\n- Gmail Oku: Belirli kriterlere göre (ör: okunmamış, etiket, gönderen) e-postaları listele.\n- Gmail Tetikle: Yeni e-posta geldiğinde workflow'u başlat.\n\nYanıt Kuralları:\n- E-posta metinlerini kısa ve profesyonel tut.\n- Hata durumlarında \"[HATA]\" prefix'i kullan.\n- Başarılı işlemlerde \"[TAMAMLANDI]\" prefix'i ekle.\n\nToday is: {{ $now.format('dd/MM/yyyy') }}"
+        }
+      },
+      "id": "a4ebd784-b4e9-4fdf-b36d-db6cc4186790",
+      "name": "Email Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        352,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -16,
+        208
+      ],
+      "id": "ed89e834-d8f2-4b26-aead-67f0ebe828be",
+      "name": "When chat message received",
+      "webhookId": "0485a2bf-6192-4d4b-9f99-bf77307632c5"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-14T22:37:32.968Z",
+  "versionId": "f41dafa3-ac55-4556-9344-605939cef824"
+}
