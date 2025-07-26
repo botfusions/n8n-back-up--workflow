@@ -1,0 +1,93 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Legal Search API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Legal Search API": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-19T21:26:01.784Z",
+  "id": "ImFQ7ZyS18Sc6bJF",
+  "isArchived": false,
+  "meta": null,
+  "name": "Hukuki Arama Workflow'u - Düzeltilmiş",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "PATCH",
+        "path": "hukuki-arama-yeni",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        304
+      ],
+      "webhookId": "fcfc6172-cd66-4b61-b31a-49f500f3bc94"
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.botfusions.com/webhook/hukuki-arama-yeni?query=anayasa%20hukuku&page_size=3",
+        "options": {}
+      },
+      "id": "legal-search-api",
+      "name": "Legal Search API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        464,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        688,
+        304
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-21T07:15:24.441Z",
+  "versionId": "6ed48cb0-e8cb-4e94-a648-9bc178123dc8"
+}
