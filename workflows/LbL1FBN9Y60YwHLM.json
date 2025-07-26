@@ -1,0 +1,124 @@
+{
+  "active": false,
+  "connections": {
+    "Başlat": {
+      "main": [
+        [
+          {
+            "node": "GitHub Sayfası Oluştur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Sayfası Oluştur": {
+      "main": [
+        [
+          {
+            "node": "n8n Sayfası Oluştur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-21T21:57:38.189Z",
+  "id": "LbL1FBN9Y60YwHLM",
+  "isArchived": true,
+  "meta": null,
+  "name": "Google Sheets Sayfa Oluşturucu",
+  "nodes": [
+    {
+      "id": "trigger1",
+      "name": "Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        200,
+        300
+      ],
+      "parameters": {},
+      "typeVersion": 1
+    },
+    {
+      "id": "sheets1",
+      "name": "GitHub Sayfası Oluştur",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        400,
+        300
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "create",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": ""
+        },
+        "sheetName": "GitHub_Workflows",
+        "options": {
+          "headerRow": [
+            "Dosya_Adi",
+            "Workflow_Adi",
+            "Node_Sayisi",
+            "Trigger_Turu",
+            "Google_Sheets",
+            "AI_Kullanimi",
+            "Webhook",
+            "Aciklama",
+            "Dosya_Boyutu",
+            "Son_Guncelleme",
+            "GitHub_URL"
+          ]
+        }
+      },
+      "typeVersion": 4.5
+    },
+    {
+      "id": "sheets2",
+      "name": "n8n Sayfası Oluştur",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        600,
+        300
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "create",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": ""
+        },
+        "sheetName": "n8n_Workflows",
+        "options": {
+          "headerRow": [
+            "workflow_id",
+            "workflow_name",
+            "aktif_mi",
+            "node_sayisi",
+            "etiketler",
+            "tarih",
+            "download_link"
+          ]
+        }
+      },
+      "typeVersion": 4.5
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-21T23:07:10.197Z",
+  "versionId": "1c34dfc9-6c04-4158-a6f8-7d75a69b91fc"
+}
