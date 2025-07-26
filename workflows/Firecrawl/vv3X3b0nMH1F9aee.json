@@ -1,0 +1,76 @@
+{
+  "active": false,
+  "connections": {
+    "3. Adım: JSON'u Düzelt": {
+      "main": [
+        [
+          {
+            "node": "4. Adım: Düzeltilmiş Çıktıyı Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T12:39:16.601Z",
+  "id": "vv3X3b0nMH1F9aee",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "651a3632-81d8-4ed0-befe-84cb86d1e62b",
+      "name": "1. Adım: Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -768,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.item.json.bozuk_json_icerigi;\n\nif (!inputData || inputData.trim() === '' || inputData.trim() === 'BOZUK .JSON DOSYASININ TÜM İÇERİĞİNİ BU ALANA YAPIŞTIRIN') {\n  throw new Error('Lütfen bir önceki `Set` noduna düzeltilecek JSON içeriğini yapıştırın.');\n}\n\nlet workflowJson;\n\n// 1. Dış katmanı (rawJson) temizle\ntry {\n  const parsedInput = JSON.parse(inputData);\n  if (Array.isArray(parsedInput) && parsedInput[0] && parsedInput[0].rawJson) {\n    workflowJson = JSON.parse(parsedInput[0].rawJson);\n  } else {\n    // Eğer rawJson formatında değilse, belki de zaten temizlenmiş. Olduğu gibi al.\n    workflowJson = parsedInput;\n  }\n} catch (e) {\n  throw new Error(`Girdi metni geçerli bir JSON değil gibi görünüyor. Lütfen dosya içeriğini tam olarak kopyaladığınızdan emin olun. Hata: ${e.message}`);\n}\n\n\n// 2. Hatalı ifadeleri (expression) düzelt\nfor (const node of workflowJson.nodes) {\n  if (node.type === 'n8n-nodes-base.httpRequest' && \n      node.parameters && \n      typeof node.parameters.jsonBody === 'string' && \n      node.parameters.jsonBody.startsWith('={')) {\n    \n    // '={...}' formatını temizleyip '{...}' haline getir\n    node.parameters.jsonBody = node.parameters.jsonBody.substring(2, node.parameters.jsonBody.length - 1);\n  }\n}\n\nreturn {\n  duzeltilmis_workflow_json: workflowJson\n};"
+      },
+      "id": "68899586-4139-4393-b1b6-ec3141a09624",
+      "name": "3. Adım: JSON'u Düzelt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -336,
+        -320
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4ca28e6c-a1bf-4ca5-a4e9-a6a3bc09fc95",
+      "name": "4. Adım: Düzeltilmiş Çıktıyı Al",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -112,
+        -320
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T12:17:45.031Z",
+      "updatedAt": "2025-07-15T12:17:45.031Z",
+      "id": "w3T2JuwWY03GvK9f",
+      "name": "Firecrawl"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T12:42:58.036Z",
+  "versionId": "ea5db962-8441-4bad-9ab5-ee9c8d734195"
+}
