@@ -1,0 +1,473 @@
+{
+  "active": false,
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "get image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get image": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "get image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get image1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T14:06:50.008Z",
+  "id": "klPz1LJVQ4LRpE30",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "seedance image",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Reklam videosu",
+        "formDescription": "kendi ürünlerin ile video oluşturma",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Ürün resmin",
+              "fieldType": "file",
+              "acceptFileTypes": "jpg,png,webp"
+            },
+            {
+              "fieldLabel": "Pront",
+              "placeholder": "güzel bir bayan otel odasın sandalye oturuyor"
+            },
+            {
+              "fieldLabel": "email",
+              "fieldType": "email",
+              "placeholder": "cenk@example.com"
+            },
+            {
+              "fieldLabel": "Çıkış formatı",
+              "placeholder": "1:1,16:9,9:16 "
+            },
+            {
+              "fieldLabel": "ÇÖZÜNÜRLÜK",
+              "placeholder": "1080P,480P,720P"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        864,
+        176
+      ],
+      "id": "38439cfb-e3db-4124-a92c-226f25135dcd",
+      "name": "On form submission",
+      "webhookId": "7bd8d559-3b80-4347-aefb-a4464c1712f4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.imgbb.com/1/upload?expiration=600&key=eb84755802a9508d445bd40e96aa0555",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "_r_n_resmin"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        176
+      ],
+      "id": "3f4ffb87-e3aa-4714-a64d-f7be07552a8d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer r8_ceOGELA4cSQ2ZcNuUjP8fyEOOiPlCce47bn21"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"fps\": 24,\n  \"image\": \"{{ $json.data.url }}\",\n  \"prompt\": \"{{ $('On form submission').item.json.Pront }}\",\n  \"duration\": 10,\n  \"resolution\": \"480p\",\n  \"aspect_ratio\": \"9:16\",\n  \"camera_fixed\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        736,
+        16
+      ],
+      "id": "bf4fb306-6c9e-425e-8f90-e11157de86f7",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "amount": 100
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1664,
+        176
+      ],
+      "id": "fcd5d114-d05f-495f-9c14-5c7e30dd3ac5",
+      "name": "Wait",
+      "webhookId": "0e24bb7c-8db7-4da1-9f42-40e7f951f01d"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        176
+      ],
+      "id": "c3c1b758-11e8-4d74-aaa5-1eb8f8c68adc",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.imgbb.com/1/upload?expiration=600&key=eb84755802a9508d445bd40e96aa0555",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2176,
+        176
+      ],
+      "id": "029bad1d-f8b1-4943-9be6-b06c58ff8cb2",
+      "name": "HTTP Request4"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.email }}",
+        "subject": "Portre Resminiz Hazırdır",
+        "emailType": "text",
+        "message": "=İstemiş olduğunuz  Portre  resim ektedir: {{ $json.data.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2384,
+        176
+      ],
+      "id": "440a6fd5-9228-4126-a096-c87eae386fde",
+      "name": "Gmail",
+      "webhookId": "c8f40d77-5d5c-4fe7-b5ef-2ba67bb87886"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.urls.get }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1824,
+        176
+      ],
+      "id": "fe7f24c2-2dd1-430e-90cc-02be988a2160",
+      "name": "get image"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer r8_ceOGELA4cSQ2ZcNuUjP8fyEOOiPlCce47bn21"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n\"input\": {\n      \"fps\": 24,\n      \"image\": \"{{ $json.data.url }}\",\n      \"prompt\": \"A high-quality video will be generated showing the wooden chaise lounge rotating 360 degrees on a Bytedance / SeeDance-1-Pro in a white background. The video will emphasize the details and form of the lounge chair as it smoothly revolves.\",\n      \"duration\": 10,\n      \"resolution\": \"480p\",\n      \"aspect_ratio\": \"9:16\",\n      \"camera_fixed\": false\n    }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1424,
+        176
+      ],
+      "id": "817002c8-2c8c-41c3-991a-420a844cdc59",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/bytedance/seedance-1-pro/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer r8_ceOGELA4cSQ2ZcNuUjP8fyEOOiPlCce47bn21"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n\"input\": {\n      \"fps\": 24,\n      \"image\": \"{{ $json.owners[0].photoLink }}\",\n      \"prompt\": \"A high-quality video will be generated showing the wooden chaise lounge rotating 360 degrees on a Bytedance / SeeDance-1-Pro in a white background. The video will emphasize the details and form of the lounge chair as it smoothly revolves.\",\n      \"duration\": 5,\n      \"resolution\": \"480p\",\n      \"aspect_ratio\": \"9:16\",\n      \"camera_fixed\": false\n    }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1424,
+        496
+      ],
+      "id": "03273b8a-b59a-40b3-8ce2-7dd26e0f6058",
+      "name": "HTTP Request5"
+    },
+    {
+      "parameters": {
+        "amount": 100
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        496
+      ],
+      "id": "96716692-a1a5-4626-abe1-394ba5c036b0",
+      "name": "Wait1",
+      "webhookId": "0e24bb7c-8db7-4da1-9f42-40e7f951f01d"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2016,
+        496
+      ],
+      "id": "e9931afd-e1c3-4fb0-8660-e0c19693e1bc",
+      "name": "HTTP Request6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.imgbb.com/1/upload?expiration=600&key=eb84755802a9508d445bd40e96aa0555",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2320,
+        496
+      ],
+      "id": "956d4eb0-6be9-41bd-a341-dae925cde404",
+      "name": "HTTP Request7"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.email }}",
+        "subject": "Portre Resminiz Hazırdır",
+        "emailType": "text",
+        "message": "=İstemiş olduğunuz  Portre  resim ektedir: {{ $json.data.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2496,
+        496
+      ],
+      "id": "d115968f-303a-4062-b25c-f0605108f3ff",
+      "name": "Gmail1",
+      "webhookId": "c8f40d77-5d5c-4fe7-b5ef-2ba67bb87886"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.urls.get }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1840,
+        496
+      ],
+      "id": "587775a2-9666-4a7c-96fd-819641111d5b",
+      "name": "get image1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T14:06:50.008Z",
+  "versionId": "7cf0d289-1750-4581-b63d-e244d5ecc3ff"
+}
