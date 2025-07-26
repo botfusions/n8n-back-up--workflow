@@ -1,0 +1,369 @@
+{
+  "active": false,
+  "connections": {
+    "Manuel Başlat": {
+      "main": [
+        [
+          {
+            "node": "Tarih Saat Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3 Günde Bir": {
+      "main": [
+        [
+          {
+            "node": "Tarih Saat Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tarih Saat Al": {
+      "main": [
+        [
+          {
+            "node": "Zaman Damgası Hazırla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zaman Damgası Hazırla": {
+      "main": [
+        [
+          {
+            "node": "Workflow'ları Listele",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow'ları Listele": {
+      "main": [
+        [
+          {
+            "node": "Ana Tarih Klasörü",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ana Tarih Klasörü": {
+      "main": [
+        [
+          {
+            "node": "Slack Bildirimi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Her Workflow İçin": {
+      "main": [
+        [
+          {
+            "node": "Veriyi Hazırla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Veriyi Hazırla": {
+      "main": [
+        [
+          {
+            "node": "Workflow Klasörü Oluştur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Klasörü Oluştur": {
+      "main": [
+        [
+          {
+            "node": "JSON Dosyaya Çevir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Dosyaya Çevir": {
+      "main": [
+        [
+          {
+            "node": "Alt Klasöre Yükle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-22T10:00:28.041Z",
+  "id": "kXuRgM8NHtIoRBwF",
+  "isArchived": false,
+  "meta": null,
+  "name": "Alt klosör kopyalama",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9527df6e-f07a-4893-8ae2-eaa8c54b5ca3",
+      "name": "Manuel Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -816,
+        160
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 */3 * *"
+            }
+          ]
+        }
+      },
+      "id": "d4cbcaf8-793e-48b8-a378-d0ebf7df69ac",
+      "name": "3 Günde Bir",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        -816,
+        48
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "87a7aa18-de7b-42a7-86e7-1e171d9944c2",
+      "name": "Tarih Saat Al",
+      "type": "n8n-nodes-base.dateTime",
+      "position": [
+        -608,
+        112
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "format": "custom",
+        "customFormat": "yyyy-MM-dd_HH-mm",
+        "options": {}
+      },
+      "id": "a6991388-3686-45a8-80da-a71ee7abf458",
+      "name": "Zaman Damgası Hazırla",
+      "type": "n8n-nodes-base.dateTime",
+      "position": [
+        -400,
+        112
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "{{ $vars.N8N_BASE_URL }}/api/v1/workflows",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-N8N-API-KEY",
+              "value": "{{ $vars.N8N_API_KEY }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "0feadc59-d5e0-4777-859a-eb5f36ee9cf0",
+      "name": "Workflow'ları Listele",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -208,
+        112
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "IMGrjr0LMbBlORHY",
+          "name": "Llama cloud"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "name": "={{ $node['Zaman Damgası Hazırla'].json.timestamp.split('_')[0] }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "{{ $vars.BACKUP_FOLDER_ID }}"
+        },
+        "options": {}
+      },
+      "id": "68a5e638-2ed8-474f-a18e-e26befcc5c23",
+      "name": "Ana Tarih Klasörü",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "30efb145-ac56-4c11-9f10-3918f2ed06b9",
+      "name": "Her Workflow İçin",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        0,
+        208
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "const workflow = $input.all()[0].json.data[0];\nconst timestamp = $node['Zaman Damgası Hazırla'].json.timestamp;\nconst mainFolderId = $node['Ana Tarih Klasörü'].json.id;\n\n// Workflow adını temizle (klasör adı için)\nconst workflowFolderName = workflow.name.replace(/[^a-zA-Z0-9-_ÇĞIıÖŞÜçğıöşü\\s]/g, '_').replace(/\\s+/g, '_');\n\n// Basit dosya adı: sadece zaman damgası\nconst fileName = `${timestamp}.json`;\n\n// Export data\nconst exportData = {\n  name: workflow.name,\n  nodes: workflow.nodes,\n  connections: workflow.connections,\n  settings: workflow.settings,\n  staticData: workflow.staticData,\n  tags: workflow.tags,\n  meta: {\n    exportedAt: new Date().toISOString(),\n    originalId: workflow.id,\n    originalName: workflow.name,\n    backupTimestamp: timestamp\n  }\n};\n\nreturn {\n  json: {\n    workflow: workflow,\n    exportData: exportData,\n    workflowFolderName: workflowFolderName,\n    fileName: fileName,\n    mainFolderId: mainFolderId,\n    timestamp: timestamp\n  }\n};\n"
+      },
+      "id": "15818cd0-bf0c-476c-b1ce-2e3ec8a90d3f",
+      "name": "Veriyi Hazırla",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        208,
+        208
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "name": "={{ $json.workflowFolderName }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.mainFolderId }}"
+        },
+        "options": {}
+      },
+      "id": "b6765f1b-f7f6-4f7a-bf29-68d3b5b33618",
+      "name": "Workflow Klasörü Oluştur",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        400,
+        208
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "binaryPropertyName": "backupFile",
+        "options": {
+          "fileName": "={{ $json.fileName }}"
+        }
+      },
+      "id": "25ee0ca4-ef31-4e42-8c0f-427e0df214b0",
+      "name": "JSON Dosyaya Çevir",
+      "type": "n8n-nodes-base.convertToFile",
+      "position": [
+        608,
+        208
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "backupFile",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $node['Workflow Klasörü Oluştur'].json.id }}"
+        },
+        "options": {}
+      },
+      "id": "f21dc010-28ce-45d2-974c-03d11f4a8a78",
+      "name": "Alt Klasöre Yükle",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        800,
+        208
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "text": "✅ *Workflow Yedekleme Tamamlandı!*\\n\\n📁 *Toplam:* {{ $node[\"Workflow'ları Listele\"].json.data.length }} workflow\\n🗓️ *Tarih:* {{ $node['Zaman Damgası Hazırla'].json.timestamp }}\\n💾 *Konum:* Google Drive/Yedekler/",
+        "otherOptions": {
+          "mrkdwn": true
+        }
+      },
+      "id": "bd4e5e27-1d6d-47f8-96f6-66db2be2b065",
+      "name": "Slack Bildirimi",
+      "type": "n8n-nodes-base.slack",
+      "position": [
+        400,
+        0
+      ],
+      "typeVersion": 2.3,
+      "webhookId": "4c09b688-f8f8-4110-be50-2d8b0b746f51"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-22T10:00:28.041Z",
+  "versionId": "3a42676e-4c10-4b1a-a296-dd3c9909a047"
+}
