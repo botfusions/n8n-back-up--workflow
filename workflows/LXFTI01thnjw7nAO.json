@@ -1,0 +1,257 @@
+{
+  "active": false,
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "List Google JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Google JSON": {
+      "main": [
+        [
+          {
+            "node": "Loop Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Files": {
+      "main": [
+        [
+          {
+            "node": "Get Binary Content",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Mark Processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Binary Content": {
+      "main": [
+        [
+          {
+            "node": "Fix JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fix JSON": {
+      "main": [
+        [
+          {
+            "node": "Dump JSON Blob",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dump JSON Blob": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T14:49:31.062Z",
+  "id": "LXFTI01thnjw7nAO",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 4",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        0
+      ],
+      "id": "4d09e98f-4b5c-4538-9908-49f8a25ba57c"
+    },
+    {
+      "parameters": {
+        "operation": "list"
+      },
+      "name": "Read Local Folder",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        272
+      ],
+      "id": "98f37ae2-6e83-428e-a4cf-3b36dfa3cae8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "search"
+      },
+      "id": "38145094-8cc2-492a-9df0-5b62f8a3e46f",
+      "name": "List Google JSON",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "name": "Loop Files",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2c856fb4-b317-4326-a8f6-2679e8231c09"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1n8FuQ80ogYrlOZI4BGXsypqnx9k_bJJL",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "a8a3faf3-c7d7-4b5d-aa4a-efe23cf88e17",
+      "name": "Get Binary Content",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        400,
+        0
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const safeParse = (str) => { try { return JSON.parse(str); } catch {} return null; };\nconst sanitize = (s) => s\n  .replace(/^\\uFEFF/, '')\n  .replace(/\\/\\*[\\s\\S]*?\\*\\//g, '')\n  .replace(/\\/\\/.*$/gm, '')\n  .replace(/\\x0D\\x0A|\\x0D|\\x0A/g, '')\n  .replace(/'([^']+)'(?=\\s*:)/g, '\"$1\"')\n  .replace(/'([^']+)'(?=\\s*,|\\})/g, '\"$1\"')\n  .replace(/,\\s*(?=]})/g, '')\n  .replace(/\\bundefined\\b/g, 'null');\n\nlet whole = items[0].binary.bin;\nlet str   = Buffer.from(whole.data, 'base64').toString('utf8');\nstr = sanitize(str);\n\nlet root = safeParse(str);\nif (!root) return [{ json: { _fixed_file_ok: false, _error: 'Root parse failed' } }];\n\nlet payload = root;\n\nconst rawInside = root.rawJson || root?.[0]?.rawJson || root?.json?.rawJson;\nif (rawInside) {\n  const innerStr = typeof rawInside === 'string' ? sanitize(rawInside) : sanitize(JSON.stringify(rawInside));\n  const innerObj = safeParse(innerStr);\n  if (innerObj) {\n    payload = innerObj;\n  } else {\n    payload = root;\n  }\n}\n\nreturn [{ json: payload, binary: { bin: { data: Buffer.from(JSON.stringify(payload, null, 2), 'utf8').toString('base64') } } }];\n"
+      },
+      "name": "Fix JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        0
+      ],
+      "id": "b54cbac9-eeb9-4291-ae94-824d73c71031"
+    },
+    {
+      "parameters": {
+        "operation": "convertAnotherFormat"
+      },
+      "name": "Dump JSON Blob",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        0
+      ],
+      "id": "6766b6c0-53cf-4c1a-8f22-72103e25868d"
+    },
+    {
+      "parameters": {
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1bSN2rea58FokXUsgf2AvJNv0pGZW0TxZ",
+          "mode": "list",
+          "cachedResultName": "DUZELTILMIŞ WORKFLOW",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1bSN2rea58FokXUsgf2AvJNv0pGZW0TxZ"
+        },
+        "options": {}
+      },
+      "name": "Save to Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1008,
+        0
+      ],
+      "id": "1e1d273f-1821-470f-97f5-6236f9e396fa",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "fixed_uploaded"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Mark Processed",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        352,
+        336
+      ],
+      "id": "b2f4447c-87d4-44ce-8342-0b7d65df177c"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T14:49:31.062Z",
+  "versionId": "ea4aaca6-44e8-4cc4-8917-60a19a39abdd"
+}
