@@ -1,0 +1,209 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a task in Todoist": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete a task in Todoist": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many tasks in Todoist": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T17:34:43.641Z",
+  "id": "rHfJV4kO5b2MwAsc",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Todist_Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "df37ad97-1b27-4057-9dde-79874b8b7887",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant,todoist kullanarak görev ekle,etiket sorma direk ekle,\nThe current date/time is :{{$now }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "1939028f-391b-4f35-af70-f1d2dec0592d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        112,
+        288
+      ],
+      "id": "ed045b8f-878a-454e-8a0c-bd34c6b3c306",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "project": {
+          "__rl": true,
+          "value": "2353082496",
+          "mode": "list",
+          "cachedResultName": "Inbox"
+        },
+        "labels": "={{ $fromAI('Label_Names_or_IDs', ``, 'string') }}",
+        "content": "={{ $fromAI('Content', ``, 'string') }}",
+        "options": {
+          "dueDateTime": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Due_Date_Time', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.todoistTool",
+      "typeVersion": 2.1,
+      "position": [
+        320,
+        288
+      ],
+      "id": "578d0a51-c1a6-434a-a2ad-af084c89d653",
+      "name": "Create a task in Todoist",
+      "credentials": {
+        "todoistApi": {
+          "id": "a9cczZvbOgCE17Tn",
+          "name": "Todoist account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "taskId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Task_ID', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.todoistTool",
+      "typeVersion": 2.1,
+      "position": [
+        464,
+        288
+      ],
+      "id": "7e166510-7288-46cd-bb17-9fbcc70cde56",
+      "name": "Delete a task in Todoist",
+      "credentials": {
+        "todoistApi": {
+          "id": "a9cczZvbOgCE17Tn",
+          "name": "Todoist account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 20,
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.todoistTool",
+      "typeVersion": 2.1,
+      "position": [
+        624,
+        288
+      ],
+      "id": "9f7f82bb-865f-401d-b47a-f3187893f48c",
+      "name": "Get many tasks in Todoist",
+      "credentials": {
+        "todoistApi": {
+          "id": "a9cczZvbOgCE17Tn",
+          "name": "Todoist account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T16:51:18.619Z",
+      "updatedAt": "2025-07-15T16:51:18.619Z",
+      "id": "WvQPj24wYGxsTQrx",
+      "name": "TElegram  Asistan"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T19:30:06.134Z",
+  "versionId": "2e6ed3a1-327e-4edc-b244-0252b3cab785"
+}
