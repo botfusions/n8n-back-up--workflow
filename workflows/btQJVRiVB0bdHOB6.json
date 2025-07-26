@@ -1,0 +1,94 @@
+{
+  "active": false,
+  "connections": {
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Fix JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fix JSON": {
+      "main": [
+        [
+          {
+            "node": "Save",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T12:10:34.644Z",
+  "id": "btQJVRiVB0bdHOB6",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "f3b8ef3c-bf2f-4ff1-82eb-40650671e21a",
+        "formTitle": "Upload JSON",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "File",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ad53defb-878b-4707-add7-7fb4180c11f1",
+      "name": "Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "f3b8ef3c-bf2f-4ff1-82eb-40650671e21a"
+    },
+    {
+      "parameters": {
+        "functionCode": "const file = $binary.File;\nif (!file) throw new Error('No file uploaded');\n\nconst jsonStr = file.data.toString('utf8');\nconst fixed = JSON.stringify(JSON.parse(jsonStr), null, 2);\nconst buffer = Buffer.from(fixed, 'utf8');\n\nreturn [{\n  json: { fileName: `fixed_${file.fileName}` },\n  binary: { data: { data: buffer, fileName: `fixed_${file.fileName}` } }\n}];"
+      },
+      "id": "853958e8-7ab8-42f3-93d9-5453f957c8f9",
+      "name": "Fix JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "={{ $json.fileName }}",
+        "options": {}
+      },
+      "id": "7858079d-4bda-458a-bffc-4c90f64d73c5",
+      "name": "Save",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        400,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T12:48:20.787Z",
+  "versionId": "9c5ac48f-015e-434f-a38b-76c860adf125"
+}
