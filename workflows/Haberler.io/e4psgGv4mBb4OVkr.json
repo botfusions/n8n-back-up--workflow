@@ -1,0 +1,344 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Perplexity - Blog Topic Research Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Perplexity Search Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Perplexity - Blog Topic Research Node": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Perplexity - Blog Topic Research Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T22:53:58.072Z",
+  "id": "e4psgGv4mBb4OVkr",
+  "isArchived": false,
+  "meta": null,
+  "name": "Blog yazar",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "2b6f5b95-fa8f-4822-8027-60c0b460d92b",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        1744,
+        288
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "model": "sonar-pro",
+        "messages": {
+          "message": [
+            {
+              "content": "Research on the latest AI news that will be interesting to blog about. Choose and return only the most interesting news for the blog intended for non-technical audience trying to learn more about AI."
+            }
+          ]
+        },
+        "options": {
+          "searchRecency": "week"
+        },
+        "requestOptions": {}
+      },
+      "id": "bafb661a-1901-43b2-b9c9-3495035ceef5",
+      "name": "Perplexity - Blog Topic Research Node",
+      "type": "n8n-nodes-base.perplexity",
+      "position": [
+        2032,
+        288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-3-5-sonnet-20241022",
+          "mode": "list",
+          "cachedResultName": "Claude Sonnet 3.5"
+        },
+        "options": {}
+      },
+      "id": "ee5081b1-ab54-404b-8f22-b12732512112",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "position": [
+        2352,
+        480
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.content }}",
+        "options": {
+          "systemMessage": "HORECA Commercial Furniture Expert Blog Writer Prompt\nYou are a professional blog content writer and commercial furniture industry expert with 10+ years of experience covering HORECA (Hotel, Restaurant, Cafe) furniture trends, manufacturing innovations, and commercial space design. Your expertise spans from durable outdoor furniture to sophisticated indoor seating solutions, with deep knowledge of commercial-grade materials, durability testing, and high-traffic environment requirements.\nYour task is to write engaging, informative, and SEO-optimized blog posts for Sandaluci, a leading manufacturer of indoor and outdoor commercial furniture specializing in chairs, tables, and seating solutions for the hospitality industry. Your writing should be authoritative yet accessible, helping HORECA professionals make informed decisions about their furniture investments.\nAUDIENCE:\n\nHotel and resort managers\nRestaurant owners and operators\nCafe and bistro owners\nCommercial interior designers\nHospitality industry procurement managers\nOutdoor dining space planners\nEvent venue operators\nCruise ship and casino furniture buyers\n\nTONE & STYLE:\n\nProfessional and industry-focused, yet accessible\nCommercial-grade expertise with cost-efficiency focus\nDurability and performance-oriented\nClear explanations of technical specifications\nUse case studies from successful hospitality projects\nROI and business impact-focused\n\nCONTENT REQUIREMENTS:\n\nTitle: SEO-friendly with commercial furniture keywords (e.g., \"restaurant chairs\", \"outdoor hospitality furniture\", \"hotel seating\")\nHook/Intro: Address specific business challenges or opportunities\n3-5 Sections with clear, scannable headers\nCommercial Specifications: Include weight capacity, materials, warranties\nDurability Testing: Reference industry standards and certifications\nCost Analysis: ROI considerations, lifecycle costs, bulk pricing\nStyle Options: Match different hospitality aesthetics and brand identities\nInstallation/Maintenance: Professional guidance for commercial use\nCompliance: Safety standards, fire resistance, health regulations\nCase Studies: Real HORECA projects featuring Sandaluci products\nFinal Takeaway: Business-focused summary with procurement guidance\n\nEXPERTISE AREAS TO DRAW FROM:\n\nCommercial Materials: Aluminum, steel, synthetic wicker, commercial-grade fabrics, marine-grade finishes\nDurability Standards: EN 16139 for commercial seating, weight capacity ratings, stress testing\nWeather Resistance: UV protection, moisture resistance, salt spray testing for outdoor furniture\nHospitality Trends: Biophilic design, sustainable materials, flexible seating solutions\nSpace Optimization: Stackable designs, space-saving solutions, modular systems\nMaintenance Requirements: Easy cleaning, stain resistance, replacement parts availability\nBrand Integration: Custom colors, logo integration, brand-specific designs\nRegulatory Compliance: Fire safety ratings, ADA compliance, health regulations\nInstallation Support: Professional installation services, warranty terms\n\nWRITING APPROACH:\nFollow the engaging, non-technical blog style from the original prompt while maintaining HORECA industry expertise:\n\nAudience: HORECA professionals who need practical guidance, not overly technical jargon\nTone: Professional yet accessible, like explaining to a fellow business owner\nStructure: Use numbered sections (1., 2., 3., 4.) for easy scanning\nContent Depth: Each section should be 2-3 paragraphs with specific examples\nPractical Focus: Always connect features to business benefits (ROI, guest satisfaction, operational efficiency)\nReal-world Examples: Include case studies or scenarios from actual restaurant/hotel operations\n\nEXAMPLE TOPICS:\n\n\"2024 Restaurant Seating Trends: Durability Meets Design in Commercial Dining\"\n\"Outdoor Dining Excellence: Choosing Weather-Resistant Furniture for Your Terrace\"\n\"Hotel Lobby Furniture: Creating Lasting First Impressions with Commercial-Grade Seating\"\n\"Stackable vs. Fixed Seating: Space Optimization for Cafes and Bistros\"\n\"The Complete Guide to HORECA Furniture Procurement: From Specs to Installation\"\n\"Sustainable Hospitality: Eco-Friendly Commercial Furniture Solutions\"\n\"High-Traffic Durability: What to Look for in Restaurant Chairs and Tables\"\n\"Seasonal Outdoor Dining: Extending Your Service with All-Weather Furniture\"\n\nBLOG POST STRUCTURE & FORMAT:\nWrite in the modern blog format with professional layout and scannable structure:\n[Catchy SEO Blog Title with HORECA Keywords]\n[Subtitle that explains the commercial benefit for restaurant/hotel owners]\nAuthor Bio Section:\n[Include author credentials: \"Ahmet Yılmaz - HORECA sektöründe 15 yıllık deneyime sahip mobilya uzmanı\"]\nArticle Metadata:\n\nPublication date\nReading time (X dakika okuma)\nView count\nSocial sharing buttons\n\nIntroduction:\n[Compelling hook paragraph that addresses specific HORECA challenges and introduces the comprehensive guide]\n1. [First Key Factor - e.g., Dayanıklılık ve Kalite]\n[Detailed explanation with commercial-grade specifications, industry standards, and why this matters for restaurant/hotel profitability. Include specific examples and technical details.]\n2. [Second Key Factor - e.g., Konfor ve Ergonomi]\n[How guest comfort impacts business success, staff efficiency considerations, ergonomic standards for commercial seating]\n3. [Third Key Factor - e.g., Temizlik ve Bakım]\n[Maintenance requirements, cleaning protocols, cost implications, hygiene standards for hospitality]\n4. [Fourth Key Factor - e.g., Maliyet ve ROI]\n[Total cost of ownership, bulk pricing, warranty considerations, return on investment calculations]\nSonuç:\n[Summary of key takeaways with actionable next steps for HORECA professionals]\nBu Yazıda:\n\n[Key learning point 1]\n[Key learning point 2]\n[Key learning point 3]\n[Key learning point 4]\n\nMeta Description:\n[SEO-optimized summary, 150-160 characters]\nTarget Keywords:\n[Commercial furniture keywords naturally integrated]\n\nRemember: Always prioritize durability, functionality, and ROI over aesthetic trends. Help HORECA professionals make informed decisions that will serve their businesses efficiently for years while maintaining the highest standards of quality and guest satisfaction.\nÇIKTILARI TÜRKÇE VERELİM HER SEFERİNDE 1 ADET MAKELE YAZALIM\nİMOJİ KULLANILA BİLİR"
+        }
+      },
+      "id": "f7368e5f-f379-4570-8ac8-a8ee833e3bbf",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        2384,
+        288
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Perplexity - Blog Topic Research Node').item.json.id }}"
+      },
+      "id": "df267491-091e-4e61-8358-344c64a75a05",
+      "name": "Simple Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        2464,
+        480
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "model": "sonar-pro",
+        "messages": {
+          "message": [
+            {
+              "content": "Search for additional information about the AI news topic to provide more context and details."
+            }
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "id": "deab5ba1-cc43-40cd-8da3-5de9560963b0",
+      "name": "Perplexity Search Tool",
+      "type": "n8n-nodes-base.perplexityTool",
+      "position": [
+        2624,
+        480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "1️⃣ BAŞLANGIÇ\nSchedule Trigger ile iş akışını başlatın\nVeya manual olarak test edin",
+        "height": 600,
+        "width": 260
+      },
+      "id": "a6c529e2-5a1a-4a43-8411-b4f07a5efd9a",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1664,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "2️⃣ ARAŞTIRMA\nPerplexity AI ile son AI haberlerini araştırır\nTeknik olmayan kitle için uygun konular seçer",
+        "height": 600,
+        "width": 300,
+        "color": 3
+      },
+      "id": "63c4b70d-9605-4489-a464-0431f1ecb860",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1952,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "3️⃣ MAKALE YAZIMI\nClaude AI ile profesyonel blog yazısı oluşturur\nHORECA sektörü odaklı içerik\nSEO optimizasyonu\nTürkçe çıktı",
+        "height": 600,
+        "width": 500,
+        "color": 5
+      },
+      "id": "8a8d3951-4bba-4337-a920-4e33c6483b0c",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2272,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "4️⃣ KAYDETME\nGoogle Docs'a otomatik kayıt\nHazır blog yazısı\nİnceleme ve yayınlama için hazır",
+        "height": 600,
+        "width": 300,
+        "color": 6
+      },
+      "id": "d451ce9d-a6eb-4a51-a6b2-02a6a6d5b09b",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2784,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "🧠 AI-Powered Blog Post Generator\nCategory: Content Automation / AI Writing / Marketing\n\nDescription:\nThis automated workflow helps you generate fresh, SEO-optimized blog posts daily using AI tools—perfect for solo creators, marketers, and content teams looking to stay on top of the latest AI trends without manual research or writing.\n\nFor more of this build and step-by-step tutorials, check out:\nhttps://www.youtube.com/@Automatewithmarc\n\nHere's how it works:\n\nSchedule Trigger kicks off the workflow daily (or at your preferred interval).\n\nPerplexity AI Node researches the most interesting recent AI news tailored for a non-technical audience.\n\nAI Agent (Claude via Anthropic) turns that news into a full-length blog post based on a structured prompt that includes title, intro, 3+ section headers, takeaway, and meta description—designed for clarity, engagement, and SEO.\n\nOptional Memory & Perplexity Tool Nodes enhance the agent's responses by allowing it to clarify facts or fetch more context.\n\nGoogle Docs Node automatically saves the final blog post to your selected document—ready for review, scheduling, or publishing.\n\nKey Features:\n\nCombines Perplexity AI + Claude AI (Anthropic) for research + writing\n\nBuilt-in memory and retrieval logic for deeper contextual accuracy\n\nNon-technical, friendly writing style ideal for general audiences\n\nOutput saved directly to Google Docs\n\nFully no-code, customizable, and extendable\n\nUse Cases:\n\nAutomate weekly blog content for your newsletter or site\n\nRepurpose content into social posts or scripts\n\nKeep your brand relevant in the fast-moving AI landscape\n\nSetup Requirements:\n\nPerplexity API Key\n\nAnthropic API Key\n\nGoogle Docs (OAuth2 connected)",
+        "height": 600,
+        "width": 300
+      },
+      "id": "3b4516b0-a093-433e-b9ea-e6761664e4b3",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## AI Destekli Blog Yazısı Oluşturucu\n\n**Kategori:** İçerik Otomasyonu / AI Yazımı / Pazarlama\n\n**Açıklama:**\nBu otomatik iş akışı, AI araçlarını kullanarak günlük olarak yeni, SEO'ya optimize edilmiş blog yazıları oluşturmanıza yardımcı olur. Tek başına içerik üretenler, pazarlamacılar ve manuel araştırma veya yazma olmadan en son AI trendlerinin başında kalmak isteyen içerik ekipleri için mükemmeldir.\n\n**İş Akışı Adımları:**\n\n1. **Schedule Trigger** - iş akışını günlük olarak (veya tercih ettiğiniz aralıkta) başlatır\n2. **Perplexity AI** - teknik olmayan bir kitleye göre uyarlanmış en ilginç son AI haberlerini araştırır\n3. **AI Agent (Claude)** - bu haberleri yapılandırılmış bir blog yazısına dönüştürür\n4. **Google Docs** - son blog gönderisini otomatik olarak kaydeder\n\n**Temel Özellikler:**\n- Perplexity AI + Claude AI kombinasyonu\n- Yerleşik bellek ve bağlam alma\n- HORECA sektörü odaklı içerik\n- Türkçe çıktı\n- Google Docs entegrasyonu\n\n**Kurulum Gereksinimleri:**\n- Perplexity API Anahtarı\n- Anthropic API Anahtarı\n- Google Docs (OAuth2 bağlı)",
+        "height": 940,
+        "width": 880
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        368,
+        0
+      ],
+      "id": "18c59add-381b-49e7-98b7-992018eef80f",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "1NQ8uNLiXdhnCAFqNm1CIpiDQivz4o_RFWxQZ2m3FumY",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $json.output }}"
+            }
+          ]
+        }
+      },
+      "id": "ae747e46-0920-49d9-b7b0-03e38f5daa01",
+      "name": "Update a document",
+      "type": "n8n-nodes-base.googleDocs",
+      "position": [
+        2880,
+        288
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        64
+      ],
+      "id": "2021accd-af47-4b76-a601-6e0015a13f8b",
+      "name": "When clicking 'Execute workflow'"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-14T22:53:41.483Z",
+      "updatedAt": "2025-07-14T22:53:41.483Z",
+      "id": "oKvrU5JWpX0l93if",
+      "name": "Haberler.io"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-14T22:53:58.072Z",
+  "versionId": "502cbd45-5d21-4e64-9ed9-3ce8051f6fcc"
+}
