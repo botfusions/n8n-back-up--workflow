@@ -1,0 +1,153 @@
+{
+  "active": false,
+  "connections": {
+    "1. Mevzuatı Ara": {
+      "main": [
+        [
+          {
+            "node": "2. Sonuç Bulundu mu?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Sonuç Bulundu mu?": {
+      "main": [
+        [
+          {
+            "node": "3. Tam Metni Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Başlat": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "1. Mevzuatı Ara",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T21:00:32.732Z",
+  "id": "HYHPTuHahcQnOvbo",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a7e8a9c8-8b7d-4547-a439-34b6aa24bc3a",
+      "name": "Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://mevzuat-mcp-2z26.onrender.com/search?query={{ encodeURIComponent($json.aranacak_mevzuat) }}",
+        "options": {}
+      },
+      "id": "f5185e05-6c45-4df8-b634-f384af124f5d",
+      "name": "1. Mevzuatı Ara",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        464,
+        0
+      ],
+      "notes": "Bu node, belirlediğimiz metni arar ve ilgili mevzuatın linkini bulur."
+    },
+    {
+      "parameters": {
+        "url": "={{ $('1. Mevzuatı Ara').item.json[0].source }}",
+        "options": {}
+      },
+      "id": "2c51bc5d-8ec2-4c13-abb2-5eb0b40b2d95",
+      "name": "3. Tam Metni Al",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        928,
+        0
+      ],
+      "notes": "Bir önceki node'dan gelen linki ziyaret ederek sayfanın tam metnini (HTML olarak) alır."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json[0].source }}",
+              "operator": {
+                "type": "string",
+                "operation": "exists"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bbe75d67-a2fe-4875-850b-eb496320e6ec",
+      "name": "2. Sonuç Bulundu mu?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        688,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "229c5a4a-c9f3-4f8d-975e-80657e338232",
+              "name": "iş kanunu",
+              "value": "true",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ],
+      "id": "0bb44c50-9396-44f4-9f44-b76052fac334",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T21:00:32.732Z",
+  "versionId": "c6fcfbfa-ddd4-463c-9567-8c05b219753d"
+}
