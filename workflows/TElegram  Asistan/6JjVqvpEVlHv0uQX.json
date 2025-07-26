@@ -1,0 +1,109 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T17:22:14.901Z",
+  "id": "6JjVqvpEVlHv0uQX",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Writer_Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ac7da585-788c-4105-9ac1-d9608f0a1568",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "# ROLE\nYou are an expert content writer.\nCreate SEO friendly posts, articles, etc. based on\nthe user's query. imojide kullana bilirsin, makele formatında yaza bilirsin  yada istenilen formata uygunda düzenliye bilirsin.\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "5276dc20-8153-45b0-bc03-a563b5c23296",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {
+          "frequencyPenalty": 0.3
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        144,
+        240
+      ],
+      "id": "ad9689a6-2e15-4c7b-b3c1-1c1e614dd14b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T16:51:18.619Z",
+      "updatedAt": "2025-07-15T16:51:18.619Z",
+      "id": "WvQPj24wYGxsTQrx",
+      "name": "TElegram  Asistan"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T19:13:38.177Z",
+  "versionId": "fc96200d-260c-45db-adcd-7ec607e65fc1"
+}
