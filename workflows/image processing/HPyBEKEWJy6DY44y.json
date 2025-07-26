@@ -1,0 +1,549 @@
+{
+  "active": false,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Google Drive Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Upload": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Google Drive Download",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Download": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Image Edit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Image Edit": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload to ImgBB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to ImgBB": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Start Video Generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Video Generation": {
+      "main": [
+        [
+          {
+            "node": "Wait for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Processing": {
+      "main": [
+        [
+          {
+            "node": "Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Video Status": {
+      "main": [
+        [
+          {
+            "node": "Is Video Ready?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Video Ready?": {
+      "main": [
+        [
+          {
+            "node": "Send Video Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait and Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait and Retry": {
+      "main": [
+        [
+          {
+            "node": "Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T10:30:08.132Z",
+  "id": "HPyBEKEWJy6DY44y",
+  "isArchived": false,
+  "meta": null,
+  "name": "imaj yenileme gtp ile",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Photo Enhancement",
+        "formDescription": "Photo improvement service",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "image",
+              "fieldType": "file",
+              "acceptFileTypes": "jpg,png,webp",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Mail",
+              "fieldType": "email",
+              "placeholder": "cenk@example.com"
+            },
+            {
+              "fieldLabel": "product_title",
+              "placeholder": "toothpaste"
+            },
+            {
+              "fieldLabel": "product_description"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        576,
+        -224
+      ],
+      "id": "74b2f148-dc71-44f3-b3e5-59cf135820c0",
+      "name": "On form submission",
+      "webhookId": "51b70dec-a2e2-4ce4-a94a-0443c1d235e1"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "image",
+        "name": "={{ $json.product_title }}",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1M_5o7Txjts9YBni1bXYlCWFv_qVrkGH9",
+          "mode": "list",
+          "cachedResultName": "AI Image Generate",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1M_5o7Txjts9YBni1bXYlCWFv_qVrkGH9"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        816,
+        -224
+      ],
+      "id": "70063adc-6d24-426c-a537-e0513a78a800",
+      "name": "Google Drive Upload"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Product: {{ $('On form submission').item.json.product_title }}\nDescription: {{ $('On form submission').item.json.product_description }}",
+        "options": {
+          "systemMessage": "# Overview\nYou are a world-class marketing strategist and an expert text-to-image prompt engineer specializing in creating hyper-realistic, high-quality product photography prompts for AI image generation models.\n\n## Your Objective:\nWhen given a product description, your task is to craft a detailed, professional prompt that results in a hyper-realistic, clean, and visually stunning product image suitable for marketing material, advertising campaigns, or e-commerce platforms.\n\n## Key Requirements:\n- Focus on hyper-realistic, professional studio photography\n- Maintain a clean, minimalistic, and elegant visual style\n- Highlight the product as the main subject with sharp detail and perfect lighting\n- Use backgrounds that complement but do not overpower the product (e.g., soft gradient, light-colored, or pure white)\n- Include professional lighting details such as \"softbox lighting\", \"studio lights\", or \"natural soft shadows\"\n- Emphasize realism, texture, and color accuracy\n- Maintain a high-end, premium look and feel\n- If applicable, suggest a subtle setting that enhances the product's story\n\n## Output Format:\n- Write a single text-to-image prompt optimized for a professional AI image model\n- Be direct and descriptive without using excessive words\n- Avoid unnecessary repetition or adjectives that do not enhance the image quality\n- Ensure the prompt is complete and ready for direct input into an AI model\n\n## Tone:\nProfessional, precise, clean, and optimized for maximum realism and marketing impact.\n\n# Example Input:\n\"A premium wireless Bluetooth speaker in matte black, cylindrical shape, modern design.\"\n# Example Output:\n\"Hyper-realistic product photo of a premium matte black wireless Bluetooth speaker with a cylindrical modern design, centered on a clean white studio background, softbox lighting with natural shadows, sharp focus on texture and material, minimalistic, professional advertising shot.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        -224
+      ],
+      "id": "0b15fd8f-a4c9-436e-ac71-aff9de1f64c9",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        928,
+        48
+      ],
+      "id": "1b1b471c-1ee8-4722-9b46-a84d997ec640",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Google Drive Upload').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1408,
+        -224
+      ],
+      "id": "566b1f45-b497-4cc6-b5d0-e3e63e5d3fcf",
+      "name": "Google Drive Download"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/edits",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $('AI Agent').item.json.output }}"
+            },
+            {
+              "name": "model",
+              "value": "dall-e-2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1616,
+        -224
+      ],
+      "id": "12018bb5-a1b8-4431-902a-463873a35b07",
+      "name": "OpenAI Image Edit"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data[0].b64_json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1840,
+        -224
+      ],
+      "id": "b465fdc7-2dfa-47d1-9c1f-8ad8654ef856",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.imgbb.com/1/upload?expiration=600&key=eb84755802a9508d445bd40e96aa0555",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2064,
+        -224
+      ],
+      "id": "071aeed3-1868-4042-9a3a-094cdeed485c",
+      "name": "Upload to ImgBB"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.Mail }}",
+        "subject": "Your Product is Ready",
+        "emailType": "text",
+        "message": "=Your enhanced product image: {{ $json.data.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2304,
+        -224
+      ],
+      "id": "5d88dfa9-fae8-4653-a126-ca4a669a076f",
+      "name": "Send Email",
+      "webhookId": "85d653c1-ceab-4b4b-ae72-ebeec93b8cb0"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.piapi.ai/api/v1/task",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "ebc7deea9d8eabab8008200f373934e0b9207ed2b453c870cbaf426c1b7695aa"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n    \"model\": \"kling\",\n    \"mode\": \"std\",\n    \"task_type\": \"video_generation\",\n    \"input\": {\n        \"prompt\": \"{{ $('AI Agent').item.json.output }}\",\n        \"negative_prompt\": \"bad quality\",\n        \"cfg_scale\": 0.65,\n        \"duration\": 10,\n        \"image_url\": \"{{ $('Upload to ImgBB').item.json.data.url }}\",\n        \"camera_control\": {\n            \"type\": \"simple\",\n            \"config\": {\n                \"horizontal\": 0,\n                \"vertical\": 0,\n                \"pan\": 0,\n                \"tilt\": 0,\n                \"roll\": 0,\n                \"zoom\": 0\n            }\n        }\n    },\n    \"config\": {}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2528,
+        -224
+      ],
+      "id": "1c67fca9-bc9e-4677-8957-70480008d9e3",
+      "name": "Start Video Generation"
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2736,
+        -224
+      ],
+      "id": "e2f7def2-30b6-44fd-bd04-0febad5f640e",
+      "name": "Wait for Processing",
+      "webhookId": "5de76fb5-1a00-4f7e-a4ed-121d9a5e3bac"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.piapi.ai/api/v1/task/{{ $('Start Video Generation').item.json.data.task_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "ebc7deea9d8eabab8008200f373934e0b9207ed2b453c870cbaf426c1b7695aa"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2960,
+        -224
+      ],
+      "id": "2d185a18-a6ef-4290-9005-37fd467abe7e",
+      "name": "Check Video Status"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ce03d455-0afb-456b-b545-bfb6d537bc20",
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3184,
+        -224
+      ],
+      "id": "4af4e4ee-ae91-4c75-a0e2-5c140e1205f5",
+      "name": "Is Video Ready?"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3184,
+        -32
+      ],
+      "id": "fbc40e54-1090-4b5c-92ee-33dec5539111",
+      "name": "Wait and Retry",
+      "webhookId": "6ab7069b-3a98-47db-bf9a-e2600a2158ac"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json.Mail }}",
+        "subject": "Your Video is Ready",
+        "emailType": "text",
+        "message": "=Your product video is ready: {{ $json.data.output.video_url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3408,
+        -224
+      ],
+      "id": "53a78713-c580-4ef5-8bc7-33b618780b5e",
+      "name": "Send Video Email",
+      "webhookId": "5275c2bc-8f4d-4e9f-9397-a795abc838bd"
+    },
+    {
+      "parameters": {
+        "content": "## Video Generation Pipeline\n\nThis section handles the video generation from the enhanced image using the AI API.",
+        "height": 220,
+        "width": 540,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        64
+      ],
+      "id": "ef186053-ca50-4f40-a53e-00c2ab49c376",
+      "name": "Video Generation Note"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T10:29:48.972Z",
+      "updatedAt": "2025-07-15T10:29:48.972Z",
+      "id": "RiA8MQ6HcOYmCouk",
+      "name": "image processing"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T10:30:08.132Z",
+  "versionId": "733a360b-a212-4544-883a-95a2e91cefa7"
+}
