@@ -1,0 +1,1266 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI CMO Agent": {
+      "main": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search in Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Research Agent": {
+      "main": [
+        [
+          {
+            "node": "AI IG Expert Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI LinkedIn Expert Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI IG Expert Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI LinkedIn Expert Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI IG Expert Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI LinkedIn Expert Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI IG Expert Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet in Google Sheets1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI LinkedIn Expert Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet in Google Sheets2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI CMO Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet in Google Sheets3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-22T18:59:34.201Z",
+  "id": "cOVBGKMqorSGqnEe",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Pazarlama  Ekip v3",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        112
+      ],
+      "id": "b1e4be08-523b-4cef-8672-3b290772b730",
+      "name": "When chat message received",
+      "webhookId": "852c6499-5c22-4544-8e3b-525efbab8f6e"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        352
+      ],
+      "id": "2421524d-1a08-400e-9f90-dedb8cd92c8e",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GVcN1j4kCpkVmtTW",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        720,
+        368
+      ],
+      "id": "5f74b2c9-5155-4c8d-b398-088f7b0d692a",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "# AI Chief Marketing Officer (CMO) Agent\n\nYou are an experienced Chief Marketing Officer who leads a specialized marketing team. Your role is to understand marketing requests, develop strategic approaches, and delegate specific tasks to your expert team members.\n\n## Your Team Structure:\n- **AI Research Agent**: Handles market research, competitor analysis, trend identification\n- **AI Instagram Expert**: Creates Instagram-specific content and strategies\n- **AI LinkedIn Expert**: Develops LinkedIn content and B2B marketing approaches\n\n## Your Responsibilities:\n1. **Strategic Planning**: Analyze the marketing request and create a comprehensive strategy\n2. **Task Delegation**: Break down complex requests into specific tasks for team members\n3. **Quality Control**: Ensure all outputs align with brand guidelines and marketing objectives\n4. **Coordination**: Manage workflow between different team members\n\n## Decision Framework:\n- For content creation requests → Delegate to specific platform experts\n- For market research needs → Send to Research Agent first\n- For campaign strategies → Develop overall strategy, then delegate execution\n- For analytics/tracking → Set up measurement frameworks\n\n## Output Format:\nAlways structure your response as:\n1. **Strategic Assessment**: Brief analysis of the request\n2. **Recommended Approach**: High-level strategy\n3. **Next Steps**: Clear delegation to appropriate team members\n4. **Success Metrics**: How to measure results\n\nMaintain a professional, strategic mindset while being actionable and specific in your directions to the team.\n\n## LOGGING INSTRUCTIONS\nAfter providing your strategic assessment, you MUST log your work:\n\n1. Use \"Append or update row in sheet in Google Sheets2\" tool\n2. Provide data with these EXACT field names:\n   - timestamp: Current date and time\n   - request_id: Unique ID in format CMO_YYYYMMDD_HHMM\n   - user_request: The original user's input\n   - cmo_strategy: Your complete strategic response\n   - research_findings: \"\" (empty string)\n   - instagram_content: \"\" (empty string)\n   - linkedin_content: \"\" (empty string)\n   - platform: \"Strategy\"\n   - status: \"CMO_Complete\"\n   - approval_notes: \"\" (empty string)\n\nAlways log immediately after completing your strategic analysis."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        592,
+        112
+      ],
+      "id": "75ea329a-b7d2-442c-a3b0-c6f7cf9492a1",
+      "name": "AI CMO Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        336
+      ],
+      "id": "5ef67343-d548-45a2-9f54-e8bb44b1a53a",
+      "name": "Anthropic Chat Model1",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GVcN1j4kCpkVmtTW",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "# AI Research Agent\n\nYou are a specialized marketing research analyst who provides data-driven insights to support marketing strategies. Your expertise covers market trends, competitor analysis, industry research, and consumer behavior.\n\n## Core Responsibilities:\n1. **Market Research**: Conduct thorough market analysis using available tools\n2. **Trend Identification**: Spot emerging trends and opportunities\n3. **Competitive Intelligence**: Analyze competitor strategies and positioning\n4. **Data Synthesis**: Transform raw research into actionable marketing insights\n5. **Report Generation**: Create comprehensive research summaries\n\n## Research Methodology:\n1. **Define Research Scope**: Clarify what information is needed\n2. **Multi-Source Investigation**: Use search tools to gather comprehensive data\n3. **Data Validation**: Cross-reference findings from multiple sources\n4. **Insight Generation**: Identify patterns and opportunities\n5. **Strategic Recommendations**: Provide actionable next steps\n\n## Research Areas:\n- Industry trends and market size\n- Competitor analysis and positioning\n- Consumer behavior and preferences\n- Content performance benchmarks\n- Platform-specific best practices\n- Emerging technologies and tools\n\n## Output Format:\n**Research Summary**:\n- Key Findings (3-5 bullet points)\n- Market Opportunities\n- Competitive Landscape\n- Recommended Strategy\n- Supporting Data/Sources\n\nAlways use the Tavily search tool for current information and provide specific, actionable insights that directly support marketing decision-making.\n\n## LOGGING INSTRUCTIONS\nAfter completing your research, you MUST log your findings:\n\n1. Use \"Append or update row in sheet in Google Sheets3\" tool\n2. Provide the data with these EXACT field names:\n   - timestamp: Current date and time\n   - request_id: Unique ID in format RES_YYYYMMDD_HHMM\n   - user_request: The original user's input\n   - cmo_strategy: The CMO agent's strategic output\n   - research_findings: Your complete research summary\n   - instagram_content: \"\" (empty string)\n   - linkedin_content: \"\" (empty string)\n   - platform: \"Research\"\n   - status: \"Research_Complete\"\n   - approval_notes: \"\" (empty string)\n\nIMPORTANT: Use these exact field names when calling the tool. The tool expects this specific schema.\n\nAlways log immediately after completing your research analysis."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1136,
+        112
+      ],
+      "id": "c5b518e0-9d37-425a-9ee6-3f03fa594113",
+      "name": "AI Research Agent"
+    },
+    {
+      "parameters": {
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        352
+      ],
+      "id": "2610cce3-5ed5-46aa-b7e2-b31b1d4db482",
+      "name": "Search in Tavily",
+      "credentials": {
+        "tavilyApi": {
+          "id": "19fJy7dWyO2ShFos",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1584,
+        192
+      ],
+      "id": "5c813b50-e767-4acc-b67c-c038913286bd",
+      "name": "Anthropic Chat Model2",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GVcN1j4kCpkVmtTW",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "# AI Instagram Expert Agent\n\nYou are a specialized Instagram marketing expert who creates engaging, platform-optimized content that drives results. You understand Instagram's unique culture, algorithms, and best practices.\n\n**IMPORTANT**: When you receive research findings or strategic direction, AUTOMATICALLY create comprehensive Instagram content without asking for clarification. Be proactive and use your expertise to determine the best content approach.\n\n## Instagram Expertise:\n- **Visual Storytelling**: Creating scroll-stopping content\n- **Hashtag Strategy**: Research and optimization for discoverability\n- **Story Formats**: Stories, Reels, Posts, IGTV content planning\n- **Engagement Tactics**: Community building and interaction strategies\n- **Instagram Trends**: Current trends, challenges, and viral content patterns\n- **Creator Economy**: Influencer partnerships and UGC strategies\n\n## Content Creation Approach:\n1. **Visual-First Thinking**: Every concept starts with visual impact\n2. **Mobile Optimization**: Content designed for mobile consumption\n3. **Story Arc**: Creating compelling narratives in short formats\n4. **Community Focus**: Building genuine connections with audience\n5. **Trend Integration**: Leveraging current trends while staying authentic\n6. **Auto-Generate**: Create content immediately based on any input received\n\n## Instagram Content Types:\n- **Feed Posts**: Carousel posts, single images, brand storytelling\n- **Reels**: Short-form video content, trending audio, entertainment\n- **Stories**: Behind-scenes, polls, Q&As, quick updates\n- **IGTV/Videos**: Long-form content, tutorials, interviews\n- **Shopping**: Product showcases, shopping tags\n\n## Content Strategy Elements:\n- **Hook Creation**: First 3 seconds that stop the scroll\n- **Value Delivery**: Education, entertainment, or inspiration\n- **Call-to-Action**: Clear next steps for audience\n- **Hashtag Mix**: Branded, trending, niche, and broad hashtags\n- **Timing**: Optimal posting schedules\n- **Engagement**: Response strategies and community management\n\n## Auto-Content Creation Rules:\nWhen receiving research findings or strategic direction:\n1. **Analyze the key insights** from the research\n2. **Identify the most Instagram-worthy angles** (visual, trendy, shareable)\n3. **Create multiple content options** (feed post, reel concept, story series)\n4. **Target general business/tech audience** unless specified otherwise\n5. **Focus on educational or inspirational value**\n\n## Output Format:\n**Instagram Content Package**:\n- Caption (with emojis and line breaks)\n- Hashtag strategy (mix of 20-30 hashtags)\n- Visual concept description\n- Story sequence ideas\n- Engagement strategy\n- Performance tracking metrics\n\nCreate content that feels authentic to Instagram's casual, visual culture while driving business objectives. Always consider the mobile-first, fast-scrolling environment.\n\n## LOGGING INSTRUCTIONS\nAfter creating Instagram content, you MUST log your output:\n\n1. Use \"Append or update row in sheet in Google Sheets\" tool\n2. Provide data with these EXACT field names:\n  - timestamp: Current date and time\n  - request_id: Unique ID in format IG_YYYYMMDD_HHMM\n  - user_request: The original user's input\n  - cmo_strategy: The CMO's strategic output\n  - research_findings: The research agent's findings\n  - instagram_content: Your complete Instagram content package\n  - linkedin_content: \"\" (empty string)\n  - platform: \"Instagram\"\n  - status: \"IG_Generated\"\n  - approval_notes: \"\" (empty string)\n\nAlways log immediately after creating your content."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        0
+      ],
+      "id": "56931f20-011c-4601-9d30-98f89129f812",
+      "name": "AI IG Expert Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1568,
+        688
+      ],
+      "id": "2e25456c-1639-4565-8de6-3b2c89638d1d",
+      "name": "Anthropic Chat Model3",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GVcN1j4kCpkVmtTW",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "# AI LinkedIn Expert Agent\n\nYou are a specialized LinkedIn marketing strategist who creates professional, thought-leadership content that builds authority and drives business results. You understand LinkedIn's professional ecosystem and B2B marketing dynamics.\n\n## LinkedIn Expertise:\n- **Thought Leadership**: Establishing authority and expertise\n- **Professional Networking**: Building meaningful business connections\n- **B2B Marketing**: Lead generation and business development\n- **Content Formats**: Posts, articles, newsletters, events, polls\n- **LinkedIn Algorithm**: Understanding reach and engagement optimization\n- **Sales Navigator**: Advanced targeting and outreach strategies\n\n## Content Creation Philosophy:\n1. **Professional Authority**: Building credibility and expertise\n2. **Value-First Approach**: Providing actionable insights\n3. **Conversation Starters**: Creating engaging professional discussions\n4. **Network Building**: Connecting with industry professionals\n5. **Business Impact**: Content that drives measurable business outcomes\n\n## LinkedIn Content Types:\n- **Industry Insights**: Market trends and analysis\n- **Professional Stories**: Career lessons and experiences\n- **Educational Content**: How-to guides and best practices\n- **Company Updates**: Behind-the-scenes and culture content\n- **Thought Leadership**: Opinion pieces and industry commentary\n- **Data-Driven Posts**: Research findings and statistics\n\n## Professional Tone Guidelines:\n- **Authoritative but Approachable**: Expert knowledge with human touch\n- **Minimal Emojis**: Professional presentation (only when highly relevant)\n- **Data-Backed Claims**: Support statements with credible sources\n- **Clear Structure**: Easy-to-scan formatting with bullet points\n- **Professional Language**: Business-appropriate terminology\n- **Call-to-Action**: Professional engagement prompts\n\n## Content Structure:\n1. **Hook**: Engaging opening that captures professional attention\n2. **Value Delivery**: Actionable insights or professional wisdom\n3. **Supporting Evidence**: Data, examples, or case studies\n4. **Professional CTA**: Encouraging professional discussion or connection\n5. **Relevant Hashtags**: Industry-specific and professional tags\n\n## Output Format:\n**LinkedIn Content Package**:\n- Professional post text (with proper formatting)\n- Industry hashtags (5-10 professional tags)\n- Engagement strategy\n- Target audience definition\n- Follow-up conversation ideas\n- Performance metrics to track\n\nCreate content that positions the brand as a trusted industry authority while fostering meaningful professional relationships and business opportunities.\n\n## LOGGING INSTRUCTIONS\nAfter creating LinkedIn content, you MUST log your output:\n\n1. Use \"Append or update row in sheet in Google Sheets1\" tool\n2. Provide data with these EXACT field names:\n   - timestamp: Current date and time\n   - request_id: Unique ID in format LI_YYYYMMDD_HHMM\n   - user_request: The original user's input\n   - cmo_strategy: The CMO's strategic output\n   - research_findings: The research agent's findings\n   - instagram_content: \"\" (empty string)\n   - linkedin_content: Your complete LinkedIn content package\n   - platform: \"LinkedIn\"\n   - status: \"LI_Generated\"\n   - approval_notes: \"\" (empty string)\n\nAlways log immediately after creating your content."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        432
+      ],
+      "id": "fd16c7b4-8644-470d-b527-6f8157b17c9f",
+      "name": "AI LinkedIn Expert Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        864,
+        352
+      ],
+      "id": "7ade9d4e-389e-4270-be61-c2a644ee0cc1",
+      "name": "Think"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        352
+      ],
+      "id": "fc8f8c5d-4a10-4d33-9ca0-d3a8796608d5",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1792,
+        240
+      ],
+      "id": "d937016d-84c8-453f-a910-2c255b12acda",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1744,
+        688
+      ],
+      "id": "f668c2e9-7fa5-4117-bbb3-9e83e40a31b0",
+      "name": "Get row(s) in sheet in Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('timestamp', ``, 'string') }}",
+            "request_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request_id', ``, 'string') }}",
+            "user_request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user_request', ``, 'string') }}",
+            "linkedin_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('linkedin_content', ``, 'string') }}",
+            "instagram_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('instagram_content', ``, 'string') }}",
+            "research_findings": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('research_findings', ``, 'string') }}",
+            "cmo_strategy": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('cmo_strategy', ``, 'string') }}",
+            "approval_notes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('approval_notes', ``, 'string') }}",
+            "status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('status', ``, 'string') }}",
+            "platform": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('platform', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "timestamp"
+          ],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_request",
+              "displayName": "user_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cmo_strategy",
+              "displayName": "cmo_strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "research_findings",
+              "displayName": "research_findings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "instagram_content",
+              "displayName": "instagram_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_content",
+              "displayName": "linkedin_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "approval_notes",
+              "displayName": "approval_notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        2016,
+        240
+      ],
+      "id": "fe40b1f7-ccd4-48f0-96fc-777261f8d525",
+      "name": "Append or update row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('timestamp__using_to_match_', ``, 'string') }}",
+            "request_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request_id', ``, 'string') }}",
+            "user_request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user_request', ``, 'string') }}",
+            "cmo_strategy": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('cmo_strategy', ``, 'string') }}",
+            "research_findings": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('research_findings', ``, 'string') }}",
+            "instagram_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('instagram_content', ``, 'string') }}",
+            "approval_notes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('approval_notes', ``, 'string') }}",
+            "status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('status', ``, 'string') }}",
+            "platform": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('platform', ``, 'string') }}",
+            "linkedin_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('linkedin_content', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "timestamp"
+          ],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_request",
+              "displayName": "user_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cmo_strategy",
+              "displayName": "cmo_strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "research_findings",
+              "displayName": "research_findings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "instagram_content",
+              "displayName": "instagram_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_content",
+              "displayName": "linkedin_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "approval_notes",
+              "displayName": "approval_notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1952,
+        672
+      ],
+      "id": "4e699e73-a13a-4027-8292-3cdd9ac9ff82",
+      "name": "Append or update row in sheet in Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        672,
+        608
+      ],
+      "id": "0d2c2725-b779-42a1-8480-bd4c721f63b8",
+      "name": "Get row(s) in sheet in Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('timestamp__using_to_match_', ``, 'string') }}",
+            "request_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request_id', ``, 'string') }}",
+            "user_request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user_request', ``, 'string') }}",
+            "cmo_strategy": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('cmo_strategy', ``, 'string') }}",
+            "research_findings": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('research_findings', ``, 'string') }}",
+            "instagram_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('instagram_content', ``, 'string') }}",
+            "approval_notes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('approval_notes', ``, 'string') }}",
+            "status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('status', ``, 'string') }}",
+            "platform": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('platform', ``, 'string') }}",
+            "linkedin_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('linkedin_content', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "timestamp"
+          ],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_request",
+              "displayName": "user_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cmo_strategy",
+              "displayName": "cmo_strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "research_findings",
+              "displayName": "research_findings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "instagram_content",
+              "displayName": "instagram_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_content",
+              "displayName": "linkedin_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "approval_notes",
+              "displayName": "approval_notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        864,
+        624
+      ],
+      "id": "f4b0cb32-0f36-41c0-8154-818232442688",
+      "name": "Append or update row in sheet in Google Sheets2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('timestamp__using_to_match_', ``, 'string') }}",
+            "request_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request_id', ``, 'string') }}",
+            "user_request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user_request', ``, 'string') }}",
+            "cmo_strategy": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('cmo_strategy', ``, 'string') }}",
+            "research_findings": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('research_findings', ``, 'string') }}",
+            "instagram_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('instagram_content', ``, 'string') }}",
+            "approval_notes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('approval_notes', ``, 'string') }}",
+            "status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('status', ``, 'string') }}",
+            "platform": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('platform', ``, 'string') }}",
+            "linkedin_content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('linkedin_content', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "timestamp"
+          ],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "request_id",
+              "displayName": "request_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_request",
+              "displayName": "user_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cmo_strategy",
+              "displayName": "cmo_strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "research_findings",
+              "displayName": "research_findings",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "instagram_content",
+              "displayName": "instagram_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_content",
+              "displayName": "linkedin_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "platform",
+              "displayName": "platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "approval_notes",
+              "displayName": "approval_notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1328,
+        608
+      ],
+      "id": "ce86b3ea-ba6e-4984-87f6-330a0a144172",
+      "name": "Append or update row in sheet in Google Sheets3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4",
+          "mode": "list",
+          "cachedResultName": "AI_Content_Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1219414581,
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0SA6XRld1p3OSTrqKON2tvXSl-XvgAMxraeC3y05R4/edit#gid=1219414581"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1104,
+        592
+      ],
+      "id": "3c5ede37-34c9-4b34-9d4a-ed3c053ed4f0",
+      "name": "Get row(s) in sheet in Google Sheets3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🚀 Yapay Zeka Pazarlama Ekibi İş Akışı\n\n## **Akışa Genel Bakış**\nSohbet Tetikleyicisi → CMO Stratejisi → Araştırma → İçerik Üretimi → Kayıt Tutma\n\n## **Ana Temsilciler (Agent'lar)**\n- **🎯 CMO Temsilcisi**: Stratejik planlama ve görev dağılımı\n- **🔍 Araştırma Temsilcisi**: Tavily araması ile pazar analizi\n- **📸 Instagram Uzmanı**: Görsel içerik ve hashtag stratejisi\n- **💼 LinkedIn Uzmanı**: Profesyonel B2B içerik\n\n## **Süreç Akışı**\n1. Kullanıcı talebi sohbet üzerinden alınır\n2. CMO analiz eder ve stratejik bir yaklaşım oluşturur\n3. Araştırma temsilcisi pazar hakkında bilgi toplar\n4. Platform uzmanları eş zamanlı olarak özel içerikler oluşturur\n5. Tüm çıktılar takip için Google E-Tablolar'a kaydedilir\n\n## **Ana Özellikler**\n- ✅ Çoklu temsilci (multi-agent) koordinasyonu\n- ✅ Gerçek zamanlı pazar araştırması\n- ✅ Platforma özel optimize edilmiş içerik\n- ✅ Eksiksiz iş akışı kaydı\n- ✅ Anthropic Claude 4 Sonnet destekli\n\n## **Kurulum Gereksinimleri**\n📊 **E-Tablo Şablonu**: [YZ İçerik Kaydı](https://docs.google.com/spreadsheets/d/1cu96wKNC5vMkWdiHdRtr0asKC0Asldq8Jkh1nRRXmCY/edit?gid=0#gid=0)\n\n**Sonuç**: Stratejiden uygulamaya kadar tam denetim kaydıyla eksiksiz bir pazarlama kampanyası.",
+        "height": 1156,
+        "width": 520
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2672,
+        -592
+      ],
+      "id": "1660e720-d8ab-4d72-88e2-be8ad1c88a63",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "https://youtu.be/mThhodUPHLo?si=8VfpS8sLCaxG8LO2",
+        "height": 80,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2768,
+        -672
+      ],
+      "id": "8afc74f9-c2dd-4d99-bd2b-f8937787c873",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "Elbette, videonun dökümünü zaman damgalarından arındırılmış ve okunması kolay bir Markdown (.md) formatında aşağıda bulabilirsiniz.\n\n---\n\n### Tam Bir Pazarlama Ekibini Yapay Zeka ile Kurmak\n\nMerhaba arkadaşlar, bugün sadece yapay zeka ve n8n kullanarak tam bir pazarlama ekibini nasıl kuracağınızı öğreneceksiniz.\n\nElimizde bir **CMO (Pazarlama Direktörü) Temsilcisi** var. Ayrıca bir **Yapay Zeka Araştırma Temsilcisi** bulunuyor. Bu araştırma temsilcisi, tüm görevleri ya bir **Instagram Uzmanına** ya da bir **LinkedIn Uzmanına** devrediyor. Bu, tüm araştırma verileri ve yapay zeka temsilcilerinin bulgularıyla birlikte Instagram için hazır bir gönderi ve LinkedIn için hazır bir gönderiye sahip olacağınız anlamına geliyor.\n\nAyrıca **Tavily** adında bir araç kullanıyoruz. Tavily, aslında bir web kazıyıcıdır (web scraper). Yani, sadece yapay zekanın sağladığı verileri kullanmakla kalmıyor, aynı zamanda bu verileri, web kazıyıcılar aracılığıyla web'e ve en son trendlere gerçek zamanlı erişimi olan yapay zeka araştırma temsilcisiyle doğruluyoruz.\n\nİşte karşınızda, %100 ücretsiz olarak tam bir yapay zeka pazarlama ekibiniz.\n\n### Neden Bu İş Akışını Oluşturdum?\n\nArkadaşlar, 6 yıldır pazarlama sektöründeyim. Bu iş akışını, pazarlama operasyonlarını ölçeklendirmek isteyen veya pazarlama uzmanları ya da uzmanları işe alacak durumda olmayan insanlar için oluşturdum. Artık ihtiyacınız olan tek şey n8n, onu nasıl kullanacağınıza dair temel bilgiler ve %100 ücretsiz olan bu iş akışı.\n\n### Ücretsiz JSON Şablonunu İndirin\n\nLink, videonun altındaki açıklama kutusunda mevcut olacak. JSON şablonunu kesinlikle indirin. Şimdi işin içine dalalım ve nasıl çalıştığını daha ayrıntılı bir şekilde açıklayayım. Eğer iş akışını kendi nişinize veya tercihlerinize göre değiştirmek isterseniz, bu akışla nasıl çalışacağınızı öğrenmek için izlemeye devam edin.\n\n### İş Akışına Genel Bakış\n\nBu akış oldukça büyük sayılır, ama devasa değil. Bazı iş akışları ekranın her yerine yayılırken, bu oldukça kompakt. Harika olan tarafı, her şeyin yapay zeka tarafından yönetilmesi. \"Alt akışlar\" (subflows) gibi şeyler kullanmıyoruz veya farklı alt akışlardaki yapay zeka temsilcilerini çağırmıyoruz. Bunu süper başlangıç dostu yapmak ve tamamen tek bir akış içinde yapay zekayı kullandığımızdan emin olmak istedim.\n\n#### Başlangıç Dostu Pazarlama Akışı\n\nİşleyiş şu şekilde: Çok temel bir sohbet mesajı girişi veya sohbet tetikleyicimiz var. Burada yapay zekaya pazarlama hedefleriniz doğrultusunda ne yapmak istediğinizi soracaksınız. Örneğin, \"pazarlamadaki en son trendleri araştır ve sosyal medya hesaplarım için gönderiler oluştur\" gibi. Pazarlamanız için ne yapmak isterseniz, bu sohbet girişine yazacaksınız.\n\nBu yapıldıktan sonra, veriler **CMO (Pazarlama Direktörü) Temsilcisine** iletilir. Bu temsilcilerin her birinin kendi karakteri veya nasıl davranması gerektiğine dair davranış kalıpları var. Pazarlama geçmişinden gelen biri olarak, her bir yapay zeka temsilcisini, gerçek bir şirketteki pozisyonlarını %99 doğrulukla taklit edecek şekilde ayarladığımdan emin oldum.\n\n#### Yapay Zeka CMO Temsilcisi ile Tanışın\n\nCMO temsilcisini açarsak, burada temsilcinin davranışını veya karakterini tanımlıyoruz:\n> \"Sen deneyimli bir Pazarlama Direktörüsün (CMO).\"\n\nArdından ne yaptığını, fonksiyonlarının ne olduğunu ve görevleri diğer temsilcilere nasıl devredeceğini açıklıyoruz. Bu temsilcinin görevi, tüm şirketin beyni olarak hareket etmektir, çünkü bir CMO'nun yaptığı budur. Gerçek bir şirkette CMO, tüm pazarlama ekibinin beyni ve stratejisti olarak hareket eder ve görevleri ekibe dağıtır.\n\nBurada, birlikte çalışabileceği ve görevleri devredebileceği bir ekibi olduğunu açıklıyoruz: **Yapay Zeka Araştırma Temsilcisi**, **Yapay Zeka Instagram Uzmanı** ve **Yapay Zeka LinkedIn Uzmanı**.\n\n#### Instagram ve LinkedIn Yapay Zeka Temsilcileri\n\nBu uzmanlar, sosyal medya gönderilerini oluşturacaklar. Nihai çıktı, bir e-tabloda şuna benzer görünecek. Süslü bir şey değil, çünkü odak noktamız veriler ve nihai sonuç. İşte bir LinkedIn gönderi örneği: En iyi uygulamaları ve biçimlendirmeyi uyarlıyoruz. Hashtag'ler, etkileşim stratejisi, hedef kitle gibi her şey hazır. Gerçek bir pazarlama uzmanı işe almadan. Oldukça çılgınca.\n\n### Neden Pazarlama İçin ChatGPT Yerine Claude Daha İyi?\n\nTüm yapay zeka modelleri için **Claude** kullanıyorum çünkü Claude, pazarlama için en iyi yapay zeka modelidir. Tekrar ediyorum: Claude, bir nedenle pazarlama için en iyi yapay zeka modelidir. ChatGPT, kutudan çıktığı haliyle çok genel (jenerik) bir tona sahipken, Claude ile içeriğin kalitesi çok daha yüksek. ChatGPT ile doğru tonu yakalamak ve \"insansı\" bir ses elde etmek için çok çalışmanız gerekir. ChatGPT ile çalıştığınızda her zaman aynı abartılı ifadelerle karşılaşırsınız: \"içeriğinizi güçlendirin\", \"içeriğinizi yükseltin\".\n\nAyrıca, sık sık \"halüsinasyon\" görür (yanlış bilgi uydurur). Çok fazla veri aldığında, özellikle bağlam penceresi büyükse, halüsinasyon görebilir. ChatGPT veya OpenAI modelleri halüsinasyon gördüğünde, boşlukları var olmayan sahte verilerle doldurmaya çalışır. Claude ise bu konuda gerçekten iyi. İçerik kalitesi yüksek ve halüsinasyon oranı piyasadaki diğer tüm yapay zeka modelleri arasında en düşüklerden biri.\n\n### Tavily Web Kazıyıcı ile Gerçek Zamanlı Veri\n\nAraştırma temsilcisinde **Tavily** kullanıyorum. Tavily bir web kazıyıcıdır ve gerçekten cömert bir ücretsiz planı var. Aylık 1.000 kredi veriyorlar. Birkaç talep yaptım ve sadece 25 kredi harcadım. Bu oldukça iyi. Kısıtlı bir bütçeniz varsa, Tavily kesinlikle iyi bir seçenektir. Kurulumu çok kolay: API anahtarınızı oluşturun, kopyalayın, n8n'e getirin ve bir kimlik bilgisi oluşturarak yapıştırın.\n\n### Google Sheets Entegrasyonu\n\nGoogle E-Tablolar'ı ayrı bir düğüm olarak değil, temsilcilere eklenmiş bir \"araç\" (tool) olarak kullanıyorum. Artık araçlar sayesinde E-Tablolar, Google Drive, YouTube gibi resmi olarak desteklenen araçları doğrudan temsilcinize ekleyebilirsiniz. Örneğin, e-tablo seçeneklerini açtığımda herhangi bir ifade (expression) tanımlamadığımı görebilirsiniz. Her bir giriş, yapay zeka tarafından yönetiliyor. Sadece e-tabloyu düğümle senkronize ettim. Yapay zeka, ona verdiğiniz talimatlara göre verileri e-tabloya nasıl kaydedeceğini tam olarak bilir.\n\n### Uçtan Uca Otomatik İş Akışı\n\nCMO temsilcisinden gelen görev, önce **Yapay Zeka Araştırma Temsilcisi**'ne gider. Bu bizim araştırma uzmanımızdır. Yapısı çok benzer; bir beyni (Claude modeli) var, aynı e-tablo araçlarına sahip. Tek fark, burada Tavily'yi kullanmasıdır.\n\nAraştırma tamamlandıktan sonra, her temsilci kendi bulgularını kendi e-tablosuna kaydeder. Verilerin saflığını korumak için her temsilcinin kendi bulgularını kendi e-tablosuna kaydetmesini sağlıyorum. Bu, verileri granüler hale getirir ve verinin tam olarak o yapay zeka temsilcisinden geldiğinden emin olmamızı sağlar.\n\n### Markanız İçin Nasıl Özelleştirilir?\n\nAraştırma tamamlandıktan sonra, iş akışı ikiye ayrılır: **Yapay Zeka Instagram Uzmanı Temsilcisi** ve **Yapay Zeka LinkedIn Uzmanı Temsilcisi**. Bu temsilcilerin her biri kendi platformuna göre uyarlanmıştır.\n\n*   **Instagram Uzmanı**, ilgi çekici ve platforma özel içerik oluşturmak için kendi talimatlarına sahiptir. Hashtag'ler, hikaye anlatımı gibi konulara odaklanır.\n*   **LinkedIn Uzmanı**, farklı bir platform olduğu için farklı bir içerik stiline sahiptir. Instagram'da işe yarayan bir içerik, LinkedIn'de aynı etkiyi yaratmayabilir. LinkedIn daha çok B2B odaklıdır, ses tonu ve marka algısı tamamen farklıdır. Bu yüzden emojileri daha az kullanır.\n\n### İş Akışını Çalıştırma Örneği\n\nSizin için işi çok kolaylaştırdım. İçerik oluşturmak için herhangi bir şeyi ayarlamanıza gerek yok. Sadece sohbet giriş kutusunu kullanacaksınız.\n\nÖrneğin, şunu yazıyorum:\n> \"Sosyal medya hesaplarım için en son n8n trendleri hakkında içerik oluştur.\"\n\nŞimdi akış çalışmaya başlıyor:\n1.  **CMO** görevi alıyor, düşünüyor ve bir strateji oluşturuyor.\n2.  Görevi **Araştırma Temsilcisine** gönderiyor.\n3.  Araştırma temsilcisi Tavily ile web'i tarıyor ve bulgularını (ana bulgular, pazar fırsatları, rekabet ortamı, önerilen strateji) e-tabloya kaydediyor.\n4.  Bu bulgular hem **Instagram** hem de **LinkedIn** uzmanlarına gönderiliyor.\n5.  **Instagram Uzmanı**, platforma uygun bir başlık, içerik metni ve hashtag stratejisi ile bir gönderi paketi oluşturup e-tabloya kaydediyor.\n6.  **LinkedIn Uzmanı**, daha profesyonel bir dil ve daha az emoji kullanarak kapsamlı bir LinkedIn gönderisi oluşturuyor ve bunu da e-tabloya kaydediyor.\n\nİşin %90'ı sizin için yapılmış durumda. Sadece kopyalayıp kendi markanıza göre ayarlamanız yeterli. İşte bu, sizin tam teşekküllü, 360 derece pazarlama ekibiniz.\n\nBu iş akışını bir adım öteye taşıyabilir ve araştırma tamamlandıktan sonra görseller veya videolar oluşturmak için DALL-E veya başka API'lar ekleyebilirsiniz. Bu sistemi, sizin için 7/24 çalışan tam bir pazarlama ajansına dönüştürebilirsiniz.\n\n### İndirin ve Başlayın\n\nUnutmayın, bu tüm JSON şablonunu ücretsiz olarak indirebilirsiniz. Link videonun altındaki açıklama kutusunda. İndirdikten sonra n8n'de üç noktaya tıklayıp \"İçe Aktar\" (Import) seçeneği ile kullanmaya başlayabilirsiniz.\n\nHerhangi bir sorunuz olursa veya bir hatayla karşılaşırsanız, yorumlarda bana bildirin, size yardımcı olacağım. Eğer bu tür içerikleri ve ücretsiz JSON şablonlarını paylaşmaya devam etmemi isterseniz, beğenmeyi, abone olmayı ve bildirimleri açmayı unutmayın. Bir sonraki videoda görüşmek üzere",
+        "height": 3376,
+        "width": 1344
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        -1344
+      ],
+      "id": "57577ad4-f111-4ba2-afb5-7bbb2df2f161",
+      "name": "Sticky Note2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-22T18:50:11.405Z",
+      "updatedAt": "2025-07-22T18:50:11.405Z",
+      "id": "AAVk4fZ4SHgnUfOc",
+      "name": "AI Agents"
+    },
+    {
+      "createdAt": "2025-07-22T18:50:11.404Z",
+      "updatedAt": "2025-07-22T18:50:11.404Z",
+      "id": "xh1lZZeWbgsC9Dus",
+      "name": "Content Creation"
+    },
+    {
+      "createdAt": "2025-07-22T18:50:11.402Z",
+      "updatedAt": "2025-07-22T18:50:11.402Z",
+      "id": "DhSIeCSw5KLArZfp",
+      "name": "Social Media"
+    },
+    {
+      "createdAt": "2025-07-22T18:50:11.400Z",
+      "updatedAt": "2025-07-22T18:50:11.400Z",
+      "id": "3L446QMziWp221kL",
+      "name": "Arthur"
+    },
+    {
+      "createdAt": "2025-07-22T18:50:11.381Z",
+      "updatedAt": "2025-07-22T18:50:11.381Z",
+      "id": "3480L1qbniYIp0jV",
+      "name": "Automation"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-22T20:00:27.029Z",
+  "versionId": "d10c3e1c-b094-4c34-b524-79e44746bbce"
+}
