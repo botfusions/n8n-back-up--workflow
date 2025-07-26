@@ -1,0 +1,121 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T22:49:05.558Z",
+  "id": "1JNvygrhb8atzRps",
+  "isArchived": false,
+  "meta": null,
+  "name": "mevzuat-api-v2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mevzuat-api-v2",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -576,
+        -208
+      ],
+      "id": "55755f5b-0b6e-4f84-bab7-6a01b0497c0a",
+      "name": "Webhook",
+      "webhookId": "de42d50c-2264-4841-9e7e-099f36ef6b42"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mevzuat-mcp-2z26.onrender.com/webhook/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "custom",
+        "body": "={\"query\": \"test\", \"page_size\": 5}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        -480
+      ],
+      "id": "29010547-ffcd-4420-b7bf-be24d43979ce",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -112,
+        -208
+      ],
+      "id": "a41f2789-3828-4d1c-b2d2-3cbc41cdfb9d",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ \n  json: { \n    test: \"Webhook yapılandırması çalışıyor\",\n    received_query: items[0].json.query,\n    received_page_size: items[0].json.page_size,\n    timestamp: new Date().toISOString()\n  } \n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        -208
+      ],
+      "id": "72aa32f9-4513-4bd9-b40e-e4bcfa53b601",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-17T18:03:08.719Z",
+  "versionId": "8a371d53-6ca5-4565-bddc-a57efff559e6"
+}
