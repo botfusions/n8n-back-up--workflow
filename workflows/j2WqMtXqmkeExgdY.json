@@ -1,0 +1,94 @@
+{
+  "active": false,
+  "connections": {
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Fix JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fix JSON": {
+      "main": [
+        [
+          {
+            "node": "Save",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T12:02:06.914Z",
+  "id": "j2WqMtXqmkeExgdY",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "6d8aaacd-68b7-415b-ac05-27dff7bd0c76",
+        "formTitle": "Upload JSON",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "File",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9fb95985-6a69-4c82-a010-f45e3c40a5d3",
+      "name": "Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2,
+      "position": [
+        528,
+        -80
+      ],
+      "webhookId": "6d8aaacd-68b7-415b-ac05-27dff7bd0c76"
+    },
+    {
+      "parameters": {
+        "functionCode": "const key = Object.keys($binary)[0];\nconst file = $binary[key];\nconst jsonStr = file.data.toString('utf8');\nconst fixed = JSON.stringify(JSON.parse(jsonStr), null, 2);\nconst buffer = Buffer.from(fixed, 'utf8');\nreturn [{\n  json: { fileName: `fixed_${file.fileName}` },\n  binary: { data: { data: buffer, fileName: `fixed_${file.fileName}` } }\n}];"
+      },
+      "id": "13bc547b-83e4-4604-9f03-cf2c605e10f9",
+      "name": "Fix JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        736,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "={{ $json.fileName }}",
+        "options": {}
+      },
+      "id": "26533a53-4e69-44ef-ba31-846a679943ab",
+      "name": "Save",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        928,
+        -80
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T12:10:02.227Z",
+  "versionId": "508421f9-2b6e-496a-a47c-51b2306f903c"
+}
