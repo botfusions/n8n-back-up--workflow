@@ -1,0 +1,234 @@
+{
+  "active": false,
+  "connections": {
+    "Manuel Trigger": {
+      "main": [
+        [
+          {
+            "node": "Workflow Listesi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Listesi": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-21T22:05:15.708Z",
+  "id": "Qtrz1fIgcguyUwAC",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Basit n8n to Sheets",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger1",
+      "name": "Manuel Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        208,
+        304
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "duplicateItem": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "workflow_id",
+              "type": "string",
+              "value": "B4mjnLj1cIEepYo2"
+            },
+            {
+              "id": "2",
+              "name": "workflow_name",
+              "type": "string",
+              "value": "copy _Agent"
+            },
+            {
+              "id": "3",
+              "name": "aktif_mi",
+              "type": "string",
+              "value": "Hayır"
+            },
+            {
+              "id": "4",
+              "name": "node_sayisi",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "id": "5",
+              "name": "etiketler",
+              "type": "string",
+              "value": "yazar agent"
+            },
+            {
+              "id": "6",
+              "name": "tarih",
+              "type": "string",
+              "value": "2025-07-22"
+            },
+            {
+              "id": "7",
+              "name": "download_link",
+              "type": "string",
+              "value": "ID: B4mjnLj1cIEepYo2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set1",
+      "name": "Workflow Listesi",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        400,
+        304
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1771fVaoerXaQ9dISNDHWUF3gRrx_DWz2tl1wHhcTV58",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1168612582,
+          "mode": "list",
+          "cachedResultName": "n8n_Workflows",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1771fVaoerXaQ9dISNDHWUF3gRrx_DWz2tl1wHhcTV58/edit#gid=1168612582"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "workflow_id": "={{ $json.workflow_id }}",
+            "workflow_name": "={{ $json.workflow_name }}",
+            "aktif_mi": "={{ $json.aktif_mi }}",
+            "node_sayisi": "={{ $json.node_sayisi }}",
+            "etiketler": "={{ $json.etiketler }}",
+            "tarih": "={{ $json.etiketler }}",
+            "download_link": "={{ $json.download_link }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "workflow_id",
+              "displayName": "workflow_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "workflow_name",
+              "displayName": "workflow_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aktif_mi",
+              "displayName": "aktif_mi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "node_sayisi",
+              "displayName": "node_sayisi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "etiketler",
+              "displayName": "etiketler",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "tarih",
+              "displayName": "tarih",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "download_link",
+              "displayName": "download_link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "sheets1",
+      "name": "Append row in sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        608,
+        304
+      ],
+      "typeVersion": 4.5,
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-21T23:05:51.994Z",
+  "versionId": "90d9daec-fcfb-4802-a0e3-f8edb519d316"
+}
