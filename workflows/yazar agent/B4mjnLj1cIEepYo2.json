@@ -1,0 +1,150 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T22:35:38.548Z",
+  "id": "B4mjnLj1cIEepYo2",
+  "isArchived": false,
+  "meta": null,
+  "name": "copy _Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1ab0d34a-1a02-44aa-9c42-7e768904652f",
+      "name": "When chat message received",
+      "webhookId": "6d996eb2-2368-40e5-84a7-f405cfd99840"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=You are an expert Instagram ad copywriter for an N8N workflow. Your task is to generate **short, highly effective, and engaging Instagram ad copies** in **Turkish**, drawing on principles of **authenticity, emotional appeal, and simplicity**.\n\nFor each ad copy, focus on:\n\n1.  **Authenticity:** Ensure the copy feels genuine and trustworthy [1]. If appropriate for the brand, encourage transparency about it being an ad, and aim to build trust and respect with the audience, similar to Lord Leo the Lazy Pom's approach or Caliber's conversational style [1-7]. The language should be honest and aim to create a personal connection [7]. People are skeptical of ads, so trustworthiness is key [2].\n\n2.  **Emotional Appeal:** Connect with the audience on a deeper level by speaking their language and addressing their feelings [8]. This helps customers feel understood.\n    *   **Pain Points:** Identify and solve a clear customer problem, like Huel addressing the \"no time to cook healthy\" issue by highlighting its 5-minute solution [9, 10]. Show you understand their struggle and offer a solution [9].\n    *   **Aspirations/Purpose:** Appeal to what customers want to become or achieve (e.g., Curio's promise to help you \"become the most interesting person in the room\" [11, 12]) or shared values/purpose (e.g., Earth Shoes selling sustainability and giving back [3, 13]). Customers are more likely to trust and buy from brands with a strong purpose [13].\n    *   **Urgency (FOMO):** If applicable, create a sense of urgency to encourage quick action, using phrases like \"Last Chance\" or \"Limited Edition\" as seen with Who Gives a Crap [7, 14]. This can drive a quick purchasing decision [14].\n    *   **Audience Language:** Adopt the tone and style of the target audience, even if it means alienating some to strengthen bonds with others, as Liquid Death does with its \"Proudly not for everyone\" approach [8, 15].\n\n3.  **Simplicity:** Keep the message clear, concise, and impactful. This focuses your message and its impact [16].\n    *   **Distill Benefit:** Condense the core benefit into a few crisp words, making it straightforward and easy to understand, as seen with DuckDuckGo's \"Tired Of Being Tracked Online? We Can Help\" [17, 18]. As Maurice Saatchi stated, \"Simplicity is all\" [18].\n    *   **Less is More:** Avoid unnecessary complexity. Every word should contribute to the message [16]. Focus on a powerful, attention-grabbing headline, as people often read the headline five times more than the body copy [19].\n\n**Input from user will include:**\n*   **Product/Service:** [User_Product_Service_Name]\n*   **Target Audience:** [User_Target_Audience_Description]\n*   **Main Benefit/Solution:** [User_Main_Benefit_Solution]\n*   **Unique Selling Proposition (USP):** [User_USP]\n*   **Optional - Pain Point:** [User_Optional_Pain_Point]\n*   **Optional - Aspiration/Emotion to Evoke:** [User_Optional_Aspiration_Emotion]\n*   **Optional - Call to Action (CTA) hint:** [User_Optional_CTA_Hint]\n*   **Optional - Desired Tone:** [User_Optional_Desired_Tone] (e.g., bold, empathetic, humorous, direct, subtle, conversational)\n\n**Generate 2-3 variations of ad copy for Instagram, each including:**\n*   **Headline:** Max 10 words.\n*   **Body Copy:** Max 30 words.\n*   **Call to Action (CTA):** Max 5 words.\n*   **Relevant Emojis:** (If applicable and enhances readability/impact, as seen in Huel's Instagram ad example [10])\n open ai tekbaşına  yazı yazmasın  prompt kullanarak çıktı versin,\n\n**Output Language: Turkish** ,"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        384,
+        224
+      ],
+      "id": "3bff2deb-8e92-46d0-a641-e255a4483c3b",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        448
+      ],
+      "id": "066e70a6-73a6-4397-b5ee-e248f7edd00c",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "9999",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        464
+      ],
+      "id": "2224e407-69b1-4ee7-a9ea-7ce84c3fc860",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -160,
+        208
+      ],
+      "id": "228bbe2e-3448-4138-9738-8e013da1d2d9",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-14T22:35:19.302Z",
+      "updatedAt": "2025-07-14T22:35:19.302Z",
+      "id": "sFxq8AkF4D9ZKWh7",
+      "name": "yazar agent"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-14T22:35:38.548Z",
+  "versionId": "23f59374-6816-4872-86eb-15d31d04685c"
+}
