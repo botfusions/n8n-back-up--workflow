@@ -1,0 +1,123 @@
+{
+  "active": false,
+  "connections": {
+    "1. Mevzuatı Ara ve Linki Al": {
+      "main": [
+        [
+          {
+            "node": "2. Tam Metni Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Tam Metni Al": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "1. Mevzuatı Ara ve Linki Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Başlat": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T20:38:51.619Z",
+  "id": "wsZJRERQKUwJnoJq",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1bd11148-84c3-41e0-896b-f1dc9f5bc99f",
+      "name": "Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://mevzuat-mcp-2z26.onrender.com/search?query={{ encodeURIComponent($json.aranacak_mevzuat) }}",
+        "options": {}
+      },
+      "id": "6bdff964-2596-4edb-ba75-4bd227bd48de",
+      "name": "1. Mevzuatı Ara ve Linki Al",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        272,
+        -112
+      ],
+      "notes": "Bu node, belirlediğimiz metni arar ve ilgili mevzuatın linkini bulur."
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[0].source }}{{ $json.data }}",
+        "options": {}
+      },
+      "id": "f635e2e3-9a48-4d24-9a37-331aeac72545",
+      "name": "2. Tam Metni Al",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        496,
+        -112
+      ],
+      "notes": "Bir önceki node'dan gelen linki ziyaret ederek sayfanın tam metnini (HTML olarak) alır."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2190b51d-cd04-4698-a4ec-cba9ab7545da",
+              "name": "iş kanunu",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        80,
+        -112
+      ],
+      "id": "9f176471-6a07-43a8-9dda-9e9723b21479",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T20:59:26.322Z",
+  "versionId": "070bebf8-70d6-4f7c-94d9-4c798475312d"
+}
