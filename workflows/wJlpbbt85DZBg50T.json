@@ -1,0 +1,111 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T17:39:04.655Z",
+  "id": "wJlpbbt85DZBg50T",
+  "isArchived": false,
+  "meta": null,
+  "name": "mcp -mevzuta",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mevzuat-query",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -720,
+        -176
+      ],
+      "id": "ad9f2384-ef21-448e-8867-16436d6c017b",
+      "name": "Webhook",
+      "webhookId": "d3026149-e7b1-4e93-86b2-58308cd4cfe7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mevzuat-mcp-2z26.onrender.com/webhook/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{{ $json.query }}\",\n  \"page_size\": \"{{ $json.page_size }}\"\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -464,
+        -176
+      ],
+      "id": "d84a5e46-0780-47c1-80e6-abc512d15023",
+      "name": "HTTP Request",
+      "retryOnFail": true,
+      "waitBetweenTries": 3000
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -240,
+        -176
+      ],
+      "id": "1a2577ea-859e-4f28-9217-4ad25cab4dfd",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-16T22:29:50.497Z",
+  "versionId": "4156028d-17ca-4f3d-a66e-6719932f2728"
+}
