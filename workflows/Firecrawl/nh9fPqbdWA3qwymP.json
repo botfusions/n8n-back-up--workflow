@@ -1,0 +1,374 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Processing": {
+      "main": [
+        [
+          {
+            "node": "Check Extraction Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Extraction Status": {
+      "main": [
+        [
+          {
+            "node": "Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Status Check": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Scrape": {
+      "main": [
+        [
+          {
+            "node": "Wait for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T12:18:07.370Z",
+  "id": "nh9fPqbdWA3qwymP",
+  "isArchived": false,
+  "meta": null,
+  "name": "Firecrawl",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "6e36f38d-1cf9-4583-b1c5-cef7d234d9c0",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -880,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "3245945c-54a1-479e-b0f6-173ebfb509fb",
+      "name": "Wait for Processing",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        80
+      ],
+      "webhookId": "2c498876-0a85-419e-85fd-829410001dba"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.firecrawl.dev/v1/extract/{{ $('Firecrawl Scrape').item.json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "18c13dca-6ede-4eaf-b0c0-ef9fd4beafc4",
+      "name": "Check Extraction Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "id": "9d6a5042-ad81-4b04-aa15-fd484159f2a9"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "433fc092-ba20-4e0f-b3ae-f95735d953f5",
+      "name": "Status Check",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw",
+          "mode": "list",
+          "cachedResultName": "Firecrawl Facebook Ads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -656,
+        80
+      ],
+      "id": "02e53eed-8b16-4fc6-81d7-c484618ca3ec",
+      "name": "Google Sheets"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw",
+          "mode": "list",
+          "cachedResultName": "Firecrawl Facebook Ads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CTDBHaqZFxyR2ZsUzPOHvCEYTrp8Mq--UJz6aqG5iXw/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Google Sheets').item.json.id }}",
+            "Landing page URL": "={{ $('Google Sheets').item.json['Landing page URL'] }}",
+            "quarenty Copy": "={{ $json.data.guaranteeCopy }}",
+            "hERO HEADLİNE/MANŞET": "={{ $json.data.heroHeadline }}",
+            "subHeadline/alt başlık": "={{ $json.data.subHeadline }}",
+            "ctaText/ hızlı giriş": "={{ $json.data.ctaText }}",
+            "socialProof/ kullanıcı beğenmesi": "={{ $json.data.socialProof }}",
+            "discountCopy/İndirim ": "={{ $json.data.discountCopy }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Landing page URL",
+              "displayName": "Landing page URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "hERO HEADLİNE/MANŞET",
+              "displayName": "hERO HEADLİNE/MANŞET",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "subHeadline/alt başlık",
+              "displayName": "subHeadline/alt başlık",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ctaText/ hızlı giriş",
+              "displayName": "ctaText/ hızlı giriş",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "socialProof/ kullanıcı beğenmesi",
+              "displayName": "socialProof/ kullanıcı beğenmesi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "discountCopy/İndirim ",
+              "displayName": "discountCopy/İndirim ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "quarenty Copy",
+              "displayName": "quarenty Copy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        528,
+        64
+      ],
+      "id": "12e672fd-f666-46d5-b15b-796844117715",
+      "name": "Google Sheets1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/extract",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"{{ $json['Landing page URL'] }}\"\n  ],\n  \"prompt\": \"Extract the key marketing copy elements from the given webpage, including (if available):\\n\\nMain headline\\n\\nSub-headline\\n\\nSocial proof (e.g. testimonials, client logos, media mentions, user counts)\\n\\nGuarantee or risk-reversal statements\\n\\nDiscount or promotional offers (e.g. student/military deals, limited-time offers)\\n\\nPrimary call-to-action (CTA) text (e.g. button text)\\n\\nReturn them exactly as they appear on the page, in plain text. If any element is missing, leave it empty.\",\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"heroHeadline\": {\n        \"type\": \"string\"\n      },\n      \"subHeadline\": {\n        \"type\": \"string\"\n      },\n      \"socialProof\": {\n        \"type\": \"string\"\n      },\n      \"guaranteeCopy\": {\n        \"type\": \"string\"\n      },\n      \"discountCopy\": {\n        \"type\": \"string\"\n      },\n      \"ctaText\": {\n        \"type\": \"string\"\n      }\n    },\n    \"required\": [\n      \"heroHeadline\",\n      \"subHeadline\",\n      \"socialProof\",\n      \"guaranteeCopy\",\n      \"discountCopy\",\n      \"ctaText\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "b1b3efc2-2033-4ac8-99ad-ed1e48850c12",
+      "name": "Firecrawl Scrape",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        80
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T12:17:45.031Z",
+      "updatedAt": "2025-07-15T12:17:45.031Z",
+      "id": "w3T2JuwWY03GvK9f",
+      "name": "Firecrawl"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T12:18:07.370Z",
+  "versionId": "05ae9aa3-1b09-46fe-98f6-d885c85cc1a5"
+}
