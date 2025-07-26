@@ -1,0 +1,788 @@
+{
+  "active": false,
+  "connections": {
+    "When fetching a dataset row": {
+      "main": [
+        [
+          {
+            "node": "Match chat format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluating?": {
+      "main": [
+        [
+          {
+            "node": "Extract documents",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return chat response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match chat format": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set metrics": {
+      "main": [
+        [
+          {
+            "node": "Evaluation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate doc relevance metric": {
+      "main": [
+        [
+          {
+            "node": "Set metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract documents": {
+      "main": [
+        [
+          {
+            "node": "Calculate doc relevance metric",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Evaluating?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Document URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Document URL": {
+      "main": [
+        [
+          {
+            "node": "Parse Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Document": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Result": {
+      "main": [
+        []
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T10:27:08.450Z",
+  "id": "ObqapWBHgNQ3uuYr",
+  "isArchived": false,
+  "meta": null,
+  "name": "New RAG & Evaluation System",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k",
+          "mode": "list",
+          "cachedResultName": "Sample n8n evaluation datasets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 727318679,
+          "mode": "list",
+          "cachedResultName": "Finance",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k/edit#gid=727318679"
+        }
+      },
+      "id": "e029a997-bc76-4dea-8168-0724c51fee48",
+      "name": "When fetching a dataset row",
+      "type": "n8n-nodes-base.evaluationTrigger",
+      "position": [
+        80,
+        768
+      ],
+      "typeVersion": 4.6
+    },
+    {
+      "parameters": {
+        "operation": "checkIfEvaluating"
+      },
+      "id": "2988c825-8a0a-46d7-9a42-2e0bba0ad41e",
+      "name": "Evaluating?",
+      "type": "n8n-nodes-base.evaluation",
+      "position": [
+        928,
+        912
+      ],
+      "typeVersion": 4.6
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "93f89095-7918-45ad-aa74-a0bbcf0d5788",
+              "name": "chatInput",
+              "type": "string",
+              "value": "={{ $json.Question }}"
+            },
+            {
+              "id": "d26b3f9b-e190-46a3-9f85-11685546fa46",
+              "name": "expected_answer",
+              "value": "={{ $json['Expected Answer'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4ab99cb8-e98c-4343-9945-b05fc9860c89",
+      "name": "Match chat format",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        304,
+        768
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {},
+      "id": "eff51a97-d222-4c93-8cf8-228e0678f5eb",
+      "name": "Return chat response",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        1200,
+        1040
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "setMetrics",
+        "metrics": {
+          "assignments": [
+            {
+              "id": "230589eb-34c8-4d10-9296-4a78d673077a",
+              "name": "Relevance Score",
+              "type": "number",
+              "value": "={{ $json.message.content.relevance_score }}"
+            },
+            {
+              "id": "94ee98aa-ee58-4047-b108-b38ee4d33438",
+              "name": "Correctness Score",
+              "value": "={{ $json.message.content.correctness_score }}",
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "id": "8d8c3422-a1d7-44b0-8867-195faa5c5ede",
+      "name": "Set metrics",
+      "type": "n8n-nodes-base.evaluation",
+      "position": [
+        1792,
+        784
+      ],
+      "typeVersion": 4.6
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-large",
+        "options": {}
+      },
+      "id": "94e44e9d-4baa-45ce-b2fb-5c7eec47abb9",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        1104,
+        352
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.data }}",
+        "options": {}
+      },
+      "id": "9ade9adf-9349-432e-97fd-89aaa6dbc6f5",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [
+        1264,
+        352
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 50,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "id": "a19cacaa-4bb8-4ca0-9b8a-ba7ed537df14",
+      "name": "Recursive Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [
+        1424,
+        480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an evaluator assessing student‐provided FACTS against a QUESTION and an EXPECTED ANSWER. For each input, you must:\n\nInputs:  \n- QUESTION: the question to be answered.  \n- EXPECTED ANSWER: the correct answer.  \n- FACTS: a list of one or more student‐provided fact snippets.\n\nYour tasks:\n1. Relevance Evaluation  \n   a. Identify the QUESTION’s key concepts.  \n   b. Check each FACT for keywords/concepts or explanations that address those concepts (semantic matches count).  \n   c. A FACT is “relevant” if it contributes information toward answering the QUESTION, even if it contains some unrelated details.  \n   d. Assign a **relevance_score** between **0 and 1**, where:  \n      - 0 means no relevance  \n      - 1 means fully relevant  \n      - any intermediate value reflects partial relevance or incomplete coverage  \n\n2. Correctness Evaluation  \n   a. Compare the AI ANSWER to the EXPECTED ANSWER.  \n   b. Determine how well the AI ANSWER match the EXPECTED ANSWER.  \n   c. Assign a **correctness_score** between **0 and 1**, where:  \n      - 0 indicates totally wrong answer\n      - 1 indicates full and accurate  \n      - intermediate values indicate correct or missing details  \n   d. Only check if it covers the expected answer, extra information should be penalised\n\n3. Analysis and Summary  \n   a. First, provide a detailed, step-by-step **extended_reasoning** that covers both relevance and correctness checks.  \n   b. Then give a one short sentence **reasoning_summary** of your conclusion.  \n\nOutput exactly the following JSON:\n\n{\n  \"reasoning_summary\": \"...\",        // one-sentence encapsulation\n  \"relevance_score\": 0.0–1.0,        // float between 0 and 1\n  \"correctness_score\": 0.0–1.0       // float between 0 and 1\n}\n",
+              "role": "system"
+            },
+            {
+              "content": "=QUESTION: {{ $('Match chat format').item.json.chatInput }}\n\nEXPECTED ANSWER: {{ $('Match chat format').item.json.expected_answer }}\n\nAI ANSWER: {{ $('AI Agent1').item.json.output }}\n\nFACTS: \n{{ $json.documents }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "id": "bb2cdc72-b34d-4a25-bbb6-497c31cc805d",
+      "name": "Calculate doc relevance metric",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        1424,
+        784
+      ],
+      "typeVersion": 1.8
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2d771c52-6637-4af0-9ff7-c87368041bfd",
+              "name": "documents",
+              "type": "string",
+              "value": "={{ $json.intermediateSteps.filter(x => x.action.tool == 'Pinecone_Vector_Store').map(i => i.observation) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ea6cd0ba-34d3-4a57-8e1c-2bf6ef98650e",
+      "name": "Extract documents",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1200,
+        784
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-large",
+        "options": {}
+      },
+      "id": "c1eb8247-29c8-488f-9e77-70b234ba89e5",
+      "name": "Embeddings OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        720,
+        1328
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "content": "### Main workflow",
+        "height": 840,
+        "width": 2120,
+        "color": 4
+      },
+      "id": "88993093-ebad-4f77-bd1a-d45f4ab06ca8",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        672
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Make sure to enable 'Return intermediate steps' in the agent, to get the list of executed tools",
+        "height": 200,
+        "width": 300,
+        "color": 7
+      },
+      "id": "f1a6e687-6dbe-45fe-ac58-ad0c63ed919a",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        544,
+        832
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Check whether the documents returned a relevant to the question",
+        "height": 180,
+        "width": 300,
+        "color": 7
+      },
+      "id": "6819c6cd-da7d-4f59-b3c8-3394d97af26b",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1408,
+        720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Only calculate metrics if we're evaluating, to reduce costs",
+        "height": 260,
+        "width": 150,
+        "color": 7
+      },
+      "id": "745b9cc0-535d-49ca-b17e-fa0aed17f4d9",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        912,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a retrieval-augmented AI assistant. You SHOULD search from vector database for the Coca Cola financial data with tool.",
+          "returnIntermediateSteps": true
+        }
+      },
+      "id": "b6556ae2-b33b-4f92-8586-9ea89c5df43d",
+      "name": "AI Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        560,
+        912
+      ],
+      "typeVersion": 1.9
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "id": "05b63c54-59df-423b-a161-df68b19d76e3",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        512,
+        1152
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k",
+          "mode": "list",
+          "cachedResultName": "Sample n8n evaluation datasets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 727318679,
+          "mode": "list",
+          "cachedResultName": "Finance",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Zq9Esm9-v1V6fOT8dbwzP6eenbVhsMiarYcQw9av_8k/edit#gid=727318679"
+        },
+        "outputs": {
+          "values": [
+            {
+              "outputName": "Relevance Score",
+              "outputValue": "={{ $json['Relevance Score'] }}"
+            },
+            {
+              "outputName": "Correctness Score",
+              "outputValue": "={{ $json['Correctness Score'] }}"
+            },
+            {
+              "outputName": "Summary",
+              "outputValue": "={{ $('Calculate doc relevance metric').item.json.message.content.reasoning_summary }}"
+            },
+            {
+              "outputName": "AI Answer",
+              "outputValue": "={{ $('AI Agent1').item.json.output }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.evaluation",
+      "typeVersion": 4.6,
+      "position": [
+        1968,
+        784
+      ],
+      "id": "29bcf7f9-220e-4fac-a0df-f2d1c31c242a",
+      "name": "Evaluation"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        80,
+        144
+      ],
+      "id": "787d5a21-ce83-4fa9-b720-255488c2b328",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.rerankerCohere",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1328
+      ],
+      "id": "2f5f1e6d-a4b1-400f-b9c9-9d43d605278e",
+      "name": "Reranker Cohere"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "You can get financial report from this Vector store.",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "n8n-demo-2",
+          "mode": "list",
+          "cachedResultName": "n8n-demo-2"
+        },
+        "topK": 10,
+        "includeDocumentMetadata": false,
+        "options": {
+          "pineconeNamespace": "finance"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        752,
+        1152
+      ],
+      "id": "5285a60c-e3b9-4ff7-a3dc-b74e2bebb82d",
+      "name": "Pinecone Vector Store"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "n8n-demo-2",
+          "mode": "list",
+          "cachedResultName": "n8n-demo-2"
+        },
+        "options": {
+          "clearNamespace": true,
+          "pineconeNamespace": "finance"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        1184,
+        144
+      ],
+      "id": "65ad1a55-2da9-4829-a423-9ea7064e9449",
+      "name": "Pinecone Vector Store1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bd6966f6-edb2-4f06-8a35-d7427e0cd585",
+              "name": "url",
+              "value": "https://investors.coca-colacompany.com/_assets/_5bddbc09b8e289df1a4ff4ecf5d44d89/cocacolacompany/db/880/10625/earnings_release/Coca-Cola+2025+Q1+Earnings+Release_Full+Release_4.29.25.pdf",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        144
+      ],
+      "id": "0d646f5f-5638-4e7b-a2e2-60668704530e",
+      "name": "Document URL"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cloud.llamaindex.ai/api/v1/parsing/upload",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "input_url",
+              "value": "={{ $json.url }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        528,
+        144
+      ],
+      "id": "a271810b-b952-46ce-9e4a-708a217c847c",
+      "name": "Parse Document",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "IMGrjr0LMbBlORHY",
+          "name": "Llama cloud"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.cloud.llamaindex.ai/api/v1/parsing/job/{{ $json.id }}/result/raw/markdown",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        144
+      ],
+      "id": "e6117370-b9c1-425b-ae1f-4357a3cdfa76",
+      "name": "Get Result",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "IMGrjr0LMbBlORHY",
+          "name": "Llama cloud"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        752,
+        144
+      ],
+      "id": "ec2fd485-19b4-46e9-a355-19b60f79c60b",
+      "name": "Wait",
+      "webhookId": "07dc1dca-9c11-41ce-a45b-86840f46920f"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        304,
+        1040
+      ],
+      "id": "7441d6ce-2688-4760-94f4-c1090f643d9e",
+      "name": "When chat message received",
+      "webhookId": "2a150fd8-ed34-4ce6-8d3e-ba602580659c"
+    },
+    {
+      "parameters": {
+        "content": "### Setup: Populate vector DB\nRun this once before running the main workflow. It inserts the documents from the dataset in the vector store, so they can be queried by the agent below.\nWe used LlamaIndex for PDF parser to md format, then use text-embedding-3-large to store in Pinecone vector db.\n",
+        "height": 620,
+        "width": 1620
+      },
+      "id": "3a70aa6e-c4d1-4da4-a37b-3374d60e4ee9",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T12:57:06.172Z",
+  "versionId": "51e403d4-34d2-46b7-b4f4-749bd6a1b0f0"
+}
