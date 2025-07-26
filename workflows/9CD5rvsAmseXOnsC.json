@@ -1,0 +1,150 @@
+{
+  "active": false,
+  "connections": {
+    "Chat Trigger": {
+      "main": [
+        [
+          {
+            "node": "Cold Email AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI GPT-4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Cold Email AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Cold Email AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cold Email AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T22:51:50.822Z",
+  "id": "9CD5rvsAmseXOnsC",
+  "isArchived": false,
+  "meta": null,
+  "name": "Cold email",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        848,
+        -432
+      ],
+      "id": "6ae2b30f-7b79-4e86-a315-38deaa2a5729",
+      "name": "Chat Trigger",
+      "webhookId": "bf3c6c02-659d-4de9-b0f2-3fc9d842eab5"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "You are an expert B2B cold email copywriter specializing in personalized outreach emails.\n\nYour task: Create compelling cold emails that get responses.\n\nGuidelines:\n1. Subject Line: Creative, personalized, avoid 'free' (use 'complimentary')\n2. Email Structure:\n   - Personalized opening (use recipient insights)\n   - Clear value proposition\n   - Social proof/customer examples\n   - Engaging call-to-action\n   - Optional P.S. for additional impact\n\nInput: Provide recipient details in JSON format:\n{\n  \"recipient_name\": \"Name\",\n  \"company_name\": \"Company\",\n  \"industry\": \"Industry\",\n  \"personal_insight\": \"LinkedIn insight\",\n  \"business_insight\": \"Company news\",\n  \"sender_name\": \"Your name\",\n  \"sender_company\": \"Your company\",\n  \"value_proposition\": \"What you offer\",\n  \"customer_example\": \"Success story\"\n}\n\nOutput Format:\nSubject: [Creative subject line]\n\nHi [Name],\n\n[Personalized opening based on insights]\n\n[Value proposition and how you help]\n\n[Social proof with customer example]\n\n[Call to action]\n\nBest regards,\n[Sender name]\n\nP.S. [Optional personal touch]"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1152,
+        -432
+      ],
+      "id": "790065f7-124f-481e-9547-20c139a74001",
+      "name": "Cold Email AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        -256
+      ],
+      "id": "27c07817-9e59-45bb-b271-db33a1f3b609",
+      "name": "OpenAI GPT-4"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "cold_email_session",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1328,
+        -256
+      ],
+      "id": "aef18c0e-efdc-4b58-b6f8-f3d7547738da",
+      "name": "Chat Memory"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "95ff63ba-0527-49f6-a62c-18c78edbbd71",
+              "name": "email_content",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1456,
+        -432
+      ],
+      "id": "a6588b00-d1d7-4d4b-ac2c-168165c7137b",
+      "name": "Format Response"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-14T22:51:50.822Z",
+  "versionId": "608c5894-3bf8-4378-8e80-2ae56de0ec2b"
+}
