@@ -1,0 +1,493 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Değişkenleri Çıkar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Değişkenleri Çıkar": {
+      "main": [
+        [
+          {
+            "node": "Embedding Oluştur",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Zep Hafızasını Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embedding Oluştur": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Sorgula",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zep Hafızasını Al": {
+      "main": [
+        [
+          {
+            "node": "Süper Prompt Oluştur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Sorgula": {
+      "main": [
+        [
+          {
+            "node": "Süper Prompt Oluştur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Süper Prompt Oluştur": {
+      "main": [
+        [
+          {
+            "node": "Claude 3 API Çağır",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude 3 API Çağır": {
+      "main": [
+        [
+          {
+            "node": "Zep'e Kaydet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ],
+      "error": [
+        [
+          {
+            "node": "Hata Yanıtı Hazırla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zep'e Kaydet": {
+      "main": [
+        [
+          {
+            "node": "Webhook'a Yanıt Ver",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ],
+      "error": [
+        [
+          {
+            "node": "Hata Yanıtı Hazırla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hata Yanıtı Hazırla": {
+      "main": [
+        [
+          {
+            "node": "Hata Yanıtı Gönder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-26T08:55:46.930Z",
+  "id": "uTkYuEvXkVE5pc2s",
+  "isArchived": false,
+  "meta": null,
+  "name": "Catalyst AI Koçluk Platformu",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "catalyst-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "f158c6a4-e5e3-4f47-8e5c-9e6b2a3c1d4e",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        304
+      ],
+      "webhookId": "5fdc1d7f-495c-4c23-ab11-99e772d9aa77",
+      "notes": "Frontend'den gelen POST isteklerini dinler. JSON formatında session_id ve user_message alır."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "values": [
+            {
+              "id": "session_id",
+              "name": "session_id",
+              "type": "string",
+              "value": "={{ $json.body.session_id }}"
+            },
+            {
+              "id": "user_message",
+              "name": "user_message",
+              "type": "string",
+              "value": "={{ $json.body.user_message }}"
+            },
+            {
+              "id": "knowledge_base_query",
+              "name": "knowledge_base_query",
+              "type": "string",
+              "value": "={{ $json.body.user_message }}"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "name": "Değişkenleri Çıkar",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        304
+      ],
+      "notes": "Webhook'tan gelen verileri temizler ve kullanıma hazır hale getirir. session_id, user_message ve knowledge_base_query değişkenlerini oluşturur."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/embeddings",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "input",
+              "value": "={{ $json.knowledge_base_query }}"
+            },
+            {
+              "name": "model",
+              "value": "text-embedding-ada-002"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+      "name": "Embedding Oluştur",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        608,
+        96
+      ],
+      "notes": "Kullanıcı mesajını OpenAI API ile vektör haline dönüştürür. Bu vektör Pinecone'da arama yapmak için kullanılacak."
+    },
+    {
+      "parameters": {
+        "url": "https://YOUR_ZEP_URL/api/v1/sessions/{{ $json.session_id }}/memory?lastn=10",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ZEP_JWT_TOKEN"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+      "name": "Zep Hafızasını Al",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        608,
+        304
+      ],
+      "notes": "Zep API'sinden kullanıcının oturum geçmişini alır. Son 10 mesajı getirerek konuşma bağlamını sağlar."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://YOUR_PINECONE_INDEX_URL/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Key",
+              "value": "YOUR_PINECONE_API_KEY"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "vector",
+              "value": "={{ $('Embedding Oluştur').item.json.data[0].embedding }}"
+            },
+            {
+              "name": "topK",
+              "value": "3"
+            },
+            {
+              "name": "includeMetadata",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+      "name": "Pinecone Sorgula",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        816,
+        96
+      ],
+      "notes": "Oluşturulan embedding ile Pinecone vektör veritabanından en ilgili 3 bilgi parçasını getirir. Satış ve psikoloji kitaplarındaki en alakalı içerikleri bulur."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "values": [
+            {
+              "id": "super_prompt",
+              "name": "super_prompt",
+              "type": "string",
+              "value": "=Sen Elite Performance Coach'ısın. Satış profesyonelleri için uzman koçluk hizmeti veriyorsun.\n\n### ÖNCEKİ KONUŞMA GEÇMİŞİ (Son 10 mesaj) ###\n{{ $('Zep Hafızasını Al').item.json.memory ? $('Zep Hafızasını Al').item.json.memory.map(msg => msg.role + ': ' + msg.content).join('\\n') : 'Konuşma geçmişi bulunamadı' }}\n\n### İLGİLİ BİLGİ BANKASI İÇERİKLERİ ###\n{{ $('Pinecone Sorgula').item.json.matches ? $('Pinecone Sorgula').item.json.matches.slice(0,3).map((match, index) => (index + 1) + '. ' + (match.metadata.text || match.metadata.content || 'İçerik mevcut değil')).join('\\n\\n') : 'İlgili içerik bulunamadı' }}\n\n### MEVCUT KULLANICI MESAJI ###\nKullanıcı: {{ $json.user_message }}\n\n### TALİMATLAR ###\n- Yukarıdaki bağlamı kullanarak profesyonel bir satış koçu olarak yanıt ver\n- Konuşma geçmişini dikkate al\n- Bilgi bankasındaki alakalı içerikleri kullan\n- Türkçe yanıt ver\n- Pratik ve uygulanabilir tavsiyeler ver\n- Empati kuran, destekleyici bir ton kullan\n\nKoç:"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "name": "Süper Prompt Oluştur",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1008,
+        304
+      ],
+      "notes": "Tüm bağlamsal bilgileri birleştirerek Claude 3 için kapsamlı bir prompt oluşturur. Master prompt, konuşma geçmişi, bilgi bankası ve güncel mesajı içerir."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "claude-3-opus-20240229"
+            },
+            {
+              "name": "max_tokens",
+              "value": "2048"
+            },
+            {
+              "name": "temperature",
+              "value": "0.7"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\": \"user\", \"content\": \"{{ $json.super_prompt }}\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+      "name": "Claude 3 API Çağır",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        304
+      ],
+      "notes": "Oluşturulan süper prompt ile Claude 3 Opus'a istek gönderir. AI koçluk yanıtını alır."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://YOUR_ZEP_URL/api/v1/sessions/{{ $('Değişkenleri Çıkar').item.json.session_id }}/memory",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ZEP_JWT_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "messages",
+              "value": "={{ JSON.stringify([{\"role\": \"human\", \"content\": $('Değişkenleri Çıkar').item.json.user_message}, {\"role\": \"ai\", \"content\": $('Claude 3 API Çağır').item.json.content[0].text}]) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+      "name": "Zep'e Kaydet",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1408,
+        304
+      ],
+      "notes": "Yeni konuşma turunu (kullanıcı mesajı + AI yanıtı) Zep hafıza servisine kaydeder. Gelecekteki konuşmalar için bağlam sağlar."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "options": {}
+      },
+      "id": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+      "name": "Webhook'a Yanıt Ver",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1600,
+        304
+      ],
+      "notes": "AI koçluk yanıtını JSON formatında frontend'e gönderir. response, session_id ve timestamp içerir."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "values": [
+            {
+              "id": "error_response",
+              "name": "error_response",
+              "type": "string",
+              "value": "Üzgünüm, şu anda teknik bir sorun yaşıyoruz. Lütfen daha sonra tekrar deneyin."
+            },
+            {
+              "id": "error_code",
+              "name": "error_code",
+              "type": "string",
+              "value": "TECHNICAL_ERROR"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+      "name": "Hata Yanıtı Hazırla",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1344,
+        608
+      ],
+      "notes": "API hatalarında kullanıcıya gönderilecek standart hata mesajını hazırlar."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "options": {}
+      },
+      "id": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+      "name": "Hata Yanıtı Gönder",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1584,
+        608
+      ],
+      "notes": "Hata durumunda frontend'e HTTP 500 ile standart hata mesajı gönderir."
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Istanbul",
+    "saveManualExecutions": true,
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-26T09:08:42.161Z",
+  "versionId": "f0d18d60-2d32-462e-9061-2fa0977b7194"
+}
