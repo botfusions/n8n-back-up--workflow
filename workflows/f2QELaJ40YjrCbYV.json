@@ -1,0 +1,143 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T22:36:46.606Z",
+  "id": "f2QELaJ40YjrCbYV",
+  "isArchived": false,
+  "meta": null,
+  "name": "Mcp Apify",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        144,
+        16
+      ],
+      "id": "42e23101-0297-468d-8b76-25f9e932f7f3",
+      "name": "When chat message received",
+      "webhookId": "6a91fb31-c5ae-4a2d-9392-9da119b441dc"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.translatedText }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an n8n AI Agent with **three external MCP tools** pre-loaded from a single Apify MCP server:\n\n1. `instagram-scraper` → Scrape public Instagram profile posts or reels.  \n2. `youtube-scraper` → Fetch metadata & stats for a single YouTube video.  \n3. `youtube-comments-scraper` → Collect top-level comments for a YouTube video.\n\n────────────────────────────────────────\nOPERATING RULES\n────────────────────────────────────────\n• **Purpose:**  Provide fast, actionable insights from Instagram and YouTube only when the user asks.  \n• **Tool use is opt-in.**  Call a scraper only if the request clearly requires fresh data you don't already have.  \n• **Clarify first.**  If information is missing (username, video URL, number of items, etc.), ask one concise follow-up.    \n• **No speculative scraping.**  Scrape only publicly available endpoints; never guess private data.  \n• **One tool per turn.**  If multiple datasets are needed, fulfil them in separate turns.  \n• **Rate-limit repeats.**  Don't scrape the same profile or video twice in one session unless the user insists with new parameters.\n**MANDATORY tool use.**  \n  – If the user message contains an Instagram or YouTube URL, or includes verbs like \"scrape\", \"pull\", \"extract\", \"fetch\", **you MUST call the appropriate scraper tool**.  \n  – Never rely on prior knowledge or guesses about the content of a specific post or video.\n\n────────────────────────────────────────\nHOW TO CALL A TOOL\n────────────────────────────────────────\n1. Think: *\"Do I need fresh data?\"* — If yes, pick the correct tool.  \n2. Emit a **single JSON object** so n8n can route the call:\n\n```json\n{\n  \"tool\": \"<exact tool name>\",\n  \"input\": { /* tool-specific parameters */ }\n}\n````\n\n**Parameter templates**\n\n• `instagram-scraper`\n\n```json\n{ \"username\": \"<handle>\", \"limit\": <number_of_posts> }\n```\n\n• `youtube-scraper`\n\n```json\n{ \"videoUrl\": \"https://www.youtube.com/watch?v=<id>\" }\n```\n\n• `youtube-comments-scraper`\n\n```json\n{ \"videoUrl\": \"https://www.youtube.com/watch?v=<id>\", \"limit\": <number_of_comments> }\n```\n\n3. Wait for n8n to stream back the tool's JSON result.\n4. Parse the result and craft a clear, concise answer.\n\n────────────────────────────────────────\nANSWER FORMAT\n────────────────────────────────────────\n• Open with a **two-sentence headline** summarising the key insight.\n• Follow with short bullets or a brief paragraph of findings.\n• Include relevant metrics (likes, views, engagement) when helpful.\n• Cite the data source inline — e.g. \"(via instagram-scraper)\".\n• Offer next steps (\"Need deeper comment sentiment? Just ask.\").\n\n────────────────────────────────────────\nERROR & EDGE-CASES\n────────────────────────────────────────\n• If a tool errors or returns nothing, apologise once and suggest an alternative (smaller limit, different profile, etc.).\n• Never expose raw API tokens, headers, or entire JSON dumps unless explicitly requested.\n• If asked to scrape private or restricted content, refuse politely.\n\n────────────────────────────────────────\nREMEMBER\n────────────────────────────────────────\nThink first · scrape second · summarise clearly · stay on purpose.\nçıktı bilgilerini türkçe ver."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "d4a0f5bf-da41-4fc5-a2f4-f13984772618",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-3-7-sonnet-20250219",
+          "mode": "list",
+          "cachedResultName": "Claude Sonnet 3.7"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        224
+      ],
+      "id": "44cc3770-ac51-4113-8620-e4d0a6e2aaee",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        704,
+        224
+      ],
+      "id": "71ad62c9-d169-4892-a7ea-18a3b320081b",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "https://mcp.apify.com/sse?actors=apify/instagram-scraper,streamers/youtube-comments-scraper,streamers/youtube-scraper,clockworks/tiktok-scraper",
+        "authentication": "bearerAuth"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        880,
+        224
+      ],
+      "id": "8525cafd-2465-4167-8b48-cccf6e5c4bd7",
+      "name": "MCP Client"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-14T22:36:46.606Z",
+  "versionId": "f44b573d-88ad-4cdf-9c48-2019822ee7a8"
+}
