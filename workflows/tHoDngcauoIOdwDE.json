@@ -1,0 +1,80 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-25T16:12:37.284Z",
+  "id": "tHoDngcauoIOdwDE",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "gemini deneme",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -576,
+        -96
+      ],
+      "id": "de0c80a4-a242-47fb-a5c9-f44e27847f26",
+      "name": "When chat message received",
+      "webhookId": "db84573b-180b-4fe7-8e44-88bb298ea324"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=\n {{ $json.chatInput }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        -96
+      ],
+      "id": "ba171611-0c1f-4919-9f82-e14e62938ec3",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "TleQLEpwAGvafRyO",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-25T18:36:36.649Z",
+  "versionId": "be6d32ef-ebea-4b69-b008-d7df29885d37"
+}
