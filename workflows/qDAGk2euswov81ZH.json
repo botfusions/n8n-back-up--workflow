@@ -1,0 +1,200 @@
+{
+  "active": false,
+  "connections": {
+    "Mevzuat Search": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        []
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Mevzuat Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T15:21:17.963Z",
+  "id": "qDAGk2euswov81ZH",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Mevzuat deneme API",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mevzuat-search",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        -48,
+        -128
+      ],
+      "typeVersion": 1,
+      "webhookId": "17fb684e-4103-4396-9699-494c302c04c7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mevzuat-mcp-2z26.onrender.com/mcp",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=",
+        "options": {}
+      },
+      "id": "mevzuat-search",
+      "name": "Mevzuat Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -560,
+        208
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"query\": \"{{ $('Webhook Trigger').item.json.query }}\",\n  \"results\": \"Mevzuat arama işlemi tamamlandı. Aranan: {{ $('Webhook Trigger').item.json.query }}\",\n  \"data\": \"{{ $json }}\",\n  \"timestamp\": \"{{ $now }}\"\n}",
+        "options": {}
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        160,
+        -112
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -800,
+        208
+      ],
+      "id": "3405f952-08e1-4ebc-9677-218044f928cf",
+      "name": "When chat message received",
+      "webhookId": "d9e478ac-4cec-4f18-830e-b74a72bbd5e4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.data }}",
+        "options": {
+          "systemMessage": "sen bir editörsün gelen yazıyı markdown formatına okunaklı bir biçimde çevir\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -352,
+        208
+      ],
+      "id": "300c799c-7eda-4e82-aba9-0e6b22039c02",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        464
+      ],
+      "id": "f9f0e1a9-9c32-455c-92fd-55057d0a9ef6",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "TleQLEpwAGvafRyO",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "9999",
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -224,
+        480
+      ],
+      "id": "881e127b-3dda-474a-bce1-7e755a91a155",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-07-16T19:03:07.385Z",
+  "versionId": "325e9bd9-d923-44e6-ae12-4a1d28028c28"
+}
