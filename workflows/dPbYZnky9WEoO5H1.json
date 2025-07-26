@@ -1,0 +1,405 @@
+{
+  "active": false,
+  "connections": {
+    "Daily Backup Trigger": {
+      "main": [
+        [
+          {
+            "node": "Export N8n Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Export N8n Data": {
+      "main": [
+        [
+          {
+            "node": "Read Export Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Export Files": {
+      "main": [
+        [
+          {
+            "node": "Separate Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separate Files": {
+      "main": [
+        [
+          {
+            "node": "Upload Credentials (First Time)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Upload Workflows (First Time)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Credentials (First Time)": {
+      "main": [
+        [
+          {
+            "node": "Update Credentials File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Workflows (First Time)": {
+      "main": [
+        [
+          {
+            "node": "Update Workflows File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Workflows File": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-07-24T22:12:32.590Z",
+  "id": "dPbYZnky9WEoO5H1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "N8n Workflows and Credentials Backup System",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 19
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "schedule-trigger",
+      "name": "Daily Backup Trigger",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "n8n export:workflow --all --output=/tmp/workflows.json && n8n export:credentials --all --output=/tmp/credentials.json"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "execute-command",
+      "name": "Export N8n Data",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/tmp/*.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        432,
+        0
+      ],
+      "id": "read-files",
+      "name": "Read Export Files",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.fileName }}",
+                    "rightValue": "credentials",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "cred-condition"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Credentials"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "workflow-condition",
+                    "leftValue": "={{ $json.fileName }}",
+                    "rightValue": "workflows",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Workflows"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        640,
+        0
+      ],
+      "id": "file-switch",
+      "name": "Separate Files",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1drEAQkDuym28-mDsb6z16JGHy867FDk1",
+          "mode": "list",
+          "cachedResultName": "backup  credantel v2",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1drEAQkDuym28-mDsb6z16JGHy867FDk1"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        880,
+        -208
+      ],
+      "id": "upload-credentials",
+      "name": "Upload Credentials (First Time)",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "name": "workflows.json",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "14LRa-_JtXsmAnqkx4aTANs5JDd7IlA9o",
+          "mode": "list",
+          "cachedResultName": "backup v2 ",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/14LRa-_JtXsmAnqkx4aTANs5JDd7IlA9o"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        912,
+        112
+      ],
+      "id": "upload-workflows",
+      "name": "Upload Workflows (First Time)",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "fileId": {
+          "__rl": true,
+          "value": "1QNhqtz5nS5cfObvuWLreRttJbN8nmJvfKgRYcNGZTj4",
+          "mode": "id"
+        },
+        "changeFileContent": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1088,
+        -208
+      ],
+      "id": "update-credentials",
+      "name": "Update Credentials File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "fileId": {
+          "__rl": true,
+          "value": "1TJRm05L3mqeM2v1N-N-HMA4Wv8AeyNayBpGWGt6fz3c",
+          "mode": "id"
+        },
+        "changeFileContent": true,
+        "newUpdatedFileName": "={{ $json.name }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1152,
+        112
+      ],
+      "id": "update-workflows",
+      "name": "Update Workflows File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "5wepyKeEKnmkzsyG",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "sendTo": "cenk.tokgoz@gmail.com",
+        "subject": "N8n Backup Completed Successfully",
+        "message": "Your n8n workflows and credentials have been successfully backed up to Google Drive.\n\nBackup Date: {{ $now.format('yyyy-MM-dd HH:mm:ss') }}\nWorkflows Backed Up: Yes\nCredentials Backed Up: Yes\n\nBest regards,\nN8n Automation System",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1472,
+        -16
+      ],
+      "id": "send-notification",
+      "name": "Send Success Notification",
+      "webhookId": "0e1efb6e-c1d7-4ccf-885e-3e54d407e0f0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## N8n Backup System\n\n🔄 **Status:** Ready for Configuration\n\n### Next Steps:\n1. Configure Google Drive credentials\n2. Configure Gmail credentials\n3. Set folder ID and email address\n4. Run initial backup\n5. Switch to update mode",
+        "height": 572,
+        "width": 400,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        -464
+      ],
+      "id": "info-note",
+      "name": "Setup Instructions"
+    }
+  ],
+  "pinData": {
+    "Read Export Files": [
+      {
+        "json": {
+          "mimeType": "application/json",
+          "fileType": "json",
+          "fileName": "credentials.json",
+          "fileExtension": "json",
+          "fileSize": "12.9 kB"
+        }
+      },
+      {
+        "json": {
+          "mimeType": "application/json",
+          "fileType": "json",
+          "fileName": "workflows.json",
+          "fileExtension": "json",
+          "fileSize": "317 kB"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "none"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-26T15:14:08.482Z",
+  "versionId": "6b0c2e0f-79d9-4f90-9a49-ac1a450eef1c"
+}
