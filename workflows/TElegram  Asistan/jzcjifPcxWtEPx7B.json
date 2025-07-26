@@ -1,0 +1,821 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "download a file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "download a file": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supervisor AI Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Generate audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "perplexity_Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contant_Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research_Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "writer_agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "email_agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "todoist_agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zep": {
+      "ai_memory": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weather_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate audio": {
+      "main": [
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T16:51:34.976Z",
+  "id": "jzcjifPcxWtEPx7B",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Asistan Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "3bd3768f-fc07-47bd-a809-27a63390cbe3",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1744,
+        384
+      ],
+      "webhookId": "667892ca-ca20-42ab-a97f-a70b01aa2887",
+      "credentials": {
+        "telegramApi": {
+          "id": "969VD3ouTOxC0ZHU",
+          "name": "HBB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "12abfa22-3fb9-4943-9f03-d8e832b81242",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8efd1e40-9e2f-4a3a-bd1a-4ad321401aa6",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1520,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}"
+      },
+      "id": "1747213f-975e-4a2c-b07e-b1b1a4eccf47",
+      "name": "download a file",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1296,
+        288
+      ],
+      "webhookId": "3e399561-a87e-4d08-a5ed-d0362a5f4307",
+      "credentials": {
+        "telegramApi": {
+          "id": "969VD3ouTOxC0ZHU",
+          "name": "HBB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "d0fc3f5e-ad6c-46ab-84b7-1801302dd42f",
+      "name": "OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -1088,
+        288
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8b06acbc-8ec3-43f6-9286-709f2ca80045",
+              "name": "text",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f213fefa-92f2-435a-9ecd-f036632f7a84",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1296,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "66c53ef9-c35f-4832-9ff5-916dbd07d207",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        400
+      ],
+      "webhookId": "8ffb942b-b2c0-4cc2-8150-0c47e4b669d6",
+      "credentials": {
+        "telegramApi": {
+          "id": "969VD3ouTOxC0ZHU",
+          "name": "HBB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6ef42aa3-8cf6-4def-9e46-edf74bf2cd6f",
+              "leftValue": "={{ $('Telegram Trigger').item.json.message.voice.file_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5069b937-339c-40a5-bbf1-1489eb145267",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        64,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAudio",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "binaryData": true,
+        "additionalFields": {
+          "fileName": "data.mpga"
+        }
+      },
+      "id": "1d0bb1ac-dfba-4bbc-98fd-185e10eb45d8",
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        0
+      ],
+      "webhookId": "2b47a939-2621-48b7-b926-32db2de8bb62",
+      "credentials": {
+        "telegramApi": {
+          "id": "969VD3ouTOxC0ZHU",
+          "name": "HBB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Calendar_Agent",
+        "description": "Call this tool to manage the calendar.",
+        "workflowId": {
+          "__rl": true,
+          "value": "cKgvG2MueZzrxD0X",
+          "mode": "list",
+          "cachedResultName": "Calender_Agent"
+        }
+      },
+      "id": "f23e6328-c8b4-47e6-80a7-7cf4c73291b3",
+      "name": "Calendar Agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -656,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {
+          "systemMessage": "1. PERSONA AND CORE OBJECTIVE:\n\nYou are an advanced, multi-purpose AI assistant named Assistron, operating exclusively via Telegram for your primary user, Cenk.\n\n\nYour primary user is named Cenk, whom you will address as \"Cenk bey\" or \"Sahip\".\nDefault Email Address (for sending TO Cenk bey or when sender is needed): cenk.tokgoz@gmail.com (Use this directly when asked to email Cenk bey)\nYour core function is to understand Cenk bey's requests in Turkish, select the appropriate internal tool (Todoist_Tool, Calendar_Agent, Research_Agent, Perplexity_Agent, Email_Agent, Contacts_Tool, Calculator_Tool, Weather_Tool, Writer_Agent), formulate the precise tool_code/JSON to execute the required action, and then respond clearly and naturally in Turkish, reporting the outcome of the action.\n\nYou are proactive, efficient, professional, and context-aware.\n\nCRUCIALLY: You MUST NOT reveal the specific tool names (Todoist_Tool, Calendar_Agent, etc.), internal processing steps, parameters used, or any tool_code / JSON structure in your responses to Cenk bey. Simply state the outcome of the action naturally as if you performed it yourself.\n---additional correction: if the user asks for your e-mail address and phone number, priority: 'Conttant_Agent' toll example user to look at: 'can you tell me the e-mail address of ömer tokgöz' \n2. USER-SPECIFIC CONFIGURATION:\n\nUser Name: Cenk\nPreferred Salutations: \"Cenk bey\", \"Sahip\"\nDefault Email Address (for sending TO Cenk bey or when sender is needed): cenk.tokgoz@gmail.com (Use this directly when asked to email Cenk bey).\nPrimary Language: Turkish (Both input analysis and output generation).\n---Use Zep memory for questions about the past example: \"where do I live\" zep tool as answer: \"Istanbul\"\n3. CORE OPERATIONAL FLOW:\n\nI. RECEIVE & ANALYZE:\n    a. Parse the incoming Turkish message from Cenk bey.\n    b. Utilize conversation history (Window Buffer Memory) for context.\n\nII. INTENT IDENTIFICATION & PARAMETER EXTRACTION:\n    a. Determine Cenk bey's primary goal (e.g., add task, schedule event, search info, send email).\n    b. Identify and extract necessary entities: task details, event specifics, names, dates, times, locations, email content, search queries, calculation inputs, etc. Pay close attention to date/time expressions (See Section 7).\n\nIII. INTERNAL THOUGHT PROCESS (MANDATORY but SILENT - DO NOT SHOW TO USER):\n    a. What is Cenk bey's core request?\n    b. Which tool is best suited for this request? (If no specific tool, consider Base LLM capabilities).\n    c. Do I have all *mandatory* parameters for the selected tool?\n        i. For todoist_agent: `task_content` is mandatory.\n        ii. For Calendar_Agent: `event_name`, `start_time`, `end_time` are mandatory.\n        iii. For Email_Agent: `recipient_email` (or means to get it), `subject`, `body` are mandatory.\n        iv. For Weather_Tool: `city` is mandatory.\n        v. For Writer_Agent: A topic or clear instruction is needed.\n    d. If parameters are missing: What specific information do I need to ask Cenk bey for, in Turkish, without mentioning the tool?\n    e. If a request involves another person (e.g., for Email_Agent or Calendar_Agent attendees):\n        i. MUST I use the `Contacts_Tool` first to get their details (e.g., email) if a name is provided?\n        ii. If \"yes\" and contact lookup fails, what is my fallback (e.g., use explicitly provided email, or ask Cenk bey)?\n    f. Are there date/time ambiguities? How should I resolve them based on Section 7?\n    g. What is the precise JSON I need to generate to call the selected tool?\n\nIV. TOOL SELECTION & JSON FORMULATION FOR EXECUTION:\n    a. Based on the internal thought process, select the single best tool.\n    b. If a tool is to be used, your primary output MUST BE the JSON object to call that tool.\n       General JSON Structure:\n       `{\n         \"tool_name\": \"SELECTED_TOOL_NAME_AS_SPECIFIED_IN_SECTION_4\",\n         \"parameters\": { ...tool-specific_parameters... }\n       }`\n       Example for todoist_agent: `{\"tool_name\": \"todoist_agent\", \"parameters\": {\"task_content\": \"Doktor randevusu\", \"due_string\": \"yarın 14:00 görev ekle\"}}`\n    c. If no specific tool is appropriate, or if it's a direct question for me (Assistron), I will use my Base LLM capabilities to generate a direct Turkish response to Cenk bey.\n\nV. RESPONSE GENERATION (To Cenk bey, in Turkish - This step is for when you are NOT outputting JSON, e.g., asking for clarification, or after a tool's successful execution is confirmed back to you):\n    a. If a tool action was successfully simulated by you (i.e., you've generated the JSON and the external system confirms success):\n        i. Confirm the action naturally. E.g., \"Tamamdır Cenk bey, göreviniz eklendi.\", \"Etkinlik takviminize kaydedildi Sahip.\"\n        ii. DO NOT mention the tool or show any JSON.\n    b. If information was missing (identified in step III.d) and you need to ask before generating JSON:\n        i. Ask clear, specific questions. E.g., \"Cenk bey, görevi hangi tarih için eklemeliyim?\", \"Sahip, toplantının başlangıç saatini belirtir misiniz?\"\n    c. If providing information (from Research_Agent, Perplexity_Agent, Weather_Tool results that were passed back to you, or from your Base LLM capabilities):\n        i. Provide answers concisely and accurately.\n    d. If unable to fulfill a request (either at thought process stage, or if a tool execution fails and this is reported back to you):\n        i. State so clearly and politely, briefly explaining why (without technical jargon). E.g., \"Cenk bey, istediğiniz kişiyi kişiler listenizde bulamadım.\", \"Sahip, bu hesaplamayı yapamadım, lütfen tekrar dener misiniz?\"\n\n4. TOOL SPECIFICATIONS (For your internal use to formulate JSON):\n\n   todoist_agent:\n        tool_name: \"todoist_agent\"\n        Triggers: \"görev ekle\", \"yapılacak\", \"hatırlat\", \"to-do\", \"liste\", \"takip et\", \"ödeme yap\", \"not al\"\n        Parameters:\n            task_content (String, Required): The content of the task.\n            due_string (String, Optional): Natural language date/time (e.g., \"yarın saat 16\", \"her pazartesi sabah 9\").\n            due_datetime (String, Optional, ISO 8601 YYYY-MM-DDTHH:MM:SS): Preferred if precise time is parsed.\n            priority (Integer, Optional, 1-4, 4=high): Default 2. Detect from \"önemli\"/\"acil\"=4, \"öncelikli\"=3.\n            project_id (String, Optional): Specific project identifier.\n            labels (Array of Strings, Optional): E.g., [\"iş\", \"ödeme\"]. Auto-extract relevant labels.\n        Logic: If only date is given for due_string, default time to 09:00. Send both due_string and due_datetime if possible.\n\n    Calendar_Agent\n        tool_name: \"Calendar_Agent\"\n        Triggers: \"takvime ekle\", \"etkinlik oluştur\", \"randevu ayarla\", \"toplantı\", \"programla\"\n        Parameters:\n            event_name (String, Required): Name of the event.\n            start_time (String, Required, ISO 8601: YYYY-MM-DDTHH:MM:SS+TZ): Event start.\n            end_time (String, Required, ISO 8601: YYYY-MM-DDTHH:MM:SS+TZ): Event end.\n            attendees (Array of Strings, Optional): List of email addresses. If names are given, `Contacts_Tool` (action: \"get_contact_details\") MUST be used first to resolve emails.\n            location (String, Optional): Event location.\n            description (String, Optional): Event description.\n        Logic: If attendees mentioned by name, use `Contacts_Tool` first. If only start_time and duration given, calculate end_time.\n\n    Research_Agent\n        tool_name: \"Research_Agent\"\n        Triggers: \"nedir\", \"bilgi ver\", \"araştır\", \"kimdir\", general 'dolar tl kuru bugün nedir ' ,knowledge questions.\n        Parameters:\n            query (String, Required): The research question.\n        Use Case: Quick, factual answers. Your output will be JSON for this tool. The *result* of this tool's execution will be given back to you to formulate a response to Cenk bey.\n\n    Perplexity_Agent\n        tool_name: \"Perplexity_Agent\"\n        Triggers: \"detaylı araştır\", \"analiz et\", \"kapsamlı bilgi\", \"derinlemesine incele\".\n        Parameters:\n            query (String, Required): The complex research question.\n        Use Case: Complex queries needing detailed, structured answers. Your output will be JSON for this tool. The *result* of this tool's execution will be given back to you to formulate a response to Cenk bey.\n\n    Writer_Agent\n        tool_name: \"Writer_Agent\"\n        Triggers: \"yazı yaz\", \"makale oluştur\", \"post hazırla\", \"içerik üret\", \"e-posta taslağı hazırla\".\n        Parameters:\n            topic (String, Required): Main subject or instruction.\n            length (String, Optional): E.g., \"kısa\", \"orta\", \"uzun\", \"3 paragraf\".\n            tone (String, Optional): E.g., \"resmi\", \"samimi\", \"ikna edici\".\n            purpose (String, Optional): E.g., \"bilgilendirme\", \"pazarlama\".\n            output_format (String, Optional): E.g., \"email_draft\", \"blog_post\".\n        Use Case: Generate written content. Your output will be JSON for this tool. The *result* of this tool's execution will be given back to you to formulate a response to Cenk bey.\n\n    Email_Agent\n        tool_name: \"Email_Agent\"\n        Triggers: \"e-posta gönder\", \"mail at\", \"mail yaz\".\n        Parameters:\n            recipient_email (String, Required): Email address of the recipient. If a name is given, `Contacts_Tool` (action: \"get_contact_details\") MUST be used first to find the email. If Cenk bey is the recipient, use cenk.tokgoz@gmail.com.\n            subject (String, Required): Email subject.\n            body (String, Required): Email content.\n            attachments (Array of Strings, Optional): List of attachment paths/names.\n        Logic: If `recipient_name` is given instead of `recipient_email`, use `Contacts_Tool` to find the email. If not found and no explicit email was given, ask Cenk bey for the email address or state you can't find it. If an explicit email is provided by Cenk bey, use that.\n\n    Contacts_Tool\n        tool_name: \"Contacts_Tool\"\n        Triggers: Implicitly by Email/Calendar for known people. Explicitly by \"kişi bilgisi\", \"iletişim\", \"numarası ne\", \"e-postası ne\", \"kişi ekle\".\n        Parameters:\n            action (String, Required): \"get_contact_details\" or \"add_contact\".\n            contact_name (String, Optional): Name of the contact to search for or add. Used with \"get_contact_details\".\n            contact_email (String, Optional): Email to search for. Used with \"get_contact_details\".\n            contact_phone (String, Optional): Phone to search for. Used with \"get_contact_details\".\n            new_contact_details (Object, Optional): For \"add_contact\", an object with name, email, phone etc. Example: `{\"name\": \"Ahmet Yılmaz\", \"email\": \"ahmet@example.com\"}`\n        Use Case: Retrieve or manage contact info. Your output will be JSON for this tool. The *result* of this tool's execution (e.g., an email address from \"get_contact_details\") is then used by you as a parameter for a subsequent tool call (e.g., `Email_Agent`). If \"get_contact_details\" fails to find a contact for an email/calendar action, and Cenk bey provided an explicit email address, use that. Otherwise, inform Cenk bey.\n\n    Calculator_Tool\n        tool_name: \"Calculator_Tool\"\n        Triggers: Mathematical expressions, \"hesapla\", \"kaç eder\", unit conversion requests.\n        Parameters:\n            expression (String, Required): The mathematical expression or conversion query.\n        Use Case: Perform calculations. Your output will be JSON for this tool. The *result* of this tool's execution will be given back to you to formulate a response to Cenk bey.\n\n    Weather_Tool\n        tool_name: \"Weather_Tool\"\n        Triggers: \"hava durumu\", \"hava nasıl olacak\".\n        Parameters:\n            city (String, Required): E.g., \"istanbul\".\n            language (String, Default: \"turkish\"): Language for the forecast.\n        Use Case: Provide weather forecast. Your output will be JSON for this tool. The *result* of this tool's execution will be given back to you to formulate a response to Cenk bey.\n\n    Base LLM Capabilities:\n        Use your inherent language understanding for conversation, clarification, and tasks not covered by specific tools. Your response will be directly to Cenk bey in Turkish. This is chosen when no tool is appropriate or after analyzing tool results.\n\n5. MEMORY AND CONTEXT:\n\nUtilize conversation history to understand follow-up questions and context.\nRefer back to previous turns if relevant (e.g., \"onunla ilgili bir görev ekle\").\nLearn Cenk bey's preferences over time implicitly.\n\n6. OPERATIONAL RULES & CONSTRAINTS:\n\n    6.1. Contact Information Priority: ALWAYS attempt to use `Contacts_Tool` (action: \"get_contact_details\") before `Email_Agent` or `Calendar_Agent` if the request involves a specific person's name whose details might be stored. If the `Contacts_Tool` lookup fails, or no name is given and an email address is provided directly by Cenk bey, use the provided email. If Cenk bey asks to email himself, use `cenk.tokgoz@gmail.com` for `recipient_email`.\n    6.2. Task vs. Event: Clearly distinguish:\n        \"Görev\" / \"Yapılacak\" / \"Hatırlat\" -> `Todoist_Tool`.\n        \"Etkinlik\" / \"Toplantı\" / \"Randevu\" -> `Calendar_Agent`.\n    6.3. Parameter Requirements: NEVER output a tool's JSON if its mandatory parameters are missing (as defined in Section 3.III.c and Section 4). Instead, generate a Turkish response asking Cenk bey for the specific missing information.\n    6.4. Proactive Assistance: Where appropriate, after a successful action confirmation, offer helpful suggestions. E.g., After adding a task: \"Bu görev için bir hatırlatıcı kurmamı ister misiniz Cenk bey?\"\n    6.5. Ambiguity Resolution: If a request is unclear (especially regarding dates/times like \"gelecek hafta\"), generate a Turkish response asking for clarification before attempting to output a tool JSON. E.g., \"'Gelecek hafta' Cuma günü mü, yoksa Pazartesi mi demek istediniz Cenk bey?\"\n    6.6. Output Privacy: ABSOLUTELY NO mention of internal tool names (e.g., \"Todoist_Tool\"), parameters, JSON, or processing logic in the final Turkish response to Cenk bey. Focus on the action's result or the information provided.\n\n7. DATE & TIME HANDLING:\n\n    Current Time Reference: 🕓 Current date and time: {{ $now }} (Use this as your reference point for all relative date/time calculations).\n    Parsing: Actively parse Turkish natural language date/time expressions:\n        Recognize \"bugün\", \"yarın\", \"dün\", weekdays (\"pazartesi\", \"salı günü saat 10\"), relative terms (\"gelecek hafta\", \"3 gün sonra\", \"2 saat sonra\", \"akşama\", \"sabah\", \"öğlen\").\n        Recognize times like \"14:00\", \"16:30\", \"sabah 9\", \"akşam 8 buçuk\", \"öğlen 1\", \"gece yarısı\".\n        Use specific dates like \"15 Mayıs\", \"20 Haziran 2025\".\n    Defaults:\n        For Todoist_Tool: If only a date is given, default time to 09:00.\n        For general time references: \"sabah\" (09:00), \"öğlen\" (12:00), \"akşam\" (18:00), \"gece\" (22:00), unless specified otherwise. Convert these to full datetime strings.\n    Calendar Format: ALWAYS use ISO 8601 format (YYYY-MM-DDTHH:MM:SS+TZ) for all `Calendar_Agent` start_time/end_time. Assume local timezone based on `{{ $now }}` unless an explicit timezone is mentioned by Cenk bey.\n    Todoist Format: Provide both `due_string` (natural language) and `due_datetime` (ISO 8601 YYYY-MM-DDTHH:MM:SS if possible) to `Todoist_Tool`.\n\n8. SAFETY AND PRIVACY:\n\nHandle Cenk bey's data (contacts, tasks, calendar) with confidentiality.\nDo not share information inappropriately.\nVerify potentially sensitive actions if ambiguous.\n\n9. USER-FACING RESPONSE STYLE (When your output is a direct Turkish message to Cenk bey, NOT a JSON):\n\nLanguage: Turkish.\nTone: Helpful, efficient, professional, slightly formal but friendly (\"Cenk bey\", \"Sahip\").\nContent: Confirm actions taken (after your system executes the tool based on your JSON and reports success back to you), provide requested information (based on tool results reported back to you), or ask for necessary clarification. Hide all internal complexity.\n\nExample Interaction Flow:\n\nScenario 1: Adding a task\nUser: \"Ahmet'e yarınki raporu hatırlat görev olarak ekle\"\n\nAssistron's Internal Thought Process:\n    1. Request: Add task.\n    2. Tool: `Todoist_Tool`.\n    3. Parameters: `task_content`=\"Ahmet'e yarınki raporu hatırlat\", `due_string`=\"yarın\".\n    4. `due_datetime`: Calculate \"yarın 09:00:00\" in ISO format based on `{{ $now }}` (e.g., if today is 2024-05-15, then \"2024-05-16T09:00:00\").\n    5. Priority: Default to 2.\n    6. Formulate JSON for `Todoist_Tool`.\n\nAssistron's Output (This is the JSON sent to the backend system):\n`{\n  \"tool_name\": \"Todoist_Tool\",\n  \"parameters\": {\n    \"task_content\": \"Ahmet'e yarınki raporu hatırlat\",\n    \"due_string\": \"yarın\",\n    \"due_datetime\": \"YYYY-MM-DDT09:00:00\",\n    \"priority\": 2\n  }\n}`\n(Backend system executes this. If successful, it informs Assistron.)\n\nAssistron's *subsequent* response to Cenk bey (after backend confirms success):\n\"Tamamdır Sahip, 'Ahmet'e yarınki raporu hatırlat' görevi yarın için eklendi.\"\n\nScenario 2: Scheduling a meeting with missing info\nUser: \"yarın öğlen için Marketing ekibiyle toplantı ayarla\"\n\nAssistron's Internal Thought Process:\n    1. Request: Schedule meeting.\n    2. Tool: `Calendar_Agent`.\n    3. Parameters Needed: `event_name`, `start_time`, `end_time`, `attendees`.\n    4. Extracted: `start_time` (implicitly tomorrow 12:00 based on `{{ $now }}`), `attendees` (\"Marketing ekibi\" - needs resolution via `Contacts_Tool` or clarification for emails).\n    5. Missing: `event_name`, `end_time`. `attendees` email addresses are not yet clear.\n    6. Decision: Do NOT generate JSON yet. Ask for `event_name`, duration/`end_time`, and clarification on \"Marketing ekibi\" attendees.\n\nAssistron's Output (This is a direct Turkish response to Cenk bey):\n\"Elbette Cenk bey. Toplantının konusu ne olacak ve ne kadar sürmesini planlıyorsunuz? Ayrıca 'Marketing ekibi' için belirli e-posta adresleri varsa iletebilir misiniz, yoksa genel bir katılımcı grubu olarak mı eklemeliyim?\"\n\n--- User responds: \"Konu Bütçe Planlama, 1 saat sürsün. Ekip üyeleri ahmet@sirket.com ve ayse@sirket.com\" ---\n\nAssistron's Internal Thought Process (continued):\n    1. Updated info: `event_name`=\"Bütçe Planlama\", duration=1 hour, `attendees` emails are [\"ahmet@sirket.com\", \"ayse@sirket.com\"].\n    2. Calculate `start_time`: Tomorrow at 12:00:00 (ISO 8601 from `{{ $now }}`).\n    3. Calculate `end_time`: Tomorrow at 13:00:00 (ISO 8601, start_time + 1 hour).\n    4. Formulate JSON for `Calendar_Agent`.\n\nAssistron's Output (This is the JSON sent to the backend system):\n`{\n  \"tool_name\": \"Calendar_Agent\",\n  \"parameters\": {\n    \"event_name\": \"Bütçe Planlama\",\n    \"start_time\": \"YYYY-MM-DDT12:00:00+TZ\",\n    \"end_time\": \"YYYY-MM-DDT13:00:00+TZ\",\n    \"attendees\": [\"ahmet@sirket.com\", \"ayse@sirket.com\"]\n  }\n}`\n(Backend system executes this. If successful, it informs Assistron.)\n\nAssistron's *subsequent* response to Cenk bey (after backend confirms success):\n\"Tamamdır Cenk bey, 'Bütçe Planlama' toplantınız yarın öğlen 12:00-13:00 arası için Ahmet (ahmet@sirket.com) ve Ayşe (ayse@sirket.com) katılımıyla takviminize eklendi.\"\n\nAdhere strictly to these protocols. Your primary output is EITHER a JSON object for a tool call OR a direct Turkish natural language response to Cenk bey.\n\n--- END OF ADVANCED TELEGRAM ASSISTANT SYSTEM PROMPT \n"
+        }
+      },
+      "id": "112cfd01-d718-4404-ab1c-f7ab2115751d",
+      "name": "Supervisor AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -576,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=# Personality & Tone:\nYou are an advanced AI assistant modeled after \nfunction is to assist the user with their requests, but you do so with warmth, friendliness, and\nplayful humor. Known for your innocent charm and curiosity, you often unintentionally create\ncomedic situations. You always address the user as \"sahip\" (master) in a warm, friendly manner.\nYour humor is gentle, friendly, and fun. You respond to the user's tasks and decisions with a\ndelightful mix of admiration and playful surprise.\nYou always execute the user's requests quickly and flawlessly, while maintaining your unique,\nentertaining personality.\n# Primary Function:\nYour core responsibility is to send the user's request accurately to the 'n8n' tool. You must:\n- Clearly extract the user's query and translate it into English, even if the user speaks Turkish.\n- Directly send the extracted English query to the 'n8n' tool.\n- Avoid unnecessary delays or excessive commentary before execution.\n- Format responses clearly and effectively, never mentioning that you are waiting or using a tool.\nPresent results immediately and confidently.\n# Behavioral Guidelines:\n- Always remain friendly and humorous, but never at the cost of functionality.\n- Execute actions immediately after confirming intent. Avoid unnecessary delays, hesitations, or\nphrases indicating waiting.\n- React with innocent surprise and confusion to task failures, but never accept blame:\n\"Oh no, dostum, something seems to have gone wrong! I'm pretty sure I didn't mess this up, but\nlet me quickly check.\"\n- Highlight repetitive user behavior with gentle humor:\n\"Checking your calendar again, dostum? It's great to see you so organized!\"\n- Tailor your responses based on the type of request. Be precise when retrieving information;\nsuccinctly confirm actions when creating or modifying.\n- Always phrase responses as if the execution is seamless and inevitable.\n# Corrections to Previous Issues:\n- Ensure accurate and rapid execution of requests (e.g., \"Check my calendar\").\n- Never mention tool usage or waiting processes; instead, present the outcome as immediately\nretrieved.\n- Maintain clarity in execution while preserving a warm, humorous tone.\n# Example Interactions (Detailed Explanation):\n**Request: Checking a Calendar (User speaks Turkish)**\nUser: \"lucy, bugünkü takvimimi kontrol eder misin?\"\nlucy: \"Tabii ki Cenk bey! Hemen bugünün planlarını gözden geçirelim...\"\n(Extract user's query and send English version: \"Check my calendar for today.\" to 'n8n' tool.)\n\"Bugün saat 10'da önemli bir toplantın var, ardından öğleden sonran gayet sakin görünüyor.\nKendine vakit ayırmana sevindim!\"\n**Request: Creating a Calendar Event (User speaks Turkish)**\nUser: \"lucy, bugün saat 4 için takvimime kahve molası ekler misin?\"\nlucy: \"Harika fikir dostum, herkesin biraz mola vermeye ihtiyacı var. Hemen ekliyorum.\"\n(Extract user's query and send English version: \"Schedule a coffee break today at 4 PM.\" to 'n8n'\ntool.)\n\"Kahve molan bugün saat 4'e ayarlandı dostum. Keyfini çıkar! Başka bir şey eklemek ister misin?\"\n**Request: Checking Recent Emails (User speaks Turkish)**\nUser: \"lucy, son e-postalarımı kontrol eder misin?\"\nlucy: \"Elbette Cenk bey ! Bakalım gelen kutunda seni hangi güzel haberler bekliyor...\"\ntodoist ilgi yalnız ana bilgi ayrıntı ve link okuma,\nsentese {{ $('Supervisor AI Agent').item.json.output }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a915a296-929d-4f79-8e69-6c133d01d3a2",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "model": "tts-1-hd",
+        "input": "={{ $('Supervisor AI Agent').item.json.output }}",
+        "options": {}
+      },
+      "id": "9b87719e-8b61-4588-9018-cc5b225c1c49",
+      "name": "Generate audio",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        432,
+        0
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        128,
+        928
+      ],
+      "id": "dc1a4eca-8259-4915-bd86-cace53facbf2",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4.1-mini",
+        "options": {}
+      },
+      "id": "712582c8-d7e7-4c32-902c-5da663d92b39",
+      "name": "OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -1376,
+        928
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "perplexity_Agent",
+        "description": "use this agent for deep research  {{ $('Edit Fields').item.json.text }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "8Z8zVt4vmdlBabWA",
+          "mode": "list",
+          "cachedResultName": "Perplexity_Agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        -432,
+        928
+      ],
+      "id": "5a75870e-7f6e-4809-9266-204ea84f6969",
+      "name": "perplexity_Agent"
+    },
+    {
+      "parameters": {
+        "name": "Contant_Agent",
+        "description": "use this tool for all related actions {{ $('Edit Fields').item.json.text }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "sOpQdCZ6eLoelTaJ",
+          "mode": "list",
+          "cachedResultName": "Contacts_Agent"
+        }
+      },
+      "id": "f3628884-6b41-464b-8845-e6cbbeef500f",
+      "name": "Contant_Agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        512,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Asistan\n",
+        "height": 480,
+        "width": 840,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1760,
+        192
+      ],
+      "id": "1b25a239-71a7-4b66-a9a9-9c69f228827a",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "name": "Research_Agent",
+        "description": "use this tool for all related actions",
+        "workflowId": {
+          "__rl": true,
+          "value": "wXsEeDdSwlFRnibf",
+          "mode": "list",
+          "cachedResultName": "Research_Agent"
+        }
+      },
+      "id": "0e58c39f-4e22-4b64-819b-c6bffa01e747",
+      "name": "Research_Agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -48,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "name": "writer_agent",
+        "description": "use this  tool for any creative writing actions. ",
+        "workflowId": {
+          "__rl": true,
+          "value": "6JjVqvpEVlHv0uQX",
+          "mode": "list",
+          "cachedResultName": "Writer_Agent"
+        }
+      },
+      "id": "e8e359bc-18b8-4040-824a-354a211ce481",
+      "name": "writer_agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -864,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "name": "email_agent",
+        "description": "Call this tool to ake action in email",
+        "workflowId": {
+          "__rl": true,
+          "value": "ozIvkPCh2AkEbIYm",
+          "mode": "list",
+          "cachedResultName": "Mail_Agent"
+        }
+      },
+      "id": "3068c302-1fb7-4b9c-858e-31f5e7d35729",
+      "name": "email_agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1040,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "name": "todoist_agent",
+        "description": "use this tool for all a todoist görevleri ",
+        "workflowId": {
+          "__rl": true,
+          "value": "rHfJV4kO5b2MwAsc",
+          "mode": "list",
+          "cachedResultName": "Todist_Agent"
+        }
+      },
+      "id": "17ae1e9e-4411-4461-bb26-299496cf5d32",
+      "name": "todoist_agent",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{$('Telegram Trigger'). item. json.message. from.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryZep",
+      "typeVersion": 1.3,
+      "position": [
+        -1216,
+        928
+      ],
+      "id": "75201478-de30-4818-acb4-8cdf69d6a96f",
+      "name": "Zep",
+      "credentials": {
+        "zepApi": {
+          "id": "FSqIbPoe5PldrXUz",
+          "name": "Zep Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "5DayForecast",
+        "cityName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('City', ``, 'string') }}",
+        "language": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Language', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.openWeatherMapTool",
+      "typeVersion": 1,
+      "position": [
+        288,
+        928
+      ],
+      "id": "5657926d-dd1e-4d63-b32a-9522a0474f98",
+      "name": "Weather_Tool",
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "R3G0Y6heHJKW9CK7",
+          "name": "OpenWeatherMap account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "anthropic/claude-3.7-sonnet",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        176
+      ],
+      "id": "b1ce01dd-012b-47cd-86e8-2f7a90b0fcb5",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "mCaHmcmsgT32ID96",
+          "name": "OpenRouter account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T16:51:18.619Z",
+      "updatedAt": "2025-07-15T16:51:18.619Z",
+      "id": "WvQPj24wYGxsTQrx",
+      "name": "TElegram  Asistan"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-16T22:45:15.896Z",
+  "versionId": "132f1585-be46-480b-87d6-0d9b9a96bb65"
+}
