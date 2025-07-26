@@ -1,0 +1,326 @@
+{
+  "active": false,
+  "connections": {
+    "Başlat": {
+      "main": [
+        [
+          {
+            "node": "GitHub Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Files": {
+      "main": [
+        [
+          {
+            "node": "Sadece JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sadece JSON": {
+      "main": [
+        [
+          {
+            "node": "Düzenle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Düzenle": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-21T21:48:53.384Z",
+  "id": "Y77ch3yqYk5NtvCj",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "GitHub to Sheets - Hızlı",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger1",
+      "name": "Başlat",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        208,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/botfusions/n8n-workflows/contents",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "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"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "github1",
+      "name": "GitHub Files",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        400,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.name }}",
+              "rightValue": ".json",
+              "operator": {
+                "type": "string",
+                "operation": "endsWith"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "filter1",
+      "name": "Sadece JSON",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        608,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "Dosya_Adi",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "GitHub_URL",
+              "value": "={{ $json.html_url }}",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "Download_URL",
+              "value": "={{ $json.download_url }}",
+              "type": "string"
+            },
+            {
+              "id": "4",
+              "name": "Boyut",
+              "value": "={{ $json.size }}",
+              "type": "number"
+            },
+            {
+              "id": "5",
+              "name": "Tarih",
+              "value": "={{ new Date().toISOString().split('T')[0] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set1",
+      "name": "Düzenle",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1jMxuRU9uDFB3K4oFX_oH9eYLR8cyFjNZqXvSe5gRZtw",
+          "mode": "list",
+          "cachedResultName": "N8N v2-workflow",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jMxuRU9uDFB3K4oFX_oH9eYLR8cyFjNZqXvSe5gRZtw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1927579272,
+          "mode": "list",
+          "cachedResultName": "GitHub_Workflows",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jMxuRU9uDFB3K4oFX_oH9eYLR8cyFjNZqXvSe5gRZtw/edit#gid=1927579272"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Dosya_Adi": "={{ $json.Dosya_Adi }}",
+            "GitHub_URL": "={{ $json.GitHub_URL }}",
+            "Workflow_Adi": "={{ $json.Download_URL }}",
+            "Dosya_Boyutu": "={{ $json.Boyut }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Dosya_Adi",
+              "displayName": "Dosya_Adi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workflow_Adi",
+              "displayName": "Workflow_Adi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Node_Sayisi",
+              "displayName": "Node_Sayisi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Trigger_Turu",
+              "displayName": "Trigger_Turu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Google_Sheets",
+              "displayName": "Google_Sheets",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "AI_Kullanimi",
+              "displayName": "AI_Kullanimi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Webhook",
+              "displayName": "Webhook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Aciklama",
+              "displayName": "Aciklama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Dosya_Boyutu",
+              "displayName": "Dosya_Boyutu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Son_Guncelleme",
+              "displayName": "Son_Guncelleme",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GitHub_URL",
+              "displayName": "GitHub_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1008,
+        304
+      ],
+      "id": "0d953057-338f-4dbe-879b-8a257d051655",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-21T23:00:18.506Z",
+  "versionId": "ffc8f968-6aa8-40b2-8a03-99c87ea4b581"
+}
