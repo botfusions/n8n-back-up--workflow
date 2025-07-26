@@ -1,0 +1,117 @@
+{
+  "active": false,
+  "connections": {
+    "Mock Response": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Mock Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T15:23:15.878Z",
+  "id": "2u83JM8epN5uPnWZ",
+  "isArchived": true,
+  "meta": null,
+  "name": "Mevzuat Mock API",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {
+        "path": "mevzuat-demo",
+        "options": {},
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "mock-response",
+      "name": "Mock Response",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        460,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "success",
+              "name": "success",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "id": "query",
+              "name": "query",
+              "type": "string",
+              "value": "={{ $json.query }}"
+            },
+            {
+              "id": "results",
+              "name": "results",
+              "type": "string",
+              "value": "=**{{ $json.query }}** ile ilgili mevzuat bilgileri:\n\n**Türk Ceza Kanunu** - Kanun No: 5237\n• Yürürlük Tarihi: 01.06.2005\n• İlgili Maddeler: 1-5\n• Özet: {{ $json.query }} konusunda temel hükümler\n\n**İş Kanunu** - Kanun No: 4857\n• Yürürlük Tarihi: 10.06.2003\n• İlgili Maddeler: 10-15\n• Özet: {{ $json.query }} ile ilgili çalışma koşulları\n\n**Borçlar Kanunu** - Kanun No: 6098\n• Yürürlük Tarihi: 01.07.2012\n• İlgili Maddeler: 20-25\n• Özet: {{ $json.query }} konusunda sözleşmeli düzenlemeler\n\n*Bu sonuçlar demo amaçlıdır. Gerçek mevzuat arama için premium üyeliğe geçiniz.*"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{ $now }}"
+            }
+          ]
+        }
+      },
+      "typeVersion": 3.4
+    },
+    {
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        680,
+        300
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "typeVersion": 1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T16:28:38.617Z",
+  "versionId": "0d6ee3a1-a947-47a6-afc2-ae1aac8cbe94"
+}
