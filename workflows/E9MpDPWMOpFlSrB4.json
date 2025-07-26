@@ -1,0 +1,242 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook - Soru Al": {
+      "main": [
+        [
+          {
+            "node": "Girdi İşleme",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Girdi İşleme": {
+      "main": [
+        [
+          {
+            "node": "Yargı MCP Arama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yargı MCP Arama": {
+      "main": [
+        [
+          {
+            "node": "LLM Prompt Hazırla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Prompt Hazırla": {
+      "main": [
+        [
+          {
+            "node": "OpenAI LLM Çağrısı",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI LLM Çağrısı": {
+      "main": [
+        [
+          {
+            "node": "Yanıt Formatla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yanıt Formatla": {
+      "main": [
+        [
+          {
+            "node": "Webhook Yanıtı",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-21T07:59:12.851Z",
+  "id": "E9MpDPWMOpFlSrB4",
+  "isArchived": false,
+  "meta": null,
+  "name": "Yargı MCP + LLM Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "yargi-chat",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-node",
+      "name": "Webhook - Soru Al",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        208,
+        304
+      ],
+      "webhookId": "a6d57bde-2c66-4069-9cdc-14944b36ce28"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Gelen veriyi temizle ve hazırla\nconst body = $input.all()[0].json.body || {};\nconst query = body.soru || body.query || body.message || body.question || '';\n\nif (!query || query.length < 3) {\n  throw new Error('Lütfen en az 3 karakter içeren bir soru yazın.');\n}\n\nif (query.length > 500) {\n  throw new Error('Soru çok uzun. Lütfen 500 karakterden kısa bir soru yazın.');\n}\n\n// XSS koruması - basit temizlik\nconst cleanQuery = query.replace(/<script[^>]*>.*?<\\/script>/gi, '')\n                       .replace(/<[^>]*>/g, '')\n                       .trim();\n\nreturn [{\n  user_question: cleanQuery,\n  search_type: body.type || 'general',\n  timestamp: new Date().toISOString()\n}];"
+      },
+      "id": "input-process",
+      "name": "Girdi İşleme",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://yargi-mcp.botfusions.com/mcp/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer mock_clerk_jwt_development_token_12345"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "X-Session-ID",
+              "value": "mock_session_12345"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "mcp-search",
+      "name": "Yargı MCP Arama",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        608,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// MCP sonucunu ve kullanıcı sorusunu birleştir\nconst inputData = $input.all()[0].json;\nconst userQuestion = inputData.user_question;\nconst mcpResponse = inputData.result || [];\n\n// Mevzuat metinlerini topla\nlet mevzuatMetni = '';\nlet sourceCount = 0;\n\nif (Array.isArray(mcpResponse) && mcpResponse.length > 0) {\n  mcpResponse.forEach((result, index) => {\n    sourceCount++;\n    mevzuatMetni += `\\n${index + 1}. ${result.title || 'Başlık yok'}\\n`;\n    mevzuatMetni += `Mahkeme: ${result.court || 'Belirtilmemiş'}\\n`;\n    mevzuatMetni += `Tarih: ${result.date || 'Belirtilmemiş'}\\n`;\n    mevzuatMetni += `Özet: ${(result.summary || result.content || 'İçerik bulunamadı').substring(0, 800)}\\n`;\n    mevzuatMetni += '---\\n';\n  });\n} else {\n  mevzuatMetni = 'İlgili mevzuat/karar bulunamadı.';\n}\n\n// LLM için prompt oluştur\nconst prompt = `Kullanıcı Sorusu: \"${userQuestion}\"\n\nİlgili Yargı Kararları/Mevzuat:\n${mevzuatMetni}\n\nYukarıdaki hukuki bilgilere dayanarak:\n1. Soruyu sade ve anlaşılır dilde yanıtla\n2. İlgili maddeler/kararlar varsa referans ver\n3. Pratik öneriler sun\n4. Türkçe ve profesyonel bir dil kullan\n5. Eğer yeterli bilgi yoksa, genel hukuki bilgiler ver\n\nYanıt:`;\n\nreturn [{\n  prompt: prompt,\n  user_question: userQuestion,\n  mcp_results: mcpResponse,\n  source_count: sourceCount,\n  timestamp: inputData.timestamp\n}];"
+      },
+      "id": "prompt-prepare",
+      "name": "LLM Prompt Hazırla",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "llm-call",
+      "name": "OpenAI LLM Çağrısı",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        1008,
+        304
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// OpenAI yanıtını formatla\nconst inputData = $input.all()[0].json;\nconst aiResponse = inputData.choices?.[0]?.message?.content || 'Yanıt alınamadı.';\nconst previousData = $input.all()[0].json;\n\n// Önceki node'lardan gelen verileri al\nconst userQuestion = previousData.user_question;\nconst mcpResults = previousData.mcp_results || [];\nconst sourceCount = previousData.source_count || 0;\n\n// Formatlanmış yanıt\nconst response = {\n  success: true,\n  question: userQuestion,\n  answer: aiResponse,\n  sources: mcpResults.map(result => ({\n    title: result.title || 'Başlık yok',\n    court: result.court || 'Belirtilmemiş',\n    date: result.date || 'Belirtilmemiş',\n    summary: (result.summary || result.content || 'Özet yok').substring(0, 200) + '...'\n  })),\n  metadata: {\n    sources_found: sourceCount,\n    search_timestamp: previousData.timestamp,\n    response_timestamp: new Date().toISOString()\n  }\n};\n\nreturn [response];"
+      },
+      "id": "response-format",
+      "name": "Yanıt Formatla",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "webhook-response",
+      "name": "Webhook Yanıtı",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1408,
+        304
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-21T11:13:14.704Z",
+  "versionId": "c8052a3f-911f-4384-a797-f96ebda487dc"
+}
