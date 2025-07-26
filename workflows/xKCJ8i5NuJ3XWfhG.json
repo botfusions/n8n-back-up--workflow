@@ -1,0 +1,641 @@
+{
+  "active": false,
+  "connections": {
+    "Parametreleri Setle": {
+      "main": [
+        [
+          {
+            "node": "Template Kopyala",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Dosya Paylas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Veri Formatla": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Parametreleri Setle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-15T10:46:36.510Z",
+  "id": "xKCJ8i5NuJ3XWfhG",
+  "isArchived": false,
+  "meta": null,
+  "name": "Gelişmiş  apify",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1Kb-CNrWeStvp_L19ixdOqrlkeG3RjKl8eRitM20qukE",
+          "mode": "list",
+          "cachedResultName": "-google-harita- müşteri arama",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Kb-CNrWeStvp_L19ixdOqrlkeG3RjKl8eRitM20qukE/edit?usp=drivesdk"
+        },
+        "name": "={{ $('Form').item.json['Firma adı'] }}-google-harita--müşteri arama sonuclari",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        912,
+        -144
+      ],
+      "id": "e7f29da4-3db6-4311-98e6-da18550dae95",
+      "name": "Template Kopyala"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"city\": \"{{ $json['Şehir'] }}\",\n  \"countryCode\": \"{{ $json['Ülke'] }}\",\n  \"language\": \"en\",\n  \"locationQuery\": \"{{ $json['Şehir'] }} ,{{ $json['İlçe'] }}\",\n  \"maxCrawledPlacesPerSearch\": {{ $json['Arama Sayısı'] }},\n  \"postalCode\": \"{{ $json['posta kodu'] }}\",\n  \"searchStringsArray\": [\n    \"{{ $json['Arama Terimi'] }}\"\n  ],\n  \"skipClosedPlaces\": false,\n  \"state\": \"{{ $json['İlçe'] }}\",\n  \"placeMinimumStars\": \"\",\n  \"website\": \"allPlaces\",\n  \"searchMatching\": \"all\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        -144
+      ],
+      "id": "39c259d4-b53c-484f-977d-e3bc2d9cfac4",
+      "name": "Parametreleri Setle"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        912,
+        80
+      ],
+      "id": "1459fe2d-cbbc-4a03-8fd7-d78317ec4095",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "80e4cbf6-153b-4279-beb3-6c45431765e4",
+              "name": "Firma İsmi",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "20e64f94-0c7f-455e-9655-3d46284c8782",
+              "name": "Arama Terimi",
+              "value": "={{ $('Form').item.json['Arama Terimi'] }}",
+              "type": "string"
+            },
+            {
+              "id": "13ae6d6d-0478-4383-b908-3d03e69ee0fd",
+              "name": "Firma Kategorisi 1",
+              "value": "={{ $json.categories[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "54ed4073-f0b6-40a0-88f1-05ffcbed2593",
+              "name": "Firma Kategorisi 2",
+              "value": "={{ $json.categories[1]  }}\n",
+              "type": "string"
+            },
+            {
+              "id": "c8935840-cef7-4601-ba6e-784b36dfa709",
+              "name": "Firma Kategorisi 3",
+              "value": "={{ $json.categories[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "df9933dc-c24c-4387-990c-c2b63e2549a1",
+              "name": "Firma Kategorisi 4",
+              "value": "={{ $json.categories[2] }}",
+              "type": "string"
+            },
+            {
+              "id": "50c51144-54ad-498a-82c5-d3c9423a2799",
+              "name": "İl",
+              "value": "={{ $json.state }}",
+              "type": "string"
+            },
+            {
+              "id": "9704f6cc-d342-4350-86be-db3ad8254d5c",
+              "name": "İlçe",
+              "value": "={{ $json.city }}",
+              "type": "string"
+            },
+            {
+              "id": "d200de93-b634-400a-a852-a10b08c29315",
+              "name": "Posta Kodu",
+              "value": "={{ $json.postalCode }}",
+              "type": "string"
+            },
+            {
+              "id": "e2554620-dad4-4806-8850-05d8210dba76",
+              "name": "Adres",
+              "value": "={{ $json.address }}",
+              "type": "string"
+            },
+            {
+              "id": "8c18614b-5793-4ecd-b781-1ff6b2cd6411",
+              "name": "Telefon",
+              "value": "={{ $json.phoneUnformatted }}",
+              "type": "string"
+            },
+            {
+              "id": "1685cf2f-63ad-42a3-be62-5fb9fdfafdd0",
+              "name": "Website",
+              "value": "={{ $json.website }}",
+              "type": "string"
+            },
+            {
+              "id": "2af0ca12-30c6-437b-99e7-9190af0f0f57",
+              "name": "Firma Puanı",
+              "value": "={{ $json.totalScore }}",
+              "type": "string"
+            },
+            {
+              "id": "0768873a-7226-416d-8113-90bd8adb4b5d",
+              "name": "Google Map Url",
+              "value": "={{ $json.url }}",
+              "type": "string"
+            },
+            {
+              "id": "63d9c620-95e9-462d-a484-2a0494715b5f",
+              "name": "Twitter",
+              "value": "={{ $json.twitters[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "bb7d9615-53d2-4440-a61c-967b21acf082",
+              "name": "Instagram",
+              "value": "={{ $json.instagrams[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "5360c0da-9dab-4307-ab9c-e7ac1ca8a285",
+              "name": "Youtube",
+              "value": "={{ $json.youtubes[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "eedb11b2-5d03-4714-b74a-4131002f849c",
+              "name": "Facebook",
+              "value": "={{ $json.facebooks[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "dc9cd88d-a46f-4f08-9cab-f3729da9bdc5",
+              "name": "Linkedin",
+              "value": "={{ $json.linkedIns[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "0a81c6d2-2fc4-43af-97a1-c3b550e1efaa",
+              "name": "Email 1",
+              "value": "={{ $json.emails[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "a5404a86-16c8-411c-a020-a9ac5239c95b",
+              "name": "Email 2",
+              "value": "={{ $json.emails[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "1596593c-761b-43d9-b5c7-cb84f431050d",
+              "name": "Email 3",
+              "value": "={{ $json.emails[2] }}",
+              "type": "string"
+            },
+            {
+              "id": "e3969e02-e11e-403c-bc0b-1f82cbde2849",
+              "name": "Ekstra Bilgiler",
+              "value": "={{ Object.entries($json.additionalInfo).map(([key,value]) => {\nconst details = value.map(obj => Object.entries(obj).map(([subKey, subValue]) => `${subKey}: ${subValue ? 'Evet' : 'Hayır'}`).join('\\n')).join('\\n');\nreturn `${key}:\\n${details}`;\n}).join('\\n\\n') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        80
+      ],
+      "id": "8876191d-b9d9-493e-8271-d1ad6d12cb2f",
+      "name": "Veri Formatla"
+    },
+    {
+      "parameters": {
+        "formTitle": "Google Harita Kazıyıcı",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Arama Terimi",
+              "placeholder": "Aranacak Kelime (Dişçi, Kuaför vs.)"
+            },
+            {
+              "fieldLabel": "Ülke",
+              "placeholder": "Aranacak Ülke (Türkiye, Rusya vs.)"
+            },
+            {
+              "fieldLabel": "Şehir",
+              "placeholder": "Aranacak Şehir (İstanbul, Ankara vs.)"
+            },
+            {
+              "fieldLabel": "İlçe",
+              "placeholder": "kadıköuy, beşiktaş "
+            },
+            {
+              "fieldLabel": "posta kodu",
+              "fieldType": "number",
+              "placeholder": "34000,34100"
+            },
+            {
+              "fieldLabel": "Email Adresiniz",
+              "placeholder": "Mail Gönderilecek Mail Adresi"
+            },
+            {
+              "fieldLabel": "Firma adı",
+              "placeholder": "Sandaluci"
+            },
+            {
+              "fieldLabel": "Arama Sayısı",
+              "fieldType": "number",
+              "placeholder": "5,10,20,50"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        -144
+      ],
+      "id": "02a99c18-8622-4259-8f06-5ea82ae0f6dc",
+      "name": "Form",
+      "webhookId": "00141705-268a-41a0-9411-18c705706c8b"
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Template Kopyala').item.json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "user",
+            "emailAddress": "={{ $('Form').item.json['Email Adresiniz'] }}"
+          }
+        },
+        "options": {
+          "emailMessage": "=Merhaba, Google Haritalar için talep ettiğiniz \"{{ $('Form').item.json['Arama Terimi'] }}\" arama terimli ve \"{{ $('Form').item.json['Şehir'] }}, {{ $('Form').item.json['Ülke'] }}\" konumlu sonuçlarınız hazır."
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1168,
+        80
+      ],
+      "id": "6d9f0c82-ff5e-476e-8c8f-a33f334dc248",
+      "name": "Dosya Paylas"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -144
+      ],
+      "id": "32a65ead-c8af-47ea-a9f6-d9f05d47d53a",
+      "name": "Apify1",
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Template Kopyala').item.json.id }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1152765330,
+          "mode": "list",
+          "cachedResultName": "template",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IdaCoY5K1aiZuqCUxKBd3y87ihRsSEXLjxNs2rMPLDY/edit#gid=1152765330"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Firma İsmi": "={{ $json['Firma İsmi'] }}",
+            "Arama Terimi": "={{ $json['Arama Terimi'] }}",
+            "Firma Kategorisi 1": "={{ $json['Firma Kategorisi 1'] }}",
+            "Firma Kategorisi 2": "={{ $json['Firma Kategorisi 2'] }}",
+            "Firma Kategorisi 3": "={{ $json['Firma Kategorisi 3'] }}",
+            "Firma Kategorisi 4": "={{ $json['Firma Kategorisi 4'] }}",
+            "Adres": "={{ $json.Adres }}",
+            "İl": "={{ $json['İl'] }}",
+            "İlçe": "={{ $json['İlçe'] }}",
+            "Posta Kodu": "={{ $json['Posta Kodu'] }}",
+            "Telefon": "={{ $json.Telefon }}",
+            "Website": "={{ $json.Website }}",
+            "Firma Puanı": "={{ $json['Firma Puanı'] }}",
+            "Google Map Url": "={{ $json['Google Map Url'] }}",
+            "Twitter": "={{ $json.Twitter }}",
+            "Instagram": "={{ $json.Instagram }}",
+            "Facebook": "={{ $json.Facebook }}",
+            "Linkedin": "={{ $json.Linkedin }}",
+            "Email 1": "={{ $json['Email 1'] }}",
+            "Email 2": "={{ $json['Email 2'] }}",
+            "Email 3": "={{ $json['Email 3'] }}",
+            "Ekstra Bilgiler": "={{ $json['Ekstra Bilgiler'] }}",
+            "Youtube": "={{ $json.Youtube }}"
+          },
+          "matchingColumns": [
+            "Firma İsmi"
+          ],
+          "schema": [
+            {
+              "id": "Arama Terimi",
+              "displayName": "Arama Terimi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma İsmi",
+              "displayName": "Firma İsmi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Adres",
+              "displayName": "Adres",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma Kategorisi 1",
+              "displayName": "Firma Kategorisi 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma Kategorisi 2",
+              "displayName": "Firma Kategorisi 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma Kategorisi 3",
+              "displayName": "Firma Kategorisi 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma Kategorisi 4",
+              "displayName": "Firma Kategorisi 4",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "İl",
+              "displayName": "İl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "İlçe",
+              "displayName": "İlçe",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Posta Kodu",
+              "displayName": "Posta Kodu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefon",
+              "displayName": "Telefon",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Firma Puanı",
+              "displayName": "Firma Puanı",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Google Map Url",
+              "displayName": "Google Map Url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Twitter",
+              "displayName": "Twitter",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Instagram",
+              "displayName": "Instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Youtube",
+              "displayName": "Youtube",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Facebook",
+              "displayName": "Facebook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Linkedin",
+              "displayName": "Linkedin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email 1",
+              "displayName": "Email 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email 2",
+              "displayName": "Email 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email 3",
+              "displayName": "Email 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ekstra Bilgiler",
+              "displayName": "Ekstra Bilgiler",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        704,
+        80
+      ],
+      "id": "c8b9b585-08f1-4764-9460-5eb62a569ad5",
+      "name": "Google Sheets"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-15T11:12:24.465Z",
+  "versionId": "2976ddfe-4b1e-4f92-a9c2-3f88364f0ddd"
+}
