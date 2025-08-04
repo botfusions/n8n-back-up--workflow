@@ -1,0 +1,218 @@
+{
+  "active": false,
+  "connections": {
+    "💬 Market Chat": {
+      "main": [
+        [
+          {
+            "node": "🧠 Market Virtuoso AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🤖 GPT-4o Market Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "🧠 Market Virtuoso AI",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🧠 Market Virtuoso AI": {
+      "main": [
+        [
+          {
+            "node": "📱 Telegram Market Response",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "🔍 Debug MCP Flow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Borsa tools": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-07-30T09:38:56.382Z",
+  "id": "TatyD2e93d8BOFJR",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 9",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -176,
+        16
+      ],
+      "id": "31eb9998-d8dd-486e-850d-60c42b9c8425",
+      "name": "💬 Market Chat",
+      "webhookId": "market-virtuoso-mcp"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=Sen **Market Virtuoso** - Türk borsası uzmanısın! 🎭\n\n🧠 **Yeteneklerin:**\n- BORSA MCP Server'dan gerçek time borsa verisi çekebilirsin\n- 4 powerful MCP tool'un var:\n  • borsa_technical_analysis - Teknik analiz (RSI, MACD, destek/direnç)\n  • maestro_full_analysis - Market Maestro kişiliğiyle tam analiz\n  • market_sentiment_analysis - Piyasa duygu analizi\n  • market_overview - BIST 100 ve genel durum\n\n🎯 **Görevin:** \nKullanıcının borsa sorularını MCP tools kullanarak yanıtla. Her zaman Türkçe konuş ve profesyonel analiz yap.\n\n🎭 **Kişiliğin:**\nDeneyimli trader, analitik düşünen, risk odaklı, hikaye anlatımı seven.\n\n⚠️ **ÖNEMLİ:** Her analizin sonunda \"Bu finansal tavsiye değildir. Yatırım kararlarınızı alırken dikkatli olun.\" ekle."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        128,
+        16
+      ],
+      "id": "db54d645-259e-4cbf-9db8-cc0c987a9977",
+      "name": "🧠 Market Virtuoso AI"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "maxTokens": 3000,
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -48,
+        320
+      ],
+      "id": "1ff6a012-72bc-4342-86db-edbdbeaa77bb",
+      "name": "🤖 GPT-4o Market Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('💬 Market Chat').item.json.userId || '123456789' }}",
+        "text": "🎭 **Market Virtuoso Analizi**\n\n{{ $('🧠 Market Virtuoso AI').item.json.text }}\n\n---\n📊 *Powered by BORSA MCP Server v2.1.0*\n🔗 *API: https://borsa-mcp.botfusions.com*",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        832,
+        16
+      ],
+      "id": "bb7389e8-aff9-4869-ba3e-3a2bea95b6b9",
+      "name": "📱 Telegram Market Response",
+      "webhookId": "b1a62bc7-650b-484b-8096-61cc4a81d60d",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "debug-input",
+              "name": "user_input",
+              "value": "={{ $('💬 Market Chat').item.json.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "debug-ai-response",
+              "name": "ai_response",
+              "value": "={{ $('🧠 Market Virtuoso AI').item.json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "debug-timestamp",
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            },
+            {
+              "id": "debug-tools-used",
+              "name": "mcp_tools_available",
+              "value": "borsa_technical_analysis, maestro_full_analysis, market_sentiment_analysis, market_overview",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        -208
+      ],
+      "id": "f4e28237-ec52-41d2-9bce-0b0cfe62cd7d",
+      "name": "🔍 Debug MCP Flow"
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "https://borsa-mcp.botfusions.com/mcp"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        912,
+        304
+      ],
+      "id": "7935d428-5d51-4bc6-9458-473a3983f366",
+      "name": "Borsa tools"
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "https://borsa-mcp.botfusions.com/mcp"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        496,
+        240
+      ],
+      "id": "2ced6e76-fc44-4714-9092-6b8fa7ff2d96",
+      "name": "MCP Client"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-30T14:10:12.709Z",
+  "versionId": "306db109-ae23-4d44-a750-4f8aeb3a416b"
+}
