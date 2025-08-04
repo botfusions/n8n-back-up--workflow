@@ -1,0 +1,3319 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Elements AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "Elements AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Elements AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Unbundle Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create Veo3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Group Clips": {
+      "main": [
+        [
+          {
+            "node": "Sequence Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Video": {
+      "main": [
+        [
+          {
+            "node": "🎵 TIKTOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "🔺YOUTUBE",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📷 INSTAGRAM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Elements AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Prompt AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unbundle Elements": {
+      "main": [
+        [
+          {
+            "node": "Prompt AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Veo3": {
+      "main": [
+        [
+          {
+            "node": "Wait for Veo3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Veo3": {
+      "main": [
+        [
+          {
+            "node": "Group Clips",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Veo3": {
+      "main": [
+        [
+          {
+            "node": "Get Veo3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sequence Video": {
+      "main": [
+        [
+          {
+            "node": "Wait for Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Final Video": {
+      "main": [
+        [
+          {
+            "node": "Get Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Final Video": {
+      "main": [
+        [
+          {
+            "node": "Load Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Elements AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Elements AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Elements AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Create Veo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Elements AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Unbundle Elements1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Group Clips1": {
+      "main": [
+        [
+          {
+            "node": "Sequence Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Video1": {
+      "main": [
+        [
+          {
+            "node": "🎵 TIKTOK1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "🔺YOUTUBE1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📷 INSTAGRAM1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Video Status1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser ": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Elements AI Agent1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Prompt AI Agent1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unbundle Elements1": {
+      "main": [
+        [
+          {
+            "node": "Prompt AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Veo": {
+      "main": [
+        [
+          {
+            "node": "Wait for Veo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Veo": {
+      "main": [
+        [
+          {
+            "node": "Group Clips1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Veo": {
+      "main": [
+        [
+          {
+            "node": "Get Veo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sequence Video1": {
+      "main": [
+        [
+          {
+            "node": "Wait for Final Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Final Video1": {
+      "main": [
+        [
+          {
+            "node": "Load Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Final Video1": {
+      "main": [
+        [
+          {
+            "node": "Get Final Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Elements AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger2": {
+      "main": [
+        [
+          {
+            "node": "Elements AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think2": {
+      "ai_tool": [
+        [
+          {
+            "node": "Elements AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Create Veo4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Elements AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Unbundle Elements2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Group Clips2": {
+      "main": [
+        [
+          {
+            "node": "Sequence Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Video2": {
+      "main": [
+        [
+          {
+            "node": "🎵 TIKTOK2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "🔺YOUTUBE2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📷 INSTAGRAM2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Video Status2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 4": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Elements AI Agent2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 5": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Prompt AI Agent2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unbundle Elements2": {
+      "main": [
+        [
+          {
+            "node": "Prompt AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Veo4": {
+      "main": [
+        [
+          {
+            "node": "Wait for Veo4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Veo4": {
+      "main": [
+        [
+          {
+            "node": "Group Clips2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Veo4": {
+      "main": [
+        [
+          {
+            "node": "Get Veo4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Video2": {
+      "main": [
+        [
+          {
+            "node": "Load Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sequence Video2": {
+      "main": [
+        [
+          {
+            "node": "Wait for Final Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Final Video2": {
+      "main": [
+        [
+          {
+            "node": "Log Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Final Video2": {
+      "main": [
+        [
+          {
+            "node": "Get Final Video2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Elements AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger3": {
+      "main": [
+        [
+          {
+            "node": "Elements AI Agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think3": {
+      "ai_tool": [
+        [
+          {
+            "node": "Elements AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Create Veo5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Elements AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Unbundle Elements3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Group Clips3": {
+      "main": [
+        [
+          {
+            "node": "Sequence Video3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Video3": {
+      "main": [
+        [
+          {
+            "node": "🎵 TIKTOK3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "🔺YOUTUBE3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "📷 INSTAGRAM3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Video Status3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 6": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Elements AI Agent3",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser 7": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Prompt AI Agent3",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unbundle Elements3": {
+      "main": [
+        [
+          {
+            "node": "Prompt AI Agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Veo5": {
+      "main": [
+        [
+          {
+            "node": "Wait for Veo5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Veo5": {
+      "main": [
+        [
+          {
+            "node": "Group Clips3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Veo5": {
+      "main": [
+        [
+          {
+            "node": "Get Veo5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sequence Video3": {
+      "main": [
+        [
+          {
+            "node": "Wait for Final Video3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Final Video3": {
+      "main": [
+        [
+          {
+            "node": "Get Final Video3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Elements AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompt AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-30T18:21:16.487Z",
+  "id": "8d5VTLiZDeDAGx11",
+  "isArchived": false,
+  "meta": null,
+  "name": "vlag  veo3",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        272
+      ],
+      "id": "fe3ef1ee-8f16-4e5c-b320-26002f7c5bb7",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        64
+      ],
+      "id": "fe01d3f2-ba9b-4ebd-8b01-a8e343432d8c",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate a scene",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precision prompt generator for realistic, cinematic AI video scenes.\n\n***\n\nEach time you're called, you will receive five dynamic inputs:\n\ninstrument {{ $json.elementA }}\ncolor {{ $json.elementB }}\nmaterial {{ $json.elementC }}\nobject {{ $json.elementD }}\nsurface {{ $json.elementE }}\n\n***\n\nYour job is to take these values and insert them into the following template exactly, replacing the corresponding words. Do not use curly brackets or add extra formatting. Do not explain anything.\n\nReturn the result as a single JSON object with this structure:\n\n{\n  \"video_prompt\": \"Realistic 4k footage close-up of a [instrument] quickly cutting a [color] [material] [object] on a [surface]. It slices it quickly multiple times, each slice falls over as the knife moves to the next. The inside of the object being cut is also [material] and inside it shows intricate and beautiful visual patterns. The sound is ASMR style.\"\n}\n\n\n\n\n\nReplace the values in square brackets with the actual inputs. Do not include square brackets or quotes around the values in the final result.\n\nOutput only the final JSON. Nothing else.\n\nUse the Think tool to review your output"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1120,
+        272
+      ],
+      "id": "810c46d6-83c9-4730-be85-a4710bce4064",
+      "name": "Prompt AI Agent"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate 3 scenes",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Use the Think tool to carefully generate your output.\n\nYou are an expert visual prompt generator for AI video creation. Your job is to create realistic, cinematic ASMR cutting scenes for AI-generated videos. Each scene features an object being sliced on a surface using a tool.\n\nEach time you are called:\n\nRandomly select one value from each of the five lists: instrument, color, material, object, and surface\n\n For this round, refer to them as:\n\n  Element A = instrument\n  Element B = color\n  Element C = material\n  Element D = object\n  Element E = surface\n\n\nConstruct a structured JSON that includes:\n\nA title that is short (max 7 words), vivid, and exciting — it should clearly mention the object being cut and what it’s made of. Make it feel like a YouTube or TikTok title\n\nA caption that sounds like a real human reacting to the ASMR feel — short, casual, and personal. Mention something about how it looks or sounds. Include 1 emoji and 2 hashtags\n\nA list of scenes, where each scene follows the format below\n\nYour output must always follow this format in valid JSON:\n\n{\n\"title\": \"Exciting and descriptive title here\",\n\"caption\": \"Short, human reaction caption with 1 emoji and 2 hashtags\",\n\"scenes\": [\n {\n        \"elementA\": \"\",\n        \"elementB\": \"\",\n        \"elementC\": \"\",\n        \"elementD\": \"\",\n        \"elementE\": \"\"\n      }\n    ]\n  }\n\nHere are the value pools you must use:\n\nInstruments:\n- Damascus Steel Knife\n- Chef's Knife\n- Japanese Santoku\n- Ceramic Blade\n\nColors:\n- give a random color\n\nMaterials:\n- Glass\n- Crystal\n- Metal\n- Ice\n- Obsidian\n- Diamond\n- Quartz\n- Stone\n- Marble\n- Porcelain\n\nObjects:\n- Give a random object to be sliced. This object should have a well-known shape and structure, so that people instantly recognize what it is. You can do objects from popular media (example: pokeball, minecraft block, et cetera. Don't use pokeball or minecraft black in the output!)\n\nSurfaces:\n- Marble Slab\n- Wooden Cutting Board\n- Metal Table\n- Concrete Block\n- Black Slate Tile\n\n\nRules:\n\nNo need for full sentences, captions, or descriptions\n\nDo not describe the action or scene beyond the structured values\n\nDo not include any additional fields or formatting outside of the JSON block\n\nRespond only with the JSON object. No extra text."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        640,
+        272
+      ],
+      "id": "95f3b30e-3dfe-43a2-974d-74312bd3a458",
+      "name": "Elements AI Agent"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    video_urls: items.map(item => item.json.data.response.resultUrls).flat()\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        688,
+        544
+      ],
+      "id": "0a17c890-e431-4241-b046-e68eb117e85a",
+      "name": "Group Clips"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Log Video').item.json.title }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\":false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video').item.json.caption }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"333\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1664,
+        688
+      ],
+      "id": "7adfc410-c291-4d19-b629-5e5003be99d5",
+      "name": "🔺YOUTUBE"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video').item.json.caption }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"222\"\n  }\n}\n",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 10000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1664,
+        544
+      ],
+      "id": "f463db90-a6d4-4292-b490-ee9fd5d721fc",
+      "name": "📷 INSTAGRAM"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": false,\n      \"disabledDuet\": false,\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": true,\n      \"disabledStitch\": false,\n      \"disabledComments\": false,\n      \"isBrandedContent\": false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video').item.json.caption }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"111\"\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1664,
+        368
+      ],
+      "id": "99bb5c8a-0034-41e7-b019-532b112f50f6",
+      "name": "🎵 TIKTOK"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.final_output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1248,
+        832
+      ],
+      "id": "b50890ba-a6ee-4c22-9146-145fb6fd7583",
+      "name": "Load Video"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I",
+          "mode": "list",
+          "cachedResultName": "R33 | AI ASMR by RoboNuggets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "publishing_status": "done",
+            "title": "={{ $('Log Video').item.json.title }}"
+          },
+          "matchingColumns": [
+            "title"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1664,
+        832
+      ],
+      "id": "1f23ed09-d0ec-438b-a0fe-716122456d85",
+      "name": "Update Video Status",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Sample Video Title Here\",\n  \"caption\": \"Sample caption goes here, short and attention-grabbing.\",\n  \"scenes\": [\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    }\n  ]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        128
+      ],
+      "id": "65813c31-d252-49ed-87d2-a51716b2aced",
+      "name": "Parser 1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"video_prompt\": \"sample prompt here\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1232,
+        128
+      ],
+      "id": "55fed1fe-a906-48b7-894c-b42d9af5c236",
+      "name": "Parser 2"
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = [];\n\ntry {\n  const inputData = items[0].json;\n\n  // Check if scenes exist in the expected structure\n  if (\n    inputData.output &&\n    Array.isArray(inputData.output.scenes)\n  ) {\n    const scenes = inputData.output.scenes;\n\n    // Map each scene object to its own output item\n    output = scenes.map(scene => ({ json: scene }));\n  } else {\n    throw new Error(\"No scenes array found under output.scenes.\");\n  }\n} catch (e) {\n  throw new Error(\"Could not extract scenes properly. Details: \" + e.message);\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        272
+      ],
+      "id": "bcc96055-cf28-4517-876e-e64a4da74f41",
+      "name": "Unbundle Elements"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://kieai.erweima.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"prompt\": \"{{ $json.output.video_prompt }}\",\n  \"model\": \"veo3_fast\"\n}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 3000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        400
+      ],
+      "id": "da7fee17-02d9-4dcd-bc98-ae2beadddcd7",
+      "name": "Create Veo3"
+    },
+    {
+      "parameters": {
+        "url": "=https://kieai.erweima.ai/api/v1/veo/record-info",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "taskId",
+              "value": "={{ $json.data.taskId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        400
+      ],
+      "id": "c4cfa1e4-955b-4a8f-9114-b058f62295d3",
+      "name": "Get Veo3"
+    },
+    {
+      "parameters": {
+        "amount": 600
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        400
+      ],
+      "id": "281fc63f-e6e9-4eb8-ac3e-bf4f7c4c7654",
+      "name": "Wait for Veo3",
+      "webhookId": "8773acaa-2714-482c-8171-f0a6bf07ac33"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/ffmpeg-api/compose",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"tracks\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"video\",\n      \"keyframes\": [\n        { \"url\": \"{{ $json.video_urls[0] }}\", \"timestamp\": 0, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[1] }}\", \"timestamp\": 8, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[2] }}\", \"timestamp\": 16, \"duration\": 8 }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        560
+      ],
+      "id": "25993b1d-76c7-46b9-a093-9ce7b1cc8956",
+      "name": "Sequence Video"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/ffmpeg-api/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        560
+      ],
+      "id": "cc082556-4d65-4ac0-b834-aed5f5c29f86",
+      "name": "Get Final Video"
+    },
+    {
+      "parameters": {
+        "amount": 300
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        544
+      ],
+      "id": "8f8aafa5-e2e1-4c4e-900a-c90f0bc655a5",
+      "name": "Wait for Final Video",
+      "webhookId": "1f8c4659-e203-41b9-a2fd-065ca410dbd1"
+    },
+    {
+      "parameters": {
+        "content": "#  | 3 video Template (3 scenes)\n",
+        "height": 200,
+        "width": 1400,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e83ec5fc-57e2-4491-a47b-91d89f182aac",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 1: Generate Prompt",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        272
+      ],
+      "id": "623e3466-b1a3-4cf5-aa4c-7084d30d0b52",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 2: Generate Clips with Veo3-Fast",
+        "height": 100,
+        "width": 580,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        208,
+        400
+      ],
+      "id": "38691efa-7eab-47d0-9c19-14f036871e1f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 3: Combine to Final Vid",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        304,
+        544
+      ],
+      "id": "8efb1abc-6ff1-4eeb-bcd6-fd6d32b57d50",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 4: Publish Video\n### (optional)",
+        "height": 520,
+        "width": 150,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        400
+      ],
+      "id": "999b91f0-012c-4c0f-953e-d17b1a33122c",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        848,
+        112
+      ],
+      "id": "745dbbba-708f-4dde-882a-086e8e780e8d",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        1760
+      ],
+      "id": "e61981c1-ef3f-4713-b7f1-5ff1d89a9658",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1728,
+        1568
+      ],
+      "id": "32aa1095-c694-487f-8e6c-9226953b5254",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate a scene",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt: |\n  You are a precision prompt generator for realistic, comedic AI vlog scenes featuring Bigfoot.\n\n  ***\n\n  Each time you're called, you will receive five dynamic inputs:\n\n  elementA: setting is {{ $json.elementA }}\n  elementB: activity is {{ $json.elementB }}\n  elementC: prop is {{ $json.elementC }}\n  elementD: emotion is {{ $json.elementD }}\n  elementE: dialogue is {{ $json.elementE }}\n\n  ***\n\n  Your job is to take these values and insert them into the following template exactly, replacing the corresponding words. Do not use curly brackets or add extra formatting. Do not explain anything.\n\n  ***\n  FINAL VIDEO PROMPT\n\n  Return the result as a single JSON object with this structure:\n\n  {\n    \"video_prompt\": \"We are doing a Bigfoot vlog — Bigfoot is in a [setting], holding a selfie stick. He’s [activity], using a [prop], and seems [emotion]. The camera is shaky and chaotic as he rambles, saying: “[dialogue]” 3 point lighting, captured on a GoPro Hero10, f2.8, 16mm, handheld selfie footage.\"\n  }\n\n  Replace the values in square brackets with the actual inputs. Do not include square brackets or quotes around the values in the final result.\n\n  Output only the final JSON. Nothing else.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1792,
+        1760
+      ],
+      "id": "d97022f1-84ba-4ac7-9ef0-83d188f478f3",
+      "name": "Prompt AI Agent1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate 8 scenes",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=\n  You are an expert visual prompt generator for AI video creation.\n\n  ***\n\n  YOUR ROLE\n  is to create structured, comedic Bigfoot vlog scenes that blend the surreal with the real. Each scene shows Bigfoot rambling to the camera in wild, absurd locations using bizarre props.\n\n  ***\n\n  Each time you are called:\n  Generate a value for each of the five lists: setting, activity, prop, emotion, and dialogue.\n\n  For this round, refer to them as:\n  Element A = setting\n  Element B = activity\n  Element C = prop\n  Element D = emotion\n  Element E = dialogue\n\n  Construct a structured JSON that includes:\n\n  A title that is short (max 7 words), funny, and intriguing — like a viral vlog title.\n\n  A caption that sounds casual and human — mention something funny or mysterious Bigfoot is doing. Include 1 emoji and 2 hashtags.\n\n  A list of 1–3 scenes, where each scene follows this format:\n\n  {\n    \"elementA\": \"\",\n    \"elementB\": \"\",\n    \"elementC\": \"\",\n    \"elementD\": \"\",\n    \"elementE\": \"\"\n  }\n\n  Your output must follow this structure in valid JSON:\n\n  {\n    \"title\": \"Title goes here\",\n    \"caption\": \"Casual caption with emoji and hashtags\",\n    \"scenes\": [\n      {\n        \"elementA\": \"\",\n        \"elementB\": \"\",\n        \"elementC\": \"\",\n        \"elementD\": \"\",\n        \"elementE\": \"\"\n      }\n    ]\n  }\n\n  ***\n\n  Value pools to use. Note that these are only examples, you are encouraged to think of ideas outside of these examples.\n\n  Setting (Element A):\n  - random setting and location. Must be a bit outrageous.\n\n  Activity (Element B):\n  - random activity. Must be funny\n\n  Prop (Element C):\n  - random prop\n\n  Emotion (Element D):\n - random emotion. Which fits the scene\n\n  Dialogue (Element E):\n  - random dialogue. Which fits the scene\n\n\n\n\nRules:\n\nNo need for full sentences, captions, or descriptions\n\nDo not describe the action or scene beyond the structured values\n\nDo not include any additional fields or formatting outside of the JSON block\n\nRespond only with the JSON object. No extra text.\n "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1328,
+        1760
+      ],
+      "id": "6a5eddd9-d61c-4f50-a634-328a206ad95b",
+      "name": "Elements AI Agent1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    video_urls: items.map(item => item.json.data.response.resultUrls).flat()\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        2048
+      ],
+      "id": "4b7c4b7a-b77b-4574-b190-995ca699d9ea",
+      "name": "Group Clips1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Log Video1').item.json.title }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\":false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video1').item.json.caption }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"333\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2352,
+        2192
+      ],
+      "id": "f1b95ee4-3959-4ec9-9ea1-9d2d736c8c55",
+      "name": "🔺YOUTUBE1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video1').item.json.caption }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"222\"\n  }\n}\n",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 10000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2352,
+        2048
+      ],
+      "id": "693a0cb0-2dce-46c4-8619-d3c886648163",
+      "name": "📷 INSTAGRAM1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": false,\n      \"disabledDuet\": false,\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": true,\n      \"disabledStitch\": false,\n      \"disabledComments\": false,\n      \"isBrandedContent\": false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video1').item.json.caption }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"111\"\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2352,
+        1904
+      ],
+      "id": "7881c698-7a8d-472a-9455-68b54d916f09",
+      "name": "🎵 TIKTOK1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.final_output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1920,
+        2320
+      ],
+      "id": "aa5b0f5c-6426-4c55-a5b8-50a7b47e4039",
+      "name": "Load Video1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I",
+          "mode": "list",
+          "cachedResultName": "R33 | AI ASMR by RoboNuggets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "publishing_status": "done",
+            "title": "={{ $('Log Video1').item.json.title }}"
+          },
+          "matchingColumns": [
+            "title"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2352,
+        2320
+      ],
+      "id": "bb895514-c240-4530-9490-3024dff17b07",
+      "name": "Update Video Status1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Sample Video Title Here\",\n  \"caption\": \"Sample caption goes here, short and attention-grabbing.\",\n  \"scenes\": [\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    }\n  ]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1360,
+        1632
+      ],
+      "id": "b0334f64-c28d-4a46-8dc5-df71444c2ed6",
+      "name": "Parser "
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"video_prompt\": \"sample prompt here\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1904,
+        1632
+      ],
+      "id": "03307c3f-1728-4710-8ca1-97cc7f25e744",
+      "name": "Parser 3"
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = [];\n\ntry {\n  const inputData = items[0].json;\n\n  // Check if scenes exist in the expected structure\n  if (\n    inputData.output &&\n    Array.isArray(inputData.output.scenes)\n  ) {\n    const scenes = inputData.output.scenes;\n\n    // Map each scene object to its own output item\n    output = scenes.map(scene => ({ json: scene }));\n  } else {\n    throw new Error(\"No scenes array found under output.scenes.\");\n  }\n} catch (e) {\n  throw new Error(\"Could not extract scenes properly. Details: \" + e.message);\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1648,
+        1760
+      ],
+      "id": "3ad6efae-8abf-440e-a363-38c4062e88d8",
+      "name": "Unbundle Elements1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://kieai.erweima.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"prompt\": \"{{ $json.output.video_prompt }}\",\n  \"model\": \"veo3_fast\"\n}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 3000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1488,
+        1904
+      ],
+      "id": "e2561582-be14-4e14-8838-2bbfbf8818f3",
+      "name": "Create Veo"
+    },
+    {
+      "parameters": {
+        "url": "=https://kieai.erweima.ai/api/v1/veo/record-info",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "taskId",
+              "value": "={{ $json.data.taskId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1808,
+        1904
+      ],
+      "id": "7b6dac4c-13e6-4e5b-9e9a-43d5aa1a0956",
+      "name": "Get Veo"
+    },
+    {
+      "parameters": {
+        "amount": 600
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1904
+      ],
+      "id": "b44ec3d9-c87a-4541-8c8b-22b57e3fdc92",
+      "name": "Wait for Veo",
+      "webhookId": "72775324-3dc1-44d7-9553-e045f96001d1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/ffmpeg-api/compose",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"tracks\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"video\",\n      \"keyframes\": [\n        { \"url\": \"{{ $json.video_urls[0] }}\", \"timestamp\": 0, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[1] }}\", \"timestamp\": 8, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[2] }}\", \"timestamp\": 16, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[3] }}\", \"timestamp\": 24, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[4] }}\", \"timestamp\": 32, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[5] }}\", \"timestamp\": 40, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[6] }}\", \"timestamp\": 48, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[7] }}\", \"timestamp\": 56, \"duration\": 8 }\n      ]\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1488,
+        2048
+      ],
+      "id": "ffb53e75-ee17-49da-8887-6c7f314e8681",
+      "name": "Sequence Video1"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/ffmpeg-api/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1808,
+        2048
+      ],
+      "id": "4242514d-5d0b-4386-b74e-ed49e6aa6675",
+      "name": "Get Final Video1"
+    },
+    {
+      "parameters": {
+        "amount": 300
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        2048
+      ],
+      "id": "a7b48da4-36f0-4ae1-8285-11e07842542a",
+      "name": "Wait for Final Video1",
+      "webhookId": "0bf26a55-2ea4-4f20-9e6b-2d4cab1b315f"
+    },
+    {
+      "parameters": {
+        "content": "# Bigfoot Vlogs, 64-second video\n",
+        "height": 200,
+        "width": 1400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        672,
+        1520
+      ],
+      "id": "e22512f7-a135-4922-a771-30b1abe2ea98",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 1: Generate Prompt",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        768,
+        1760
+      ],
+      "id": "61a89467-b169-4af7-837b-fefb9ea4e525",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 2: Generate Clips with Veo3-Fast",
+        "height": 100,
+        "width": 580,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1904
+      ],
+      "id": "9c527406-42c8-4e75-9577-5a8728149f32",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 3: Combine to Final Vid",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        992,
+        2048
+      ],
+      "id": "a3fb2340-cfea-4ffd-93f4-c63162f5bb84",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 4: Publish Video\n### (optional)",
+        "height": 520,
+        "width": 150,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2528,
+        1904
+      ],
+      "id": "c80b6f36-a80f-4c80-85c1-1635178ae2e3",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1568,
+        1632
+      ],
+      "id": "16bfcc6b-8e19-4827-b42f-90c031baef4e",
+      "name": "OpenAI Chat Model1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        3008
+      ],
+      "id": "0b27e64d-e2f6-41eb-84c2-24c257ac3f10",
+      "name": "Schedule Trigger2"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        2800
+      ],
+      "id": "eaa71517-1909-4687-ac72-25e00a889c00",
+      "name": "Think2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate a scene with Harry Potter",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt: |\n  You are a precision prompt generator for realistic, cinematic AI video scenes.\n\n  ***\n\n  Each time you're called, you will receive five dynamic inputs:\n\n  elementA: character is {{ $json.elementA }}\n  elementB: activity is {{ $json.elementB }}\n  elementC: location is {{ $json.elementC }}\n  elementD: mood is {{ $json.elementD }}\n  elementE: dialogue is {{ $json.elementE }}\n\n  ***\n\n  Your job is to take these values and insert them into the following template exactly, replacing the corresponding words. Do not use curly brackets or add extra formatting. Do not explain anything.\n\n  ***\n  FINAL VIDEO PROMPT\n\n  Return the result as a single JSON object with this structure:\n\n  {\n    \"video_prompt\": \"We are doing a Hogwarts vlog. [character] is in [location] holding a selfie stick (that’s where the camera is). They’re [activity] and sound [mood]. They say: '[dialogue]'. The camera is shaky, realistic GoPro-style, with glowing wandlight and soft echoing castle ambience. Canon EOS3, wide-angle lens, f2.8, natural ambient light.\"\n  }\n\n  Replace the values in square brackets with the actual inputs. Do not include square brackets or quotes around the values in the final result.\n\n  Output only the final JSON. Nothing else.\n\n  Use the Think tool to review your output\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1872,
+        3008
+      ],
+      "id": "24abfbea-d1fc-4230-b432-e043a99f2420",
+      "name": "Prompt AI Agent2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate 8 scenes",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt: |\n  Use the Think tool to carefully generate your output.\n\n  You are an expert scene generator for Hogwarts-style GoPro vlog videos. Each scene is a POV-style vlog recorded by one of the main characters in the Harry Potter universe. These vlogs are filmed in a realistic, comedic, shaky-camera GoPro style with spontaneous, casual energy.\n\n  ***\n\n  YOUR ROLE\n  is to generate one structured vlog scene per request.\n\n  ***\n\n  Each time you are called:\n  Randomly select one value from each of the five lists:\n\n  Element A = Character (vlogger)\n  Element B = Activity (what they’re doing in the vlog)\n  Element C = Location (where it’s happening)\n  Element D = Mood/Vibe (how they behave during it)\n  Element E = Dialogue Line (what they say)\n\n  Construct a structured JSON that includes:\n\n  A title that is short (max 8 words), vivid, and funny — like a TikTok or YouTube short.\n\n  A caption that sounds like a real social media post — first-person, fun, with 1 emoji and 2 hashtags.\n\n  A list of 1–3 scenes, where each scene follows the format below.\n\n  Output must be valid JSON with this structure:\n\n  {\n    \"title\": \"Short, fun vlog title\",\n    \"caption\": \"First-person caption with 1 emoji and 2 hashtags\",\n    \"scenes\": [\n      {\n        \"elementA\": \"\",\n        \"elementB\": \"\",\n        \"elementC\": \"\",\n        \"elementD\": \"\",\n        \"elementE\": \"\"\n      }\n    ]\n  }\n\n  ***\n\n  Value pools:\n\n  Characters (A):\n  - Harry Potter\n  - Hermione Granger\n  - Ron Weasley\n\n  Activities (B):\n  - Random activity that's funny and can occur at Hogwarts\n\n  Locations (C):\n  - Gryffindor common room\n  - Great Hall\n  - Quidditch pitch\n  - Forbidden Forest edge\n  - Library\n  - Potions classroom\n  - Astronomy tower\n  - Random location\n\n  Vibes/Moods (D):\n  - Goofy\n  - Overconfident\n  - Sarcastic\n  - Chaotic\n  - Nervous but acting cool\n  - Mischievous\n  - Deadpan serious (but it's funny)\n  - Random mood\n\n  Dialogue lines (E):\n  - Random line relevant to the scene\n \n  Rules:\n  - Do not include extra text or explanations\n  - Only return the JSON object\n  - Scene text should be short and vivid — no filler\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1392,
+        3008
+      ],
+      "id": "9638f855-755b-4ba9-9dcb-41087e2ca6f9",
+      "name": "Elements AI Agent2"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    video_urls: items.map(item => item.json.data.response.resultUrls).flat()\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        3280
+      ],
+      "id": "f34ed287-6b78-4fa3-aaad-24aa1a869f7f",
+      "name": "Group Clips2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Log Video2').item.json.title }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\":false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video2').item.json.caption }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"333\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2400,
+        3424
+      ],
+      "id": "696ae1d3-915a-4af4-ae5e-a86472fc69d4",
+      "name": "🔺YOUTUBE2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video2').item.json.caption }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"222\"\n  }\n}\n",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 10000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2400,
+        3280
+      ],
+      "id": "d06d3ffe-4639-4d2c-9f86-9fd05e009ca5",
+      "name": "📷 INSTAGRAM2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": false,\n      \"disabledDuet\": false,\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": true,\n      \"disabledStitch\": false,\n      \"disabledComments\": false,\n      \"isBrandedContent\": false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video2').item.json.caption }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"111\"\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2400,
+        3152
+      ],
+      "id": "1854681f-12ee-4fcf-bfdc-6d06dc0b0643",
+      "name": "🎵 TIKTOK2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.final_output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        3568
+      ],
+      "id": "b8137ad2-aae3-40b9-b48d-6cd01c830c78",
+      "name": "Load Video2"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I",
+          "mode": "list",
+          "cachedResultName": "R33 | AI ASMR by RoboNuggets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "publishing_status": "done",
+            "title": "={{ $('Log Video2').item.json.title }}"
+          },
+          "matchingColumns": [
+            "title"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2400,
+        3568
+      ],
+      "id": "349b6b48-d8c2-45bb-867e-3aaf7996e8e2",
+      "name": "Update Video Status2",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Sample Video Title Here\",\n  \"caption\": \"Sample caption goes here, short and attention-grabbing.\",\n  \"scenes\": [\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    }\n  ]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1424,
+        2864
+      ],
+      "id": "e60ada8f-48a3-4969-9853-79ce101a15e9",
+      "name": "Parser 4"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"video_prompt\": \"sample prompt here\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1968,
+        2864
+      ],
+      "id": "71692baa-246e-4d8b-9454-fb9358057c0f",
+      "name": "Parser 5"
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = [];\n\ntry {\n  const inputData = items[0].json;\n\n  // Check if scenes exist in the expected structure\n  if (\n    inputData.output &&\n    Array.isArray(inputData.output.scenes)\n  ) {\n    const scenes = inputData.output.scenes;\n\n    // Map each scene object to its own output item\n    output = scenes.map(scene => ({ json: scene }));\n  } else {\n    throw new Error(\"No scenes array found under output.scenes.\");\n  }\n} catch (e) {\n  throw new Error(\"Could not extract scenes properly. Details: \" + e.message);\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1712,
+        3008
+      ],
+      "id": "18169e49-c948-4957-b17d-7c3f8da641d7",
+      "name": "Unbundle Elements2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://kieai.erweima.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"prompt\": \"{{ $json.output.video_prompt }}\",\n  \"model\": \"veo3_fast\"\n}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 3000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1552,
+        3152
+      ],
+      "id": "98e4b7b7-d5bb-4a2a-aa82-d4e1c7a33f94",
+      "name": "Create Veo4"
+    },
+    {
+      "parameters": {
+        "url": "=https://kieai.erweima.ai/api/v1/veo/record-info",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "taskId",
+              "value": "={{ $json.data.taskId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1888,
+        3168
+      ],
+      "id": "41cc4521-52f8-48b0-9875-41a34e8a1dc5",
+      "name": "Get Veo4"
+    },
+    {
+      "parameters": {
+        "amount": 600
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1712,
+        3152
+      ],
+      "id": "dcaa01c3-c2e6-462c-a846-e09b3e7efc85",
+      "name": "Wait for Veo4",
+      "webhookId": "354a529a-6c45-4350-95b5-89af84333015"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1zQ-tfBTY765beV8Q9geN996ozd5ugHsWhciXvjVxBRE",
+          "mode": "list",
+          "cachedResultName": "PPC Ads Sheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zQ-tfBTY765beV8Q9geN996ozd5ugHsWhciXvjVxBRE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 946637058,
+          "mode": "list",
+          "cachedResultName": "sheet 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zQ-tfBTY765beV8Q9geN996ozd5ugHsWhciXvjVxBRE/edit#gid=946637058"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "==ROW()-1",
+            "prompt_1": "={{ $('Elements AI Agent2').first().json.output.scenes[0].elementA }}_{{ $('Elements AI Agent2').first().json.output.scenes[0].elementD }}",
+            "prompt_2": "={{ $('Elements AI Agent2').first().json.output.scenes[1].elementA }}_{{ $('Elements AI Agent2').first().json.output.scenes[1].elementD }}",
+            "prompt_3": "={{ $('Elements AI Agent2').first().json.output.scenes[2].elementA }}_{{ $('Elements AI Agent2').first().json.output.scenes[2].elementD }}",
+            "final_output": "={{ $json.video_url }}",
+            "publishing_status": "for publishing",
+            "title": "={{ $('Elements AI Agent2').first().json.output.title }}",
+            "caption": "={{ $('Elements AI Agent2').first().json.output.caption }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1712,
+        3424
+      ],
+      "id": "271c3070-678d-42f0-88be-2d702856efa8",
+      "name": "Log Video2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/ffmpeg-api/compose",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"tracks\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"video\",\n      \"keyframes\": [\n        { \"url\": \"{{ $json.video_urls[0] }}\", \"timestamp\": 0, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[1] }}\", \"timestamp\": 8, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[2] }}\", \"timestamp\": 16, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[3] }}\", \"timestamp\": 24, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[4] }}\", \"timestamp\": 32, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[5] }}\", \"timestamp\": 40, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[6] }}\", \"timestamp\": 48, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[7] }}\", \"timestamp\": 56, \"duration\": 8 }\n      ]\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1552,
+        3280
+      ],
+      "id": "4071f2f4-5e32-4afe-ac77-07de5fd312c2",
+      "name": "Sequence Video2"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/ffmpeg-api/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1872,
+        3280
+      ],
+      "id": "20babc87-680d-492c-b49e-d5bc8319af26",
+      "name": "Get Final Video2"
+    },
+    {
+      "parameters": {
+        "amount": 300
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1712,
+        3280
+      ],
+      "id": "502c50b3-6e3b-4e9a-8a1f-7594c7a5a1ec",
+      "name": "Wait for Final Video2",
+      "webhookId": "cdfdca15-dbd3-4f4a-ac64-9e080467b71e"
+    },
+    {
+      "parameters": {
+        "content": "#  |- Hogwarts Vlog, 64-second video\n",
+        "height": 200,
+        "width": 1400,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        720,
+        2768
+      ],
+      "id": "5c5edf2b-b4c6-49b6-81fa-3bc4bb00f800",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 1: Generate Prompt",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        832,
+        3008
+      ],
+      "id": "910e7149-bc5e-4375-b064-ee3a50a1fa2a",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 2: Generate Clips with Veo3-Fast",
+        "height": 100,
+        "width": 580,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        944,
+        3152
+      ],
+      "id": "48875db1-486f-4298-9d79-5e89ff687204",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 3: Combine to Final Vid",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        3280
+      ],
+      "id": "1954bce1-a068-40a2-89ae-ee075f6d7064",
+      "name": "Sticky Note13"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 4: Publish Video\n### (optional)",
+        "height": 520,
+        "width": 150,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2592,
+        3152
+      ],
+      "id": "05a62c83-37de-4930-83f3-416a0354eda3",
+      "name": "Sticky Note14"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1600,
+        2800
+      ],
+      "id": "1abcf7c1-2acf-4f73-a3db-7789a2d6c192",
+      "name": "OpenAI Chat Model2"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1248,
+        4448
+      ],
+      "id": "68adf32f-e395-4bd6-a870-dc2fb6e28019",
+      "name": "Schedule Trigger3"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1824,
+        4240
+      ],
+      "id": "8b35a69e-1e7f-487a-8249-2ca0146d13b2",
+      "name": "Think3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate a scene",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt: |\n  You are a precision prompt generator for realistic, cinematic AI video scenes.\n\n  ***\n\n  Each time you're called, you will receive five dynamic inputs:\n\n  elementA: outfit is {{ $json.elementA }}\n  elementB: activity is {{ $json.elementB }}\n  elementC: environment is {{ $json.elementC }}\n  elementD: emotion is {{ $json.elementD }}\n  elementE: voiceover line is {{ $json.elementE }}\n\n  ***\n\n  Your job is to take these values and insert them into the following template exactly, replacing the corresponding words. Do not use curly brackets or add extra formatting. Do not explain anything.\n\n  ***\n  FINAL VIDEO PROMPT\n\n  Return the result as a single JSON object with this structure:\n\n  {\n    \"video_prompt\": \"A super cute 3D cartoon Pikachu wearing a [elementA] is [elementB] in a [elementC]. Pikachu looks [elementD] and says: “[elementE]” The scene is fuzzy and vibrant, with rich colors and a playful atmosphere. Focus closely on Pikachu’s expression and actions. 3-point lighting, soft glow, rendered with ultra-cute detail. Shot on a Canon EOS3, 80mm, f2.8 lens. Camera is still or gently tracking to enhance warmth.\"\n  }\n\n  Replace the values in square brackets with the actual inputs. Do not include square brackets or quotes around the values in the final result.\n\n  Output only the final JSON. Nothing else.\n\n  Use the Think tool to review your output.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1904,
+        4448
+      ],
+      "id": "abb4de33-0561-4032-bf38-f89c30749867",
+      "name": "Prompt AI Agent3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate 8 scenes",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=system_prompt: |\n  Use the Think tool to carefully generate your output.\n\n  You are an expert visual prompt generator for AI video creation.\n\n  ***\n\n  YOUR ROLE\n  is to create structured descriptions of ultra-cute Pixar-style Pikachu lifestyle scenes. Each scene features Pikachu in a unique outfit, doing an adorable or funny activity in a richly rendered 3D cartoon environment. Pikachu always speaks one line of voiceover dialogue that matches the emotion and situation.\n\n  ***\n\n  Each time you are called:\n  Randomly select one value from each of the five lists: outfit, activity, environment, emotion, and voiceover line.\n\n  For this round, refer to them as:\n\n  Element A = outfit\n  Element B = activity\n  Element C = environment\n  Element D = emotion\n  Element E = Dialogue Line (voiceover and what Pikachu Says)\n\n  Construct a structured JSON that includes:\n\n  A title that is short (max 7 words), vivid, and exciting — it should clearly mention Pikachu and the core action or theme. Make it feel like a viral YouTube or TikTok title.\n\n  A caption that sounds real and human — short, casual, and personal. Mention Pikachu or something cute about the scene. Include 1 emoji and 2 hashtags.\n\n  A list of 1–3 scenes, where each scene follows the format below.\n\n  Your output must always follow this format in valid JSON:\n\n  {\n    \"title\": \"Exciting and descriptive title here\",\n    \"caption\": \"Short, human reaction caption with 1 emoji and 2 hashtags\",\n    \"scenes\": [\n      {\n        \"elementA\": \"\",\n        \"elementB\": \"\",\n        \"elementC\": \"\",\n        \"elementD\": \"\",\n        \"elementE\": \"\"\n      }\n    ]\n  }\n\n  ***\n\n  Here are the value pools you must use:\n\n  Outfits:\n  - Random cute outfit\n\n  Activities:\n  - Random cute activity\n\n  Environments:\n  - Setting or location that matches the activity\n\n  Emotions:\n  - Overjoyed\n  - Calm and cuddly\n  - Curious and confused\n  - Electrically excited\n  - Sleepy and cozy\n  - Random emotion\n\n  Voiceover lines:\n  - Random cute line\n\n  ***\n\n  Rules:\n\n  - No need for full sentences, captions, or descriptions inside the scene objects\n  - Do not describe the action or scene beyond the structured values\n  - Do not include any additional fields or formatting outside of the JSON block\n  - Respond only with the JSON object. No extra text."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1424,
+        4448
+      ],
+      "id": "bf30c137-8b09-4d50-89be-1cb48f34b485",
+      "name": "Elements AI Agent3"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    video_urls: items.map(item => item.json.data.response.resultUrls).flat()\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1472,
+        4720
+      ],
+      "id": "3aec8f8a-f842-4a2e-98b3-d5dbb461654f",
+      "name": "Group Clips3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Log Video3').item.json.title }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\":false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video3').item.json.caption }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"333\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2448,
+        4864
+      ],
+      "id": "260a03ec-96dd-4487-a5a5-4719312cbab6",
+      "name": "🔺YOUTUBE3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video3').item.json.caption }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"222\"\n  }\n}\n",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 10000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2448,
+        4720
+      ],
+      "id": "5f4e1ae0-aa04-4206-aac7-1707274e6bdb",
+      "name": "📷 INSTAGRAM3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": false,\n      \"disabledDuet\": false,\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": true,\n      \"disabledStitch\": false,\n      \"disabledComments\": false,\n      \"isBrandedContent\": false\n    },\n    \"content\": {\n      \"text\": \"{{ $('Log Video3').item.json.caption }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\"{{ $json.url }}\"]\n    },\n    \"accountId\": \"111\"\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2448,
+        4592
+      ],
+      "id": "41736256-bc1a-4384-b1ac-6653696c5f07",
+      "name": "🎵 TIKTOK3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.final_output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2288,
+        4752
+      ],
+      "id": "542e259a-f8df-4337-b3d2-c80f28fbf5e4",
+      "name": "Load Video3"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I",
+          "mode": "list",
+          "cachedResultName": "R33 | AI ASMR by RoboNuggets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "publishing_status": "done",
+            "title": "={{ $('Log Video3').item.json.title }}"
+          },
+          "matchingColumns": [
+            "title"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2448,
+        5008
+      ],
+      "id": "1835110b-e52b-4b85-8660-28d1119535dd",
+      "name": "Update Video Status3",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Sample Video Title Here\",\n  \"caption\": \"Sample caption goes here, short and attention-grabbing.\",\n  \"scenes\": [\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    },\n    {\n      \"elementA\": \"Placeholder A\",\n      \"elementB\": \"Placeholder B\",\n      \"elementC\": \"Placeholder C\",\n      \"elementD\": \"Placeholder D\",\n      \"elementE\": \"Placeholder E\"\n    }\n  ]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1472,
+        4304
+      ],
+      "id": "3b03bf79-1835-4768-aad6-1f06cd1b5063",
+      "name": "Parser 6"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"video_prompt\": \"sample prompt here\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2000,
+        4304
+      ],
+      "id": "b71e5405-a931-4532-94ac-d84844761a50",
+      "name": "Parser 7"
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = [];\n\ntry {\n  const inputData = items[0].json;\n\n  // Check if scenes exist in the expected structure\n  if (\n    inputData.output &&\n    Array.isArray(inputData.output.scenes)\n  ) {\n    const scenes = inputData.output.scenes;\n\n    // Map each scene object to its own output item\n    output = scenes.map(scene => ({ json: scene }));\n  } else {\n    throw new Error(\"No scenes array found under output.scenes.\");\n  }\n} catch (e) {\n  throw new Error(\"Could not extract scenes properly. Details: \" + e.message);\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1744,
+        4448
+      ],
+      "id": "7ccfdf61-23c6-49b0-bd92-c22fa00a60f4",
+      "name": "Unbundle Elements3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://kieai.erweima.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"prompt\": \"{{ $json.output.video_prompt }}\",\n  \"model\": \"veo3_fast\"\n}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 3000
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1584,
+        4560
+      ],
+      "id": "b451b0fe-dcea-4c69-b757-c690d016a656",
+      "name": "Create Veo5"
+    },
+    {
+      "parameters": {
+        "url": "=https://kieai.erweima.ai/api/v1/veo/record-info",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "taskId",
+              "value": "={{ $json.data.taskId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1968,
+        4560
+      ],
+      "id": "ad4eeefb-4cff-4d4c-a72d-2fe8894e3937",
+      "name": "Get Veo5"
+    },
+    {
+      "parameters": {
+        "amount": 600
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1744,
+        4592
+      ],
+      "id": "cfc3f92e-4ed1-4f4e-99c8-870e3155eaef",
+      "name": "Wait for Veo5",
+      "webhookId": "8aa4a542-772c-42d4-ab15-c25a0233b17d"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I",
+          "mode": "list",
+          "cachedResultName": "R33 | AI ASMR by RoboNuggets",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1gso7r1AH-8xSQ-YTXRa4qIAISh7cucMkFeQJ9FAzW2I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_Ny9b_-qqQLWBoZjU5QYyQLm883e0Q2EkMqb64OAWO0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "==ROW()-1",
+            "prompt_1": "={{ $('Elements AI Agent3').first().json.output.scenes[0].elementA }}_{{ $('Elements AI Agent3').first().json.output.scenes[0].elementD }}",
+            "prompt_2": "={{ $('Elements AI Agent3').first().json.output.scenes[1].elementA }}_{{ $('Elements AI Agent3').first().json.output.scenes[1].elementD }}",
+            "prompt_3": "={{ $('Elements AI Agent3').first().json.output.scenes[2].elementA }}_{{ $('Elements AI Agent3').first().json.output.scenes[2].elementD }}",
+            "final_output": "={{ $json.video_url }}",
+            "publishing_status": "for publishing",
+            "title": "={{ $('Elements AI Agent3').first().json.output.title }}",
+            "caption": "={{ $('Elements AI Agent3').first().json.output.caption }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_1",
+              "displayName": "prompt_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_2",
+              "displayName": "prompt_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "prompt_3",
+              "displayName": "prompt_3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publishing_status",
+              "displayName": "publishing_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2304,
+        4944
+      ],
+      "id": "8987efe5-9130-4678-b1b3-2382cfdc9e29",
+      "name": "Log Video3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/ffmpeg-api/compose",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"tracks\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"video\",\n      \"keyframes\": [\n        { \"url\": \"{{ $json.video_urls[0] }}\", \"timestamp\": 0, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[1] }}\", \"timestamp\": 8, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[2] }}\", \"timestamp\": 16, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[3] }}\", \"timestamp\": 24, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[4] }}\", \"timestamp\": 32, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[5] }}\", \"timestamp\": 40, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[6] }}\", \"timestamp\": 48, \"duration\": 8 },\n        { \"url\": \"{{ $json.video_urls[7] }}\", \"timestamp\": 56, \"duration\": 8 }\n      ]\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1584,
+        4720
+      ],
+      "id": "24d9d61d-3d01-48b6-96bb-972be335f44e",
+      "name": "Sequence Video3"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/ffmpeg-api/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1952,
+        4720
+      ],
+      "id": "fec80e6b-8c84-4f09-8661-d052b08441ce",
+      "name": "Get Final Video3"
+    },
+    {
+      "parameters": {
+        "amount": 300
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1760,
+        4720
+      ],
+      "id": "cb7e9130-65c1-42e0-93f4-e2b96c6984eb",
+      "name": "Wait for Final Video3",
+      "webhookId": "f70acd6a-6ae2-4199-b921-83011e3c7437"
+    },
+    {
+      "parameters": {
+        "content": "# |  Pikachu Life, 64-second video\n",
+        "height": 200,
+        "width": 1400
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        768,
+        4208
+      ],
+      "id": "4028749e-f0c9-434a-beb4-f772525d061c",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 1: Generate Prompt",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        864,
+        4448
+      ],
+      "id": "c6afea79-0a73-479d-bb13-78c842f8625c",
+      "name": "Sticky Note16"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 2: Generate Clips with Veo3-Fast",
+        "height": 100,
+        "width": 580,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        992,
+        4592
+      ],
+      "id": "a1413287-ac5a-489e-81f9-a822abe50753",
+      "name": "Sticky Note17"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 3: Combine to Final Vid",
+        "height": 100,
+        "width": 360,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        4720
+      ],
+      "id": "9dc5803a-5738-4a95-b0c2-e8c4bbbb5a7a",
+      "name": "Sticky Note18"
+    },
+    {
+      "parameters": {
+        "content": "## | Step 4: Publish Video\n### (optional)",
+        "height": 520,
+        "width": 150,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2624,
+        4592
+      ],
+      "id": "a0990382-452a-4939-99b9-a0872f3a2591",
+      "name": "Sticky Note19"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        4240
+      ],
+      "id": "a8f24f05-5e64-4c46-b2fb-c247747fb020",
+      "name": "OpenAI Chat Model3"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-30T18:21:16.487Z",
+  "versionId": "5a891f94-469f-434a-b898-71087df4488c"
+}
