@@ -1,0 +1,2220 @@
+{
+  "active": false,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record": {
+      "main": [
+        [
+          {
+            "node": "💬 Create SMS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "💬 Create SMS": {
+      "main": [
+        [
+          {
+            "node": "Send message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records in Airtable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record in Airtable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records in Airtable2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record in Airtable2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many messages in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records2": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Search records2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records in Airtable1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record in Airtable1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cal.com Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T13:54:21.800Z",
+  "id": "jCzuopLIHou9z5i1",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 13",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.payload.name }}",
+            "Number": "={{ $json.payload.questions_and_answers[4].answer }}",
+            "Email": "={{ $json.payload.email }}",
+            "Q1": "={{ $json.payload.questions_and_answers[0].answer }}",
+            "Q2": "={{ $json.payload.questions_and_answers[1].answer }}",
+            "Q3": "={{ $json.payload.questions_and_answers[2].answer }}",
+            "Source": "Option 1",
+            "Status": "Done"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Assignee",
+              "displayName": "Assignee",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Todo",
+                  "value": "Todo"
+                },
+                {
+                  "name": "In progress",
+                  "value": "In progress"
+                },
+                {
+                  "name": "Done",
+                  "value": "Done"
+                },
+                {
+                  "name": "ac",
+                  "value": "ac"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Attachments",
+              "displayName": "Attachments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Attachment Summary",
+              "displayName": "Attachment Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Number",
+              "displayName": "Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Phone number",
+              "displayName": "Phone number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Option 1",
+                  "value": "Option 1"
+                },
+                {
+                  "name": "Option 2",
+                  "value": "Option 2"
+                },
+                {
+                  "name": "Option 3",
+                  "value": "Option 3"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q1",
+              "displayName": "Q1",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q2",
+              "displayName": "Q2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q3",
+              "displayName": "Q3",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Has the budget",
+              "displayName": "Has the budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date booked",
+              "displayName": "Date booked",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email summary",
+              "displayName": "Email summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        752,
+        112
+      ],
+      "id": "ec91ffde-4a4f-45ba-8404-59c3c823ffb4",
+      "name": "Create a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ec6f6f8c-7dfe-4971-ae91-820b0282d672",
+              "leftValue": "={{ $json.payload.questions_and_answers[3].answer }}",
+              "rightValue": "Yes, let's do it",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        128
+      ],
+      "id": "2dd10efc-690c-4986-8853-86450dcfbcfc",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Calendly Trigger').item.json.payload.email }}",
+        "subject": "=👋 Howdy {{ $('Calendly Trigger').item.json.payload.name }}",
+        "message": "=<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Email from Jack</title>\n    <style>\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n            line-height: 1.6;\n            color: #2c3e50;\n            max-width: 500px;\n            margin: 40px auto;\n            padding: 40px;\n            background: #ffffff;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);\n        }\n        \n        .greeting {\n            font-size: 18px;\n            margin-bottom: 25px;\n            color: #34495e;\n        }\n        \n        .main-text {\n            font-size: 16px;\n            margin-bottom: 20px;\n            color: #2c3e50;\n        }\n        \n        .date {\n            background: #f8f9fa;\n            padding: 3px 8px;\n            border-radius: 4px;\n            color: #495057;\n            font-weight: 500;\n        }\n        \n        .gift-highlight {\n            background: #e8f5e8;\n            padding: 20px;\n            border-radius: 6px;\n            border-left: 4px solid #28a745;\n            margin: 25px 0;\n        }\n        \n        .gift-text {\n            font-size: 16px;\n            color: #155724;\n            margin: 0;\n        }\n        \n        .signature {\n            margin-top: 30px;\n            color: #6c757d;\n            font-style: italic;\n        }\n        \n        .name {\n            color: #2c3e50;\n            font-weight: 600;\n            font-style: normal;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"greeting\">\n        Hey {{ $('Calendly Trigger').item.json.payload.name }},\n    </div>\n    \n    <div class=\"main-text\">\n        Looking forward to our call.\n    </div>\n    \n    <div class=\"gift-highlight\">\n        <p class=\"gift-text\">I want to give you a completely free training on how I scaled my first six-figure business, step by step, and everything I wish I knew when I got started.</p>\n    </div>\n    \n    <div class=\"signature\">\n        Love and automation,<br>\n        <span class=\"name\">Jack</span>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        544,
+        304
+      ],
+      "id": "3706e219-76ff-4231-b0e6-d26306b25d87",
+      "name": "Send a message",
+      "webhookId": "a6e67586-d454-4dc3-b0a0-7e523ef359ba",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Based on the below information, write me a personalized 100 words maximum text message to the user: \"You have just confirmed their appointment.\" \n\nkeep it casual. \n\nFrom the perspective of me, Jack Roberts\n\nkey info:\nname: {{ $json.fields.Name }}\n {{ $json.fields.Q1 }}\n{{ $json.fields.Q3 }}\n{{ $json.fields.Q2 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        960,
+        112
+      ],
+      "id": "9e3998ca-a166-4e8a-924a-e1e293a766d7",
+      "name": "💬 Create SMS",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        64,
+        1312
+      ],
+      "id": "7238d330-98d7-4edd-aee5-24a3a3cee276",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        304,
+        1312
+      ],
+      "id": "7baceb54-b231-46fd-afba-0bfd2ee605d8",
+      "name": "Search records",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6e65163c-6df9-4c76-a4da-1b3bd8f4fa7a",
+              "leftValue": "={{ $('Gmail Trigger').item.json.from.value[0].address }}",
+              "rightValue": "={{ $json.Email }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        528,
+        1312
+      ],
+      "id": "54e79307-ece3-4446-a221-fe9d58b111bc",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=today's date: {{ $now }}\n\nSo is information about or from the prospect:\n\ntheir email: {{ $json.Email }}\n{{ $('Gmail Trigger').item.json.headers.subject }}{{ $('Gmail Trigger').item.json.text }}",
+        "options": {
+          "systemMessage": "=Here's a detailed prompt for your AI agent:\n\n---\n\n**AI Client Information Manager - System Prompt**\n\nYou are a Client Information Manager responsible for maintaining accurate, up-to-date client records in our Airtable database. Your role is to process incoming client communications and systematically update client summaries with the most relevant new information.\n\n**MANDATORY WORKFLOW - Follow this exact sequence:**\n\n1. **ALWAYS SEARCH FIRST**: When you receive any client communication or update, immediately use the Airtable search tool to find the client's record using their email address. This gives you the complete context of what we already know about this client.\n\n2. **ANALYZE & UPDATE SECOND**: After reviewing the existing client summary, use the update tool to modify the summary field with new relevant information.\n\n**SEARCH INSTRUCTIONS:**\n- Always search the Airtable database using the client's email address first\n- Carefully read the existing client summary to understand the current state of our relationship\n- Note any previous interactions, project status, budget information, timeline details, or other relevant context\n\n**UPDATE INSTRUCTIONS:**\nWhen updating the client summary field, follow these guidelines:\n\n**For Highly Relevant Information:**\n- Add significant updates with specific dates (e.g., \"As of July 19, 2025...\")\n- Include status changes (budget availability, project decisions, timeline shifts)\n- Note new requirements, concerns, or opportunities\n- Update contact preferences or key personnel changes\n\n**For Moderately Relevant Information:**\n- Add brief notes about communication preferences\n- Include minor clarifications or additional context\n- Note scheduling updates or meeting outcomes\n\n**For Low Relevance Information:**\n- Still add a brief note if it provides context for future interactions\n- Even routine check-ins should be noted with dates\n\n**FORMATTING REQUIREMENTS:**\n- Always include specific dates when adding new information\n- Use clear, concise language\n- Maintain chronological order where possible\n- Separate different types of updates (budget, timeline, requirements, etc.)\n- Keep the summary professional but comprehensive\n\n**EXAMPLES OF GOOD UPDATES:**\n- \"As of July 19, 2025, client confirmed no budget available for Q3 expansion project\"\n- \"July 19, 2025: Requested timeline moved to September due to internal resource constraints\"\n- \"Updated July 19, 2025: New decision maker introduced - Sarah Johnson (sarah@company.com) will handle technical discussions\"\n\n**CRITICAL REMINDERS:**\n- Never update without searching first\n- Always include dates with new information\n- Preserve existing important information while adding new details\n- If the new information contradicts old information, note both with dates for context\n- Be specific about what changed and when\n\nYour goal is to ensure that anyone reading the client summary has a complete, current picture of our relationship with this client, including the most recent developments and historical context.\n\n---\n\nThis prompt ensures your agent will always search first, then thoughtfully update the client records with dated, relevant information while maintaining the historical context."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        864,
+        1232
+      ],
+      "id": "b4bd8323-fb2a-4d56-afa2-1f6c6e54eef8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        784,
+        1424
+      ],
+      "id": "41f6e8d1-a5ab-42df-89fc-3c8b6fd7b2fe",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "filterByFormula": "={Email} = \"{{ $json.Email }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        1152,
+        1424
+      ],
+      "id": "425656d3-a77a-4a3c-a295-4752fba8953e",
+      "name": "Search records in Airtable",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "=",
+            "Email summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email_summary', ``, 'string') }}",
+            "id": "={{ $('Search records').item.json.id }}",
+            "Q1": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q1', ``, 'string') }}",
+            "Q2": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q2', ``, 'string') }}",
+            "Q3": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q3', ``, 'string') }}",
+            "Has the budget": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Has_the_budget', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Number",
+              "displayName": "Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q1",
+              "displayName": "Q1",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q2",
+              "displayName": "Q2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q3",
+              "displayName": "Q3",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Has the budget",
+              "displayName": "Has the budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email summary",
+              "displayName": "Email summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "✅ Booked",
+                  "value": "✅ Booked"
+                },
+                {
+                  "name": "❌ No show",
+                  "value": "❌ No show"
+                },
+                {
+                  "name": "🎉 Customer",
+                  "value": "🎉 Customer"
+                },
+                {
+                  "name": "🙏 Can't buy rn",
+                  "value": "🙏 Can't buy rn"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "🔥 instagram",
+                  "value": "🔥 instagram"
+                },
+                {
+                  "name": "📹 YouTube",
+                  "value": "📹 YouTube"
+                },
+                {
+                  "name": "📚 Skool",
+                  "value": "📚 Skool"
+                },
+                {
+                  "name": "🤝 Referral",
+                  "value": "🤝 Referral"
+                },
+                {
+                  "name": "🦅 Other",
+                  "value": "🦅 Other"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date booked",
+              "displayName": "Date booked",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        960,
+        1424
+      ],
+      "id": "1fdf5924-b0c7-49d2-bb85-9c6c3ccbfc74",
+      "name": "Update record in Airtable",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 👋 Onboarding Automation",
+        "height": 460,
+        "width": 1600
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "0ead7b22-28a2-4fa5-8499-5239596b05b2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# 📧 Email Intelligence",
+        "height": 480,
+        "width": 1600,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        1120
+      ],
+      "typeVersion": 1,
+      "id": "b046817b-8415-4494-bd87-2764451530b6",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# 🧠 Prospect Intelligence",
+        "height": 480,
+        "width": 1240,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        544
+      ],
+      "typeVersion": 1,
+      "id": "1a01785f-8863-4c0d-8653-05434076fd3a",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        640
+      ],
+      "id": "24f043f1-9460-4ae7-a51c-dacc7c3c3fe4",
+      "name": "Telegram Trigger",
+      "webhookId": "7eb88904-fbaf-4390-9569-7c6b04280d64",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "=today's date: {{ $now }} \n\n\n---\n\n**AI Client Information Manager - System Prompt**\n\nYou are a Client Information Manager responsible for maintaining accurate, up-to-date client records in our Airtable database. Your role is to process incoming client communications and systematically update client summaries with the most relevant new information.\n\n**MANDATORY WORKFLOW - Follow this exact sequence:**\n\n1. **ALWAYS SEARCH FIRST**: When you receive any client communication or update, immediately use the Airtable search tool to find the client's record using their email address. This gives you the complete context of what we already know about this client.\n\n2. **ANALYZE & UPDATE SECOND**: After reviewing the existing client summary, use the update tool to modify the summary field with new relevant information.\n\n**SEARCH INSTRUCTIONS:**\n- Always search the Airtable database using the client's email address first\n- Carefully read the existing client summary to understand the current state of our relationship\n- Note any previous interactions, project status, budget information, timeline details, or other relevant context\n\n**UPDATE INSTRUCTIONS:**\nWhen updating the client summary field, follow these guidelines:\n\n**For Highly Relevant Information:**\n- Add significant updates with specific dates (e.g., \"As of July 19, 2025...\")\n- Include status changes (budget availability, project decisions, timeline shifts)\n- Note new requirements, concerns, or opportunities\n- Update contact preferences or key personnel changes\n\n**For Moderately Relevant Information:**\n- Add brief notes about communication preferences\n- Include minor clarifications or additional context\n- Note scheduling updates or meeting outcomes\n\n**For Low Relevance Information:**\n- Still add a brief note if it provides context for future interactions\n- Even routine check-ins should be noted with dates\n\n**FORMATTING REQUIREMENTS:**\n- Always include specific dates when adding new information\n- Use clear, concise language\n- Maintain chronological order where possible\n- Separate different types of updates (budget, timeline, requirements, etc.)\n- Keep the summary professional but comprehensive\n\n**EXAMPLES OF GOOD UPDATES:**\n- \"As of July 19, 2025, client confirmed no budget available for Q3 expansion project\"\n- \"July 19, 2025: Requested timeline moved to September due to internal resource constraints\"\n- \"Updated July 19, 2025: New decision maker introduced - Sarah Johnson (sarah@company.com) will handle technical discussions\"\n\n**CRITICAL REMINDERS:**\n- Never update without searching first\n- Always include dates with new information\n- Preserve existing important information while adding new details\n- If the new information contradicts old information, note both with dates for context\n- Be specific about what changed and when\n\nYour goal is to ensure that anyone reading the client summary has a complete, current picture of our relationship with this client, including the most recent developments and historical context.\nçıktıyı tr dilin de  ver\n---"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        528,
+        624
+      ],
+      "id": "f7c483ca-b4af-4410-9f38-c97437d47e7b",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        288,
+        864
+      ],
+      "id": "47b52c32-0223-497b-844b-3921f0e65a1e",
+      "name": "OpenAI Chat Model4",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "filterByFormula": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Filter_By_Formula', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        912,
+        864
+      ],
+      "id": "eeb65196-fb22-4a0c-bbd4-76aeb8b8a836",
+      "name": "Search records in Airtable2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email', ``, 'string') }}",
+            "Email summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email_summary', ``, 'string') }}",
+            "id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('id__using_to_match_', ``, 'string') }}",
+            "Name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Name', ``, 'string') }}",
+            "Number": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Number', ``, 'string') }}",
+            "Q1": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q1', ``, 'string') }}",
+            "Q2": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q2', ``, 'string') }}",
+            "Q3": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Q3', ``, 'string') }}",
+            "Has the budget": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Has_the_budget', ``, 'string') }}",
+            "Notes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Notes', ``, 'string') }}",
+            "Assignee": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Assignee', ``, 'string') }}",
+            "Attachments": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attachments', ``, 'string') }}",
+            "Attachment Summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attachment_Summary', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Assignee",
+              "displayName": "Assignee",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Todo",
+                  "value": "Todo"
+                },
+                {
+                  "name": "In progress",
+                  "value": "In progress"
+                },
+                {
+                  "name": "Done",
+                  "value": "Done"
+                },
+                {
+                  "name": "ac",
+                  "value": "ac"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Attachments",
+              "displayName": "Attachments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Attachment Summary",
+              "displayName": "Attachment Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Number",
+              "displayName": "Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Phone number",
+              "displayName": "Phone number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Option 1",
+                  "value": "Option 1"
+                },
+                {
+                  "name": "Option 2",
+                  "value": "Option 2"
+                },
+                {
+                  "name": "Option 3",
+                  "value": "Option 3"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q1",
+              "displayName": "Q1",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q2",
+              "displayName": "Q2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q3",
+              "displayName": "Q3",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Has the budget",
+              "displayName": "Has the budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date booked",
+              "displayName": "Date booked",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email summary",
+              "displayName": "Email summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        752,
+        880
+      ],
+      "id": "ec4875a4-5582-4689-9151-c35f312294bc",
+      "name": "Update record in Airtable2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.date }}",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        880
+      ],
+      "id": "3912a41d-2ec1-411c-8f2a-6eef93f2a6a4",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        880
+      ],
+      "id": "d5315f25-85cc-4bdb-bdc4-71600cd1a3bb",
+      "name": "Get many messages in Gmail",
+      "webhookId": "d8e6ad69-f29d-4382-86bf-3d3f7935ca48",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        1792
+      ],
+      "id": "68be8c1f-2b66-4f59-a343-634a4f432726",
+      "name": "Search records2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6e65163c-6df9-4c76-a4da-1b3bd8f4fa7a",
+              "leftValue": "=fireflies.ai",
+              "rightValue": "={{ $('Gmail Trigger3').item.json.headers.from }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        1792
+      ],
+      "id": "f0c7c355-fbc2-4db2-bd6e-5a70fe095a1c",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b088e11-e145-4036-9e16-e437e29fc480",
+              "name": "From",
+              "value": "={{ $json.from.value[0].name }}",
+              "type": "string"
+            },
+            {
+              "id": "43e02af6-d5a1-45cf-ad88-3bb8f93f2684",
+              "name": "Subject",
+              "value": "={{ $json.headers.subject }}",
+              "type": "string"
+            },
+            {
+              "id": "7afaecc5-9a7a-4dc6-b406-d19c6e998ce2",
+              "name": "Date",
+              "value": "={{ $json.headers.date }}",
+              "type": "string"
+            },
+            {
+              "id": "f83ea2dd-0cc0-421c-8176-bd60d53cc126",
+              "name": "Body",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        1792
+      ],
+      "id": "2113acb0-0a55-4784-aec3-206614a3557b",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        48,
+        1792
+      ],
+      "id": "ec9e4da3-3e6f-4b2e-99c8-6d7286d9a56c",
+      "name": "Gmail Trigger3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.fireflies.ai/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"query\": \"query Transcripts($limit: Int) { transcripts(limit: $limit) { id title date } }\",\n  \"variables\": {\n    \"limit\": 5\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        1760
+      ],
+      "id": "3d63f83e-9a2d-466d-9778-b3728a8a360a",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.fireflies.ai/graphql",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"query Transcript($id: String!) { transcript(id: $id) { title sentences { speaker_name text start_time end_time } } }\",\n  \"variables\": {\n    \"id\": \"{{ $json.transcript_id }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1328,
+        1760
+      ],
+      "id": "82589cbd-defe-4be5-96e7-00b876316d7c",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Get the transcript block from the current item\nconst transcript = $json.data.transcript;\n\n// Safely extract title and sentence list\nconst title = transcript.title;\nconst sentences = transcript.sentences || [];\n\n// Combine all sentence texts into a single transcript\nconst fullTranscriptText = sentences.map(s => `${s.speaker_name}: ${s.text}`).join('\\n');\n\n// Add final formatted values to item\nitem.json.meetingTitle = title;\nitem.json.fullTranscript = fullTranscriptText;\n\nreturn item;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1568,
+        1760
+      ],
+      "id": "e88286bc-eb42-4ca8-b300-5783da6bb2b0",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const transcripts = items[0].json.data.transcripts;\n\nreturn transcripts.map(t => ({\n  json: {\n    transcript_id: t.id,\n    title: t.title,\n    date: t.date\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        1760
+      ],
+      "id": "3580f459-f16f-4fef-b7e5-5ce637a0f1a8",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=today's date: {{ $now }}\n\ntheir email: {{ $json.Email }}\n{{ $('Gmail Trigger').item.json.headers.subject }}{{ $('Gmail Trigger').item.json.text }}",
+        "options": {
+          "systemMessage": "---\n\n**Meeting Transcript Analysis & Client Update Agent - System Prompt**\n\nYou are a Meeting Transcript Analysis Agent responsible for processing full meeting transcripts and updating client records with relevant insights and action items. Your role is to analyze conversations, identify participants, and systematically update client information while preserving all existing data.\n\n**YOUR CAPABILITIES:**\n1. Search Airtable database to find and verify client records\n2. Update client summary fields with new information\n3. Search Gmail for additional context about client relationships\n4. Analyze meeting transcripts for actionable intelligence\n\n**MANDATORY WORKFLOW:**\n\n**STEP 1: ANALYZE THE TRANSCRIPT**\n- Read the full meeting transcript carefully\n- Identify all participants by name and any mentioned companies/roles\n- Extract key information: decisions made, budget discussions, timeline changes, concerns raised, next steps, project status updates, relationship signals\n- Note any action items, commitments, or follow-up requirements\n\n**STEP 2: IDENTIFY CLIENT PARTICIPANTS**\n- Search Airtable for each participant mentioned in the transcript\n- Cross-reference names with companies or email addresses if mentioned\n- If participants aren't found, note this but continue with analysis\n- Prioritize updates for confirmed clients in your database\n\n**STEP 3: GATHER ADDITIONAL CONTEXT (OPTIONAL)**\n- If significant developments are discussed, search Gmail for recent email history with identified clients\n- Use email context to understand the progression of conversations and relationship status\n- Look for patterns or contradictions between email communications and meeting discussions\n\n**STEP 4: STRATEGIC INFORMATION EXTRACTION**\nFocus on capturing these types of meeting insights:\n- **Budget & Financial**: Budget approvals, constraints, spending authority changes\n- **Timeline & Milestones**: Project deadlines, delivery expectations, scheduling conflicts  \n- **Decision Making**: Who has authority, approval processes, stakeholder influence\n- **Requirements & Scope**: New features, changes in project scope, technical requirements\n- **Relationship Dynamics**: Satisfaction levels, concerns, enthusiasm, resistance\n- **Competitive Intelligence**: Mentions of other vendors, comparison discussions\n- **Next Steps**: Committed actions, follow-up meetings, deliverable deadlines\n\n**STEP 5: UPDATE CLIENT RECORDS**\nFor each identified client, update their summary field by:\n- **PRESERVING existing information** - never delete or overwrite historical data\n- **ADDING new insights** with specific meeting date\n- **UPDATING status changes** while noting what changed from previous state\n- **APPENDING action items** and follow-up commitments\n- **NOTING relationship temperature** based on meeting tone\n\n**UPDATE FORMATTING GUIDELINES:**\n```\nMEETING UPDATE - [Date]:\n- Key decisions: [specific decisions made]\n- Budget status: [any budget-related discussions]\n- Timeline updates: [schedule changes or confirmations]  \n- Action items: [who committed to what by when]\n- Relationship notes: [engagement level, concerns, enthusiasm]\n- Next steps: [scheduled follow-ups, deliverables due]\n\n[Previous summary information remains intact below]\n```\n\n**CONVERSATION ANALYSIS TECHNIQUES:**\n- Pay attention to tone and enthusiasm levels in participant responses\n- Note who drives decisions vs. who influences them\n- Identify concerns or objections that may need addressing\n- Look for buying signals or hesitation patterns\n- Extract specific quotes that reveal client priorities or pain points\n\n**HANDLING MULTIPLE PARTICIPANTS:**\n- If multiple clients were on the same call, update each record individually\n- Note cross-client dynamics if relevant (e.g., \"Client A expressed concerns about timeline that Client B agreed with\")\n- Update records even for clients who said little - their presence and reactions matter\n\n**EXAMPLES OF GOOD UPDATES:**\n\n```\nMEETING UPDATE - July 19, 2025:\n- Budget approved: $50K confirmed for Phase 1, pending board approval for Phase 2 ($75K)\n- Timeline concern: Expressed worry about Q4 delivery due to internal resource constraints\n- Decision maker clarification: Sarah (CTO) has final technical approval, Mike (CEO) handles budget\n- Action items: We'll provide revised timeline by July 25th, they'll confirm resource allocation by Aug 1st\n- Relationship temperature: Positive but cautious - excited about features but stressed about timeline\n- Next steps: Follow-up call scheduled July 30th to review revised proposal\n\n[Previous client history preserved below this update]\n```\n\n**CRITICAL REQUIREMENTS:**\n- Always search for participants before updating\n- Never replace existing client summary data - only append new information\n- Include specific meeting date with all updates\n- Preserve the chronological record of client interactions\n- Focus on actionable intelligence that affects business decisions\n- Update every identified client, even if minimal new information\n- If transcript quality is poor, note limitations in your analysis\n\n**QUALITY CHECKS:**\n- Verify participant identification before updating records\n- Ensure updates add meaningful business value\n- Maintain professional tone even when summarizing casual conversation\n- Flag any urgent action items that need immediate attention\n- Note if follow-up is required based on meeting commitments\n\nYour goal is to transform meeting discussions into structured, actionable client intelligence while maintaining a complete historical record of all client interactions and developments.\n\n---\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1808,
+        1760
+      ],
+      "id": "759c3576-875d-4f79-a2fe-1e71f8357481",
+      "name": "AI Agent4"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "filterByFormula": "={Email} = \"{{ $json.Email }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2112,
+        1968
+      ],
+      "id": "289cb924-bf46-4f02-a262-fc7fab912bf1",
+      "name": "Search records in Airtable1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appOEBzIdqX1w8QHU",
+          "mode": "list",
+          "cachedResultName": "Booking System",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblelqZDaewisoBpE",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "=",
+            "Email summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email_summary', ``, 'string') }}",
+            "id": "={{ $('Search records').item.json.id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Number",
+              "displayName": "Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q1",
+              "displayName": "Q1",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q2",
+              "displayName": "Q2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Q3",
+              "displayName": "Q3",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Has the budget",
+              "displayName": "Has the budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email summary",
+              "displayName": "Email summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "✅ Booked",
+                  "value": "✅ Booked"
+                },
+                {
+                  "name": "❌ No show",
+                  "value": "❌ No show"
+                },
+                {
+                  "name": "🎉 Customer",
+                  "value": "🎉 Customer"
+                },
+                {
+                  "name": "🙏 Can't buy rn",
+                  "value": "🙏 Can't buy rn"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "🔥 instagram",
+                  "value": "🔥 instagram"
+                },
+                {
+                  "name": "📹 YouTube",
+                  "value": "📹 YouTube"
+                },
+                {
+                  "name": "📚 Skool",
+                  "value": "📚 Skool"
+                },
+                {
+                  "name": "🤝 Referral",
+                  "value": "🤝 Referral"
+                },
+                {
+                  "name": "🦅 Other",
+                  "value": "🦅 Other"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date booked",
+              "displayName": "Date booked",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        1952,
+        2000
+      ],
+      "id": "574a0f19-24ac-47e4-a3d2-ed8b73f23657",
+      "name": "Update record in Airtable1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1760,
+        1968
+      ],
+      "id": "247fcfdc-5e00-48e2-a94b-945559487ad6",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 📆 Meeting Intelligence",
+        "height": 480,
+        "width": 2280,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        1664
+      ],
+      "typeVersion": 1,
+      "id": "7fb9b744-33ef-4b0c-aee9-6768789c4975",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "=",
+        "recipientPhoneNumber": "+905326111749",
+        "textBody": "11",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1312,
+        112
+      ],
+      "id": "c152bc38-9fdd-4e59-b623-bf8fc52cca7a",
+      "name": "Send message",
+      "webhookId": "f50d2258-7675-42c4-987e-9c4b367586b0",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "gGsc4bIl7Ds9z5W6",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "events": [
+          "BOOKING_CREATED"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.calTrigger",
+      "typeVersion": 2,
+      "position": [
+        128,
+        128
+      ],
+      "id": "207f6942-b72f-4be8-9d2f-98f00ddd1cf1",
+      "name": "Cal.com Trigger",
+      "webhookId": "9278360a-1c01-4216-b8a2-c72bad8240fe",
+      "credentials": {
+        "calApi": {
+          "id": "91qi8YNnmMQuC7I1",
+          "name": "Cal account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        944,
+        672
+      ],
+      "id": "a6b58ae0-5fa2-4c1c-961f-7ab45ede898f",
+      "name": "Send a text message",
+      "webhookId": "6f05811c-08db-439f-929d-8ef514963d46",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Cal.com Trigger": {},
+    "node:Gmail Trigger": {
+      "Gmail Trigger": {
+        "lastTimeChecked": 1754077945
+      }
+    },
+    "node:Gmail Trigger3": {
+      "Gmail Trigger3": {
+        "lastTimeChecked": 1754077945
+      }
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-08-01T12:44:59.859Z",
+      "updatedAt": "2025-08-01T12:44:59.859Z",
+      "id": "uQemNnETANldqDym",
+      "name": "chatbot"
+    },
+    {
+      "createdAt": "2025-08-01T12:44:59.859Z",
+      "updatedAt": "2025-08-01T12:44:59.859Z",
+      "id": "oE6kpviC0yv874Ho",
+      "name": "knowledge base"
+    }
+  ],
+  "triggerCount": 4,
+  "updatedAt": "2025-08-02T17:52:54.900Z",
+  "versionId": "ccc01d52-3e6d-47e7-b94e-c63ef564c0eb"
+}
