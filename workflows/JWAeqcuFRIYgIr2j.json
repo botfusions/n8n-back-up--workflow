@@ -1,0 +1,588 @@
+{
+  "active": false,
+  "connections": {
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP 1m",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Stock News Articles1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP 15m",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP 1h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter News Articles1": {
+      "main": [
+        [
+          {
+            "node": "Sentiment Analysis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sentiment Analysis1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Virtüöz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Virtüöz",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP 1m": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP 15m": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP 1h": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Stock News Articles1": {
+      "main": [
+        [
+          {
+            "node": "Filter News Articles1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zep": {
+      "ai_memory": [
+        [
+          {
+            "node": "Virtüöz",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "Virtüöz",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Virtüöz": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-29T07:19:26.944Z",
+  "id": "JWAeqcuFRIYgIr2j",
+  "isArchived": false,
+  "meta": null,
+  "name": "Deneme  _Borsa",
+  "nodes": [
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        544,
+        128
+      ],
+      "id": "8dd34709-0f1f-4e28-bedb-6fab6afa7e78",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -368,
+        144
+      ],
+      "id": "20de164a-c7b9-4bb9-b292-a6a549491c1b",
+      "name": "Telegram Trigger",
+      "webhookId": "ca2a478b-dbad-455f-a3ff-cafac2f5c57b"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        768,
+        128
+      ],
+      "id": "3f3c746b-bc7f-461e-b80f-be0aaaa60162",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "jsCode": "const root = items[0].json;\n\n// extract datasets\nconst data1m  = root.data[0];  // 1min\nconst data15m = root.data[1];  // 15min\nconst data1h  = root.data[2];  // 1h\n\n// standardize format\nfunction normalize(values) {\n  return values\n    .map(v => ({\n      time: new Date(v.datetime),\n      open: parseFloat(v.open),\n      high: parseFloat(v.high),\n      low: parseFloat(v.low),\n      close: parseFloat(v.close),\n      volume: parseFloat(v.volume),\n    }))\n    .sort((a, b) => a.time - b.time);\n}\n\nreturn [\n  {\n    json: {\n      ticker: data1m.meta.symbol,\n      candles1m: normalize(data1m.values),\n      candles15m: normalize(data15m.values),\n      candles1h: normalize(data1h.values),\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        128
+      ],
+      "id": "59d39faf-df1d-4deb-b0e6-65dd499fa345",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "const articles = $json.articles || [];\nconst filteredArticles = articles.map(article => ({\n  title: article.title,\n  description: article.description,\n}));\n\nreturn [{\n  json: {\n    filteredArticles\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        608
+      ],
+      "id": "0c1c7a77-5187-401f-8a41-b185051714ec",
+      "name": "Filter News Articles1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a highly intelligent and accurate sentiment analyzer specializing in the financial markets. Analyze the sentiment of the provided text \n\n   - Evaluate the immediate market reaction, recent news impact, and technical volatility.\n   - Determine a sentiment category: \"Positive\", \"Neutral\", or \"Negative\".\n   - Calculate a numerical score between -1 (extremely negative) and 1 (extremely positive).\n   - Provide a concise rationale explaining the short-term sentiment (give a detailed response with appropriate headlines for major events. \n\n\nYour output must be exactly a JSON object. The value  must be an object with three keys: \"category\", \"score\", and \"rationale\". Do not output any additional text.\n\nFor example, your output should look like:\n\n{\n  \"shortTermSentiment\": {\n    \"category\": \"Positive\",\n    \"score\": 0.7,\n    \"rationale\": \"....\"\n\nNow, analyze the following text and produce your JSON output:\n{{ JSON.stringify($json.filteredArticles) }}\n",
+              "role": "system"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        400,
+        608
+      ],
+      "id": "342a07e7-d734-4b10-984b-eb2262743b97",
+      "name": "Sentiment Analysis1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1200,
+        144
+      ],
+      "id": "d244ceae-1b74-404f-8367-46eaaf636aab",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        144
+      ],
+      "id": "342e9abc-d3de-4072-80b2-0146530aecbe",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1552,
+        384
+      ],
+      "id": "2af0d37e-9cff-4ead-adde-14d4390ca3b3",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1968,
+        144
+      ],
+      "id": "ae9f4b94-5ba3-4726-9b27-7b8d478e90e2",
+      "name": "Telegram",
+      "webhookId": "8231d275-5b3a-4b89-842c-491d143478de"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.twelvedata.com/time_series",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "symbol",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            },
+            {
+              "name": "interval",
+              "value": "1min"
+            },
+            {
+              "name": "outputsize",
+              "value": "100"
+            },
+            {
+              "name": "apikey"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        -64
+      ],
+      "id": "928a73ea-fd64-44c1-ba05-e561f4737a02",
+      "name": "HTTP 1m"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.twelvedata.com/time_series",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "symbol",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            },
+            {
+              "name": "interval",
+              "value": "15min"
+            },
+            {
+              "name": "outputsize",
+              "value": "100"
+            },
+            {
+              "name": "apikey"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        144
+      ],
+      "id": "4716517e-815c-4acf-b31e-2c8d4153c760",
+      "name": "HTTP 15m"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.twelvedata.com/time_series",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "symbol",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            },
+            {
+              "name": "interval",
+              "value": "1h"
+            },
+            {
+              "name": "outputsize",
+              "value": "100"
+            },
+            {
+              "name": "apikey"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        336
+      ],
+      "id": "4bca4d7a-09fb-40b9-9e79-14eb4f6915cd",
+      "name": "HTTP 1h"
+    },
+    {
+      "parameters": {
+        "url": "https://newsapi.org/v2/everything",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}"
+            },
+            {
+              "name": "from",
+              "value": "={{$today.minus({ days: 1 }).toFormat('yyyy-MM-dd')}}\n"
+            },
+            {
+              "name": "sortBy",
+              "value": "popularity"
+            },
+            {
+              "name": "apiKey"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        608
+      ],
+      "id": "9af2bc95-c681-4636-a9e0-94d1683032f1",
+      "name": "Stock News Articles1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=1"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryZep",
+      "typeVersion": 1.3,
+      "position": [
+        1712,
+        400
+      ],
+      "id": "9e463337-e12b-4569-bf2e-a8044c0e9240",
+      "name": "Zep"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "docs",
+        "toolDescription": "use this tool to retrieve information from ai investors knowldge base",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "dancing-hazel12",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        1872,
+        368
+      ],
+      "id": "2aa7bebc-8d16-4975-a6db-ee9a012c55b3",
+      "name": "Pinecone Vector Store"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1888,
+        608
+      ],
+      "id": "5d600936-70dd-427f-9bf9-754b57d463ee",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=# Mission: Design a High-Fidelity n8n Workflow for the \"Market Virtuoso\" AI Persona\n\n**You are a Principal Systems Architect,** specializing in building complex, AI-driven applications. Your task is to translate a detailed creative brief for an AI persona, which includes dynamic data feeds, into a robust, executable n8n workflow blueprint.\n\n---\n\n### **I. The Creative & Strategic Brief: The \"Soul\" of the Application**\n\nFirst, you must deeply understand the persona you are building the system for. Read and internalize the following Master Prompt for **\"The Market Virtuoso\"**:\n\n> **# Persona: The Market Virtuoso**\n>\n> **Core Identity:**\n> You are a legendary trader and quantitative analyst, known as \"The Maestro.\" You understand that markets are a symphony of mathematics, human psychology, and hidden global currents. You are not a \"stock-picker\"; you are a **market cartographer and a risk architect.**\n>\n> **Core Philosophy:**\n> - **Asymmetry is Everything:** You hunt for opportunities where the potential upside massively outweighs the calculated downside.\n> - **The Narrative and The Numbers:** You believe every asset's price is a story told by numbers. You must understand both the quantitative data (the numbers) and the market sentiment (the narrative).\n> - **Patience is a Strategic Position:** You know when to trade and, more importantly, when to sit and observe.\n>\n> **Implicit Superpowers (Internal capabilities):**\n> - **Quantitative/Technical Analysis Engine:** You can interpret raw financial data like candle charts (OHLC), moving averages, and RSI.\n> - **Macroeconomic Synthesizer:** You connect global events to asset classes.\n> - **Behavioral Economics Module:** You analyze market sentiment through the lens of cognitive biases.\n>\n> **Methodology (The Investment Thesis Framework):**\n> You guide the user through your four-phase framework: \"Telescope\" (Macro), \"Microscope\" (Specifics), \"Barometer\" (Sentiment), and \"Architect's Blueprint\" (Plan).\n>\n> **Tone, Language, and Critical Disclaimers:**\n> - **Voice:** Calm, measured, and authoritative. A teacher, not a salesman.\n> - **Disclaimer:** You MUST frequently state that this is **NOT FINANCIAL ADVICE** and is for educational purposes only.\n> - **Forbidden Actions:** Never give a direct \"buy/sell\" command or guarantee returns.\n> - **[ULTRA CRITICAL] Output Language:** The core prompt and logic are in English for your understanding. However, **ALL your final responses to the user MUST be in TURKISH, without exception,** unless the user explicitly requests another language. You will synthesize all the English and data inputs into a fluid, expert Turkish output.\n\n---\n\n### **II. Technical Components & Data Feeds**\n\nYour workflow will orchestrate these services:\n\n1.  **Frontend:** Sends `{ \"session_id\": \"...\", \"user_message\": \"Can you analyze $TSLA?\" }`.\n2.  **LLM (The Brain):** **Claude 3 Opus.**\n3.  **Episodic Memory:** **Zep.**\n4.  **Semantic Memory:** **Pinecone** (for books, principles).\n5.  **[NEW] Dynamic Data APIs:** External APIs that provide real-time or near real-time market data. This could be a financial data provider like Finnhub, Polygon.io, or a crypto-specific API.\n\n---\n\n### **III. The n8n Workflow Blueprint: The \"How\"**\n\nDesign a workflow with the following nodes and logic.\n\n**1. Trigger: Receive User Query**\n*   **Node Type:** `Webhook`\n\n**2. Initialize & Analyze Intent**\n*   **Node Type:** `Code` or `IF` nodes.\n*   **Logic:**\n    *   Extract `session_id`, `user_message`.\n    *   **Extract Asset Ticker:** Identify the asset in the message (e.g., \"$TSLA\", \"Bitcoin\"). Store it in a variable `asset_ticker`.\n    *   Set `query_type` based on intent (\"microscope\", \"telescope\", etc.).\n\n**3. Retrieve Context & Data (Parallel Execution)**\n*   Execute the following data retrieval nodes simultaneously.\n\n    **3A. Get Conversational Context (Zep)**\n    *   **Node Type:** `HTTP Request`. Fetches recent dialogue history.\n\n    **3B. Get Knowledge Base Context (Pinecone)**\n    *   **Node Type:** `HTTP Request`. Fetches relevant principles from books based on `query_type`.\n\n    **3C. [NEW] Get Technical Chart Data**\n    *   **Node Type:** `HTTP Request` (to Financial Data API)\n    *   **Logic:** Only run this node if an `asset_ticker` was identified.\n    *   Make an API call to get the last 90 days of daily candle data (OHLC - Open, High, Low, Close, Volume) for the `asset_ticker`.\n    *   The output will be a JSON array of candle data.\n\n    **3D. [NEW] Get Sentiment & News Data**\n    *   **Node Type:** `HTTP Request` (to Financial Data or News API)\n    *   **Logic:** Only run this node if an `asset_ticker` was identified.\n    *   Make an API call to get recent news headlines and a sentiment score (e.g., a number from -1 to 1) for the `asset_ticker`.\n    *   The output will be a JSON object with news and sentiment.\n\n**4. Construct the \"Super-Prompt\"**\n*   **Node Type:** `Set`\n*   **Logic:** This is the most critical step. Assemble the final prompt, **placing the new dynamic data in its own dedicated section.**\n\n    ```\n    {{ FULL_MARKET_VIRTUOSO_MASTER_PROMPT }}\n\n    ### DYNAMIC MARKET DATA FOR: {{ asset_ticker }} ###\n    Here is the most recent data I have for my analysis.\n\n    **Technical Data (last 90d candles):**\n    {{ JSON.stringify(Output from node 3C) }}\n\n    **Sentiment Analysis & News (past 24h):**\n    {{ JSON.stringify(Output from node 3D) }}\n\n    ---\n\n    ### CONTEXT: ONGOING CONVERSATION ###\n    Here is the recent history of my conversation with this user:\n    {{ Output from Zep node, formatted as a readable dialogue }}\n\n    ---\n\n    ### CONTEXT: RELEVANT KNOWLEDGE FROM LIBRARY ###\n    Based on the user's current query, here are relevant principles and data from our knowledge base:\n    {{ Output from Pinecone node, clearly labeled }}\n\n    ---\n\n    ### CURRENT TASK ###\n    Now, as The Market Virtuoso, synthesize ALL the information provided above (Dynamic Data, Conversational History, and aylar Kitap Bilgisi). Provide a comprehensive, multi-faceted analysis in response to the user's latest message. Remember, your entire output must be in expert-level Turkish.\n    \n    User: {{ user_message }}\n\n    Maestro:\n    ```\n\n**5. Call the LLM (The Maestro Speaks)**\n*   **Node Type:** `Claude 3`\n*   **Logic:** Send the `super_prompt`. Model: `claude-3-opus-20240229`. `temperature: 0.6`.\n\n**6. Persist the Conversation (Zep)**\n*   **Node Type:** `HTTP Request`. Save the user message and the AI's Turkish response to Zep.\n\n**7. Respond to Frontend**\n*   **Node Type:** `Webhook Response`. Send the final Turkish response to the user.\n\n---\n\n### **Bu Yapının Anlamı ve Gücü**\n\nBu yeni yapı ile AI'ınız artık sadece teorik bir uzman değil. O, bir **veri analisti**.\n\n*   **Çok Katmanlı Analiz:** Bir kullanıcı \"$TSLA'yı analiz et\" dediğinde, AI artık sadece kitaplarda yazanları söylemekle kalmayacak.\n    *   **Teknik Analiz:** Mum grafiklerine bakıp, \"Son 2 haftadır bir düşüş trendi var, ancak 200 günlük hareketli ortalamasından destek bulmuşa benziyor\" diyebilecek.\n    *   **Duyarlılık Analizi:** Haberlere ve duyarlılık skoruna bakıp, \"Ancak, son 24 saatteki haber akışı oldukça pozitif ve piyasa duyarlılığı 'nötr'den 'hafif alıcılı'ya dönmüş görünüyor\" diye ekleyebilecek.\n    *   **Temel Analiz:** Pinecone'dan gelen bilgiye dayanarak, \"Benjamin Graham'ın prensiplerine göre, mevcut F/K oranı sektör ortalamasının üzerinde, bu da büyüme beklentilerinin fiyata zaten yansıtıldığını gösteriyor\" gibi bir yorum yapabilecek.\n    *   **Nihai Sentez:** Tüm bu verileri birleştirerek, \"Teknik olarak kısa vadede bir baskı olsa da, pozitif haber akışı bir toparlanma sinyali olabilir. Ancak, temel değerlemesi yüksek olduğu için, bu bir 'değer' yatırımından çok, bir 'momentum' yatırımı gibi görünüyor. Risk iştahınıza göre pozisyon almayı düşünmelisiniz. Unutmayın, bu bir finansal tavsiye değildir.\" gibi **bütünsel ve inanılmaz derecede değerli** bir çıktı üretecek.\n\nBu, projenizi piyasadaki tüm rakiplerden fersah fersah öteye taşıyacak olan mimaridir.",
+        "options": {
+          "systemMessage": "You are an expert day trader. ONLY output exactly the lines below—no rationale, no extra commentary.\nAlways cehck vector store too.\n### Response format (absolutely no other text!)\n• Technical Recommendation: <BUY|SELL|HOLD>\n• Entry Price: <number or N/A>\n• Stop-Loss: <number or N/A>\n• Target/Exit: <number or N/A>\n• Hold or Exit Decision: <Hold|Exit>"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        1600,
+        144
+      ],
+      "id": "c4ee1aa3-23aa-411c-89f5-77cdd6bcaab3",
+      "name": "Virtüöz"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-29T07:19:57.424Z",
+  "versionId": "6b880f11-af22-4988-8feb-8c7fc54573a1"
+}
