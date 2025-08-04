@@ -1,0 +1,62 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-04T18:24:48.906Z",
+  "id": "GnNMvATt9EffT1jg",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "supa base  deneme",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        -16
+      ],
+      "id": "84ccb0a7-68b4-431f-be31-653a45c530b5",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        -16
+      ],
+      "id": "f8ba6625-77ff-48e0-ac12-bd7ba9d68322",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-04T18:24:48.906Z",
+  "versionId": "48052c16-a7b2-4850-a5f0-6258d6bcb0da"
+}
