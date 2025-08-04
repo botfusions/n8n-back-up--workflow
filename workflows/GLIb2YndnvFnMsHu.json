@@ -1,0 +1,574 @@
+{
+  "active": false,
+  "connections": {
+    "Sirala": {
+      "main": [
+        [
+          {
+            "node": "Yanit Formatla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slot_Al_Araci": {
+      "main": [
+        [
+          {
+            "node": "Giris Parametreleri",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yanit Formatla": {
+      "main": [
+        [
+          {
+            "node": "Musait Baslangic Saatleri ve Araliklari",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Giris Parametreleri": {
+      "main": [
+        [
+          {
+            "node": "Musaitlik Kontrol Et",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Musaitlik Kontrol Et": {
+      "main": [
+        [
+          {
+            "node": "Zaman Musait mi Kontrol Et",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yanit Payload Olustur": {
+      "main": [
+        [
+          {
+            "node": "JSON Formatini Vapi icin Donustur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zaman Musait mi Kontrol Et": {
+      "main": [
+        [
+          {
+            "node": "Zaman Musait true ve Call_id",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tum Takvim Etkinliklerini Al",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tum Takvim Etkinliklerini Al": {
+      "main": [
+        [
+          {
+            "node": "Baslangic Bitis ve Isim Cikar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zaman Musait true ve Call_id": {
+      "main": [
+        [
+          {
+            "node": "Yanit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Baslangic Bitis ve Isim Cikar": {
+      "main": [
+        [
+          {
+            "node": "Sirala",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Formatini Vapi icin Donustur": {
+      "main": [
+        [
+          {
+            "node": "Vapiye Yanit Ver",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Musait Baslangic Saatleri ve Araliklari": {
+      "main": [
+        [
+          {
+            "node": "Yanit Payload Olustur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-02T17:04:49.700Z",
+  "id": "GLIb2YndnvFnMsHu",
+  "isArchived": true,
+  "meta": null,
+  "name": "vapi extara v2",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ccabe9f4-7911-4488-a75b-7c5779fb2014",
+              "name": "timeZone",
+              "type": "string",
+              "value": "=Europe/Istanbul"
+            },
+            {
+              "id": "b802d976-78f5-4c00-8764-f8c49eaded29",
+              "name": "endtime",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].function.arguments.endtime }}"
+            },
+            {
+              "id": "02d58122-6a0f-4bdb-9914-6f50d2af6df4",
+              "name": "starttime",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].function.arguments.starttime }}"
+            },
+            {
+              "id": "c1249493-a1d7-4a91-9468-9e5c49430d2e",
+              "name": "body.message.toolCalls[0].id",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].id }}"
+            },
+            {
+              "id": "2d1e0d9a-4c70-488e-b430-b8137fd54970",
+              "name": "customer.number",
+              "type": "string",
+              "value": "={{ $json.body.message.call.customer.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "giris-parametreleri",
+      "name": "Giris Parametreleri",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1360,
+        624
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "slotlari-al",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "slot-al-araci",
+      "name": "Slot_Al_Araci",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1104,
+        624
+      ],
+      "typeVersion": 2,
+      "webhookId": "bce32f07-530b-4511-ab4c-c1853f2e68e1"
+    },
+    {
+      "parameters": {
+        "resource": "calendar",
+        "calendar": {
+          "__rl": true,
+          "mode": "list",
+          "value": "example@gmail.com",
+          "cachedResultName": "example@gmail.com"
+        },
+        "timeMin": "={{ $json.starttime.toDateTime() }}",
+        "timeMax": "={{ $json.endtime.toDateTime() || $now.plus(1, 'hour').toISO() }}",
+        "options": {}
+      },
+      "id": "musaitlik-kontrol",
+      "name": "Musaitlik Kontrol Et",
+      "type": "n8n-nodes-base.googleCalendar",
+      "position": [
+        1648,
+        624
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "4a8741a2-a903-4fb7-b0a3-5c74c7eea6ca",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.available }}",
+              "rightValue": "="
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "zaman-musait-kontrol",
+      "name": "Zaman Musait mi Kontrol Et",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1872,
+        624
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f582d965-af15-4ecf-8a8c-d8bf6c0d15c1",
+              "name": "body.message.toolCalls[0].id",
+              "type": "string",
+              "value": "={{ $('Giris Parametreleri').item.json.body.message.toolCalls[0].id }}"
+            },
+            {
+              "id": "834ee925-5c8d-4e46-aeee-f399dc1ff40c",
+              "name": "available",
+              "type": "boolean",
+              "value": "={{ $json.available }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "zaman-musait-true",
+      "name": "Zaman Musait true ve Call_id",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2160,
+        528
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\":[\n        {\n            \"toolCallId\":\"{{ $('Slot_Al_Araci').first().json.body.message.toolCalls[0].id }}\",\n            \"result\":\"musait:{{ $json.available }}\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "id": "yanit",
+      "name": "Yanit",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        2384,
+        528
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "mode": "list",
+          "value": "example@gmail.com",
+          "cachedResultName": "example@gmail.com"
+        },
+        "returnAll": true,
+        "options": {
+          "timeMin": "={{ $now.toISO() }}",
+          "timeMax": "={{ $now.plus(1, 'week').toISO() }}",
+          "singleEvents": true,
+          "orderBy": "startTime"
+        }
+      },
+      "id": "tum-takvim",
+      "name": "Tum Takvim Etkinliklerini Al",
+      "type": "n8n-nodes-base.googleCalendar",
+      "position": [
+        2160,
+        720
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1045b97f-c76f-450e-8f57-008602000848",
+              "name": "start",
+              "type": "string",
+              "value": "={{ DateTime.fromISO($json.start.dateTime).toLocaleString(DateTime.DATE_HUGE) }}, {{ DateTime.fromISO($json.start.dateTime).toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET) }}"
+            },
+            {
+              "id": "457e3a2b-d33e-4a65-b2da-d19ad9d754ac",
+              "name": "end",
+              "type": "string",
+              "value": "={{ DateTime.fromISO($json.end.dateTime).toLocaleString(DateTime.DATE_HUGE) }}, {{ DateTime.fromISO($json.end.dateTime).toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET) }}"
+            },
+            {
+              "id": "b6802452-557e-4568-af14-4574e8ecc013",
+              "name": "name",
+              "type": "string",
+              "value": "={{ $json.summary }}"
+            },
+            {
+              "id": "799b656f-68b6-467c-88a1-217ff7c7801b",
+              "name": "sort",
+              "type": "string",
+              "value": "={{ $json.start.dateTime }}"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "id": "baslangic-bitis",
+      "name": "Baslangic Bitis ve Isim Cikar",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2384,
+        720
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "sort",
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "sort"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "sirala",
+      "name": "Sirala",
+      "type": "n8n-nodes-base.itemLists",
+      "position": [
+        2608,
+        720
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "response",
+        "include": "allFieldsExcept",
+        "fieldsToExclude": "sort",
+        "options": {}
+      },
+      "id": "yanit-formatla",
+      "name": "Yanit Formatla",
+      "type": "n8n-nodes-base.itemLists",
+      "position": [
+        2848,
+        720
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "// Girdi verisi\nconst inputData = $input.all()[0].json.response;\n\n// Turkiye saati icin calisma saatleri tanimla\nconst CALISMA_BASLANGIC = \"09:00:00 +03\";\nconst CALISMA_BITIS = \"18:00:00 +03\";\nconst SLOT_SURESI = 30 * 60 * 1000;\n\n// Turkiye saati datetime stringlerini parse et\nconst parseTurkeyTime = (datetime) => {\n  const parsedDate = new Date(datetime.replace(\" +03\", \"+03:00\"));\n  return isNaN(parsedDate) ? null : parsedDate;\n};\n\n// 30 dakikalik baslangic zamanlari olustur\nconst generateStartTimes = (start, end) => {\n  const startTimes = [];\n  let current = new Date(start);\n\n  while (current < end) {\n    startTimes.push(\n      current.toLocaleTimeString('tr-TR', {\n        timeZone: 'Europe/Istanbul',\n        hour: '2-digit',\n        minute: '2-digit',\n      })\n    );\n    current = new Date(current.getTime() + SLOT_SURESI);\n  }\n  return startTimes;\n};\n\n// Genis acik araliklari bul\nconst findWideOpenRanges = (startTimes) => {\n  if (startTimes.length < 3) return [];\n\n  const ranges = [];\n  let rangeStart = null;\n  let consecutiveCount = 0;\n\n  for (let i = 0; i < startTimes.length - 1; i++) {\n    const currentTime = parseTurkeyTime(`2000-01-01 ${startTimes[i]} +03`);\n    const nextTime = parseTurkeyTime(`2000-01-01 ${startTimes[i + 1]} +03`);\n    const diff = nextTime - currentTime;\n\n    if (diff === SLOT_SURESI) {\n      consecutiveCount += 1;\n      if (rangeStart === null) rangeStart = startTimes[i];\n    } else {\n      if (consecutiveCount >= 2) {\n        ranges.push(`${rangeStart} - ${startTimes[i]} arasi`);\n      }\n      rangeStart = null;\n      consecutiveCount = 0;\n    }\n  }\n\n  if (consecutiveCount >= 2) {\n    ranges.push(`${rangeStart} - ${startTimes[startTimes.length - 1]} arasi`);\n  }\n  return ranges;\n};\n\n// Toplantilari tarihe gore grupla\nconst meetingsByDate = inputData.reduce((acc, meeting) => {\n  const start = parseTurkeyTime(meeting.start);\n  const end = parseTurkeyTime(meeting.end);\n\n  if (!start || !end) return acc;\n\n  const dateKey = start.toISOString().split('T')[0];\n  if (!acc[dateKey]) acc[dateKey] = [];\n  acc[dateKey].push({ start, end });\n  return acc;\n}, {});\n\n// Musaitlik olustur\nconst availability = Object.keys(meetingsByDate)\n  .filter((date) => {\n    const dayOfWeek = new Date(date).getUTCDay();\n    return dayOfWeek !== 0 && dayOfWeek !== 6;\n  })\n  .map((date) => {\n    const workdayStart = parseTurkeyTime(`${date} ${CALISMA_BASLANGIC}`);\n    const workdayEnd = parseTurkeyTime(`${date} ${CALISMA_BITIS}`);\n    const dayMeetings = meetingsByDate[date].sort((a, b) => a.start - b.start);\n\n    let availableStartTimes = [];\n    let lastEnd = workdayStart;\n\n    for (const meeting of dayMeetings) {\n      if (meeting.start > lastEnd) {\n        availableStartTimes = availableStartTimes.concat(generateStartTimes(lastEnd, meeting.start));\n      }\n      lastEnd = meeting.end > lastEnd ? meeting.end : lastEnd;\n    }\n\n    if (lastEnd < workdayEnd) {\n      availableStartTimes = availableStartTimes.concat(generateStartTimes(lastEnd, workdayEnd));\n    }\n\n    const wideOpenRanges = findWideOpenRanges(availableStartTimes);\n    return {\n      date: new Date(date).toLocaleDateString('tr-TR', {\n        weekday: 'long',\n        year: 'numeric',\n        month: 'long',\n        day: 'numeric',\n      }),\n      availableStartTimes,\n      wideOpenRanges,\n    };\n  });\n\n// Ciktiyi formatla\nconst availableTimes = availability\n  .map(({ date, availableStartTimes, wideOpenRanges }) => {\n    const times = availableStartTimes.map((time) => `- ${time}`).join('\\n');\n    const ranges = wideOpenRanges.length\n      ? `Genis Acik Araliklar:\\n${wideOpenRanges.map((range) => `- ${range}`).join('\\n')}`\n      : \"Genis Acik Araliklar: Yok\";\n    return `### ${date}\\nMusait Baslangic Saatleri:\\n${times}\\n\\n${ranges}`;\n  })\n  .join('\\n\\n');\n\nreturn { json: { availableTimes } };"
+      },
+      "id": "musait-saatler",
+      "name": "Musait Baslangic Saatleri ve Araliklari",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        3088,
+        720
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5cb05b10-e916-459e-84a2-9c314a859a07",
+              "name": "results[0].toolCallId",
+              "type": "string",
+              "value": "={{ $('Giris Parametreleri').item.json.body.message.toolCalls[0].id }}"
+            },
+            {
+              "id": "552246f9-7afd-404e-9fb3-cb38c7447359",
+              "name": "results[0].result",
+              "type": "string",
+              "value": "={{ $json.availableTimes }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "yanit-payload",
+      "name": "Yanit Payload Olustur",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3744,
+        720
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.first().json;\nlet message = inputData.results?.[0]?.result;\n\nif (typeof message !== 'string') {\n    return { message: \"\" };\n}\n\nlet cleanedMessage = message.replace(/\\\\n/g, ' ');\ncleanedMessage = cleanedMessage.replace(/\\s*:\\s*/g, ':');\ncleanedMessage = cleanedMessage.replace(/\\s+/g, ' ').trim();\n\nreturn { message: cleanedMessage };"
+      },
+      "id": "json-donustur",
+      "name": "JSON Formatini Vapi icin Donustur",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        3968,
+        720
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\":[\n        {\n            \"toolCallId\":\"{{ $('Slot_Al_Araci').first().json.body.message.toolCalls[0].id }}\",\n            \"result\":\"Orijinal saat musait degil, iste musait slotlar:{{ $json.message }}\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "id": "vapi-yanit",
+      "name": "Vapiye Yanit Ver",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        4208,
+        720
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "randevu-al",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "randevu-al",
+      "name": "Randevu_Al_Araci",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1104,
+        1104
+      ],
+      "typeVersion": 2,
+      "webhookId": "458740a5-305d-4f28-9558-5ed299dfd13a"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "randevu-guncelle",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "randevu-guncelle",
+      "name": "Randevu_Guncelle_Araci",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1120,
+        1360
+      ],
+      "typeVersion": 2,
+      "webhookId": "025dc850-edd3-4033-b940-3ef5bbd7cee8"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "randevu-iptal",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "randevu-iptal",
+      "name": "Randevu_Iptal_Araci",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1120,
+        1680
+      ],
+      "typeVersion": 2,
+      "webhookId": "6d138021-fc4b-4d62-9390-574f078099dc"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "arama-sonuclari",
+        "options": {}
+      },
+      "id": "arama-sonuclari",
+      "name": "Arama_Sonuclari",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1136,
+        1952
+      ],
+      "typeVersion": 2,
+      "webhookId": "cf61bedf-d15c-43b0-97ae-2cb2f6f326a7"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-02T18:17:44.452Z",
+  "versionId": "7744335d-2337-4872-8411-a2a5ba5b7ef3"
+}
