@@ -1,0 +1,150 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Ticker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Ticker": {
+      "main": [
+        [
+          {
+            "node": "Get Stock Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Stock Data": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Send Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-29T19:10:29.492Z",
+  "id": "ydZhumy8ew0VpNhS",
+  "isArchived": true,
+  "meta": null,
+  "name": "Market Virtuoso - Simple REST API",
+  "nodes": [
+    {
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        100,
+        200
+      ],
+      "parameters": {
+        "path": "market-virtuoso",
+        "httpMethod": "POST",
+        "responseMode": "lastNode"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "extract-ticker",
+      "name": "Extract Ticker",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "jsCode": "// Extract ticker from message\nconst message = $json.body.message || $json.body.query || 'THYAO analiz et';\nconst tickerMatch = message.match(/([A-Z]{4,6})/);\nconst ticker = tickerMatch ? tickerMatch[1] : 'THYAO';\n\nreturn {\n  ticker: ticker,\n  originalMessage: message,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "get-stock-data",
+      "name": "Get Stock Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "url": "https://borsa-mcp.botfusions.com/analyze/technical/{{ $json.ticker }}",
+        "method": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "{\"ticker\": \"{{ $json.ticker }}\"}"
+      },
+      "typeVersion": 4.2
+    },
+    {
+      "id": "format-response",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        700,
+        200
+      ],
+      "parameters": {
+        "jsCode": "// Market Virtuoso Response Formatter\nconst stockData = $json.technical_data;\nconst indicators = $json.indicators;\nconst ticker = stockData.ticker;\n\nconst response = `🎭 Market Virtuoso - ${ticker} Analizi\n\n💰 Fiyat: ${stockData.price} TL\n📈 Değişim: ${stockData.change > 0 ? '+' : ''}${stockData.change} TL (${stockData.change_percent > 0 ? '+' : ''}${stockData.change_percent}%)\n📊 Hacim: ${stockData.volume.toLocaleString()} adet\n\n🔬 Teknik Göstergeler:\n• RSI: ${indicators.rsi}\n• Trend: ${indicators.trend}\n• Destek: ${indicators.support_level} TL\n• Direnç: ${indicators.resistance_level} TL\n\n🕐 Güncelleme: ${stockData.timestamp}\n📡 Kaynak: ${stockData.source}\n\n⚠️ Bu analiz yatırım tavsiyesi değildir.`;\n\nreturn {\n  response: response,\n  ticker: ticker,\n  data: stockData,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "send-response",
+      "name": "Send Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        900,
+        200
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"message\": $json.response, \"ticker\": $json.ticker, \"timestamp\": $json.timestamp, \"source\": \"Market Virtuoso API\" } }}"
+      },
+      "typeVersion": 1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-30T09:29:53.677Z",
+  "versionId": "66930e29-71ff-4509-b51f-9e69fd8c86cd"
+}
