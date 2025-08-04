@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Webhook - Soru Al": {
       "main": [
@@ -237,6 +237,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-21T11:13:14.704Z",
+  "updatedAt": "2025-07-27T16:12:17.053Z",
   "versionId": "c8052a3f-911f-4384-a797-f96ebda487dc"
 }
