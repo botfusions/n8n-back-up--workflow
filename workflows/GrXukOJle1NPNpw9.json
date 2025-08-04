@@ -1,0 +1,113 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook - BORSA MCP": {
+      "main": [
+        [
+          {
+            "node": "Format Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Input": {
+      "main": [
+        [
+          {
+            "node": "Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-29T19:01:10.695Z",
+  "id": "GrXukOJle1NPNpw9",
+  "isArchived": true,
+  "meta": null,
+  "name": "BORSA MCP - Market Virtuoso AI",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Webhook - BORSA MCP",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        100,
+        200
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "borsa-mcp",
+        "responseMode": "lastNode"
+      }
+    },
+    {
+      "id": "set-input",
+      "name": "Format Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "message",
+              "name": "message",
+              "type": "string",
+              "value": "={{ $json.body.message || $json.body.query || 'THYAO hissesini analiz et' }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "response",
+      "name": "Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"message\": \"BORSA MCP Workflow aktif!\", \"input\": $json.message, \"timestamp\": $now, \"status\": \"ready\" } }}"
+      }
+    },
+    {
+      "id": "mcp-client",
+      "name": "BORSA MCP Client",
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        400,
+        100
+      ],
+      "parameters": {
+        "operation": "executeTool",
+        "toolName": "get_stock_data",
+        "toolParameters": "{\"ticker\": \"{{ $json.message || 'THYAO' }}\"}"
+      }
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-29T19:11:02.365Z",
+  "versionId": "1aa03c04-12dc-4160-94a2-92a36645bbd1"
+}
