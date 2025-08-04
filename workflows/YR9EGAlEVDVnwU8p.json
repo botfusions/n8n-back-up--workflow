@@ -12,17 +12,6 @@
         ]
       ]
     },
-    "Perplexity": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "OpenRouter Chat Model": {
       "ai_languageModel": [
         [
@@ -40,6 +29,28 @@
           {
             "node": "AI Agent",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model in Perplexity": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
@@ -74,7 +85,7 @@
         "text": "={{ $json.chatInput }}{{ $json.querye }}",
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "You are a helpful assistant, derin araştırmaları yap, gelen  sorulara açıklayıcı samimi bir dille cevap ver, perplexity tool kullan\n"
+          "systemMessage": "You are a helpful assistant, derin araştırmaları yap, gelen  sorulara açıklayıcı samimi bir dille cevap ver, perplexity tool kullan, kısa vadeli zamanlar için ser api kullana bilirsin\n"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -111,7 +122,46 @@
     },
     {
       "parameters": {
-        "model": "sonar-deep-research",
+        "model": "openrouter/horizon-beta",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1056,
+        160
+      ],
+      "id": "a54c64a3-9968-4539-b9c6-e52a9649c066",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "mCaHmcmsgT32ID96",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        176
+      ],
+      "id": "18cc5791-7fd0-44a1-8539-617ffc74f7d8",
+      "name": "SerpAPI",
+      "credentials": {
+        "serpApi": {
+          "id": "8L1ksea7aXlpEk7S",
+          "name": "SerpAPI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "sonar-reasoning",
         "messages": {
           "message": [
             {
@@ -126,34 +176,15 @@
       "type": "n8n-nodes-base.perplexityTool",
       "typeVersion": 1,
       "position": [
-        -576,
-        192
-      ],
-      "id": "00803726-35ec-42f9-b90d-91801ae4edbe",
-      "name": "Perplexity",
-      "credentials": {
-        "perplexityApi": {
-          "id": "YKGhB2HiCDLjVcVU",
-          "name": "Perplexity account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
-      "typeVersion": 1,
-      "position": [
-        -800,
+        -688,
         176
       ],
-      "id": "a54c64a3-9968-4539-b9c6-e52a9649c066",
-      "name": "OpenRouter Chat Model",
+      "id": "00803726-35ec-42f9-b90d-91801ae4edbe",
+      "name": "Message a model in Perplexity",
       "credentials": {
-        "openRouterApi": {
-          "id": "mCaHmcmsgT32ID96",
-          "name": "OpenRouter account"
+        "perplexityApi": {
+          "id": "uO17fRCcmPwk9Bhg",
+          "name": "Perplexity 03082025"
         }
       }
     }
@@ -165,6 +196,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-16T19:47:14.688Z",
-  "versionId": "9f0ab0b2-9c84-4c20-a8fd-dc881da37ac9"
+  "updatedAt": "2025-08-03T16:11:28.896Z",
+  "versionId": "16008dd2-36ad-45e9-af55-ddee17ed630c"
 }
