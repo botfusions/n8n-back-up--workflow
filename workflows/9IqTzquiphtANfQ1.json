@@ -1,0 +1,85 @@
+{
+  "active": false,
+  "connections": {
+    "Get Records": {
+      "main": [
+        [
+          {
+            "node": "Update Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T13:42:13.307Z",
+  "id": "9IqTzquiphtANfQ1",
+  "isArchived": false,
+  "meta": null,
+  "name": "Fix Date Format - Cleanup",
+  "nodes": [
+    {
+      "id": "get-records-1",
+      "name": "Get Records",
+      "type": "n8n-nodes-base.airtable",
+      "position": [
+        100,
+        200
+      ],
+      "parameters": {
+        "operation": "list",
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        }
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "update-records-1",
+      "name": "Update Records",
+      "type": "n8n-nodes-base.airtable",
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        },
+        "id": "={{ $json.id }}",
+        "columns": {
+          "value": {
+            "Date booked": "={{ $json.fields['Date booked'] ? $json.fields['Date booked'].split('T')[0] : null }}"
+          },
+          "mappingMode": "defineBelow"
+        }
+      },
+      "typeVersion": 2.1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-01T13:42:13.307Z",
+  "versionId": "02898c56-6395-496d-b102-98a0ae163751"
+}
