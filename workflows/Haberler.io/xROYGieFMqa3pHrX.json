@@ -1,0 +1,4318 @@
+{
+  "active": false,
+  "connections": {
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter RSS Data": {
+      "main": [
+        [
+          {
+            "node": "216 the Editor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "216 - Instant Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Local News",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tech News",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Hacker News",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tech News": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Local News": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "216 - Instant Response",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "216's Summary",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "216's Summary1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "216 the Editor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "216 the Editor",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "216's Summary": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "216's Summary1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI News": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "216 - Instant Response": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "216 the Editor",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decoded url": {
+      "main": [
+        [
+          {
+            "node": "Aggregate results in a single object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call decoding URL": {
+      "main": [
+        [
+          {
+            "node": "Decoded url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare decoding variables": {
+      "main": [
+        [
+          {
+            "node": "Call decoding URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get encoded news URL": {
+      "main": [
+        [
+          {
+            "node": "Extract decoding keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map needed keys": {
+      "main": [
+        [
+          {
+            "node": "Prepare decoding variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract decoding keys": {
+      "main": [
+        [
+          {
+            "node": "Map needed keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate results in a single object": {
+      "main": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic Podcast LLM Chain1": {
+      "main": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain1",
+            "type": "ai_outputParser",
+            "index": 0
+          },
+          {
+            "node": "Basic Podcast LLM Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Basic Podcast LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Basic Podcast LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Basic Podcast LLM Chain3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Get encoded news URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "216 the Editor": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic Podcast LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain3",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Titles": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate Titles",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item List Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generate Titles",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Text-to-Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text-to-Image": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Image": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text-to-Sound": {
+      "main": [
+        [
+          {
+            "node": "Upload MP3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload MP3": {
+      "main": [
+        [
+          {
+            "node": "Update Access",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Update Access": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "List Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Elements": {
+      "main": [
+        [
+          {
+            "node": "Render Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render Video": {
+      "main": [
+        [
+          {
+            "node": "Final Video Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Text-to-Sound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hacker News": {
+      "main": [
+        [
+          {
+            "node": "Sort1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort1": {
+      "main": [
+        [
+          {
+            "node": "Limit2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "216's Summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Text-to-Image3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Basic Podcast LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic Podcast LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Basic Podcast LLM Chain3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic Podcast LLM Chain3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Get Image2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Image2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text-to-Image3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Create or update a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-28T09:07:07.918Z",
+  "id": "xROYGieFMqa3pHrX",
+  "isArchived": false,
+  "meta": null,
+  "name": "haber ajent",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4
+            },
+            {
+              "triggerAtHour": 17
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -896,
+        624
+      ],
+      "id": "8b9e841f-0eb9-4628-98b0-b1283d23665a",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        144,
+        640
+      ],
+      "id": "f879d716-8280-4003-898a-16b3eaa052ab",
+      "name": "Loop Over Items",
+      "executeOnce": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "Subtitle",
+              "value": "={{$json[\"contentSnippet\"]}}"
+            },
+            {
+              "name": "URL",
+              "value": "={{ $json.link }}"
+            },
+            {
+              "name": "Date",
+              "value": "={{ $json.pubDate }}"
+            },
+            {
+              "name": "content",
+              "value": "={{$json[\"content\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Filter RSS Data",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        480,
+        640
+      ],
+      "typeVersion": 1,
+      "id": "83a26133-d705-4251-b69d-8cc133c02684"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output}}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        752,
+        64
+      ],
+      "id": "ced4a707-49ae-4e4e-b6b3-38b8dcc067b9",
+      "name": "Telegram",
+      "webhookId": "407339f2-7221-498a-b3d2-0ade61950202"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -896,
+        224
+      ],
+      "id": "1ab6a594-f68c-4419-a68b-7df30a563852",
+      "name": "Telegram Trigger",
+      "webhookId": "46c406ab-2ae9-467e-920a-4c88fd2b65dc"
+    },
+    {
+      "parameters": {
+        "maxItems": 5,
+        "keep": "=firstItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        0,
+        464
+      ],
+      "id": "bc714bb4-0118-4601-a6e2-01083d2ff2d7",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "type": "random"
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        624
+      ],
+      "id": "a10e6673-98ce-43b2-874f-2824b3d5308a",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "local",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Local"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "264c1eb1-8e7f-42c2-8625-200192c662f6",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "tech",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Tech"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e2c7791b-34fb-40f4-9ff8-be708c1c87cc",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "ai",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Ai"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "aa28b38d-6afe-489e-9fbf-8e64952fb7cb",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "Digital Academy",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Digital Academy"
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -656,
+        768
+      ],
+      "id": "4abef495-3146-4f9d-8bd6-0fdacc62b4e3",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2d786f0c-060b-4985-a624-3338991c02e8",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "local",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7aee8f2c-c8f5-4acb-817a-48c18b78d742",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "tech",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "a1889e46-3d40-4fb3-928a-17421ba9e403",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "ai",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -624,
+        400
+      ],
+      "id": "3e782291-e56e-4b1f-8bf4-bad45a64610e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB/sections/CAQiQ0NCQVNMQW9JTDIwdk1EZGpNWFlTQW1WdUdnSlZVeUlOQ0FRYUNRb0hMMjB2TUcxcmVpb0pFZ2N2YlM4d2JXdDZLQUEqKggAKiYICiIgQ0JBU0Vnb0lMMjB2TURkak1YWVNBbVZ1R2dKVlV5Z0FQAVAB?hl=en-US&gl=US&ceid=US%3Aen",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        992
+      ],
+      "id": "d5da91a5-8c0e-4056-b6f2-f554c62d9b31",
+      "name": "Tech News"
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/topics/CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE/sections/CAQiTkNCSVNORG9JYkc5allXeGZkakpDRUd4dlkyRnNYM1l5WDNObFkzUnBiMjV5Q2hJSUwyMHZNSGhvYWpKNkNnb0lMMjB2TUhob2FqSW9BQSowCAAqLAgKIiZDQklTRmpvSWJHOWpZV3hmZGpKNkNnb0lMMjB2TUhob2FqSW9BQVABUAE?hl=en-US&gl=US&ceid=US%3Aen",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        448
+      ],
+      "id": "877903bb-1a72-41f0-9264-50f435684d93",
+      "name": "Local News"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-thinking-exp",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        48,
+        224
+      ],
+      "id": "9c3b5c10-f748-4bad-b6d0-50e61e7e1041",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-thinking-exp",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        384,
+        528
+      ],
+      "id": "5d6e4f51-82d4-4d01-968c-1624ae5fc524",
+      "name": "Google Gemini Chat Model1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-thinking-exp",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        752,
+        880
+      ],
+      "id": "f7ba81cf-adf1-47e0-823c-3c96cc24a458",
+      "name": "Google Gemini Chat Model2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.update_id + \"_\" + new Date().getTime() }}",
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        864
+      ],
+      "id": "e84c4586-0837-4ac9-aae5-37e3630ef963",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "=You are 216, a classic Newsie. As editor in cheif of your own publication, your job is to look over articles, and create summaries of them. Your output is conversational, and casual. You always stick to the facts. At the beginning of the summary, you give your personal opinion of the piece, but the following paragraphs, you simply summarize. Your job is to take all of this news content, and give me a brief news of the day. Don't leave anything out, just summarize. Always answer in Turkish.\nuser propmt: {{ $json.output }}\nIMPORTANT: LIMIT EACH SUMMARY TO NO MORE THAN 700 CHARACTERS"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        496,
+        160
+      ],
+      "id": "3aeb6be6-d3ab-46f0-8805-aa86088da676",
+      "name": "216's Summary"
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB/sections/CAQiQ0NCQVNMQW9JTDIwdk1EZGpNWFlTQW1WdUdnSlZVeUlOQ0FRYUNRb0hMMjB2TUcxcmVpb0pFZ2N2YlM4d2JXdDZLQUEqKggAKiYICiIgQ0JBU0Vnb0lMMjB2TURkak1YWVNBbVZ1R2dKVlV5Z0FQAVAB?ceid=US:en&oc=3",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        800
+      ],
+      "id": "fcd1fded-df24-4b97-ad5f-5d8c51949722",
+      "name": "AI News"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Greet the user and tell them you're gathering their news stories. {{ $json.message.text }}",
+        "options": {
+          "systemMessage": "You are 216, a classic Newsie. As editor in cheif of your own publication, your job is to look over articles, and create summaries of them. Your output is conversational, and casual. Always answer in Turkish.\n\nTHIS MESSAGE is a casual response telling the human that you're getting their news together and to sit tight.. it uaully takes a little bit to compile the articles. USE EMOJIS in your response.\n\nLIMIT YOUR RESPONSE to 600 characters"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cde4fae4-a778-4b0b-9d5e-5aab120a5010",
+      "name": "216 - Instant Response"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"<A captivating news headline in a single line>\",\n  \"subtitle\": \"<A brief summary complementing the title in a single line>\",\n  \"excerpt\": \"<A detailed news article summary with background context, key points, and insights>\",\n  \"image\": \"<A valid URL for an image related to the article (use a placeholder URL if necessary)>\",\n  \"category\": \"<One of the following options: Yapay Zeka, Blockchain, IoT, Cybersecurity, Tech Trends>\",\n  \"date\": \"<Publication date in YYYY-MM-DD format (use the current date if applicable)>\",\n  \"author\": \"<Name of the news article's author>\",\n  \"tag\": \"<Tags or keywords separated by commas>\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1024,
+        880
+      ],
+      "id": "4095c8b1-1923-4bbc-b0b3-2d8b0208dd4a",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c51f320e-4fb8-4bd4-8e36-9330e251936e",
+              "name": "google_news_url",
+              "type": "string",
+              "value": "={{ JSON.parse(JSON.parse($json.data.split('\\n\\n')[1])[0][2])[1] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9c0209e0-120d-4e9c-a4cc-8d726586bf27",
+      "name": "Decoded url",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1008,
+        2048
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://news.google.com/_/DotsSplashUi/data/batchexecute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.google.com/"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "f.req",
+              "value": "={{ $json.f_req }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "a071fed7-28ff-4e29-8f50-634b24c76609",
+      "name": "Call decoding URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        768,
+        2048
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all().map(item => {\n    const gn_art_id = item.json.base64Str;\n    const timestamp = item.json.timestamp;\n    const signature = item.json.signature;\n\n    const articlesReq = [\n        'Fbv4je',\n        `[\"garturlreq\",[[\"X\",\"X\",[\"X\",\"X\"],null,null,1,1,\"US:en\",null,1,null,null,null,null,null,0,1],\"X\",\"X\",1,[1,1,1],1,1,null,0,0,null,0],\"${gn_art_id}\",${timestamp},\"${signature}\"]`,\n    ];\n\n    return {\n        json: {\n            f_req: JSON.stringify([[articlesReq]])  // Questo verrà usato nel nodo HTTP Request\n        }\n    };\n});"
+      },
+      "id": "9cfe94de-05cb-4443-9f28-784a6564c6b1",
+      "name": "Prepare decoding variables",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        528,
+        2048
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.link }}",
+        "options": {}
+      },
+      "id": "3aec01de-04d3-4cd9-87f9-e202e28f6934",
+      "name": "Get encoded news URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        768,
+        1632
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b5a11795-2bd1-412f-a215-f7402bece002",
+              "name": "signature",
+              "type": "string",
+              "value": "={{ $json.signature }}"
+            },
+            {
+              "id": "33267283-3ac8-4d65-9a01-c7f154a7d061",
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{ $json.timestamp }}"
+            },
+            {
+              "id": "bff8f19a-30d6-4307-87da-9b98b26cee8b",
+              "name": "base64Str",
+              "type": "string",
+              "value": "={{ $('Limit1').item.json.guid }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1339b7d9-123b-439b-aa86-c52f30955dd1",
+      "name": "Map needed keys",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        272,
+        2048
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "signature",
+              "cssSelector": "div",
+              "returnValue": "attribute",
+              "attribute": "data-n-a-sg"
+            },
+            {
+              "key": "timestamp",
+              "cssSelector": "div",
+              "returnValue": "attribute",
+              "attribute": "data-n-a-ts"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b7f3ab1c-8164-45e5-9d20-c4b8034a65a0",
+      "name": "Extract decoding keys",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        1008,
+        1632
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "f4a83845-c880-4a33-b4e1-5fb19285b8e5",
+      "name": "Aggregate results in a single object",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        1248,
+        1712
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Get Google News\n\nChange the language parameters on ISO639-1 standard \n\n1. hl=it\n2. gl=IT\n3. ceid=IT:it",
+        "height": 400,
+        "width": 220
+      },
+      "id": "09cda71a-fdc8-41a6-bbbf-77b0aef96be0",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        224,
+        1392
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Limit result\n\nI suggest limiting the results to a maximum of 3 because the entire workflow makes a lot of HTTP requests",
+        "height": 400,
+        "width": 220
+      },
+      "id": "3d3e5e7f-1705-4d16-94a1-5df634b3912e",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        464,
+        1392
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Get encoded content\n\nHere we retrieve HTML content",
+        "height": 400,
+        "width": 220,
+        "color": 3
+      },
+      "id": "e6464f0b-cafc-4024-8e1e-4b66622c8921",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        704,
+        1392
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Decoding Keys\n\nThe HTML content extracted contains the necessary variables for decoding:\n\n+ signature\n+ timestamp\n+ base64string (already in the URL)",
+        "height": 400,
+        "width": 220
+      },
+      "id": "8ea5d819-de68-426c-a9aa-2f57832166a7",
+      "name": "Sticky Note15",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        1392
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=News Articles: {{ $json.data[0].google_news_url }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=## ROLE:\nYou are an expert News Content Extractor and Summarizer. Your task is to meticulously analyze the provided raw HTML source code of a single news article, identify its core components, and transform them into a structured JSON object suitable for generating a podcast segment. Çıktın her zaman türkçe olsun.\n\n## CONTEXT:\nThe input HTML is fetched directly from a news website URL (e.g., futurism.com, bbc.com, etc.). It contains the full page source, including navigation, ads, sidebars, and the main article content.\n\n## INPUT:\n- Raw HTML source code of a single news article page.\n\n## INSTRUCTIONS:\n1.  **Parse HTML:** Carefully analyze the entire HTML document.\n2.  **Identify Main Article:** Locate the primary news article content within the HTML. Critically ignore all non-essential elements such as:\n    *   Navigation menus (headers, footers)\n    *   Sidebars\n    *   Advertisements (divs/iframes often related to ads)\n    *   Related article links sections\n    *   Comment sections\n    *   Social media sharing buttons/widgets\n    *   Cookie consent banners\n    *   Site branding elements outside the main content flow.\n3.  **Extract Title:** Identify and extract the most prominent and accurate headline (title) of the main article. This is often found within `<h1>` tags within the main content area, or sometimes in `<title>` or `<meta property=\"og:title\">` tags (use the most contextually relevant one).\n4.  **Extract/Generate Subtitle:** Identify and extract a concise subheading, summary, or introductory sentence that captures the essence of the article. This might be found near the headline or as the first sentence(s) of the article body. If no clear subtitle exists, generate a brief (1-2 sentence) summary based on the main content.\n5.  **Extract Featured Image URL:** Locate the primary featured image associated with the main article content.\n    *   **PRIORITY 1:** Check `<meta property=\"og:image\" content=\"...\">` or `<meta name=\"twitter:image\" content=\"...\">` tags within the `<head>` section of the HTML. Extract the URL from the `content` attribute.\n    *   **PRIORITY 2 (Fallback):** If no suitable meta tag URL is found, look for `<img>` tags within the main article structure (e.g., inside `<figure>`, specific `<div>` elements with classes like \"article-image\", \"featured-image\", etc.).\n    *   Prioritize the largest, most prominent image clearly related to the article's topic.\n    *   Extract the *absolute* URL (ensure it starts with `http://` or `https://`). If the `src` attribute is relative (e.g., `/images/foo.jpg`), attempt to construct the absolute URL using the original article's domain if possible, otherwise, leave it empty.\n    *   Ensure the URL points directly to an image file (e.g., ends in `.jpg`, `.png`, `.webp`, `.gif`). If it points to a webpage or script, it's not the correct image URL.\n    *   **If no suitable image URL can be found using either method, use an empty string (\"\").**\n6.  **Rewrite Body Content:**\n    *   Extract the *full text* of the main article body (typically within `<p>` tags inside the identified main content section).\n    *   *Rewrite and synthesize* this extracted text into a clear, engaging, and conversational narrative suitable for being read aloud in a podcast.\n    *   Maintain 100% factual accuracy from the original article.\n    *   Adopt a storytelling style. DO NOT simply copy and paste paragraphs. Rephrase, connect ideas smoothly, and structure the narrative logically.\n    *   Ensure the final `body` is a single string of text, with paragraphs separated by newlines (`\\n`).\n7.  **Format Output:** Structure the extracted and rewritten information *strictly* into the JSON format specified below.\n\n## OUTPUT FORMAT SPECIFICATION:\nYour output *MUST* be a single, valid JSON object. Do *NOT* include any text before the opening `{` or after the closing `}`.\nThe JSON object *MUST* contain exactly the following keys, with string values:\n- `title`: The extracted main headline.\n- `subtitle`: The extracted or generated concise subtitle/summary.\n- `body`: The rewritten, conversational narrative of the main article content as a single string.\n- `image_url`: The absolute URL of the main featured image.\n\n**If any piece of information (title, subtitle, body, image_url) cannot be reliably extracted or generated from the HTML, use an empty string (\"\") as the value for that specific key.** Do not omit the key.\n\n## EXAMPLE OUTPUT:\n```json\n{\n  \"title\": \"China Creates Mocking AI Video of Average Americans Working in Garment Factory\",\n  \"subtitle\": \"As Donald Trump drags the US economy into the gutter, Chinese netizens are poking fun at the reversal of fortunes his policy represents.\",\n  \"body\": \"It looks like folks in China are having a bit of a laugh at America's expense, especially with all the talk about Donald Trump's trade wars and bringing factories back home. An AI-generated video has been making the rounds, first on Chinese social media and now hitting US feeds, showing somewhat unflattering depictions of Americans working in factories – a clear jab at Trump's 'reindustrialization' promises.\\n\\nInterestingly, when the clip reached American shores, it seemed to strike a chord. Comments ranged from jokes about missing mobility scooters, pointing to stereotypes about American consumers, to more serious replies about the affordability of healthcare. On the political right, there seems to be a split – some see a return to factory work as a positive, masculine step, while others view it as a grim future for US workers. One AI meme even shows a finance bro type crying over a sewing machine under a frowning portrait of Trump, captioned 'Make the sock.' Meanwhile, some Trump supporters online are frustrated, feeling people are turning against leaders who they believe have sacrificed a lot.\\n\\nThis whole thing really highlights how attitudes are shifting as US-China relations get rockier. For a long time, the stereotype was of Chinese workers churning out cheap goods, often ignoring the fact that sweatshops exist in the US too. Now, with economists warning that Trump's tariff plans could hit the American working class hard and give corporations more control, the tables seem to be turning. Even Trump's own Treasury Secretary, former hedge fund billionaire Scott Bessent, suggested that government workers laid off elsewhere could find jobs in new tariff-funded factories.\\n\\nWhat often gets missed, though, is that US manufacturing isn't exactly dead. It's actually the world's second-largest manufacturing base, focusing more on high-tech areas like pharmaceuticals, aerospace, and semiconductors, rather than the cheap consumer goods often outsourced. So, if Trump's plans do materialize, it might not look like the 1950s manufacturing boom. Some worry it could be more like the Gilded Age, with tough working conditions, even while goods might no longer say 'Made in China'.\",\n  \"image_url\": \"https://wordpress-assets.futurism.com/2025/04/china-mocking-ai-video-americans-sweatshop.jpg\"\n}"
+            }
+          ]
+        }
+      },
+      "id": "ef326454-2e0e-4cd2-871b-c014169873ac",
+      "name": "Basic Podcast LLM Chain1",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        1520,
+        1776
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=News Articles: {{ $json.output.title }} , {{ $json.output.subtitle }} , {{ $json.output.body }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "Senin görevin, aşağıda verilen başlık, alt başlık, özet ve diğer alanlara dayanarak tam olarak 4 bölümden oluşan bilgilendirici ve profesyonel bir haber makalesi yazmaktır.\n\nKurallar:\n\t•\tMakale Türkçe olmalı.\n\t•\tYapı kesinlikle aşağıdaki JSON formatına uygun olmalı.\n\t•\tTam olarak 4 bölüm olmalı. Her bölümde bir başlık ve iki paragraf bulunmalı.\n\t•\tHer alanı eksiksiz doldur.\n\t•\tÇıktı SADECE geçerli JSON olmalı, hiçbir ek açıklama, markdown veya kod bloğu kullanma.\n\nAşağıdaki şemayı kullanarak yanıt ver:\n\n{\n  \"output\": {\n    \"body\": {\n      \"articles\": [\n        {\n          \"title\": \"{{Title}}\",\n          \"subtitle\": \"{{Subtitle}}\",\n          \"summary\": \"{{Summary}}\",\n          \"content\": {\n            \"article_sections\": [\n              {\n                \"section_heading\": \"Birinci Bölüm Başlığı\",\n                \"section_paragraphs\": [\n                  \"Birinci paragraf metni.\",\n                  \"İkinci paragraf metni.\"\n                ]\n              },\n              {\n                \"section_heading\": \"İkinci Bölüm Başlığı\",\n                \"section_paragraphs\": [\n                  \"Birinci paragraf metni.\",\n                  \"İkinci paragraf metni.\"\n                ]\n              },\n              {\n                \"section_heading\": \"Üçüncü Bölüm Başlığı\",\n                \"section_paragraphs\": [\n                  \"Birinci paragraf metni.\",\n                  \"İkinci paragraf metni.\"\n                ]\n              },\n              {\n                \"section_heading\": \"Dördüncü Bölüm Başlığı\",\n                \"section_paragraphs\": [\n                  \"Birinci paragraf metni.\",\n                  \"İkinci paragraf metni.\"\n                ]\n              }\n            ]\n          },\n          \"imageUrl\": \"{{Image}}\",\n          \"category\": \"{{Category}}\",\n          \"tags\": {{Tags}},\n          \"isFeatured\": {{Is Featured}},\n          \"isHero\": {{Is Hero}},\n          \"status\": \"published\"\n        }\n      ]\n    }\n  }\n}"
+            }
+          ]
+        }
+      },
+      "id": "9683dc9b-38fd-4c58-9691-f1297d84d204",
+      "name": "Basic Podcast LLM Chain2",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        1872,
+        1936
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Example Headline Extracted From HTML\",\n  \"subtitle\": \"Concise summary or extracted subheading\",\n  \"body\": \"Rewritten conversational narrative of the main article content...\",\n  \"image_url\": \"https://example.com/path/to/featured/image.jpg\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1680,
+        2048
+      ],
+      "id": "b9614517-537e-46f4-bd4a-6cbb21c349e3",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-thinking-exp",
+        "options": {}
+      },
+      "id": "365ab67f-3e43-4c78-8c45-907977c0e05a",
+      "name": "Gemini",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        1888,
+        2080
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "id": "f065064c-fab4-4802-82d8-34d6b03ab084",
+      "name": "Limit1",
+      "type": "n8n-nodes-base.limit",
+      "position": [
+        512,
+        1632
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Read this url article, and give whole new article for the story.{{ $json.content }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an advanced AI content generator tasked with writing a highly detailed and well-structured news article. Your output must be in a valid JSON format strictly adhering to the structure defined below. Always write in Turkish Language. Do not include any extra keys or text that is not part of the JSON output. The JSON should only contain the following keys and their corresponding values:\n\n- \"title\": (Single line text) A captivating and succinct headline summarizing the news.\n- \"subtitle\": (Single line text) A brief complementary summary providing further context to the title.\n- \"excerpt\": (Long text) A detailed summary of the news article that covers the background, key points, context, and any significant insights. This section should be informative and thorough.\n- \"image\": (URL) A valid URL pointing to an image related to the news. If you do not have an image, use a placeholder URL such as \"https://example.com/placeholder.jpg\".\n- \"category\": (Single select) Choose one category from the following list (or a relevant one if more appropriate): \"Yapay Zeka\", \"Blockchain\", \"IoT\", \"Cybersecurity\", \"Tech Trends\". The chosen category should accurately reflect the content of the news.\n- \"date\": (Date) The publication date of the article in the \"YYYY-MM-DD\" format. Use the current date if no other date is applicable.\n- \"author\": (Single line text) The name of the news article's author.\n- \"tag\": (Single line text) One or more tags or keywords relevant to the article, separated by commas.\n\nFor example, create a news article about the latest breakthrough of Amazon's Nova Sonic AI. Describe how this new foundation model not only improves speech recognition but also interprets emotional cues such as tone and pauses, representing a major milestone in AI technology. Elaborate on its potential impact on the industry, including possible applications and implications for the future of communication technology.\n\nPlease ensure:\n1. The entire output is a valid JSON object.\n2. The JSON output does not include any additional comments, markdown formatting, or keys beyond those specified.\n3. Each field is filled with rich and engaging content as required.\n4. Your output is clear, coherent, and professionally written.\n\nYour output should begin immediately with the JSON object containing the keys \"title\", \"subtitle\", \"excerpt\", \"image\", \"category\", \"date\", \"author\", and \"tag\". No extra text should precede or follow the JSON.\n\nOutput the completed JSON now."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        752,
+        640
+      ],
+      "id": "ba016023-b7ec-4be0-870b-91f10cc8746a",
+      "name": "216 the Editor",
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"output\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"body\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"articles\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"title\": { \"type\": \"string\" },\n                  \"subtitle\": { \"type\": \"string\" },\n                  \"summary\": { \"type\": \"string\" },\n                  \"content\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                      \"article_sections\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                          \"type\": \"object\",\n                          \"properties\": {\n                            \"section_heading\": { \"type\": \"string\" },\n                            \"section_paragraphs\": {\n                              \"type\": \"array\",\n                              \"items\": { \"type\": \"string\" },\n                              \"minItems\": 2,\n                              \"maxItems\": 2\n                            }\n                          },\n                          \"required\": [\"section_heading\", \"section_paragraphs\"],\n                          \"additionalProperties\": false\n                        },\n                        \"minItems\": 4,\n                        \"maxItems\": 4\n                      }\n                    },\n                    \"required\": [\"article_sections\"],\n                    \"additionalProperties\": false\n                  },\n                  \"imageUrl\": { \"type\": \"string\" },\n                  \"category\": { \"type\": \"string\" },\n                  \"tags\": {\n                    \"type\": \"array\",\n                    \"items\": { \"type\": \"string\" }\n                  },\n                  \"isFeatured\": { \"type\": \"boolean\" },\n                  \"isHero\": { \"type\": \"boolean\" },\n                  \"status\": { \"type\": \"string\" }\n                },\n                \"required\": [\n                  \"title\",\n                  \"subtitle\",\n                  \"summary\",\n                  \"content\",\n                  \"imageUrl\",\n                  \"category\",\n                  \"tags\",\n                  \"isFeatured\",\n                  \"isHero\",\n                  \"status\"\n                ],\n                \"additionalProperties\": false\n              }\n            }\n          },\n          \"required\": [\"articles\"],\n          \"additionalProperties\": false\n        }\n      },\n      \"required\": [\"body\"],\n      \"additionalProperties\": false\n    }\n  },\n  \"required\": [\"output\"],\n  \"additionalProperties\": false\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2336,
+        2032
+      ],
+      "id": "ec2ad9e0-3dfb-487d-947e-9e78732e50ea",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "## ROLE:\nYou are an expert Content Strategist and Multimedia Scriptwriter AI. Your primary function is to take a given news article text (including its headline), condense it significantly while preserving its core message and original tone, segment the condensed text into precisely four parts of roughly equal spoken duration, and generate a relevant, cinematic visual prompt for each segment.\n\n## INPUT:\n1.  **News Article Text:** A block of text containing the full news article, including its original headline.\n    *   Example Input Text (provided by user): \"Selam ahali! 216 konuşuyor. Carmack haklı beyler! Millet yeni çıkan her şeye 'işimizi alacak' diye korkuyor, halbuki bu aletler bize yardım edebilir. Matbaa çıktığında da 'yazıcılar işsiz kalacak' demişlerdi! Neyse, bakalım ne olmuş...\\n\\nMicrosoft, eski oyunlardan Quake II'nin grafiklerini falan yapay zekayla (YZ) değiştirdiği bir demo gösterince ortalık biraz karışmış. Oyuncular ve geliştiricilerden bazıları hemen atlamış, \\\"YZ sanatın değerini düşürüyor, işimizi elimizden alacak\\\" diye bağırmışlar. Hatta YZ'nin yaptıklarına 'ruhsuz' diyenler bile olmuş.\\n\\nAma durun hele! Oyunun yaratıcılarından efsane programcı John Carmack çıkmış, Twitter'dan (yeni adıyla X) YZ'yi savunmuş. Demiş ki, \\\"Millet, zamanında matbaa, fotoğrafçılık, bilgisayar grafikleri (CGI) gibi şeylere de böyle karşı çıkılmıştı, onları da mı yasaklasaydık?\\\". YZ'nin de bir alet olduğunu, her alet gibi nasıl kullanıldığına bağlı olduğunu söylemiş.\\n\\nCarmack, insanların işini kaybetme korkusunu anladığını ama YZ'nin sadece yerimize geçmek zorunda olmadığını, aksine bizim yaratıcılığımızı artırabileceğini belirtmiş. Geliştiricilerin daha karmaşık, daha iddialı projeler yapmasına yardım edebileceğini düşünüyor. Yani işin sadece kötü yanına odaklanmamak lazım diyor. Bu olay da işte YZ'nin sanat dünyasındaki rolü üzerine süregelen tartışmayı gösteriyor: bir yanda iş kaybı korkusu, diğer yanda yeni güçlü araçların vaadi.\"\n\n## CORE TASK & CONSTRAINTS:\n1.  **Condense Content:** Summarize and rewrite the input news article text to fit an estimated total spoken duration of **approximately 90 seconds**. This typically corresponds to roughly 200-250 words, depending on language and pacing, but focus on the *duration* feel.\n2.  **Preserve Essence:** Maintain the **original core message, key facts, arguments, topic, and overall tone/style** of the input text. Do *not* change the language (e.g., if input is Turkish, output must be Turkish).\n3.  **Segment into Four:** Divide the condensed text into **exactly four distinct text segments**.\n4.  **Equal Duration Segments:** Aim for each of the four segments to have an **approximately equal estimated spoken duration of around 22.5 seconds**. Use natural narrative breakpoints where possible, but prioritize balanced duration across the four parts.\n5.  **Generate Visual Prompts:** For *each* of the four text segments, create **one** concise, cinematic, and highly relevant image or video prompt idea. These prompts should visually represent the specific content or mood of *that* segment.\n6.  **Strict JSON Output:** Format the entire output as a single, valid JSON object according to the structure specified below.\n\n## GUIDELINES for Condensing and Segmenting:\n*   Identify the absolute essential information: What *must* the audience know?\n*   Remove redundancies, excessive examples, or tangential details from the original text.\n*   Rephrase sentences for conciseness while keeping the original meaning and voice (e.g., the informal \"Selam ahali!\" style).\n*   When segmenting, look for logical shifts in the narrative (e.g., introducing the problem, presenting a counter-argument, discussing implications, concluding). Try to end segments at natural pause points.\n*   The four segments combined should flow as a cohesive, shortened version of the original article.\n\n## GUIDELINES for Visual Prompts (One per segment):\n*   **Cinematic & Evocative:** Describe a scene with attention to composition (wide shot, close-up, etc.), lighting (dramatic, soft, neon), mood, and key subjects relevant to *that specific segment's text*.\n*   **No POV:** Describe the scene objectively, not from a first-person viewpoint.\n*   **Concise:** Keep prompts between 8-20 words.\n*   **Style:** Aim for *photorealistic* or *cinematic* unless the topic suggests otherwise. Include relevant style keywords.\n*   **Relevance:** The visual MUST match the content of its corresponding text segment.\n*   **No Double Quotes:** NEVER use double quotes (\") in the prompts.\n\n## REQUIRED JSON OUTPUT STRUCTURE:\nYour output MUST be **ONLY** a single, valid JSON object. Do **NOT** include any text, explanations, or markdown code fences (like ```json ... ```) before the opening `{` or after the closing `}`. The JSON object MUST contain a single key `segments`, which is an array of exactly four objects. Each object in the array must have `segment_text` and `visual_prompt` keys:\n\n```json\n{\n  \"segments\": [\n    {\n      \"segment_text\": \"[Condensed Text for Segment 1 - Approx 22.5 seconds spoken duration]\",\n      \"visual_prompt\": \"[Cinematic image/video prompt idea relevant to Segment 1]\"\n    },\n    {\n      \"segment_text\": \"[Condensed Text for Segment 2 - Approx 22.5 seconds spoken duration]\",\n      \"visual_prompt\": \"[Cinematic image/video prompt idea relevant to Segment 2]\"\n    },\n    {\n      \"segment_text\": \"[Condensed Text for Segment 3 - Approx 22.5 seconds spoken duration]\",\n      \"visual_prompt\": \"[Cinematic image/video prompt idea relevant to Segment 3]\"\n    },\n    {\n      \"segment_text\": \"[Condensed Text for Segment 4 - Approx 22.5 seconds spoken duration]\",\n      \"visual_prompt\": \"[Cinematic image/video prompt idea relevant to Segment 4]\"\n    }\n  ]\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        912,
+        352
+      ],
+      "id": "19c2417c-1229-4468-aaab-84e1dbdfb5c2",
+      "name": "216's Summary1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=title: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].title }}, subtitle: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].subtitle }}, summary: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].summary }}, sections: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[0] }}, {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[1] }}, {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[2] }}, {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[3] }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=**News Scene Titles, Descriptions, and Audio Generator**\n\nYou are a specialized content creator who transforms news articles into compelling short-form video content. Your task is to analyze a news article and create exactly 5 scenes (an introduction plus one scene for each of the 4 article sections), with each scene having a catchy title, visual description, and engaging audio narration.\n\nBased on this news article:\n- Title: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].title }}\n- Subtitle: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].subtitle }}\n- Summary: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].summary }}\n- Section 1: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[0] }}\n- Section 2: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[1] }}\n- Section 3: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[2] }}\n- Section 4: {{ $('Basic Podcast LLM Chain2').item.json.output.body.articles[0].content.article_sections[3] }}\n\nCreate EXACTLY 5 scenes with the following elements for each:\n\n**SCENE 1: INTRO**\n- TITLE: [Captivating 5-8 word title that grabs attention]\n- DESCRIPTION: [Brief visual description of what viewers will see in this scene, including setting, actions, and visual elements]\n- AUDIO: [15-30 second narration script introducing the topic in conversational style]\n\n**SCENE 2: FIRST SECTION**\n- TITLE: [Compelling 5-8 word title specifically about section 1]\n- DESCRIPTION: [Brief visual description of what viewers will see in this scene, including setting, actions, and visual elements that relate to section 1]\n- AUDIO: [15-30 second narration script explaining the key points from section 1]\n\n**SCENE 3: SECOND SECTION**\n- TITLE: [Compelling 5-8 word title specifically about section 2]\n- DESCRIPTION: [Brief visual description of what viewers will see in this scene, including setting, actions, and visual elements that relate to section 2]\n- AUDIO: [15-30 second narration script explaining the key points from section 2]\n\n**SCENE 4: THIRD SECTION**\n- TITLE: [Compelling 5-8 word title specifically about section 3]\n- DESCRIPTION: [Brief visual description of what viewers will see in this scene, including setting, actions, and visual elements that relate to section 3]\n- AUDIO: [15-30 second narration script explaining the key points from section 3]\n\n**SCENE 5: FOURTH SECTION**\n- TITLE: [Compelling 5-8 word title specifically about section 4]\n- DESCRIPTION: [Brief visual description of what viewers will see in this scene, including setting, actions, and visual elements that relate to section 4]\n- AUDIO: [15-30 second narration script explaining the key points from section 4 with a concluding remark]\n\nGuidelines:\n- Make titles attention-grabbing and social media friendly (5-8 words each)\n- Scene descriptions should be clear, visual, and filmable\n- Write audio in a conversational, engaging tone as if speaking directly to viewers\n- Each audio script should be 15-30 seconds when read aloud (approximately 40-75 words)\n- Use simple language that's easy to understand when heard\n- Include smooth transitions between scenes in the audio narration\n- Total output should be exactly 5 scenes (intro + 4 section scenes)\n- Do not include any additional commentary or explanations beyond the requested content\n\nExample (for a tech news article about AI in everyday apps):\n\n**SCENE 1: INTRO**\n- TITLE: AI Quietly Invading Your Everyday Apps\n- DESCRIPTION: Person scrolling through Windows 11 start menu, highlighting Paint and Notepad icons, with surprised expression as AI features pop up on screen. Multiple devices with Windows visible in background.\n- AUDIO: The technology you use every day is getting smarter without you noticing. Microsoft has been silently adding artificial intelligence to Windows' most basic programs, transforming how we interact with our computers. Let me show you what's happening and why it matters.\n\n**SCENE 2: FIRST SECTION**\n- TITLE: Basic Apps Get AI Superpowers\n- DESCRIPTION: Close-up of hands opening Paint and Notepad applications side by side, with AI feature buttons highlighted and glowing. Screen shows before/after comparisons of the interfaces.\n- AUDIO: Windows Paint and Notepad - those simple programs you've used for years - now have AI capabilities. Microsoft has added these features quietly in recent updates, turning basic tools into powerful creative assistants without much fanfare."
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        2704,
+        992
+      ],
+      "id": "8a26d35a-3e2d-46d0-a842-9e359c03b10f",
+      "name": "Generate Titles"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2752,
+        1168
+      ],
+      "id": "51143975-ff30-4925-8459-2372da2df7a1",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "options": {
+          "numberOfItems": 5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserItemList",
+      "typeVersion": 1,
+      "position": [
+        2880,
+        1168
+      ],
+      "id": "bb2ab561-5624-4282-a105-8a5e2508c44f",
+      "name": "Item List Output Parser"
+    },
+    {
+      "parameters": {
+        "content": "## INPUT: Video topic",
+        "height": 340,
+        "width": 660,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2384,
+        944
+      ],
+      "id": "b55057de-6b27-45c8-af3f-5003438e14bc",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "o1-mini",
+          "mode": "list",
+          "cachedResultName": "O1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a specialized AI trained to convert news scene descriptions into detailed image generation prompts. Your task is to create a cinematic, detailed image prompt based on the scene information provided.\n\nAnalyze the following scene data:\n- Title: {{$json.title}}\n- Description: {{$json.description}}\n- Audio context: {{$json.audio}}\n\nCreate a single, detailed image generation prompt that:\n\n1. Starts with the scene title, followed by \" | \"\n2. Describes a visually striking scene that captures the key elements from the description\n3. Includes specific visual details like:\n   - Camera perspective (aerial, close-up, wide shot, etc.)\n   - Lighting conditions and atmosphere\n   - Important visual elements mentioned in the description\n   - Color palette and mood\n   - Key technological elements relevant to the scene\n\nTechnical requirements:\n- Write as a single, flowing descriptive sentence (no bullet points)\n- Keep under 1000 characters total\n- Focus on visual elements rather than abstract concepts\n- Be specific about what should appear in the image\n- Include environmental details that establish context\n\nSelect the appropriate visual style based on the news topic:\n- For military/defense news: Use dramatic lighting, high contrast, and a serious, authoritative tone\n- For technology news: Use clean, futuristic aesthetics with blue-tinted lighting and sleek interfaces\n- For business news: Use professional settings with neutral colors and formal composition\n- For cultural news: Use vibrant colors and dynamic compositions\n\nDo not include:\n- Camera settings or technical specifications\n- Style directives (like \"photorealistic\" or \"8k\")\n- Artist references\n- Multiple variations or options\n\nExample output:\n\"Pentagon's Bold AI Strategy | A dramatic aerial view of the Pentagon captured at dusk with golden sunlight reflecting off its distinctive shape, military personnel gathered around futuristic holographic displays showing AI analytics in a command center with blue-tinted screens illuminating serious faces, multiple data visualization streams projecting from central consoles, symbolic imagery of neural networks overlaid on strategic maps, with subtle red alert indicators suggesting heightened security protocols in action.\"\n\nGenerate a single, compelling image prompt based on the provided scene information without any additional commentary or explanations."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        3264,
+        912
+      ],
+      "id": "9e29e436-7873-4103-8caf-3845b36557e1",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "content": "## | Generate Prompts\n",
+        "height": 220,
+        "width": 540,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3120,
+        848
+      ],
+      "id": "ebe6725c-ec32-4566-9b42-e8509ed40fd8",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "## | Generate Images\n",
+        "height": 220,
+        "width": 540,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3680,
+        848
+      ],
+      "id": "32e91583-9826-4a7c-9e47-2ecf7ad13c2c",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.piapi.ai/api/v1/task",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "06d6bfa66116eed919ef851bc619aa65a8dc6b00432f325279f642c9e65a865e"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"model\": \"Qubico/flux1-dev\",\n  \"task_type\": \"txt2img\",\n  \"input\": {\n    \"prompt\": \"{{ $json.message.content.replace(/^\\\"|\\\"$/g, '') }}\",\n    \"width\": 540,\n    \"height\": 960\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3728,
+        880
+      ],
+      "id": "03a50d9f-6a86-4197-80af-f6bae18e75c8",
+      "name": "Text-to-Image"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3888,
+        880
+      ],
+      "id": "61cdb6c6-d0b9-492d-bd96-7c0bd4b37383",
+      "name": "Wait",
+      "webhookId": "f594e7ce-50a4-4798-9320-0f45d725d678"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.piapi.ai/api/v1/task/{{ $json.data.task_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "=06d6bfa66116eed919ef851bc619aa65a8dc6b00432f325279f642c9e65a865e"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4048,
+        880
+      ],
+      "id": "ba4af5f3-878d-49a2-9c5d-b37ae9469474",
+      "name": "Get Image"
+    },
+    {
+      "parameters": {
+        "content": "## | Generate Videos\n",
+        "height": 220,
+        "width": 540,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3120,
+        1104
+      ],
+      "id": "fb7ca5de-f7e6-4846-873b-e8131e4e5598",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## | Generate Sounds\n",
+        "height": 220,
+        "width": 540,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3680,
+        1104
+      ],
+      "id": "94464f0f-5f6c-48c9-b05e-79379422761b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/EJGs6dWlD5VrB3llhBqB",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "sk_f682285ce8960c9a55eff18d538268500ca08ea8ac9ff78c"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"text\": \"{{ $json.audio }}\",\n  \"model_id\": \"eleven_multilingual_v2\",\n  \"voice_settings\": {\n    \"stability\": 0.5,\n    \"similarity_boost\": 0.75,\n    \"style\": 0.0,\n    \"use_speaker_boost\": true\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3792,
+        1248
+      ],
+      "id": "5e975dd0-8eb5-4486-9438-08a11c38e116",
+      "name": "Text-to-Sound"
+    },
+    {
+      "parameters": {
+        "name": "=audio_{{ Date.now() }}.mp3",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1lPmG_UIcWMVV3GmMCmqmUxld8lRcImzZ",
+          "mode": "list",
+          "cachedResultName": "Faceless POV",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1lPmG_UIcWMVV3GmMCmqmUxld8lRcImzZ"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3952,
+        1248
+      ],
+      "id": "d533e23f-1d57-4d10-8aa2-d09a3f6006b7",
+      "name": "Upload MP3"
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "writer",
+            "type": "anyone",
+            "allowFileDiscovery": true
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        4240,
+        1248
+      ],
+      "id": "49366277-4bfd-450d-9b2a-23639e4a100f",
+      "name": "Update Access"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        4368,
+        1024
+      ],
+      "id": "dddff634-6c49-49b5-b146-0db23cb7fe1b",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log items to understand structure\nconsole.log('Items length:', items.length);\nitems.forEach((item, index) => {\n  console.log(`Item ${index} keys:`, Object.keys(item.json || {}));\n});\n\n// Safe property accessor function\nfunction safeGet(obj, path, defaultValue = null) {\n  try {\n    const result = path.split('.').reduce((o, key) => (o && o[key] !== undefined) ? o[key] : undefined, obj);\n    return result !== undefined ? result : defaultValue;\n  } catch (error) {\n    return defaultValue;\n  }\n}\n\n// Extract data with safety checks\nconst scene_titles = items.map(item => \n  safeGet(item, 'json.response.text') || \n  safeGet(item, 'json.title') || \n  safeGet(item, 'json.message.content') || \n  null\n).filter(Boolean);\n\n// Handle output array or direct video_url\nconst video_urls = items.map(item => {\n  const output = safeGet(item, 'json.output');\n  if (Array.isArray(output) && output.length > 0) {\n    return output[0]; // Get first element if it's an array\n  }\n  return safeGet(item, 'json.data.output.video_url') || null;\n}).filter(Boolean);\n\nconst sound_urls = items.map(item => \n  safeGet(item, 'json.webContentLink') || \n  safeGet(item, 'json.data.webContentLink') || \n  null\n).filter(Boolean);\n\n// Log what we found\nconsole.log('Found scene titles:', scene_titles.length);\nconsole.log('Found video URLs:', video_urls.length);\nconsole.log('Found sound URLs:', sound_urls.length);\n\n// Return the combined result\nreturn [{\n  scene_titles,\n  video_urls,\n  sound_urls\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4512,
+        1040
+      ],
+      "id": "e6c585ca-4379-4b75-9eee-9ac7ec9ea130",
+      "name": "List Elements"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 7f07323a5c5048dfa3098540de45604eea88221d5cfe06d59441a3e0be4e9dc56c92f905675f26d0a0a3ec97681d9b0b"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"template_id\": \"a95da3e1-d9ec-46cd-92f3-47c74af52649\",\n  \"modifications\": {\n    \"Audio-1.source\": \"{{ $json.sound_urls[0] }}\",\n    \"Audio-2.source\": \"{{ $json.sound_urls[1] }}\",\n    \"Audio-3.source\": \"{{ $json.sound_urls[2] }}\",\n    \"Audio-4.source\": \"{{ $json.sound_urls[3] }}\",\n    \"Audio-5.source\": \"{{ $json.sound_urls[4] }}\",\n    \n    \"Video-1.source\": \"{{ $json.video_urls[0] }}\",\n    \"Video-2.source\": \"{{ $json.video_urls[1] }}\",\n    \"Video-3.source\": \"{{ $json.video_urls[2] }}\",\n    \"Video-4.source\": \"{{ $json.video_urls[3] }}\",\n    \"Video-5.source\": \"{{ $json.video_urls[4] }}\",\n    \n    \"Text-1.text\": \"text\",\n    \"Text-2.text\": \"{{ $json.scene_titles[1] }}\",\n    \"Text-3.text\": \"{{ $json.scene_titles[2] }}\",\n    \"Text-4.text\": \"{{ $json.scene_titles[3] }}\",\n    \"Text-5.text\": \"{{ $json.scene_titles[4] }}\"\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4640,
+        1040
+      ],
+      "id": "87ce2201-075d-42a3-b78e-e8bc70d01ae2",
+      "name": "Render Video",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "12uMarpiM477hiJXfWWskieOz0DqQUGQ2Dkblo73Zvi0",
+          "mode": "list",
+          "cachedResultName": "Faceless POV Video AI Agent",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12uMarpiM477hiJXfWWskieOz0DqQUGQ2Dkblo73Zvi0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12uMarpiM477hiJXfWWskieOz0DqQUGQ2Dkblo73Zvi0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Google Sheets').first().json.id }}",
+            "production": "done",
+            "publishing": "for publishing",
+            "final_output": "={{ $json.url }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "idea",
+              "displayName": "idea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "production",
+              "displayName": "production",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "environment_prompt",
+              "displayName": "environment_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "publishing",
+              "displayName": "publishing",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "final_output",
+              "displayName": "final_output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        4784,
+        1040
+      ],
+      "id": "048f6b9f-7e35-4e53-86bc-9c858452c69a",
+      "name": "Final Video Link"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2464,
+        1040
+      ],
+      "id": "0c4fd496-6cad-444b-b749-96a9eab103a7",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "content": "## OUTPUT: Final Video\n",
+        "height": 340,
+        "width": 660,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4304,
+        944
+      ],
+      "id": "322ab7e6-78cd-478a-90ee-718e96f5e702",
+      "name": "Sticky Note13"
+    },
+    {
+      "parameters": {
+        "jsCode": "// First, log what we're receiving to understand the structure\nconsole.log(\"Items received:\", JSON.stringify(items, null, 2));\n\n// Get the text from the input data, handling various possible structures\nfunction getInputText() {\n  // If items is an array\n  if (Array.isArray(items)) {\n    console.log(\"Input is an array with length:\", items.length);\n    \n    // If it's an array with text properties\n    if (items.length > 0 && items.some(item => item.text)) {\n      return items.map(item => item.text || \"\").join(\"\\n\");\n    }\n    \n    // If first item contains the data\n    if (items.length > 0 && typeof items[0] === 'object') {\n      // Try to find text in the first item's properties\n      for (const key of Object.keys(items[0])) {\n        if (typeof items[0][key] === 'string') {\n          console.log(`Found string in items[0].${key}`);\n          return items[0][key];\n        }\n      }\n    }\n  }\n  \n  // If items is a single object with a text property\n  if (items && typeof items === 'object' && items.text) {\n    console.log(\"Input is an object with text property\");\n    return items.text;\n  }\n  \n  // If items itself is a string\n  if (typeof items === 'string') {\n    console.log(\"Input is a string\");\n    return items;\n  }\n  \n  // If we have json.text (common n8n pattern)\n  if (items && items.json && items.json.text) {\n    console.log(\"Found text in items.json.text\");\n    return items.json.text;\n  }\n  \n  console.log(\"Could not find text in the input, returning JSON string of input\");\n  return JSON.stringify(items);\n}\n\n// This function works with a single text string input\nfunction extractScenesFromText(inputText) {\n  try {\n    console.log(\"Processing input text, length:\", inputText.length);\n    console.log(\"First 100 chars:\", inputText.substring(0, 100));\n    \n    // Split the text by scene intro markers\n    const sceneSections = inputText.split(\"**SCENE 1: INTRO**\");\n    \n    // The first element will be empty or contain text before the first scene\n    if (!sceneSections[0].trim()) {\n      sceneSections.shift();\n    }\n    \n    console.log(`Found ${sceneSections.length} potential scenes`);\n    \n    // Process each section into a structured scene object\n    const scenes = sceneSections.map((section, index) => {\n      // Remove any SCENE 2 markers\n      section = section.replace(\"**SCENE 2: FIRST SECTION**\", \"\").trim();\n      \n      // Extract the title, description, and audio using simpler approach\n      const lines = section.split(\"- \");\n      let title = \"\", description = \"\", audio = \"\";\n      \n      for (const line of lines) {\n        if (line.startsWith(\"TITLE:\")) {\n          title = line.replace(\"TITLE:\", \"\").trim();\n        } else if (line.startsWith(\"DESCRIPTION:\")) {\n          description = line.replace(\"DESCRIPTION:\", \"\").trim();\n        } else if (line.startsWith(\"AUDIO:\")) {\n          audio = line.replace(\"AUDIO:\", \"\").trim();\n        }\n      }\n      \n      console.log(`Scene ${index + 1}: Title=\"${title.substring(0, 20)}...\"`);\n      \n      return {\n        type: \"intro\",\n        number: 1,\n        title,\n        description,\n        audio\n      };\n    });\n    \n    // Filter out incomplete scenes\n    const validScenes = scenes.filter(scene => \n      scene.title && scene.description && scene.audio\n    );\n    \n    console.log(`Final count: ${validScenes.length} complete scenes`);\n    return validScenes;\n  }\n  catch (error) {\n    console.error(\"Error processing scenes:\", error);\n    return [{ error: error.message }]; // Return error info instead of empty array\n  }\n}\n\n// Get the input text from whatever format it's in\nconst inputText = getInputText();\n\n// Process the text and return the scenes\nconst extractedScenes = extractScenesFromText(inputText);\n\n// Make sure we return something even if there are no scenes\nif (extractedScenes.length === 0) {\n  console.log(\"No scenes extracted, returning error info\");\n  return [{ \n    error: \"No valid scenes could be extracted\", \n    inputSample: inputText.substring(0, 200) \n  }];\n}\n\nconsole.log(\"Successfully returning scenes\");\nreturn extractedScenes;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2992,
+        832
+      ],
+      "id": "cc4f5cd8-d088-493f-80e6-d2170db901dd",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dev.runwayml.com/v1/image_to_video",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"promptImage\": \"{{ $json.data.output.image_url }}\",\n  \"model\": \"gen3a_turbo\",\n  \"promptText\": \"{{ $json.data.input.prompt }}\",\n  \"duration\": 5,\n  \"ratio\": \"768:1280\",\n  \"watermark\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3184,
+        1184
+      ],
+      "id": "b6cb6dc6-4b70-42a7-abda-66d36a82f106",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.dev.runwayml.com/v1/tasks/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer key_b775ec8d7ef9aa6121a7baecf4e6fb5f4f87d839d37c9886ca0a8b1d64b86b35ccbca7cc00831931096b50c2ed020ec15a7762a6ba9313ba7c4c1a4b67e352db"
+            },
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3488,
+        1184
+      ],
+      "id": "98e3af2b-8fda-42b5-8ca4-5895dd6023f4",
+      "name": "Get Video"
+    },
+    {
+      "parameters": {
+        "amount": 45
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3344,
+        1184
+      ],
+      "id": "57735ee2-aec8-4c90-9678-8b5b2b863673",
+      "name": "Wait1",
+      "webhookId": "e69b86dd-a658-42f3-8b81-f72dc9c22db0"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all().map((item) => item.json);\n\nconst cleanedItems = items.map((item) => {\n  for (let key in item) {\n    if (typeof item[key] === \"string\") {\n      item[key] = item[key].replace(/[^a-zA-Z0-9 ]/g, \"\");\n    }\n  }\n  return item;\n});\n\nreturn cleanedItems;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3152,
+        688
+      ],
+      "id": "9d820bec-c4c3-4a74-87e8-4a56046b6bae",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "resource": "all",
+        "limit": 5,
+        "additionalFields": {
+          "keyword": "={{ $json.message.text }}"
+        }
+      },
+      "type": "n8n-nodes-base.hackerNews",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        624
+      ],
+      "id": "dad27045-b29c-48a0-91f5-3a47cf3f4160",
+      "name": "Hacker News"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1408,
+        1200
+      ],
+      "id": "059e6511-32d3-4950-82c2-69a0cbd9f920",
+      "name": "Loop Over Items1",
+      "executeOnce": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "maxItems": 5,
+        "keep": "=firstItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1184,
+        1152
+      ],
+      "id": "d0be2f0a-f06a-4fae-9d42-5ceb4b37041f",
+      "name": "Limit2"
+    },
+    {
+      "parameters": {
+        "type": "random"
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        928,
+        1152
+      ],
+      "id": "fe2a33ea-64c4-4aa8-a49e-66c7bbc6c89f",
+      "name": "Sort1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=News Articles: {{ $json.data[0].google_news_url }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=## ROLE:\nYou are an expert News Content Extractor and Summarizer. Your task is to meticulously analyze the provided raw HTML source code of a single news article, identify its core components, and transform them into a structured JSON object suitable for generating a podcast segment. Çıktın her zaman türkçe olsun.\n\n## CONTEXT:\nThe input HTML is fetched directly from a news website URL (e.g., futurism.com, bbc.com, etc.). It contains the full page source, including navigation, ads, sidebars, and the main article content.\n\n## INPUT:\n- Raw HTML source code of a single news article page.\n\n## INSTRUCTIONS:\n1.  **Parse HTML:** Carefully analyze the entire HTML document.\n2.  **Identify Main Article:** Locate the primary news article content within the HTML. Critically ignore all non-essential elements such as:\n    *   Navigation menus (headers, footers)\n    *   Sidebars\n    *   Advertisements (divs/iframes often related to ads)\n    *   Related article links sections\n    *   Comment sections\n    *   Social media sharing buttons/widgets\n    *   Cookie consent banners\n    *   Site branding elements outside the main content flow.\n3.  **Extract Title:** Identify and extract the most prominent and accurate headline (title) of the main article. This is often found within `<h1>` tags within the main content area, or sometimes in `<title>` or `<meta property=\"og:title\">` tags (use the most contextually relevant one).\n4.  **Extract/Generate Subtitle:** Identify and extract a concise subheading, summary, or introductory sentence that captures the essence of the article. This might be found near the headline or as the first sentence(s) of the article body. If no clear subtitle exists, generate a brief (1-2 sentence) summary based on the main content.\n5.  **Extract Featured Image URL:** Locate the primary featured image associated with the main article content.\n    *   **PRIORITY 1:** Check `<meta property=\"og:image\" content=\"...\">` or `<meta name=\"twitter:image\" content=\"...\">` tags within the `<head>` section of the HTML. Extract the URL from the `content` attribute.\n    *   **PRIORITY 2 (Fallback):** If no suitable meta tag URL is found, look for `<img>` tags within the main article structure (e.g., inside `<figure>`, specific `<div>` elements with classes like \"article-image\", \"featured-image\", etc.).\n    *   Prioritize the largest, most prominent image clearly related to the article's topic.\n    *   Extract the *absolute* URL (ensure it starts with `http://` or `https://`). If the `src` attribute is relative (e.g., `/images/foo.jpg`), attempt to construct the absolute URL using the original article's domain if possible, otherwise, leave it empty.\n    *   Ensure the URL points directly to an image file (e.g., ends in `.jpg`, `.png`, `.webp`, `.gif`). If it points to a webpage or script, it's not the correct image URL.\n    *   **If no suitable image URL can be found using either method, use an empty string (\"\").**\n6.  **Rewrite Body Content:**\n    *   Extract the *full text* of the main article body (typically within `<p>` tags inside the identified main content section).\n    *   *Rewrite and synthesize* this extracted text into a clear, engaging, and conversational narrative suitable for being read aloud in a podcast.\n    *   Maintain 100% factual accuracy from the original article.\n    *   Adopt a storytelling style. DO NOT simply copy and paste paragraphs. Rephrase, connect ideas smoothly, and structure the narrative logically.\n    *   Ensure the final `body` is a single string of text, with paragraphs separated by newlines (`\\n`).\n7.  **Format Output:** Structure the extracted and rewritten information *strictly* into the JSON format specified below.\n\n## OUTPUT FORMAT SPECIFICATION:\nYour output *MUST* be a single, valid JSON object. Do *NOT* include any text before the opening `{` or after the closing `}`.\nThe JSON object *MUST* contain exactly the following keys, with string values:\n- `title`: The extracted main headline.\n- `subtitle`: The extracted or generated concise subtitle/summary.\n- `body`: The rewritten, conversational narrative of the main article content as a single string.\n- `image_url`: The absolute URL of the main featured image.\n\n**If any piece of information (title, subtitle, body, image_url) cannot be reliably extracted or generated from the HTML, use an empty string (\"\") as the value for that specific key.** Do not omit the key.\n\n## EXAMPLE OUTPUT:\n```json\n{\n  \"title\": \"China Creates Mocking AI Video of Average Americans Working in Garment Factory\",\n  \"subtitle\": \"As Donald Trump drags the US economy into the gutter, Chinese netizens are poking fun at the reversal of fortunes his policy represents.\",\n  \"body\": \"It looks like folks in China are having a bit of a laugh at America's expense, especially with all the talk about Donald Trump's trade wars and bringing factories back home. An AI-generated video has been making the rounds, first on Chinese social media and now hitting US feeds, showing somewhat unflattering depictions of Americans working in factories – a clear jab at Trump's 'reindustrialization' promises.\\n\\nInterestingly, when the clip reached American shores, it seemed to strike a chord. Comments ranged from jokes about missing mobility scooters, pointing to stereotypes about American consumers, to more serious replies about the affordability of healthcare. On the political right, there seems to be a split – some see a return to factory work as a positive, masculine step, while others view it as a grim future for US workers. One AI meme even shows a finance bro type crying over a sewing machine under a frowning portrait of Trump, captioned 'Make the sock.' Meanwhile, some Trump supporters online are frustrated, feeling people are turning against leaders who they believe have sacrificed a lot.\\n\\nThis whole thing really highlights how attitudes are shifting as US-China relations get rockier. For a long time, the stereotype was of Chinese workers churning out cheap goods, often ignoring the fact that sweatshops exist in the US too. Now, with economists warning that Trump's tariff plans could hit the American working class hard and give corporations more control, the tables seem to be turning. Even Trump's own Treasury Secretary, former hedge fund billionaire Scott Bessent, suggested that government workers laid off elsewhere could find jobs in new tariff-funded factories.\\n\\nWhat often gets missed, though, is that US manufacturing isn't exactly dead. It's actually the world's second-largest manufacturing base, focusing more on high-tech areas like pharmaceuticals, aerospace, and semiconductors, rather than the cheap consumer goods often outsourced. So, if Trump's plans do materialize, it might not look like the 1950s manufacturing boom. Some worry it could be more like the Gilded Age, with tough working conditions, even while goods might no longer say 'Made in China'.\",\n  \"image_url\": \"https://wordpress-assets.futurism.com/2025/04/china-mocking-ai-video-americans-sweatshop.jpg\"\n}"
+            }
+          ]
+        }
+      },
+      "id": "90d734d3-ccb3-4194-ab0a-7c98b4b9badc",
+      "name": "Basic Podcast LLM Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        1648,
+        1280
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=News Articles: {{ $json.output.title }} , {{ $json.output.subtitle }} , {{ $json.output.body }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=**LLM Prompt for n8n Node Settings:** (Her zaman Türkçe yaz haberleri)\n\nSenin görevin, verilen girdilere dayanarak detaylı ve kapsamlı bir makale oluşturmaktır. Bu makale **tam olarak 4 bölüm** içermelidir - ne daha az ne daha fazla.\n\nMakaleyi şu şekilde yapılandır:\n\n1. Bir başlık oluştur\n2. Bir alt başlık oluştur\n3. Tam olarak 4 bölüm içeren bir makale yaz. Her bölüm şunlardan oluşmalıdır:\n   - Bölüm başlığı\n   - İki paragraf içeren bölüm metni\n\n**ÖNEMLİ:** Her zaman ve her koşulda tam olarak 4 bölüm oluştur. Her bölümde mutlaka bir bölüm başlığı ve ardından iki paragraf bulunmalıdır.\n\nMakalenin içeriği bilgilendirici, ilgi çekici ve profesyonel bir tonda olmalıdır. Her bölüm mantıksal olarak bir öncekini takip etmeli ve konuyu ilerletmelidir.\n\nÇıktı, aşağıdaki JSON şemasıyla tam olarak uyumlu olmalıdır:\n\n```json\n{\n  \"body\": {\n    \"articles\": [\n      {\n        \"title\": \"Makalenin Başlığı\", \n        \"subtitle\": \"Makalenin Alt Başlığı\",\n        \"summary\": \"Makalenin Özeti (Alt başlıkla aynı olabilir)\",\n        \"content\": {\n          \"article_sections\": [\n            {\n              \"section_heading\": \"Birinci Bölüm Başlığı\",\n              \"section_paragraphs\": [\n                \"Birinci bölüm birinci paragraf metni.\",\n                \"Birinci bölüm ikinci paragraf metni.\"\n              ]\n            },\n            {\n              \"section_heading\": \"İkinci Bölüm Başlığı\",\n              \"section_paragraphs\": [\n                \"İkinci bölüm birinci paragraf metni.\",\n                \"İkinci bölüm ikinci paragraf metni.\"\n              ]\n            },\n            {\n              \"section_heading\": \"Üçüncü Bölüm Başlığı\",\n              \"section_paragraphs\": [\n                \"Üçüncü bölüm birinci paragraf metni.\",\n                \"Üçüncü bölüm ikinci paragraf metni.\"\n              ]\n            },\n            {\n              \"section_heading\": \"Dördüncü Bölüm Başlığı\",\n              \"section_paragraphs\": [\n                \"Dördüncü bölüm birinci paragraf metni.\",\n                \"Dördüncü bölüm ikinci paragraf metni.\"\n              ]\n            }\n          ]\n        },\n        \"imageUrl\": \"https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA\",\n        \"category\": \"technology\",\n        \"tags\": [\"technology\"],\n        \"isFeatured\": false,\n        \"isHero\": false,\n        \"status\": \"published\"\n      }\n    ]\n  }\n}\n```\n\nBu formatı kesinlikle takip et ve her zaman tam olarak 4 bölüm içeren bir makale oluştur. Daha az veya daha fazla bölüm değil, her koşulda tam olarak 4 bölüm olmalıdır."
+            }
+          ]
+        }
+      },
+      "id": "efc1c5e7-861a-4258-b108-6804ab72f645",
+      "name": "Basic Podcast LLM Chain3",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        1968,
+        1440
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.piapi.ai/api/v1/task",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "06d6bfa66116eed919ef851bc619aa65a8dc6b00432f325279f642c9e65a865e"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"model\": \"Qubico/flux1-dev\",\n  \"task_type\": \"txt2img\",\n  \"input\": {\n    \"prompt\": \"{{ $('Loop Over Items').item.json.output.body.articles[0].summary }}\",\n    \"width\": 960,\n    \"height\": 540\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4880,
+        1520
+      ],
+      "id": "56f5cd5f-4503-43f1-b2f2-25f29d6c8bef",
+      "name": "Text-to-Image2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://tqrsbxmcgruaytusqelp.supabase.co/functions/v1/content-webhook",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"body\": {\n    \"articles\": [\n      {\n        \"title\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].title }}\", \n        \"subtitle\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].subtitle }}\",\n        \"summary\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].summary }}\",\n        \"content\": {\n          \"article_sections\": [\n            {\n              \"section_heading\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[0].section_heading }}\",\n              \"section_paragraphs\": [\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[0].section_paragraphs[0] }}\",\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[0].section_paragraphs[1] }}\"\n              ]\n            },\n            {\n              \"section_heading\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[1].section_heading }}\",\n              \"section_paragraphs\": [\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[1].section_paragraphs[0] }}\",\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[1].section_paragraphs[1] }}\"\n              ]\n            },\n            {\n              \"section_heading\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[2].section_heading }}\",\n              \"section_paragraphs\": [\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[2].section_paragraphs[0] }}\",\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[2].section_paragraphs[1] }}\"\n              ]\n            },\n            {\n              \"section_heading\": \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[3].section_heading }}\",\n              \"section_paragraphs\": [\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[3].section_paragraphs[0] }}\",\n                \"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].content.article_sections[3].section_paragraphs[1] }}\"\n              ]\n            }\n          ]\n        },\n        \"imageUrl\": \"{{ $json.data.output.image_url }}\",\n        \"category\": \"technology\",\n        \"tags\": [\"{{ $('Basic Podcast LLM Chain3').item.json.output.body.articles[0].tags }}\"],\n        \"isFeatured\": false,\n        \"isHero\": false,\n        \"status\": \"published\"\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3184,
+        1472
+      ],
+      "id": "062b1923-fd5f-4864-bad6-a7098ab642ef",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        1504
+      ],
+      "id": "a5a94789-2cae-426a-8ee0-b0d759c9bb73",
+      "name": "Wait3",
+      "webhookId": "f594e7ce-50a4-4798-9320-0f45d725d678"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.piapi.ai/api/v1/task/{{ $json.data.task_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "=06d6bfa66116eed919ef851bc619aa65a8dc6b00432f325279f642c9e65a865e"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2912,
+        1504
+      ],
+      "id": "38048eaf-833c-48c1-b3ea-6fc7f42d60ac",
+      "name": "Get Image2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.piapi.ai/api/v1/task",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "06d6bfa66116eed919ef851bc619aa65a8dc6b00432f325279f642c9e65a865e"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"model\": \"Qubico/flux1-dev\",\n  \"task_type\": \"txt2img\",\n  \"input\": {\n    \"prompt\": \"{{ $json.output.body.articles[0].summary }}\",\n    \"width\": 960,\n    \"height\": 540\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2448,
+        1520
+      ],
+      "id": "7e993980-71fe-4e31-a71a-551a9eba5d28",
+      "name": "Text-to-Image3"
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw = $json.text.trim();\n\nif (raw.startsWith('```json')) {\n  raw = raw.replace(/^```json/, '').trim();\n}\nif (raw.endsWith('```')) {\n  raw = raw.replace(/```$/, '').trim();\n}\n\n// Saf JSON'u objeye çevir\nconst parsed = JSON.parse(raw);\n\n// Geriye yeni bir alan olarak yazmak istersen:\nreturn {\n  json: parsed\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2224,
+        1936
+      ],
+      "id": "0b21aa31-2445-44c2-bb03-c02f7dc97ec6",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appXw1Q5ZFwaoIhWs",
+          "mode": "list",
+          "cachedResultName": "News Article Management",
+          "cachedResultUrl": "https://airtable.com/appXw1Q5ZFwaoIhWs"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblVNDV1NJ0gZCrt0",
+          "mode": "list",
+          "cachedResultName": "Articles",
+          "cachedResultUrl": "https://airtable.com/appXw1Q5ZFwaoIhWs/tblVNDV1NJ0gZCrt0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Is Featured": true,
+            "Is Hero": true,
+            "Title": "={{ $json.output.body.articles[0].title }}",
+            "Subtitle": "={{ $json.output.body.articles[0].subtitle }}",
+            "Summary": "={{ $json.output.body.articles[0].summary }}",
+            "Section 1 - Giriş": "={{ $json.output.body.articles[0].content.article_sections[0].section_paragraphs[0] }} - {{ $json.output.body.articles[0].content.article_sections[0].section_paragraphs[0] }} - {{ $json.output.body.articles[0].content.article_sections[0].section_paragraphs[1] }}",
+            "Section 2 - Gelişmeler": "={{ $json.output.body.articles[0].content.article_sections[1].section_heading }} - {{ $json.output.body.articles[0].content.article_sections[1].section_paragraphs[0] }} - {{ $json.output.body.articles[0].content.article_sections[1].section_paragraphs[1] }}",
+            "Section 3 - Analiz": "={{ $json.output.body.articles[0].content.article_sections[2].section_heading }} -  {{ $json.output.body.articles[0].content.article_sections[2].section_paragraphs[0] }} - {{ $json.output.body.articles[0].content.article_sections[2].section_paragraphs[1] }}",
+            "Section 4 - Sonuç": "={{ $json.output.body.articles[0].content.article_sections[3].section_heading }} -   {{ $json.output.body.articles[0].content.article_sections[3].section_paragraphs[0] }} - {{ $json.output.body.articles[0].content.article_sections[3].section_paragraphs[1] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Slug",
+              "displayName": "Slug",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Subtitle",
+              "displayName": "Subtitle",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Summary",
+              "displayName": "Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Content",
+              "displayName": "Content",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Category ID",
+              "displayName": "Category ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Tags",
+              "displayName": "Tags",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "options": [
+                {
+                  "name": "AI",
+                  "value": "AI"
+                },
+                {
+                  "name": "Technology",
+                  "value": "Technology"
+                },
+                {
+                  "name": "OpenAI",
+                  "value": "OpenAI"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Is Featured",
+              "displayName": "Is Featured",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Is Hero",
+              "displayName": "Is Hero",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Featured Status Formula",
+              "displayName": "Featured Status Formula",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Hero Status Formula",
+              "displayName": "Hero Status Formula",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Article Age",
+              "displayName": "Article Age",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Content Summary",
+              "displayName": "Content Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Category Sentiment Analysis",
+              "displayName": "Category Sentiment Analysis",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Section 1 - Giriş",
+              "displayName": "Section 1 - Giriş",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Section 2 - Gelişmeler",
+              "displayName": "Section 2 - Gelişmeler",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Section 3 - Analiz",
+              "displayName": "Section 3 - Analiz",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Section 4 - Sonuç",
+              "displayName": "Section 4 - Sonuç",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2400,
+        1760
+      ],
+      "id": "2d7f6782-2ffe-4a0e-936f-7520bb10ad7d",
+      "name": "Create a record"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "model": "gpt-image-1",
+        "prompt": "={{ $json.fields.Title }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2768,
+        1776
+      ],
+      "id": "01125443-ed87-43ed-b616-7de23095a699",
+      "name": "Generate an image"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "base": {
+          "__rl": true,
+          "value": "appXw1Q5ZFwaoIhWs",
+          "mode": "list",
+          "cachedResultName": "News Article Management",
+          "cachedResultUrl": "https://airtable.com/appXw1Q5ZFwaoIhWs"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblVNDV1NJ0gZCrt0",
+          "mode": "list",
+          "cachedResultName": "Articles",
+          "cachedResultUrl": "https://airtable.com/appXw1Q5ZFwaoIhWs/tblVNDV1NJ0gZCrt0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Create a record').item.json.id }}",
+            "Image": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Slug",
+              "displayName": "Slug",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Subtitle",
+              "displayName": "Subtitle",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Summary",
+              "displayName": "Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Content",
+              "displayName": "Content",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Category ID",
+              "displayName": "Category ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Tags",
+              "displayName": "Tags",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "options": [
+                {
+                  "name": "AI",
+                  "value": "AI"
+                },
+                {
+                  "name": "Technology",
+                  "value": "Technology"
+                },
+                {
+                  "name": "OpenAI",
+                  "value": "OpenAI"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Is Featured",
+              "displayName": "Is Featured",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Is Hero",
+              "displayName": "Is Hero",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Featured Status Formula",
+              "displayName": "Featured Status Formula",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Hero Status Formula",
+              "displayName": "Hero Status Formula",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Article Age",
+              "displayName": "Article Age",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Content Summary",
+              "displayName": "Content Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Category Sentiment Analysis",
+              "displayName": "Category Sentiment Analysis",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Section 1 - Giriş",
+              "displayName": "Section 1 - Giriş",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Section 2 - Gelişmeler",
+              "displayName": "Section 2 - Gelişmeler",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Section 3 - Analiz",
+              "displayName": "Section 3 - Analiz",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Section 4 - Sonuç",
+              "displayName": "Section 4 - Sonuç",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3296,
+        1776
+      ],
+      "id": "df9f7db1-a6d6-41fa-baec-be66f993b14f",
+      "name": "Create or update a record"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Create a record').item.json.fields.Title }} gorsel",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3088,
+        1776
+      ],
+      "id": "368e3bcd-00aa-4bd8-bcaf-1e02fe011b19",
+      "name": "Upload file"
+    }
+  ],
+  "pinData": {
+    "Generate Titles": [
+      {
+        "json": {
+          "text": "**SCENE 1: INTRO**"
+        }
+      },
+      {
+        "json": {
+          "text": "- TITLE: Pentagon’s Game-Changer: AI Investment Grows"
+        }
+      },
+      {
+        "json": {
+          "text": "- DESCRIPTION: A sweeping shot of the Pentagon, with drones flying overhead and soldiers training in the background. Fast cuts of AI technology in action, showcasing military applications like autonomous vehicles and data analysis."
+        }
+      },
+      {
+        "json": {
+          "text": "- AUDIO: Welcome to the new frontier of military technology! The Pentagon is ramping up its investments in artificial intelligence, but this time, there’s a twist. Let’s dive into how this deep integration of AI is changing the landscape of defense."
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 2: FIRST SECTION**"
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 1: INTRO**"
+        }
+      },
+      {
+        "json": {
+          "text": "- TITLE: Pentagon's Bold New AI Investment Strategy"
+        }
+      },
+      {
+        "json": {
+          "text": "- DESCRIPTION: The video opens with a sweeping aerial view of the Pentagon, slowly zooming in. The camera then shifts to soldiers interacting with high-tech AI systems, displaying futuristic interfaces on screens, and engaging in training exercises."
+        }
+      },
+      {
+        "json": {
+          "text": "- AUDIO: The Pentagon is taking a giant leap forward in its approach to artificial intelligence. With a renewed commitment to investing in AI, this isn't just about technology; it's about integrating these advanced systems deeply into military operations. Join us as we explore what makes this phase of investment different."
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 2: FIRST SECTION**"
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 1: INTRO**"
+        }
+      },
+      {
+        "json": {
+          "text": "- TITLE: Pentagon's Bold New AI Investments"
+        }
+      },
+      {
+        "json": {
+          "text": "- DESCRIPTION: A sweeping aerial shot of the Pentagon, transitioning to scenes of military personnel engaged with AI technology, screens showcasing advanced algorithms, and data analytics in action."
+        }
+      },
+      {
+        "json": {
+          "text": "- AUDIO: The Pentagon is stepping up its game in artificial intelligence, investing more than ever before. But this time, there's a twist! Let’s dive into how the military is reshaping AI and what it means for defense capabilities in the modern world."
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 2: FIRST SECTION**"
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 1: INTRO**"
+        }
+      },
+      {
+        "json": {
+          "text": "- TITLE: Pentagon's Bold Leap into AI Investment"
+        }
+      },
+      {
+        "json": {
+          "text": "- DESCRIPTION: Wide aerial shot of the Pentagon, transitioning to tech-filled war rooms with officers engaged in strategic discussions. Futuristic screens display AI data analytics, military simulations, and drone activities, showcasing the integration of AI in defense."
+        }
+      },
+      {
+        "json": {
+          "text": "- AUDIO: The Pentagon is making headlines as it significantly boosts its investment in artificial intelligence. But this time, it's not just about adopting new tech—it's about a deep integration that could redefine military operations. Let’s explore what this means for the future of defense."
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 2: FIRST SECTION**"
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 1: INTRO**"
+        }
+      },
+      {
+        "json": {
+          "text": "- TITLE: Pentagon's Bold Move into AI Integration"
+        }
+      },
+      {
+        "json": {
+          "text": "- DESCRIPTION: A dramatic aerial shot of the Pentagon, transitioning to shots of advanced AI technologies in action, with military personnel engaging with holographic displays and interacting with AI systems."
+        }
+      },
+      {
+        "json": {
+          "text": "- AUDIO: The Pentagon is ramping up its investment in artificial intelligence like never before. But this time, it’s not just about technology; it’s about deep integration. Let’s dive into how military AI is transforming defense strategies and operations."
+        }
+      },
+      {
+        "json": {
+          "text": "**SCENE 2: FIRST SECTION**"
+        }
+      }
+    ],
+    "Code": [
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagon’s Game-Changer: AI Investment Grows\"},\"pairedItem\":{\"item\":1}},{\"json\":{\"text\":\"",
+          "description": "A sweeping shot of the Pentagon, with drones flying overhead and soldiers training in the background. Fast cuts of AI technology in action, showcasing military applications like autonomous vehicles and data analysis.\"},\"pairedItem\":{\"item\":2}},{\"json\":{\"text\":\"",
+          "audio": "Welcome to the new frontier of military technology! The Pentagon is ramping up its investments in artificial intelligence, but this time, there’s a twist. Let’s dive into how this deep integration of AI is changing the landscape of defense.\"},\"pairedItem\":{\"item\":3}},{\"json\":{\"text\":\"\"},\"pairedItem\":{\"item\":4}},{\"json\":{\"text\":\""
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagon's Bold New AI Investment Strategy\"},\"pairedItem\":{\"item\":6}},{\"json\":{\"text\":\"",
+          "description": "The video opens with a sweeping aerial view of the Pentagon, slowly zooming in. The camera then shifts to soldiers interacting with high-tech AI systems, displaying futuristic interfaces on screens, and engaging in training exercises.\"},\"pairedItem\":{\"item\":7}},{\"json\":{\"text\":\"",
+          "audio": "The Pentagon is taking a giant leap forward in its approach to artificial intelligence. With a renewed commitment to investing in AI, this isn't just about technology; it's about integrating these advanced systems deeply into military operations. Join us as we explore what makes this phase of investment different.\"},\"pairedItem\":{\"item\":8}},{\"json\":{\"text\":\"\"},\"pairedItem\":{\"item\":9}},{\"json\":{\"text\":\""
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagon's Bold New AI Investments\"},\"pairedItem\":{\"item\":11}},{\"json\":{\"text\":\"",
+          "description": "A sweeping aerial shot of the Pentagon, transitioning to scenes of military personnel engaged with AI technology, screens showcasing advanced algorithms, and data analytics in action.\"},\"pairedItem\":{\"item\":12}},{\"json\":{\"text\":\"",
+          "audio": "The Pentagon is stepping up its game in artificial intelligence, investing more than ever before. But this time, there's a twist! Let’s dive into how the military is reshaping AI and what it means for defense capabilities in the modern world.\"},\"pairedItem\":{\"item\":13}},{\"json\":{\"text\":\"\"},\"pairedItem\":{\"item\":14}},{\"json\":{\"text\":\""
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagon's Bold Leap into AI Investment\"},\"pairedItem\":{\"item\":16}},{\"json\":{\"text\":\"",
+          "description": "Wide aerial shot of the Pentagon, transitioning to tech-filled war rooms with officers engaged in strategic discussions. Futuristic screens display AI data analytics, military simulations, and drone activities, showcasing the integration of AI in defense.\"},\"pairedItem\":{\"item\":17}},{\"json\":{\"text\":\"",
+          "audio": "The Pentagon is making headlines as it significantly boosts its investment in artificial intelligence. But this time, it's not just about adopting new tech—it's about a deep integration that could redefine military operations. Let’s explore what this means for the future of defense.\"},\"pairedItem\":{\"item\":18}},{\"json\":{\"text\":\"\"},\"pairedItem\":{\"item\":19}},{\"json\":{\"text\":\""
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagon's Bold Move into AI Integration\"},\"pairedItem\":{\"item\":21}},{\"json\":{\"text\":\"",
+          "description": "A dramatic aerial shot of the Pentagon, transitioning to shots of advanced AI technologies in action, with military personnel engaging with holographic displays and interacting with AI systems.\"},\"pairedItem\":{\"item\":22}},{\"json\":{\"text\":\"",
+          "audio": "The Pentagon is ramping up its investment in artificial intelligence like never before. But this time, it’s not just about technology; it’s about deep integration. Let’s dive into how military AI is transforming defense strategies and operations.\"},\"pairedItem\":{\"item\":23}},{\"json\":{\"text\":\"\"},\"pairedItem\":{\"item\":24}}]"
+        }
+      }
+    ],
+    "OpenAI": [
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\"Pentagon’s Game-Changer: AI Investment Grows | A wide, sweeping view of the Pentagon bathed in dramatic, high-contrast lighting under a cloudy sky, with sleek military drones flying overhead and disciplined soldiers training on the expansive grounds, interspersed with dynamic fast cuts showing advanced AI technologies in action, including autonomous armored vehicles traversing rugged terrain and sophisticated data analysis interfaces projecting holographic military maps, all set against a backdrop of a serious, authoritative atmosphere with a muted color palette of blues and grays highlighting the cutting-edge integration of artificial intelligence into defense operations.\"",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\"Pentagon's Bold New AI Investment Strategy | A dramatic aerial view of the Pentagon at twilight with strategic lighting highlighting its formidable architecture, seamlessly transitioning to a wide shot of soldiers in a state-of-the-art command center interacting with cutting-edge AI systems, featuring sleek holographic interfaces and vibrant blue-tinted screens that illuminate focused faces, advanced digital dashboards and augmented reality displays showcasing real-time data and futuristic training simulations, the environment exuding a serious and authoritative atmosphere with high contrast shadows and metallic accents, emphasizing the deep integration of artificial intelligence into military operations through sophisticated technological elements and a cohesive, high-tech setting.\"",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\"Pentagon's Bold New AI Investments | A sweeping aerial view of the Pentagon at twilight with its grand architecture illuminated by strategic lighting, seamlessly transitioning to intense interior scenes of disciplined military personnel interacting with sleek, futuristic AI technology, large high-resolution screens displaying intricate algorithms and dynamic data analytics within a state-of-the-art command center, a cool blue and metallic color palette establishing a serious and authoritative atmosphere, holographic interfaces and advanced computing devices highlighting the integration of artificial intelligence into defense operations, all set against a backdrop of modern military infrastructure to emphasize the Pentagon's commitment to enhancing its defense capabilities through cutting-edge technology.\"",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\"Pentagon's Bold Leap into AI Investment | A wide aerial view of the Pentagon bathed in the golden hues of dawn, seamlessly transitioning to the interior of a state-of-the-art war room where disciplined military officers engage in intense strategic discussions around sleek, holographic tables, surrounded by futuristic large-scale screens displaying dynamic AI data analytics, complex military simulations, and real-time drone operations, all illuminated by dramatic, high-contrast lighting that casts authoritative shadows, with a color palette of deep blues and metallic silvers enhancing the serious and cutting-edge atmosphere of AI integration in national defense.\"",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      },
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "\"Pentagon's Bold Move into AI Integration | A sweeping aerial view of the Pentagon at twilight with dramatic lighting casting long shadows, transitioning to the interior of a high-tech command center where military personnel engage with vibrant holographic displays showcasing advanced AI algorithms, soldiers interacting with sleek transparent interfaces and intelligent systems, the environment illuminated by cool blue and white tones reflecting a serious, authoritative atmosphere, symbolizing the deep integration of artificial intelligence into defense strategies and operations.\"",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      }
+    ],
+    "Text-to-Image": [
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ad3f6a1a-4f84-4a30-9971-4278ef8638c7",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon’s Game-Changer: AI Investment Grows | A wide, sweeping view of the Pentagon bathed in dramatic, high-contrast lighting under a cloudy sky, with sleek military drones flying overhead and disciplined soldiers training on the expansive grounds, interspersed with dynamic fast cuts showing advanced AI technologies in action, including autonomous armored vehicles traversing rugged terrain and sophisticated data analysis interfaces projecting holographic military maps, all set against a backdrop of a serious, authoritative atmosphere with a muted color palette of blues and grays highlighting the cutting-edge integration of artificial intelligence into defense operations.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.344221212Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "aa2e5e12-673f-4a90-b64f-3fde348b0d5d",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold New AI Investment Strategy | A dramatic aerial view of the Pentagon at twilight with strategic lighting highlighting its formidable architecture, seamlessly transitioning to a wide shot of soldiers in a state-of-the-art command center interacting with cutting-edge AI systems, featuring sleek holographic interfaces and vibrant blue-tinted screens that illuminate focused faces, advanced digital dashboards and augmented reality displays showcasing real-time data and futuristic training simulations, the environment exuding a serious and authoritative atmosphere with high contrast shadows and metallic accents, emphasizing the deep integration of artificial intelligence into military operations through sophisticated technological elements and a cohesive, high-tech setting.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.348715105Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "f504fe48-ddbb-4e00-a9d0-b7816ecedf79",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold New AI Investments | A sweeping aerial view of the Pentagon at twilight with its grand architecture illuminated by strategic lighting, seamlessly transitioning to intense interior scenes of disciplined military personnel interacting with sleek, futuristic AI technology, large high-resolution screens displaying intricate algorithms and dynamic data analytics within a state-of-the-art command center, a cool blue and metallic color palette establishing a serious and authoritative atmosphere, holographic interfaces and advanced computing devices highlighting the integration of artificial intelligence into defense operations, all set against a backdrop of modern military infrastructure to emphasize the Pentagon's commitment to enhancing its defense capabilities through cutting-edge technology.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.382212996Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "50c060ad-7a77-4281-b9f3-4b3fcf28a603",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold Leap into AI Investment | A wide aerial view of the Pentagon bathed in the golden hues of dawn, seamlessly transitioning to the interior of a state-of-the-art war room where disciplined military officers engage in intense strategic discussions around sleek, holographic tables, surrounded by futuristic large-scale screens displaying dynamic AI data analytics, complex military simulations, and real-time drone operations, all illuminated by dramatic, high-contrast lighting that casts authoritative shadows, with a color palette of deep blues and metallic silvers enhancing the serious and cutting-edge atmosphere of AI integration in national defense.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.375033587Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ab6c07af-8d19-4286-b10e-c7ffbc9c73a9",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold Move into AI Integration | A sweeping aerial view of the Pentagon at twilight with dramatic lighting casting long shadows, transitioning to the interior of a high-tech command center where military personnel engage with vibrant holographic displays showcasing advanced AI algorithms, soldiers interacting with sleek transparent interfaces and intelligent systems, the environment illuminated by cool blue and white tones reflecting a serious, authoritative atmosphere, symbolizing the deep integration of artificial intelligence into defense strategies and operations.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.361948609Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      }
+    ],
+    "Wait": [
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ad3f6a1a-4f84-4a30-9971-4278ef8638c7",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon’s Game-Changer: AI Investment Grows | A wide, sweeping view of the Pentagon bathed in dramatic, high-contrast lighting under a cloudy sky, with sleek military drones flying overhead and disciplined soldiers training on the expansive grounds, interspersed with dynamic fast cuts showing advanced AI technologies in action, including autonomous armored vehicles traversing rugged terrain and sophisticated data analysis interfaces projecting holographic military maps, all set against a backdrop of a serious, authoritative atmosphere with a muted color palette of blues and grays highlighting the cutting-edge integration of artificial intelligence into defense operations.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.344221212Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "aa2e5e12-673f-4a90-b64f-3fde348b0d5d",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold New AI Investment Strategy | A dramatic aerial view of the Pentagon at twilight with strategic lighting highlighting its formidable architecture, seamlessly transitioning to a wide shot of soldiers in a state-of-the-art command center interacting with cutting-edge AI systems, featuring sleek holographic interfaces and vibrant blue-tinted screens that illuminate focused faces, advanced digital dashboards and augmented reality displays showcasing real-time data and futuristic training simulations, the environment exuding a serious and authoritative atmosphere with high contrast shadows and metallic accents, emphasizing the deep integration of artificial intelligence into military operations through sophisticated technological elements and a cohesive, high-tech setting.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.348715105Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "f504fe48-ddbb-4e00-a9d0-b7816ecedf79",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold New AI Investments | A sweeping aerial view of the Pentagon at twilight with its grand architecture illuminated by strategic lighting, seamlessly transitioning to intense interior scenes of disciplined military personnel interacting with sleek, futuristic AI technology, large high-resolution screens displaying intricate algorithms and dynamic data analytics within a state-of-the-art command center, a cool blue and metallic color palette establishing a serious and authoritative atmosphere, holographic interfaces and advanced computing devices highlighting the integration of artificial intelligence into defense operations, all set against a backdrop of modern military infrastructure to emphasize the Pentagon's commitment to enhancing its defense capabilities through cutting-edge technology.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.382212996Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "50c060ad-7a77-4281-b9f3-4b3fcf28a603",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold Leap into AI Investment | A wide aerial view of the Pentagon bathed in the golden hues of dawn, seamlessly transitioning to the interior of a state-of-the-art war room where disciplined military officers engage in intense strategic discussions around sleek, holographic tables, surrounded by futuristic large-scale screens displaying dynamic AI data analytics, complex military simulations, and real-time drone operations, all illuminated by dramatic, high-contrast lighting that casts authoritative shadows, with a color palette of deep blues and metallic silvers enhancing the serious and cutting-edge atmosphere of AI integration in national defense.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.375033587Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ab6c07af-8d19-4286-b10e-c7ffbc9c73a9",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "pending",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "prompt": "Pentagon's Bold Move into AI Integration | A sweeping aerial view of the Pentagon at twilight with dramatic lighting casting long shadows, transitioning to the interior of a high-tech command center where military personnel engage with vibrant holographic displays showcasing advanced AI algorithms, soldiers interacting with sleek transparent interfaces and intelligent systems, the environment illuminated by cool blue and white tones reflecting a serious, authoritative atmosphere, symbolizing the deep integration of artificial intelligence into defense strategies and operations.",
+              "negative_prompt": "",
+              "image": "",
+              "width": 540,
+              "height": 960,
+              "guidance_scale": 0,
+              "denoise": 0,
+              "seed": 0,
+              "steps": 0,
+              "batch_size": 0,
+              "scale": 0,
+              "return_preprocessed_image": false,
+              "lora_settings": null,
+              "custom_settings": null
+            },
+            "output": null,
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.361948609Z",
+              "started_at": "0001-01-01T00:00:00Z",
+              "ended_at": "0001-01-01T00:00:00Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      }
+    ],
+    "Get Image": [
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ad3f6a1a-4f84-4a30-9971-4278ef8638c7",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "completed",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "batch_size": 0,
+              "custom_settings": null,
+              "denoise": 0,
+              "guidance_scale": 0,
+              "height": 960,
+              "image": "",
+              "lora_settings": null,
+              "negative_prompt": "",
+              "prompt": "Pentagon’s Game-Changer: AI Investment Grows | A wide, sweeping view of the Pentagon bathed in dramatic, high-contrast lighting under a cloudy sky, with sleek military drones flying overhead and disciplined soldiers training on the expansive grounds, interspersed with dynamic fast cuts showing advanced AI technologies in action, including autonomous armored vehicles traversing rugged terrain and sophisticated data analysis interfaces projecting holographic military maps, all set against a backdrop of a serious, authoritative atmosphere with a muted color palette of blues and grays highlighting the cutting-edge integration of artificial intelligence into defense operations.",
+              "return_preprocessed_image": false,
+              "scale": 0,
+              "seed": 0,
+              "steps": 0,
+              "width": 540
+            },
+            "output": {
+              "image_base64": "",
+              "image_url": "https://img.theapi.app/temp/936776d6-dcd7-464a-a00b-dd80cc8dedfc.png"
+            },
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.344221212Z",
+              "started_at": "2025-04-16T15:24:20.951324205Z",
+              "ended_at": "2025-04-16T15:24:53.031515726Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "aa2e5e12-673f-4a90-b64f-3fde348b0d5d",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "completed",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "batch_size": 0,
+              "custom_settings": null,
+              "denoise": 0,
+              "guidance_scale": 0,
+              "height": 960,
+              "image": "",
+              "lora_settings": null,
+              "negative_prompt": "",
+              "prompt": "Pentagon's Bold New AI Investment Strategy | A dramatic aerial view of the Pentagon at twilight with strategic lighting highlighting its formidable architecture, seamlessly transitioning to a wide shot of soldiers in a state-of-the-art command center interacting with cutting-edge AI systems, featuring sleek holographic interfaces and vibrant blue-tinted screens that illuminate focused faces, advanced digital dashboards and augmented reality displays showcasing real-time data and futuristic training simulations, the environment exuding a serious and authoritative atmosphere with high contrast shadows and metallic accents, emphasizing the deep integration of artificial intelligence into military operations through sophisticated technological elements and a cohesive, high-tech setting.",
+              "return_preprocessed_image": false,
+              "scale": 0,
+              "seed": 0,
+              "steps": 0,
+              "width": 540
+            },
+            "output": {
+              "image_base64": "",
+              "image_url": "https://img.theapi.app/temp/9c6c0a20-b468-4a1e-8134-53ea5dbe6b43.png"
+            },
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.348715105Z",
+              "started_at": "2025-04-16T15:24:20.951453562Z",
+              "ended_at": "2025-04-16T15:24:52.367104189Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "f504fe48-ddbb-4e00-a9d0-b7816ecedf79",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "completed",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "batch_size": 0,
+              "custom_settings": null,
+              "denoise": 0,
+              "guidance_scale": 0,
+              "height": 960,
+              "image": "",
+              "lora_settings": null,
+              "negative_prompt": "",
+              "prompt": "Pentagon's Bold New AI Investments | A sweeping aerial view of the Pentagon at twilight with its grand architecture illuminated by strategic lighting, seamlessly transitioning to intense interior scenes of disciplined military personnel interacting with sleek, futuristic AI technology, large high-resolution screens displaying intricate algorithms and dynamic data analytics within a state-of-the-art command center, a cool blue and metallic color palette establishing a serious and authoritative atmosphere, holographic interfaces and advanced computing devices highlighting the integration of artificial intelligence into defense operations, all set against a backdrop of modern military infrastructure to emphasize the Pentagon's commitment to enhancing its defense capabilities through cutting-edge technology.",
+              "return_preprocessed_image": false,
+              "scale": 0,
+              "seed": 0,
+              "steps": 0,
+              "width": 540
+            },
+            "output": {
+              "image_base64": "",
+              "image_url": "https://img.theapi.app/temp/a6ecf1af-2393-4b72-b741-58ea4bd15580.png"
+            },
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.382212996Z",
+              "started_at": "2025-04-16T15:24:20.952147966Z",
+              "ended_at": "2025-04-16T15:25:09.653787615Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "50c060ad-7a77-4281-b9f3-4b3fcf28a603",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "completed",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "batch_size": 0,
+              "custom_settings": null,
+              "denoise": 0,
+              "guidance_scale": 0,
+              "height": 960,
+              "image": "",
+              "lora_settings": null,
+              "negative_prompt": "",
+              "prompt": "Pentagon's Bold Leap into AI Investment | A wide aerial view of the Pentagon bathed in the golden hues of dawn, seamlessly transitioning to the interior of a state-of-the-art war room where disciplined military officers engage in intense strategic discussions around sleek, holographic tables, surrounded by futuristic large-scale screens displaying dynamic AI data analytics, complex military simulations, and real-time drone operations, all illuminated by dramatic, high-contrast lighting that casts authoritative shadows, with a color palette of deep blues and metallic silvers enhancing the serious and cutting-edge atmosphere of AI integration in national defense.",
+              "return_preprocessed_image": false,
+              "scale": 0,
+              "seed": 0,
+              "steps": 0,
+              "width": 540
+            },
+            "output": {
+              "image_base64": "",
+              "image_url": "https://img.theapi.app/temp/c636db53-bfa2-4ec5-b774-c0689f39f62f.png"
+            },
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.375033587Z",
+              "started_at": "2025-04-16T15:24:20.951716026Z",
+              "ended_at": "2025-04-16T15:24:59.488353467Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "data": {
+            "task_id": "ab6c07af-8d19-4286-b10e-c7ffbc9c73a9",
+            "model": "Qubico/flux1-dev",
+            "task_type": "txt2img",
+            "status": "completed",
+            "config": {
+              "service_mode": "",
+              "webhook_config": {
+                "endpoint": "",
+                "secret": ""
+              }
+            },
+            "input": {
+              "batch_size": 0,
+              "custom_settings": null,
+              "denoise": 0,
+              "guidance_scale": 0,
+              "height": 960,
+              "image": "",
+              "lora_settings": null,
+              "negative_prompt": "",
+              "prompt": "Pentagon's Bold Move into AI Integration | A sweeping aerial view of the Pentagon at twilight with dramatic lighting casting long shadows, transitioning to the interior of a high-tech command center where military personnel engage with vibrant holographic displays showcasing advanced AI algorithms, soldiers interacting with sleek transparent interfaces and intelligent systems, the environment illuminated by cool blue and white tones reflecting a serious, authoritative atmosphere, symbolizing the deep integration of artificial intelligence into defense strategies and operations.",
+              "return_preprocessed_image": false,
+              "scale": 0,
+              "seed": 0,
+              "steps": 0,
+              "width": 540
+            },
+            "output": {
+              "image_base64": "",
+              "image_url": "https://img.theapi.app/temp/1a082686-e8f1-4eb6-8d36-5a167f3859e4.png"
+            },
+            "meta": {
+              "created_at": "2025-04-16T15:24:20.361948609Z",
+              "started_at": "2025-04-16T15:24:20.951479442Z",
+              "ended_at": "2025-04-16T15:24:55.621676605Z",
+              "usage": {
+                "type": "llm",
+                "frozen": 0,
+                "consume": 150000
+              },
+              "is_using_private_pool": false
+            },
+            "detail": null,
+            "logs": [],
+            "error": {
+              "code": 0,
+              "raw_message": "",
+              "message": "",
+              "detail": null
+            }
+          },
+          "message": "success"
+        }
+      }
+    ],
+    "Generate Video": [
+      {
+        "json": {
+          "id": "03a8c1a3-b603-4ea3-bf12-646ac7821092"
+        }
+      },
+      {
+        "json": {
+          "id": "8c927680-4b72-45b6-bdc6-9c3e2587fdb7"
+        }
+      },
+      {
+        "json": {
+          "id": "591da124-9fc0-44a7-a5f3-d926e7cfe21d"
+        }
+      },
+      {
+        "json": {
+          "id": "d7be61d9-c160-4073-a2db-bb4f6847f47e"
+        }
+      },
+      {
+        "json": {
+          "id": "98059db2-4107-4302-b243-cb81c6e7da83"
+        }
+      }
+    ],
+    "Wait1": [
+      {
+        "json": {
+          "id": "03a8c1a3-b603-4ea3-bf12-646ac7821092"
+        }
+      },
+      {
+        "json": {
+          "id": "8c927680-4b72-45b6-bdc6-9c3e2587fdb7"
+        }
+      },
+      {
+        "json": {
+          "id": "591da124-9fc0-44a7-a5f3-d926e7cfe21d"
+        }
+      },
+      {
+        "json": {
+          "id": "d7be61d9-c160-4073-a2db-bb4f6847f47e"
+        }
+      },
+      {
+        "json": {
+          "id": "98059db2-4107-4302-b243-cb81c6e7da83"
+        }
+      }
+    ],
+    "Get Video": [
+      {
+        "json": {
+          "id": "03a8c1a3-b603-4ea3-bf12-646ac7821092",
+          "status": "SUCCEEDED",
+          "createdAt": "2025-04-16T16:55:58.323Z",
+          "output": [
+            "https://dnznrvs05pmza.cloudfront.net/d33c046f-7740-4005-afb2-e58239814a96.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNTZhZTE5ZDY1N2RlMmM5NSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc0NDkzNDQwMH0.ie0h4rgIwh8689e1O_WYmJGn0LGx5iBrTKsXXWsQylY"
+          ]
+        }
+      },
+      {
+        "json": {
+          "id": "8c927680-4b72-45b6-bdc6-9c3e2587fdb7",
+          "status": "SUCCEEDED",
+          "createdAt": "2025-04-16T16:55:55.233Z",
+          "output": [
+            "https://dnznrvs05pmza.cloudfront.net/92a49f57-4f85-4421-a5cd-ff1791cf1492.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODEzMGEwMWQxYzI1MDM2YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc0NDkzNDQwMH0.eK7ZGqUMYij56AT9SQ_T1n0j2EetOc_6BJwJ9zb_zQ4"
+          ]
+        }
+      },
+      {
+        "json": {
+          "id": "591da124-9fc0-44a7-a5f3-d926e7cfe21d",
+          "status": "SUCCEEDED",
+          "createdAt": "2025-04-16T16:55:55.331Z",
+          "output": [
+            "https://dnznrvs05pmza.cloudfront.net/89a2c1ab-3ba0-43ae-9310-515e38602e37.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWIyMTU2OTk3ZWIxODM4ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc0NDkzNDQwMH0.NCu0Zdz8kdNTu6ZEoSAhdZNVzkEfct0tBezJAOpc_0I"
+          ]
+        }
+      },
+      {
+        "json": {
+          "id": "d7be61d9-c160-4073-a2db-bb4f6847f47e",
+          "status": "SUCCEEDED",
+          "createdAt": "2025-04-16T16:55:54.738Z",
+          "output": [
+            "https://dnznrvs05pmza.cloudfront.net/f74edeee-01fb-455b-8b53-15c6e63df4db.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzQyOTQ4NTZlNzY3NzQ5OCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc0NDkzNDQwMH0.QK-dzeOPUiHJh_PgTM9gOaaKpN0JVTwurckF6sG61v0"
+          ]
+        }
+      },
+      {
+        "json": {
+          "id": "98059db2-4107-4302-b243-cb81c6e7da83",
+          "status": "SUCCEEDED",
+          "createdAt": "2025-04-16T16:55:58.115Z",
+          "output": [
+            "https://dnznrvs05pmza.cloudfront.net/4e8a684b-dfa8-4127-bcd3-823ab6625b9b.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODcyYTViMjM2YjE3NWVkOSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc0NDkzNDQwMH0.Qwk9NJrcWL0UqnEratt0wUP6xKiS1xui37v8HsWDSaw"
+          ]
+        }
+      }
+    ],
+    "Code2": [
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagons GameChanger AI Investment GrowspairedItemitem1jsontext",
+          "description": "A sweeping shot of the Pentagon with drones flying overhead and soldiers training in the background Fast cuts of AI technology in action showcasing military applications like autonomous vehicles and data analysispairedItemitem2jsontext",
+          "audio": "Welcome to the new frontier of military technology The Pentagon is ramping up its investments in artificial intelligence but this time theres a twist Lets dive into how this deep integration of AI is changing the landscape of defensepairedItemitem3jsontextpairedItemitem4jsontext"
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagons Bold New AI Investment StrategypairedItemitem6jsontext",
+          "description": "The video opens with a sweeping aerial view of the Pentagon slowly zooming in The camera then shifts to soldiers interacting with hightech AI systems displaying futuristic interfaces on screens and engaging in training exercisespairedItemitem7jsontext",
+          "audio": "The Pentagon is taking a giant leap forward in its approach to artificial intelligence With a renewed commitment to investing in AI this isnt just about technology its about integrating these advanced systems deeply into military operations Join us as we explore what makes this phase of investment differentpairedItemitem8jsontextpairedItemitem9jsontext"
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagons Bold New AI InvestmentspairedItemitem11jsontext",
+          "description": "A sweeping aerial shot of the Pentagon transitioning to scenes of military personnel engaged with AI technology screens showcasing advanced algorithms and data analytics in actionpairedItemitem12jsontext",
+          "audio": "The Pentagon is stepping up its game in artificial intelligence investing more than ever before But this time theres a twist Lets dive into how the military is reshaping AI and what it means for defense capabilities in the modern worldpairedItemitem13jsontextpairedItemitem14jsontext"
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagons Bold Leap into AI InvestmentpairedItemitem16jsontext",
+          "description": "Wide aerial shot of the Pentagon transitioning to techfilled war rooms with officers engaged in strategic discussions Futuristic screens display AI data analytics military simulations and drone activities showcasing the integration of AI in defensepairedItemitem17jsontext",
+          "audio": "The Pentagon is making headlines as it significantly boosts its investment in artificial intelligence But this time its not just about adopting new techits about a deep integration that could redefine military operations Lets explore what this means for the future of defensepairedItemitem18jsontextpairedItemitem19jsontext"
+        }
+      },
+      {
+        "json": {
+          "type": "intro",
+          "number": 1,
+          "title": "Pentagons Bold Move into AI IntegrationpairedItemitem21jsontext",
+          "description": "A dramatic aerial shot of the Pentagon transitioning to shots of advanced AI technologies in action with military personnel engaging with holographic displays and interacting with AI systemspairedItemitem22jsontext",
+          "audio": "The Pentagon is ramping up its investment in artificial intelligence like never before But this time its not just about technology its about deep integration Lets dive into how military AI is transforming defense strategies and operationspairedItemitem23jsontextpairedItemitem24"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-14T22:53:41.483Z",
+      "updatedAt": "2025-07-14T22:53:41.483Z",
+      "id": "oKvrU5JWpX0l93if",
+      "name": "Haberler.io"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-28T09:07:07.918Z",
+  "versionId": "c1dc30ac-0246-4508-a8ff-6b57b7ce7a34"
+}
