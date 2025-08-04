@@ -838,8 +838,8 @@
       "type": "n8n-nodes-base.googleSheetsTool",
       "typeVersion": 4.6,
       "position": [
-        672,
-        608
+        528,
+        624
       ],
       "id": "0d2c2725-b779-42a1-8480-bd4c721f63b8",
       "name": "Get row(s) in sheet in Google Sheets2",
@@ -985,7 +985,7 @@
       "type": "n8n-nodes-base.googleSheetsTool",
       "typeVersion": 4.6,
       "position": [
-        864,
+        800,
         624
       ],
       "id": "f4b0cb32-0f36-41c0-8154-818232442688",
@@ -1186,8 +1186,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2672,
-        -592
+        2336,
+        -288
       ],
       "id": "1660e720-d8ab-4d72-88e2-be8ad1c88a63",
       "name": "Sticky Note"
@@ -1261,6 +1261,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-07-22T20:00:27.029Z",
-  "versionId": "d10c3e1c-b094-4c34-b524-79e44746bbce"
+  "updatedAt": "2025-07-26T16:26:08.478Z",
+  "versionId": "2d2f5740-3f62-4569-a7d8-938f5e6008ec"
 }
