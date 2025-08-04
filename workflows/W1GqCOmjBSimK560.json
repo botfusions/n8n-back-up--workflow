@@ -1,0 +1,171 @@
+{
+  "active": false,
+  "connections": {
+    "Calculate Score": {
+      "main": [
+        [
+          {
+            "node": "Update AI Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Analysis": {
+      "main": [
+        [
+          {
+            "node": "Calculate Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable Trigger": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T10:14:17.503Z",
+  "id": "W1GqCOmjBSimK560",
+  "isArchived": false,
+  "meta": null,
+  "name": "AI Lead Scoring & Analysis",
+  "nodes": [
+    {
+      "id": "airtable-trigger-2",
+      "name": "Airtable Trigger",
+      "type": "n8n-nodes-base.airtableTrigger",
+      "position": [
+        100,
+        200
+      ],
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "event": "recordCreated",
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "openai-analysis-1",
+      "name": "OpenAI Analysis",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "messages": {
+          "values": [
+            {
+              "content": "=Analyze this lead and provide a detailed assessment:\\n\\nName: {{ $json.fields.Name }}\\nEmail: {{ $json.fields.Email }}\\nSource: {{ $json.fields.Source }}\\n\\nQ1: {{ $json.fields.Q1 }}\\nQ2: {{ $json.fields.Q2 }}\\nQ3: {{ $json.fields.Q3 }}\\nBudget: {{ $json.fields['Has the budget'] }}\\n\\nProvide:\\n1. Lead Quality Score (1-10)\\n2. Conversion Probability (%)\\n3. Key Insights\\n4. Recommended Actions\\n5. Priority Level (High/Medium/Low)\\n\\nFormat as JSON with these fields: score, probability, insights, actions, priority"
+            }
+          ]
+        },
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        }
+      },
+      "typeVersion": 1.8
+    },
+    {
+      "id": "calculate-score-1",
+      "name": "Calculate Score",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ai_analysis",
+              "name": "ai_analysis",
+              "type": "string",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "id": "lead_score",
+              "name": "lead_score",
+              "type": "number",
+              "value": "={{ JSON.parse($json.output).score || 5 }}"
+            },
+            {
+              "id": "priority",
+              "name": "priority",
+              "type": "string",
+              "value": "={{ JSON.parse($json.output).priority || 'Medium' }}"
+            },
+            {
+              "id": "probability",
+              "name": "probability",
+              "type": "number",
+              "value": "={{ JSON.parse($json.output).probability || 50 }}"
+            }
+          ]
+        }
+      },
+      "typeVersion": 3.4
+    },
+    {
+      "id": "update-ai-summary-1",
+      "name": "Update AI Summary",
+      "type": "n8n-nodes-base.airtable",
+      "position": [
+        700,
+        200
+      ],
+      "parameters": {
+        "id": "={{ $('Airtable Trigger').item.json.id }}",
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "value": {
+            "Email summary": "=AI Analysis ({{ $now.format('yyyy-MM-dd HH:mm') }}):\\n\\nLead Score: {{ $json.lead_score }}/10\\nConversion Probability: {{ $json.probability }}%\\nPriority: {{ $json.priority }}\\n\\nFull Analysis:\\n{{ $json.ai_analysis }}"
+          },
+          "mappingMode": "defineBelow"
+        },
+        "operation": "update"
+      },
+      "typeVersion": 2.1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-01T10:14:17.503Z",
+  "versionId": "1fe37f22-7429-4a88-a41e-e814e00cbd79"
+}
