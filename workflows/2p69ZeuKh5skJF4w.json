@@ -1,0 +1,218 @@
+{
+  "active": false,
+  "connections": {
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Create Airtable Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Airtable Record": {
+      "main": [
+        [
+          {
+            "node": "Dashboard Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dashboard Notification": {
+      "main": [
+        [
+          {
+            "node": "Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T10:12:02.651Z",
+  "id": "2p69ZeuKh5skJF4w",
+  "isArchived": false,
+  "meta": null,
+  "name": "Lead Capture Webhook - FIXED",
+  "nodes": [
+    {
+      "id": "webhook-trigger-1",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        100,
+        200
+      ],
+      "webhookId": "lead-capture-webhook",
+      "parameters": {
+        "path": "lead-capture",
+        "options": {},
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "set-variables-1",
+      "name": "Set Variables",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "name",
+              "name": "name",
+              "type": "string",
+              "value": "={{ $json.payload.name }}"
+            },
+            {
+              "id": "email",
+              "name": "email",
+              "type": "string",
+              "value": "={{ $json.payload.email }}"
+            },
+            {
+              "id": "phone",
+              "name": "phone",
+              "type": "string",
+              "value": "={{ $json.payload.phone }}"
+            },
+            {
+              "id": "source",
+              "name": "source",
+              "type": "string",
+              "value": "={{ $json.payload.source }}"
+            },
+            {
+              "id": "q1",
+              "name": "q1",
+              "type": "string",
+              "value": "={{ $json.payload.questions_and_answers[0].answer }}"
+            },
+            {
+              "id": "q2",
+              "name": "q2",
+              "type": "string",
+              "value": "={{ $json.payload.questions_and_answers[1].answer }}"
+            },
+            {
+              "id": "q3",
+              "name": "q3",
+              "type": "string",
+              "value": "={{ $json.payload.questions_and_answers[2].answer }}"
+            },
+            {
+              "id": "budget",
+              "name": "budget",
+              "type": "string",
+              "value": "={{ $json.payload.questions_and_answers[3].answer }}"
+            }
+          ]
+        }
+      },
+      "typeVersion": 3.4
+    },
+    {
+      "id": "airtable-create-1",
+      "name": "Create Airtable Record",
+      "type": "n8n-nodes-base.airtable",
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "value": {
+            "Q1": "={{ $json.q1 }}",
+            "Q2": "={{ $json.q2 }}",
+            "Q3": "={{ $json.q3 }}",
+            "Name": "={{ $json.name }}",
+            "Email": "={{ $json.email }}",
+            "Number": "={{ $json.phone }}",
+            "Source": "={{ $json.source }}",
+            "Status": "✅ Booked",
+            "Date booked": "={{ $now.format('yyyy-MM-dd') }}",
+            "Has the budget": "={{ $json.budget }}"
+          },
+          "mappingMode": "defineBelow"
+        },
+        "operation": "create"
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "dashboard-notification-1",
+      "name": "Dashboard Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        700,
+        200
+      ],
+      "parameters": {
+        "url": "http://srv817237.hstgr.cloud:3002/api/webhook/dashboard-update",
+        "method": "POST",
+        "options": {},
+        "jsonBody": "={{ $json }}",
+        "sendBody": true,
+        "specifyBody": "json"
+      },
+      "typeVersion": 4.2
+    },
+    {
+      "id": "response-node-1",
+      "name": "Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        900,
+        200
+      ],
+      "parameters": {
+        "options": {},
+        "responseBody": "={\"success\": true, \"message\": \"Lead captured successfully\", \"recordId\": \"{{ $('Create Airtable Record').item.json.id }}\"}"
+      },
+      "typeVersion": 1.1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-01T13:41:55.936Z",
+  "versionId": "ccc8d9cc-28cc-4208-9ddb-b546758f6efc"
+}
