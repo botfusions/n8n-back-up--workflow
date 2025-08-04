@@ -1,0 +1,155 @@
+{
+  "active": false,
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Hisse Senedi Belirle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hisse Senedi Belirle": {
+      "main": [
+        [
+          {
+            "node": "Borsa Verisini Çek",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-07-30T14:19:25.687Z",
+  "id": "0SrFq3MTQDbBaYMk",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 12",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3d35fbe9-14a0-4110-967a-c677534836c5",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "symbol",
+              "value": "THYAO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e6c485a5-f4a2-47ba-8806-e1cb4108ad5d",
+      "name": "Hisse Senedi Belirle",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "# Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor item in _input.all():\n  item.json.myNewField = 1\nreturn _input.all()"
+      },
+      "id": "b79a950b-b089-47a0-bbe4-54dd0a21f862",
+      "name": "Borsa Verisini Çek",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        144,
+        144
+      ],
+      "id": "e90a3d42-2416-40b9-8032-1838e5a01150",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://borsa-mcp.botfusions.com:9000/mcp/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json,   text/event-stream"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 2,\n  \"method\": \"tools/list\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -832,
+        -128
+      ],
+      "id": "070af712-1563-43f1-85b8-d64698f97a12",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "url": "http://borsa-mcp.botfusions.com:9000/api/analysis/AKBNK",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        -112
+      ],
+      "id": "dfc0c492-9b25-416a-9129-0585c3422664",
+      "name": "HTTP Request1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-30T15:32:10.929Z",
+  "versionId": "9e4fadd9-2c98-429e-81db-37f75a97d319"
+}
