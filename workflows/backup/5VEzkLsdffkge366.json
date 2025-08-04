@@ -262,7 +262,7 @@
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "My workflow 9",
+  "name": "Back up Agent",
   "nodes": [
     {
       "parameters": {},
@@ -579,7 +579,7 @@
     },
     {
       "parameters": {
-        "content": "## Backup to GitHub \nThis workflow will backup all instance workflows to GitHub.\n\nThe files are saved `ID.json` for the filename.\n\n### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository. If it doesn't exist it will be created.\n\n\nIf your username was `john-doe` and your repository was called `n8n-backups` and you wanted the workflows to go into a `workflows` folder you would set:\n\n- repo.owner - john-doe\n- repo.name - n8n-backups\n- repo.path - workflows/\n\n\nThe workflow calls itself using a subworkflow, to help reduce memory usage.",
+        "content": "## Backup to GitHub \nBu iş akışı, kurulumdaki tüm iş akışlarını GitHub'a yedekleyecektir.\nDosyalar, dosya adı olarak ID.json formatıyla kaydedilir.\nKurulum\nGlobals düğümünü açın ve aşağıdaki değerleri güncelleyin 👇\nrepo.owner: GitHub kullanıcı adınız\nrepo.name: deponuzun adı\nrepo.path: depo içinde kullanılacak klasör. Eğer yoksa oluşturulacaktır.\nKullanıcı adınız john-doe, deponuz n8n-backups ve iş akışlarını workflows klasörüne kaydetmek isteseydiniz, ayarlar şöyle olurdu:\nrepo.owner - john-doe\nrepo.name - n8n-backups\nrepo.path - workflows/\nİş akışı, bellek kullanımını azaltmak için bir alt iş akışı (subworkflow) kullanarak kendini çağırır.\n\nhttps://youtu.be/NJMMBc9FM_w?si=Ae0ZHv6gQPi2GMjq",
         "height": 1097,
         "width": 515,
         "color": 4
@@ -830,7 +830,11 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [
     {
       "createdAt": "2025-07-26T15:21:11.127Z",
@@ -839,7 +843,7 @@
       "name": "backup"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-07-26T15:45:33.023Z",
-  "versionId": "1f6ba010-43a0-4935-93e8-9c6dd60f5103"
+  "triggerCount": 1,
+  "updatedAt": "2025-08-04T18:34:51.425Z",
+  "versionId": "d6dfdeff-f28a-4462-8d3b-bcec849810cc"
 }
