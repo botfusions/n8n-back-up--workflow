@@ -1,0 +1,279 @@
+{
+  "active": false,
+  "connections": {
+    "Status Check": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Customer Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Follow-up Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send No Show Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable Trigger": {
+      "main": [
+        [
+          {
+            "node": "Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send No Show Email": {
+      "main": [
+        [
+          {
+            "node": "Update Email Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Email": {
+      "main": [
+        [
+          {
+            "node": "Update Email Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Customer Email": {
+      "main": [
+        [
+          {
+            "node": "Update Email Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Follow-up Email": {
+      "main": [
+        [
+          {
+            "node": "Update Email Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T10:13:58.034Z",
+  "id": "z3V4N980AELoITCU",
+  "isArchived": false,
+  "meta": null,
+  "name": "Email Follow-up Automation",
+  "nodes": [
+    {
+      "id": "airtable-trigger-1",
+      "name": "Airtable Trigger",
+      "type": "n8n-nodes-base.airtableTrigger",
+      "position": [
+        100,
+        200
+      ],
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "event": "recordUpdated",
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "status-check-1",
+      "name": "Status Check",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        300,
+        200
+      ],
+      "parameters": {
+        "options": {},
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "1",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.fields.Status }}",
+              "rightValue": "✅ Booked"
+            },
+            {
+              "id": "2",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.fields.Status }}",
+              "rightValue": "🎉 Customer"
+            },
+            {
+              "id": "3",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.fields.Status }}",
+              "rightValue": "🙏 Can't buy rn"
+            },
+            {
+              "id": "4",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.fields.Status }}",
+              "rightValue": "❌ No show"
+            }
+          ]
+        }
+      },
+      "typeVersion": 3
+    },
+    {
+      "id": "send-welcome-1",
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        500,
+        100
+      ],
+      "parameters": {
+        "sendTo": "={{ $json.fields.Email }}",
+        "message": "=Hi {{ $json.fields.Name }},\\n\\nGreat news! Your appointment is confirmed.\\n\\nWe're excited to help you with your goals.\\n\\nBest regards,\\nJack",
+        "subject": "Welcome! Your appointment is confirmed 🎉"
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "send-customer-1",
+      "name": "Send Customer Email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "sendTo": "={{ $json.fields.Email }}",
+        "message": "=Hi {{ $json.fields.Name }},\\n\\nCongratulations on becoming our customer!\\n\\nYour onboarding materials will be sent shortly.\\n\\nBest regards,\\nJack",
+        "subject": "Welcome to the family! 🎉"
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "send-followup-1",
+      "name": "Send Follow-up Email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        500,
+        300
+      ],
+      "parameters": {
+        "sendTo": "={{ $json.fields.Email }}",
+        "message": "=Hi {{ $json.fields.Name }},\\n\\nI understand this might not be the right time.\\n\\nFeel free to reach out when you're ready.\\n\\nBest regards,\\nJack",
+        "subject": "Let's stay in touch 📧"
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "send-noshow-1",
+      "name": "Send No Show Email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        500,
+        400
+      ],
+      "parameters": {
+        "sendTo": "={{ $json.fields.Email }}",
+        "message": "=Hi {{ $json.fields.Name }},\\n\\nWe missed you at your scheduled appointment.\\n\\nNo worries! Let's find another time that works better.\\n\\nBest regards,\\nJack",
+        "subject": "We missed you! Let's reschedule 📅"
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "update-email-1",
+      "name": "Update Email Sent",
+      "type": "n8n-nodes-base.airtable",
+      "position": [
+        700,
+        250
+      ],
+      "parameters": {
+        "id": "={{ $json.id }}",
+        "base": {
+          "__rl": true,
+          "mode": "id",
+          "value": "appOEBzIdqX1w8QHU"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "id",
+          "value": "tblelqZDaewisoBpE"
+        },
+        "columns": {
+          "value": {
+            "Email summary": "={{ $json.fields['Email summary'] + '\\n\\nEmail sent: ' + $now.format('yyyy-MM-dd HH:mm') + ' - Status: ' + $json.fields.Status }}"
+          },
+          "mappingMode": "defineBelow"
+        },
+        "operation": "update"
+      },
+      "typeVersion": 2.1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-01T10:13:58.034Z",
+  "versionId": "e0a2083d-68e6-47df-9f45-19da8727ed37"
+}
