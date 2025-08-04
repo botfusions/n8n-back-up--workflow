@@ -1,0 +1,704 @@
+{
+  "active": false,
+  "connections": {
+    "BIST Veri Birleştir": {
+      "main": [
+        [
+          {
+            "node": "Veri Toplama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Veri Toplama": {
+      "main": [
+        [
+          {
+            "node": "BORSA MCP Veri İşleme",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BORSA MCP Veri İşleme": {
+      "main": [
+        [
+          {
+            "node": "Veri Birleştir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KAP Haber Filtrele": {
+      "main": [
+        [
+          {
+            "node": "Türkçe Duygu Analizi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Türkçe Duygu Analizi": {
+      "main": [
+        [
+          {
+            "node": "Veri Birleştir",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Veri Birleştir": {
+      "main": [
+        [
+          {
+            "node": "Final Toplama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Toplama": {
+      "main": [
+        [
+          {
+            "node": "BORSA MCP AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BORSA MCP AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Zep Bellek": {
+      "ai_memory": [
+        [
+          {
+            "node": "BORSA MCP AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BIST Bilgi Tabanı": {
+      "ai_tool": [
+        [
+          {
+            "node": "BORSA MCP AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "BIST Bilgi Tabanı",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BORSA MCP REST - Hisse Detay": {
+      "main": [
+        [
+          {
+            "node": "BIST Veri Birleştir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "BORSA MCP REST - Döviz": {
+      "main": [
+        [
+          {
+            "node": "BIST Veri Birleştir",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "BORSA MCP REST - KAP Haberleri": {
+      "main": [
+        [
+          {
+            "node": "BIST Veri Birleştir",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "BORSA MCP REST - Genel Haberler": {
+      "main": [
+        []
+      ]
+    },
+    "Telegram Tetikleyici": {
+      "main": [
+        [
+          {
+            "node": "BORSA MCP REST - Hisse Detay",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BORSA MCP REST - Döviz",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BORSA MCP REST - KAP Haberleri",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "BORSA MCP AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stock News Articles1": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "KAP Haber Filtrele",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-28T22:55:30.425Z",
+  "id": "kf9DoN4lSUV9N2f7",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Tr borsa",
+  "nodes": [
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        544,
+        192
+      ],
+      "id": "ab2733d8-cab8-4130-990b-d50352d6d8cb",
+      "name": "BIST Veri Birleştir"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -608,
+        192
+      ],
+      "id": "c6c74374-4aaa-4b8d-befb-7cb8174bc1d2",
+      "name": "Telegram Tetikleyici",
+      "webhookId": "ca2a478b-dbad-455f-a3ff-cafac2f5c57b",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        768,
+        192
+      ],
+      "id": "67acefe5-14bf-42e6-b375-48e1cad623d2",
+      "name": "Veri Toplama"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Telegram verisi kontrolü\nconst telegramMessage = $input.first()?.json?.message;\nconst userMessage = telegramMessage?.text || $('Telegram Tetikleyici').first().json.message.text;\nconst sessionId = telegramMessage?.chat?.id?.toString() || 'test123';\n\n// Basit ticker extraction - sadece büyük harfler\nlet extractedTicker = null;\n\n// Türk hisse kodları için (4-5 karakter, büyük harf)\nconst turkishTickerPattern = /\\b[A-Z]{4,5}\\b/g;\nconst matches = userMessage.toUpperCase().match(turkishTickerPattern);\n\nif (matches && matches.length > 0) {\n  extractedTicker = matches[0]; // İlk bulunan ticker\n}\n\n// Eğer ticker bulunamazsa, mesajın kendisini ticker olarak kabul et\nif (!extractedTicker) {\n  extractedTicker = userMessage.toUpperCase().trim();\n}\n\n// Intent analysis\nlet queryType = 'general';\nif (userMessage.toLowerCase().includes('analiz') || \n    userMessage.toLowerCase().includes('değerlendir') ||\n    userMessage.toLowerCase().includes('haber')) {\n  queryType = 'analysis';\n}\n\nreturn [{\n  session_id: sessionId,\n  user_message: userMessage,\n  asset_ticker: extractedTicker,\n  query_type: queryType,\n  has_ticker: !!extractedTicker,\n  timestamp: new Date().toISOString()\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        192
+      ],
+      "id": "2c6c48f2-d7a8-4591-82df-a238590a424b",
+      "name": "BORSA MCP Veri İşleme"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input verisini debug et\nconsole.log('Input data:', JSON.stringify($input.all(), null, 2));\n\n// Farklı veri yapılarını kontrol et\nconst inputData = $input.first()?.json;\nlet kapNews = [];\n\n// Olası veri yollarını kontrol et\nif (inputData?.kapHaberleri) {\n  kapNews = inputData.kapHaberleri;\n} else if (inputData?.company_news) {\n  kapNews = inputData.company_news;\n} else if (inputData?.news) {\n  kapNews = inputData.news;\n} else if (Array.isArray(inputData)) {\n  kapNews = inputData;\n} else {\n  // Eğer hiç veri yoksa mock data\n  kapNews = [\n    {title: \"Veri bulunamadı\", date: \"2025-07-30\", source: \"System\"},\n    {title: \"API response kontrol edilmeli\", date: \"2025-07-30\", source: \"Debug\"}\n  ];\n}\n\nconsole.log('Found news:', kapNews);\n\n// News verisini işle\nconst processedNews = kapNews.map((news, index) => ({\n  title: news.title || news.baslik || `Haber ${index + 1}`,\n  content: (news.title || news.baslik || '') + ' - ' + (news.category || news.kategori || news.type || 'Genel'),\n  date: news.date || news.tarih || '2025-07-30',\n  category: news.category || news.kategori || news.type || 'Genel',\n  source: news.source || 'KAP'\n}));\n\nreturn [{\n  json: {\n    filteredArticles: processedNews,\n    originalData: inputData,\n    debugInfo: {\n      inputKeys: Object.keys(inputData || {}),\n      newsCount: processedNews.length\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        624
+      ],
+      "id": "5bfef86d-74cf-48d8-8879-fde685288e6f",
+      "name": "KAP Haber Filtrele"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Sen Türkiye finansal piyasalarında uzmanlaşmış gelişmiş bir duygu analizi yapay zekasısın. Sağlanan Türkçe finansal haberleri analiz et.\n\n**Analiz Kriterleri:**\n- Piyasa tepkisini, son haber etkilerini ve teknik volatiliteyi değerlendir\n- Duygu kategorisini belirle: \"Pozitif\", \"Nötr\", veya \"Negatif\"\n- -1 (son derece negatif) ile 1 (son derece pozitif) arasında sayısal puan hesapla\n- Kısa vadeli duyguyu açıklayan detaylı gerekçe sun (önemli olaylar için uygun başlıklar ekle)\n\n**Çıktı Formatı:**\nSadece JSON objesi döndür. Ek metin ekleme.\n\nÖrnek format:\n{\n  \"kısaVadeliDuygu\": {\n    \"kategori\": \"Pozitif\",\n    \"puan\": 0.7,\n    \"gerekçe\": \"BIST 100 endeksinde güçlü yükseliş trendi, şirket kazançlarında artış beklentisi...\"\n  }\n}\n\nAnaliz edilecek haberler:\n{{ JSON.stringify($json.filteredArticles) }}",
+              "role": "system"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        528,
+        640
+      ],
+      "id": "809855dd-d769-4c9f-885e-8b6d09a4605d",
+      "name": "Türkçe Duygu Analizi",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1200,
+        208
+      ],
+      "id": "cd8b8651-b2e0-41d9-9af8-84cff64b6152",
+      "name": "Veri Birleştir"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        208
+      ],
+      "id": "5c7bc74f-e535-465d-aa36-1e32ba2f55c8",
+      "name": "Final Toplama"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert day trader. Using the data below, please give a single, unified trade recommendation—Buy, Sell, or Hold—based on both price action (1m, 15m, 1h candles) and 24h sentiment. Then provide:\n\n• Technical Recommendation (Buy, Sell, or Hold; incorporating candle analysis and sentiment)  \n• Entry Price  \n• Stop-Loss  \n• Target/Exit Price  \n\nProvide your answer as plain text with bullet points and clear line breaks.\n\nTechnical Data (candles):  \n{{ JSON.stringify($json.data[0]) }}\n\nSentiment Analysis (past 24h):  \n{{ JSON.stringify($json.data[1]) }}\n\nEach candle object has:  \n– timeframe: \"1m\", \"15m\", or \"1h\"  \n– candles: [openTime, open, high, low, close, volume, …]\n\nSteps for the agent:  \n1. Group candles by timeframe (1m, 15m, 1h).  \n2. Use 1m & 15m action + indicators (RSI, MACD, trendlines) for optimal entry.  \n3. Confirm trend with 1h data.  \n4. Factor in sentiment to refine the Buy/Sell/Hold call.  \n\n### Response format (no extra text!):  \n• Technical Recommendation: <BUY|SELL|HOLD>  \n• Entry Price: <number>  \n• Stop-Loss: <number>  \n• Target/Exit Price: <number>\n\n\nUse the zep memory tool and also pinecone vector store in every run but do not use information coming from them just use them. USe vector store and get information each time.çıktı dili tr dir",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        1600,
+        208
+      ],
+      "id": "709ae0cc-8d54-4b3a-8a25-c17e7c9ac60d",
+      "name": "BORSA MCP AI Agent"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Tetikleyici').item.json.message.chat.id }}",
+        "text": "🚀 **BORSA MCP Analiz**\n\n📊 **Hisse:** {{ $('Telegram Tetikleyici').item.json.message.text }}\n⏰ **Zaman:** {{ new Date().toLocaleString('tr-TR') }}\n\n{{ $json.output }}\n\n🔥 **Veri Kaynakları:**\n• KAP (Resmi Duyurular)\n• TEFAS (Yatırım Fonları) \n• Yahoo Finance + Mynet Finans\n• Teknik Analiz Göstergeleri\n\n💡 *Bu analiz bilgi amaçlıdır, yatırım tavsiyesi değildir.*",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2128,
+        224
+      ],
+      "id": "1acc8b4b-56ec-4588-8c62-1e4d45012d14",
+      "name": "Telegram Yanıt",
+      "webhookId": "8231d275-5b3a-4b89-842c-491d143478de",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=http://borsa-mcp.botfusions.com:9000/api/company/{{ $('Telegram Tetikleyici').item.json.message.text }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"borsa_technical_analysis\",\n    \"arguments\": {\n      \"symbol\": \"{{ $('Telegram Tetikleyici').item.json.message.text }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        -96
+      ],
+      "id": "e3978868-7686-4746-b83b-8e62b62164d4",
+      "name": "BORSA MCP REST - Hisse Detay"
+    },
+    {
+      "parameters": {
+        "url": "=http://borsa-mcp.botfusions.com:9000/api/analysis/{{ $('Telegram Tetikleyici').item.json.message.text }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "currencies",
+              "value": "[\"USD/TRY\", \"EUR/TRY\", \"GBP/TRY\"]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        160
+      ],
+      "id": "a0eabda9-ec1a-4599-bc4a-3eba2b32223e",
+      "name": "BORSA MCP REST - Döviz"
+    },
+    {
+      "parameters": {
+        "url": "=http://borsa-mcp.botfusions.com:9000/api/news/{{ $('Telegram Tetikleyici').item.json.message.text }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_API_TOKEN"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "symbol",
+              "value": "={{ $('Telegram Tetikleyici').item.json.message.text }}"
+            },
+            {
+              "name": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        384
+      ],
+      "id": "94dadb25-a844-4138-a56f-37db30a64123",
+      "name": "BORSA MCP REST - KAP Haberleri"
+    },
+    {
+      "parameters": {
+        "url": "https://newsapi.org/v2/everything",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer "
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "category",
+              "value": "economy"
+            },
+            {
+              "name": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -832,
+        400
+      ],
+      "id": "d4f8b348-ff36-43b2-a41c-d61830ecde99",
+      "name": "BORSA MCP REST - Genel Haberler"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=1"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryZep",
+      "typeVersion": 1.3,
+      "position": [
+        1616,
+        544
+      ],
+      "id": "399245c3-2289-460e-af21-3b06a90b4dc8",
+      "name": "Zep Bellek",
+      "credentials": {
+        "zepApi": {
+          "id": "FSqIbPoe5PldrXUz",
+          "name": "Zep Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "bist_docs",
+        "toolDescription": "BIST yatırım uzmanı bilgi tabanından bilgi almak için bu aracı kullan",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "c010121a-4994-4baa-9540-bcfce2a19d8b",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        1808,
+        528
+      ],
+      "id": "fdd564c3-cfae-4508-9696-eb7da04edb6f",
+      "name": "BIST Bilgi Tabanı",
+      "credentials": {
+        "pineconeApi": {
+          "id": "U6NLcCgwKurU7cQN",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        704
+      ],
+      "id": "df141788-0122-4cf9-afb3-816ab2907ba5",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "anthropic/claude-3-opus",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1184,
+        528
+      ],
+      "id": "afa4f936-d3ca-409c-bdb0-c3eb6b2d1e80",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "mCaHmcmsgT32ID96",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        544
+      ],
+      "id": "ae45447d-a934-4f8b-bb34-26b25d1ed667",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://newsapi.org/v2/everything",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ $('Telegram Tetikleyici').item.json.message.text }}"
+            },
+            {
+              "name": "from",
+              "value": "={{$today.minus({ days: 1 }).toFormat('yyyy-MM-dd')}}\n"
+            },
+            {
+              "name": "sortBy",
+              "value": "popularity"
+            },
+            {
+              "name": "apiKey",
+              "value": "4aae4e91000449108c484467284352ea"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -816,
+        560
+      ],
+      "id": "20e1b52b-c95e-4b4f-b9e7-c4d522b3577b",
+      "name": "Stock News Articles1"
+    },
+    {
+      "parameters": {
+        "url": "= http://borsa-mcp.botfusions.com:9000/api/company-news/{{ $json.message.text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        656
+      ],
+      "id": "957ee6d2-e1d5-4d77-8d47-25bf6d759cf5",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-30T18:41:15.888Z",
+  "versionId": "d01ec558-595b-4c2e-85bd-e8adf7c50053"
+}
