@@ -1,0 +1,81 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-17T22:46:26.747Z",
+  "id": "SFzsNgUWxAlOud0V",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 21",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -608,
+        -96
+      ],
+      "id": "40ab2e1b-234d-4a0f-b165-f091cb2c79a2",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://api.getzep.com/v1/collections",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer  z_1dWlkIjoiNWUwNDU5ZmYtNThjZC00NTU0LTkxZDYtNThjOTEwZDZjMjA2In0.T81flSHu5HMScgUufArR7wMcyuB_kve-dis7l9U7KzmLXNWeaJ1w5bHAEzEsDMWM18JsEa0QkMUul45bO8_nhA"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -400,
+        -96
+      ],
+      "id": "d0064c91-9fa6-43b0-9a83-ef4fb6886e66",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-17T22:46:26.747Z",
+      "updatedAt": "2025-08-17T22:46:26.747Z",
+      "role": "workflow:owner",
+      "workflowId": "SFzsNgUWxAlOud0V",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-17T22:46:26.747Z",
+  "versionId": "fe959f96-713c-4a24-8baf-72503cdafcdc"
+}
