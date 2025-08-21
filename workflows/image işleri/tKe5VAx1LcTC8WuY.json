@@ -1,0 +1,410 @@
+{
+  "active": false,
+  "connections": {
+    "foto giriş": {
+      "main": [
+        [
+          {
+            "node": "Resim kontrol",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resim kontrol": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Kie ai.post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Kie ai.post": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        []
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-20T14:24:35.448Z",
+  "id": "tKe5VAx1LcTC8WuY",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "resim iyilileştirme",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-pro/kontext",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 7a949ee2-95b0-4e6e-b0ec-9b981d3b2442:19cc23b2fef4e418ac07d0d6601e91a3 "
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "Focus on hyper-realistic, professional studio photography.\n- Maintain a clean, minimalistic, and elegant visual style.\n- Highlight the product as the main subject with sharp detail and perfect lighting.\n- Use backgrounds that complement but do not overpower the product (e.g., soft gradient,\nlight-colored, or pure white).\n- Include professional lighting details such as \"softbox lighting\", \"studio lights\", or \"natural soft\nshadows\".\n- Emphasize realism, texture, and color accuracy.\n- Maintain a high-end, premium look and feel.\n- If applicable, suggest a subtle setting that enhances the product's story (e.g., a luxury kitchen\ncounter for a high-end blender).\n"
+            },
+            {
+              "name": "image_url",
+              "value": "={{ $json['FOTO URL'] }}"
+            },
+            {
+              "name": "output_format",
+              "value": "jpeg"
+            },
+            {
+              "name": "aspect_ratio",
+              "value": "1:1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1024,
+        -912
+      ],
+      "id": "7f77de4c-d5cd-42f3-8be0-5694cde90226",
+      "name": "foto giriş"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/flux-pro/requests/{{ $json.request_id }}/status\\",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 7a949ee2-95b0-4e6e-b0ec-9b981d3b2442:19cc23b2fef4e418ac07d0d6601e91a3 "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -832,
+        -896
+      ],
+      "id": "433d3e0d-fa80-4e9e-ba6d-05e18209d82a",
+      "name": "Resim kontrol"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -592,
+        -896
+      ],
+      "id": "3ea67499-e246-4dde-b72c-47504b8432ea",
+      "name": "Wait",
+      "webhookId": "56f38788-eb6b-4d71-b22d-2487545a7b03"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/flux-pro/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "key 7a949ee2-95b0-4e6e-b0ec-9b981d3b2442:19cc23b2fef4e418ac07d0d6601e91a3 "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -160,
+        -896
+      ],
+      "id": "dbab4dd9-c585-4fe6-8f02-f1ba16bda605",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "sendTo": "x",
+        "subject": "ürünüz hazırlanmıştr",
+        "emailType": "text",
+        "message": "xx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        32,
+        -912
+      ],
+      "id": "3693a058-a4f4-4d42-afae-0896faa8ea1f",
+      "name": "Send a message",
+      "webhookId": "5e9ee69e-5234-4848-91db-4756a8303ca4",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wThrdmE4MUz9SaCI",
+          "name": "Gmail "
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "foto değişim",
+        "formDescription": "değişim",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "FOTO URL",
+              "placeholder": "url",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "MAİL",
+              "placeholder": "name @example.com",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -1376,
+        -496
+      ],
+      "id": "ac9eba07-053b-433b-806c-ef225e644894",
+      "name": "On form submission",
+      "webhookId": "49bc7524-f04a-4247-8922-d7391ae7fdf5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b5f7c9ae-8e60-4b44-a54a-670954dd3ba1",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -400,
+        -896
+      ],
+      "id": "57c79d09-4c3a-4698-8cd1-615e4ee0e4cd",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kie.ai/api/v1/flux/kontext/generate",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer d1b032046692563886f0fcd3e1ef02a7"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"prompt\": \"You are an expert AI image generation prompt engineer specializing in commercial product photography. Transform the given product description into a hyper-realistic, professional studio photograph prompt. Core Photography Standards: Three-point studio lighting setup with key light, fill light, and rim light. Soft diffused lighting to eliminate harsh shadows while maintaining product definition. Rule of thirds placement, negative space utilization, perfect product positioning. Shot with professional DSLR camera, 85mm lens, f/8 aperture, optimal depth of field. Visual Aesthetics: Seamless infinity curve, gradient from pure white to soft gray, or contextually appropriate minimal setting. Clean acrylic platform, invisible glass surface. Subtle natural drop shadows, soft edge gradients. Product Presentation: Product centered as primary focal point, optimal viewing angle showcasing key features. Sharp focus on textures, materials, branding elements. Premium, high-end commercial appeal suitable for marketing materials.\",\n  \"inputImage\": \"{{ $json['FOTO URL'] }}\",\n  \"aspectRatio\": \"1:1\",\n  \"model\": \"flux-kontext-pro\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        -496
+      ],
+      "id": "71d2ad5f-ae69-4c77-94d4-18a35bd57b1e",
+      "name": "Kie ai.post"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.kie.ai/api/v1/flux/kontext/record-info?taskId={{ $json.data.taskId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": " Authorization",
+              "value": "Bearer d1b032046692563886f0fcd3e1ef02a7"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -688,
+        -496
+      ],
+      "id": "0db9e565-6332-4421-8827-d21873043999",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -928,
+        -496
+      ],
+      "id": "1cfb724c-68f1-45b2-be93-cc0b38f04cac",
+      "name": "Wait1",
+      "webhookId": "bc554feb-5a00-4c53-b835-7cbf2e0ecab7"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-20T14:24:35.448Z",
+      "updatedAt": "2025-08-20T14:24:35.448Z",
+      "role": "workflow:owner",
+      "workflowId": "tKe5VAx1LcTC8WuY",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T13:39:02.751Z",
+      "updatedAt": "2025-07-15T13:39:02.751Z",
+      "id": "8KCbLRT0x4rOGk6W",
+      "name": "image işleri"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-20T18:51:01.689Z",
+  "versionId": "59bc06d8-61cf-40b8-ba76-dba6efcacf0d"
+}
