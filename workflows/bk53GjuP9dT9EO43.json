@@ -42,7 +42,7 @@
   },
   "createdAt": "2025-07-15T21:59:42.227Z",
   "id": "bk53GjuP9dT9EO43",
-  "isArchived": false,
+  "isArchived": true,
   "meta": {
     "templateCredsSetupCompleted": true
   },
@@ -145,9 +145,18 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-15T21:59:42.227Z",
+      "updatedAt": "2025-07-15T21:59:42.227Z",
+      "role": "workflow:owner",
+      "workflowId": "bk53GjuP9dT9EO43",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-15T22:29:24.204Z",
-  "versionId": "96f44c67-3523-4dc5-9006-0b5be6b210f7"
+  "updatedAt": "2025-08-16T16:36:46.913Z",
+  "versionId": "aba1aa71-e70f-4de8-91bf-734779ded18e"
 }
