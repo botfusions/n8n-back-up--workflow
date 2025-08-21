@@ -1,0 +1,382 @@
+{
+  "active": false,
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-21T19:03:59.210Z",
+  "id": "HOz1gr5RO3esPsNW",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "multi kontexs",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/flux-kontext-apps/multi-image-kontext-max/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer r8_ceOGELA4cSQ2ZcNuUjP8fyEOOiPlCce47bn21"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"prompt\": \"{{ $json.prompt }}\",\n    \"aspect_ratio\": \"{{ $json.format }}\",\n    \"input_image_1\": \"{{ $json.input_image_1 }}\",\n    \"input_image_2\": \"{{ $json.input_image_2 }}\",\n    \"output_format\": \"png\",\n    \"safety_tolerance\": 2\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        768,
+        0
+      ],
+      "id": "f85a75ef-f2c6-4fa6-a180-150dcd045c2b",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ",
+          "mode": "list",
+          "cachedResultName": "multi-image-kontext-max",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        304,
+        0
+      ],
+      "id": "eb73cb28-27f3-44a5-8784-bb0d5d6917fe",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7700b6c6-c404-40d8-9c0a-b17c7688954a",
+              "name": "input_image_1",
+              "value": "={{ $json.input_image_1 }}",
+              "type": "string"
+            },
+            {
+              "id": "4122fab2-d6b8-4b08-96b2-c8a6f253d2bb",
+              "name": "input_image_2",
+              "value": "={{ $json.input_image_2 }}",
+              "type": "string"
+            },
+            {
+              "id": "43b86917-ca97-4e14-8946-9e46c0b30c12",
+              "name": "prompt",
+              "value": "={{ $json.prompt }}",
+              "type": "string"
+            },
+            {
+              "id": "7594e120-c436-4d4e-b80-e3e7f9935f93",
+              "name": "format",
+              "value": "={{ $json.format }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        528,
+        0
+      ],
+      "id": "9e95e3ea-3ead-4748-b27a-1d2cd9bccd03",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5fbe708c-9910-49a3-ac41-48426fb470cd",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        992,
+        0
+      ],
+      "id": "29fd077d-ecd3-4ba5-a716-6023a93d556e",
+      "name": "Wait",
+      "webhookId": "d13e6f46-fb07-4fc7-83b6-15c1aac10734"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.replicate.com/v1/predictions/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer r8_ceOGELA4cSQ2ZcNuUjP8fyEOOiPlCce47bn21"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        0
+      ],
+      "id": "2863eba8-4dc7-4660-85cf-81d75ab78f04",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ",
+          "mode": "list",
+          "cachedResultName": "multi-image-kontext-max",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13qKEWahCqYRFAxh_9ba5JgaX9xzCMTg1AP7mBFR-kAQ/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Google Sheets').item.json.row_number }}",
+            "image": "={{ $json.output }}",
+            "status": "done"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "input_image_1",
+              "displayName": "input_image_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "input_image_2",
+              "displayName": "input_image_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "prompt",
+              "displayName": "prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "format",
+              "displayName": "format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1424,
+        0
+      ],
+      "id": "6fb12607-2cb2-4f32-92a4-0d2bf76c8822",
+      "name": "Google Sheets1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-21T19:03:59.210Z",
+      "updatedAt": "2025-08-21T19:03:59.210Z",
+      "role": "workflow:owner",
+      "workflowId": "HOz1gr5RO3esPsNW",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-07-15T13:39:02.751Z",
+      "updatedAt": "2025-07-15T13:39:02.751Z",
+      "id": "8KCbLRT0x4rOGk6W",
+      "name": "image işleri"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-21T19:04:21.413Z",
+  "versionId": "8bfbfeb8-a0a5-4b54-9998-4872af3f8faa"
+}
