@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "/": {
       "main": [
@@ -563,7 +563,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 7
+              "triggerAtHour": 7,
+              "triggerAtMinute": null
             }
           ]
         }
@@ -828,8 +829,19 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "timezone": "Europe/Istanbul",
+    "callerPolicy": "workflowsFromSameOwner"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-26T15:39:22.383Z",
+      "updatedAt": "2025-07-26T15:39:22.383Z",
+      "role": "workflow:owner",
+      "workflowId": "5VEzkLsdffkge366",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": {
     "node:Schedule Trigger": {
       "recurrenceRules": []
@@ -844,6 +856,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-08-04T18:34:51.425Z",
-  "versionId": "d6dfdeff-f28a-4462-8d3b-bcec849810cc"
+  "updatedAt": "2025-08-21T18:34:16.305Z",
+  "versionId": "f1b9e0fb-6224-48b9-87bb-3062242ae756"
 }
