@@ -59,7 +59,7 @@
   },
   "createdAt": "2025-07-15T21:38:23.668Z",
   "id": "74c3jGfIodv8Lq2S",
-  "isArchived": false,
+  "isArchived": true,
   "meta": null,
   "name": "My workflow 7",
   "nodes": [
@@ -169,9 +169,18 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-15T21:38:23.668Z",
+      "updatedAt": "2025-07-15T21:38:23.668Z",
+      "role": "workflow:owner",
+      "workflowId": "74c3jGfIodv8Lq2S",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-15T21:38:23.668Z",
-  "versionId": "7a5f66ea-20b5-4683-8b9e-580948c45116"
+  "updatedAt": "2025-08-16T16:36:55.500Z",
+  "versionId": "7f9d42cb-5a7b-4b9d-8dd7-47c80dd22360"
 }
