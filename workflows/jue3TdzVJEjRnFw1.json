@@ -1,0 +1,103 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook - Receive": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request - MCP": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-11T15:24:09.896Z",
+  "id": "jue3TdzVJEjRnFw1",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 17",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mcp-analyze",
+        "options": {}
+      },
+      "id": "006df4aa-259f-4e92-994a-9239b0191f30",
+      "name": "Webhook - Receive",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -1184,
+        -416
+      ],
+      "webhookId": "mcp-analyze"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://borsa-mcp.botfusions.com/maestro/analyze",
+        "allowUnauthorizedCerts": true,
+        "jsonParameters": true,
+        "options": {},
+        "sendBinaryData": true,
+        "headerParametersJson": "{\n  \"command\": \"technical_analysis\",\n  \"params\": { \"ticker\": \"ASELS\" }\n}",
+        "queryParametersJson": "={\n  \"parameters\": {\n    \"method\": \"POST\",\n    \"url\": \"https://borsa-mcp.botfusions.com/maestro/analyze\",\n    \"jsonParameters\": true,\n    \"options\": {},\n    \"bodyParametersJson\": \"{\\n  \\\"command\\\": \\\"technical_analysis\\\",\\n  \\\"params\\\": {\\n    \\\"ticker\\\": \\\"ASELS\\\"\\n  }\\n}\",\n    \"responseFormat\": \"json\",\n    \"headerParametersJson\": \"{\\n  \\\"Content-Type\\\": \\\"application/json\\\"\\n}\"\n  },\n  \"id\": \"HTTP_Request_MCP_Single\",\n  \"name\": \"HTTP Request - MCP Test\",\n  \"type\": \"n8n-nodes-base.httpRequest\",\n  \"typeVersion\": 1,\n  \"position\": [\n    500,\n    300\n  ]\n}"
+      },
+      "id": "776dc30d-21b1-498c-be8e-ebb86de0fe30",
+      "name": "HTTP Request - MCP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -912,
+        -432
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://borsa-mcp.botfusions.com/maestro/analyze",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"ticker\": \"XU100\",\n  \"user_query\": \"XU100 endeksinin son 1 aylık performansını analiz et\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -560,
+        -304
+      ],
+      "id": "a609d176-1185-461a-a1ed-5fe7abc2e479",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-11T15:24:09.896Z",
+      "updatedAt": "2025-08-11T15:24:09.896Z",
+      "role": "workflow:owner",
+      "workflowId": "jue3TdzVJEjRnFw1",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-13T09:36:54.279Z",
+  "versionId": "d858271a-771c-4aa4-9f5f-815baddcbbea"
+}
