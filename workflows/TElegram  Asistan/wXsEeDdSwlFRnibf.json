@@ -59,6 +59,17 @@
       "main": [
         []
       ]
+    },
+    "Search in Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-07-16T19:55:31.114Z",
@@ -76,8 +87,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -192,
-        96
+        -336,
+        48
       ],
       "id": "22e1a90c-8267-4ff3-8ee4-cf8fafa7a075",
       "name": "When Executed by Another Workflow"
@@ -126,7 +137,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        320,
+        224,
         304
       ],
       "id": "1d115945-8aeb-42bc-bd48-ae56fa864e98",
@@ -143,8 +154,8 @@
       "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
       "typeVersion": 1,
       "position": [
-        192,
-        288
+        512,
+        320
       ],
       "id": "3864d0a8-7b4f-44bc-8ebd-e64c7d9108b9",
       "name": "Wikipedia"
@@ -212,12 +223,41 @@
       "id": "0bad73ea-fa08-4d2f-a6dc-86c699421b6b",
       "name": "When chat message received",
       "webhookId": "19a3500d-32e2-4464-8599-767c9dd6ef0c"
+    },
+    {
+      "parameters": {
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        352,
+        320
+      ],
+      "id": "a4b5f03b-2bf4-41fd-a9c8-ac3e5ed1a7fc",
+      "name": "Search in Tavily",
+      "credentials": {
+        "tavilyApi": {
+          "id": "19fJy7dWyO2ShFos",
+          "name": "Tavily account"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-16T19:55:31.114Z",
+      "updatedAt": "2025-07-16T19:55:31.114Z",
+      "role": "workflow:owner",
+      "workflowId": "wXsEeDdSwlFRnibf",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
@@ -228,6 +268,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-07-16T20:11:22.684Z",
-  "versionId": "8a5b3391-7c98-4ec6-975b-ef71593d7480"
+  "updatedAt": "2025-08-08T09:20:26.532Z",
+  "versionId": "be5a95cd-f2db-47eb-bced-d70166abb98d"
 }
