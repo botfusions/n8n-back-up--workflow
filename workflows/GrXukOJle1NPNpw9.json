@@ -105,6 +105,15 @@
     "saveManualExecutions": true,
     "saveExecutionProgress": true
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-29T19:01:10.695Z",
+      "updatedAt": "2025-07-29T19:01:10.695Z",
+      "role": "workflow:owner",
+      "workflowId": "GrXukOJle1NPNpw9",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
