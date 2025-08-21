@@ -1,0 +1,182 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Function extractFileId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function extractFileId": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request getFile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request getFile": {
+      "main": [
+        [
+          {
+            "node": "Set buildDownloadUrl",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set buildDownloadUrl": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request downloadFile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request downloadFile": {
+      "main": [
+        [
+          {
+            "node": "Google Drive (optional)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-12T18:12:32.744Z",
+  "id": "nUopGDQN45UrjvL9",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 18",
+  "nodes": [
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -688,
+        -320
+      ],
+      "output": "main",
+      "id": "f10241bc-5c91-4d93-8090-afe466983013",
+      "webhookId": "6d98ba31-60e4-4016-bca6-a7bf74ffcbc0",
+      "credentials": {
+        "telegramApi": {
+          "id": "OXGMc7LNlHEuEaOm",
+          "name": "Nctk_Bot"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Function extractFileId",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        -320
+      ],
+      "code": "const msg = $json.message;\nif (msg.photo) {\n  const best = msg.photo[msg.photo.length - 1];\n  return { fileId: best.file_id };\n}\nif (msg.document) {\n  return { fileId: msg.document.file_id };\n}\nif (msg.video) {\n  return { fileId: msg.video.file_id };\n}\nreturn { fileId: null };\n",
+      "id": "75fb7cff-a668-45c0-ad44-140686418cde"
+    },
+    {
+      "parameters": {
+        "url": "https://api.telegram.org/bot{{ $env[\"8418326092:AAFp5uwekYpl-7B_aQCQo7__fmS-lDhZpBc\"] }}/getFile",
+        "options": {}
+      },
+      "name": "HTTP Request getFile",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        -320
+      ],
+      "id": "a1e95524-6dad-4595-afff-3bef6ecb416d"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "downloadUrl",
+              "value": "https://api.telegram.org/file/bot{{ $env[\"TELEGRAM_TOKEN\"] }}/{{ $json[\"result\"][\"file_path\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set buildDownloadUrl",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        64,
+        -320
+      ],
+      "id": "969d039e-ef06-404e-9d7c-7da6a8d78d0e"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"downloadUrl\"] }}",
+        "responseFormat": "file",
+        "options": {}
+      },
+      "name": "HTTP Request downloadFile",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        320,
+        -320
+      ],
+      "id": "df6d63f6-d93a-42c2-9b34-f2fe524810e8"
+    },
+    {
+      "parameters": {
+        "binaryData": "={{ $binary[\"HTTP Request downloadFile\"].data }}",
+        "options": {}
+      },
+      "name": "Google Drive (optional)",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [
+        576,
+        -320
+      ],
+      "id": "4e45e1e9-0ae8-49ba-8be5-71928c199717"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-12T18:12:32.744Z",
+      "updatedAt": "2025-08-12T18:12:32.744Z",
+      "role": "workflow:owner",
+      "workflowId": "nUopGDQN45UrjvL9",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-12T18:23:36.935Z",
+  "versionId": "aa2ac2b5-cd3d-409b-8b37-31417b99a4d0"
+}
