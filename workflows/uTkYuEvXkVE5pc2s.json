@@ -485,6 +485,15 @@
     "saveManualExecutions": true,
     "errorWorkflow": ""
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-26T08:55:46.930Z",
+      "updatedAt": "2025-07-26T08:55:46.930Z",
+      "role": "workflow:owner",
+      "workflowId": "uTkYuEvXkVE5pc2s",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
