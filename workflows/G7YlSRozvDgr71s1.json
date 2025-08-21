@@ -1,0 +1,150 @@
+{
+  "active": false,
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get MCP Tools",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get MCP Tools": {
+      "main": [
+        [
+          {
+            "node": "Set Tool & Params",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Tool & Params": {
+      "main": [
+        [
+          {
+            "node": "Execute MCP Tool",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-08T16:00:58.926Z",
+  "id": "G7YlSRozvDgr71s1",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 15",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9e9723cb-d8d9-40e8-b5a6-0bcd18cbfe14",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        608,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://borsa-mcp.botfusions.com/mcp/tools",
+        "options": {}
+      },
+      "id": "ddf4fa59-1b19-43c9-919a-4cf528f4b148",
+      "name": "Get MCP Tools",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        864,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "endpoint",
+              "value": "https://borsa-mcp.botfusions.com/maestro/analyze"
+            },
+            {
+              "name": "ticker",
+              "value": "BIST100"
+            },
+            {
+              "name": "user_query",
+              "value": "BIST100 endeksi hakkında güncel piyasa değerlendirmesi yap."
+            },
+            {
+              "name": "provider",
+              "value": "openrouter"
+            },
+            {
+              "name": "model",
+              "value": "openai/gpt-oss-120b"
+            },
+            {
+              "name": "prompt",
+              "value": "BIST100 endeksi için teknik, duygu ve genel piyasa analizi yap."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ae59f88d-19f4-46f7-b600-f3809347f3c4",
+      "name": "Set Tool & Params",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        -64
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$json[\"endpoint\"]}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "98e71283-6350-47d8-a761-d21e79b5bada",
+      "name": "Execute MCP Tool",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1360,
+        -64
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-08T16:00:58.926Z",
+      "updatedAt": "2025-08-08T16:00:58.926Z",
+      "role": "workflow:owner",
+      "workflowId": "G7YlSRozvDgr71s1",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-10T22:33:51.472Z",
+  "versionId": "42d2def2-1e33-4785-af7b-29f3ca3f0b2d"
+}
