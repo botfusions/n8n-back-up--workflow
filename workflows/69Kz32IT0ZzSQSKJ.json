@@ -1,0 +1,258 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Check Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Photo": {
+      "main": [
+        [
+          {
+            "node": "Get File Info",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Info": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Studio Enhancement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Studio Enhancement": {
+      "main": [
+        [
+          {
+            "node": "Send Enhanced Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-15T22:10:14.957Z",
+  "id": "69Kz32IT0ZzSQSKJ",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Telegram Studio Photo Enhancement",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        304
+      ],
+      "webhookId": "49ab16d9-a7d8-41c5-8eb0-1ecfe7f700da",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value1": "={{ $json.message.photo && $json.message.photo.length }}",
+              "operation": "gt",
+              "value2": 0
+            }
+          ]
+        }
+      },
+      "id": "check-photo",
+      "name": "Check Photo",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        464,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "fileId": "={{ $json.message.photo[$json.message.photo.length - 1].file_id }}",
+        "resource": "file",
+        "operation": "get",
+        "additionalFields": {}
+      },
+      "id": "get-file-info",
+      "name": "Get File Info",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        688,
+        304
+      ],
+      "webhookId": "2986635e-0111-42c9-ba20-cb9c036e6821",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://api.telegram.org/file/bot' + $credentials.telegramApi.accessToken + '/' + $json.file_path }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "download-image",
+      "name": "Download Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        912,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "Transform this product photo into a professional studio photograph with the following characteristics:\n- Clean, white or neutral background\n- Professional studio lighting with soft shadows and highlights\n- High-end commercial photography style with premium aesthetics\n- Sharp focus and excellent image quality\n- Product positioned attractively with optimal composition\n- Professional color grading and contrast\n- Eliminate any amateur photography artifacts, clutter, or distractions\n- Make it suitable for high-end e-commerce or luxury marketing materials\n- Maintain the product's authentic colors and details\n- Add subtle reflections or shadows for depth if appropriate\n- Ensure the lighting enhances the product's texture and features",
+        "options": {
+          "size": "1024x1024"
+        },
+        "requestOptions": {}
+      },
+      "id": "enhance-with-openai",
+      "name": "Studio Enhancement",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        304
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "GpuIDM5IMbQzdsWf",
+          "name": "OpenAi İmage"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "operation": "sendPhoto",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "✨ İşte ürününüzün profesyonel stüdyo fotoğrafı! Yüksek kaliteli e-ticaret kullanımına hazır.",
+          "replyToMessageId": "={{ $json.message.message_id }}"
+        }
+      },
+      "id": "send-enhanced-photo",
+      "name": "Send Enhanced Photo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        304
+      ],
+      "webhookId": "87025650-ae1a-4f93-abe6-8f9245b605ef",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "❌ Lütfen bir ürün fotoğrafı gönderin. Sadece fotoğraf dosyalarını işleyebilirim.",
+        "resource": "message",
+        "operation": "sendMessage",
+        "additionalFields": {
+          "replyToMessageId": "={{ $json.message.message_id }}"
+        }
+      },
+      "id": "send-error-message",
+      "name": "Send Error Message",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        688,
+        512
+      ],
+      "webhookId": "6b1e8e08-7b00-4f08-abcb-a2dfee788c0f",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-15T22:10:14.957Z",
+      "updatedAt": "2025-08-15T22:10:14.957Z",
+      "role": "workflow:owner",
+      "workflowId": "69Kz32IT0ZzSQSKJ",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-15T22:13:46.183Z",
+  "versionId": "4b84a70c-591d-4f55-ad33-3856570ab715"
+}
