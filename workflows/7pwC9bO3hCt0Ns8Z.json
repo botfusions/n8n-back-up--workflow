@@ -1,0 +1,225 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Check Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Photo": {
+      "main": [
+        [
+          {
+            "node": "Get File Info",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get File Info": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Studio Enhancement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Studio Enhancement": {
+      "main": [
+        [
+          {
+            "node": "Send Enhanced Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-15T22:14:34.460Z",
+  "id": "7pwC9bO3hCt0Ns8Z",
+  "isArchived": true,
+  "meta": null,
+  "name": "Telegram Studio Photo Enhancement - V2",
+  "nodes": [
+    {
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {
+        "updates": [
+          "message"
+        ]
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "check-photo",
+      "name": "Check Photo",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        460,
+        300
+      ],
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value1": "={{ $json.message.photo && $json.message.photo.length }}",
+              "operation": "gt",
+              "value2": 0
+            }
+          ]
+        }
+      },
+      "typeVersion": 3
+    },
+    {
+      "id": "get-file-info",
+      "name": "Get File Info",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        680,
+        300
+      ],
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "fileId": "={{ $json.message.photo[$json.message.photo.length - 1].file_id }}"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "download-image",
+      "name": "Download Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        900,
+        300
+      ],
+      "parameters": {
+        "url": "={{ 'https://api.telegram.org/file/bot' + $credentials.telegramApi.accessToken + '/' + $json.file_path }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "typeVersion": 4
+    },
+    {
+      "id": "enhance-with-openai",
+      "name": "Studio Enhancement",
+      "type": "n8n-nodes-base.openAi",
+      "position": [
+        1120,
+        300
+      ],
+      "parameters": {
+        "resource": "image",
+        "operation": "create",
+        "prompt": "Transform this product photo into a professional studio photograph with the following characteristics:\n- Clean, white or neutral background\n- Professional studio lighting with soft shadows and highlights\n- High-end commercial photography style with premium aesthetics\n- Sharp focus and excellent image quality\n- Product positioned attractively with optimal composition\n- Professional color grading and contrast\n- Eliminate any amateur photography artifacts, clutter, or distractions\n- Make it suitable for high-end e-commerce or luxury marketing materials\n- Maintain the product's authentic colors and details\n- Add subtle reflections or shadows for depth if appropriate\n- Ensure the lighting enhances the product's texture and features",
+        "imageModel": "dall-e-3",
+        "options": {
+          "size": "1024x1024",
+          "quality": "hd",
+          "responseFormat": "binaryData"
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "send-enhanced-photo",
+      "name": "Send Enhanced Photo",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1340,
+        300
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendPhoto",
+        "chatId": "={{ $json.message.chat.id }}",
+        "binaryData": true,
+        "binaryPropertyName": "data",
+        "additionalFields": {
+          "caption": "✨ İşte ürününüzün profesyonel stüdyo fotoğrafı! Yüksek kaliteli e-ticaret kullanımına hazır.",
+          "replyToMessageId": "={{ $json.message.message_id }}"
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "send-error-message",
+      "name": "Send Error Message",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        680,
+        500
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "❌ Lütfen bir ürün fotoğrafı gönderin. Sadece fotoğraf dosyalarını işleyebilirim.",
+        "additionalFields": {
+          "replyToMessageId": "={{ $json.message.message_id }}"
+        }
+      },
+      "typeVersion": 1
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-15T22:14:34.460Z",
+      "updatedAt": "2025-08-15T22:14:34.460Z",
+      "role": "workflow:owner",
+      "workflowId": "7pwC9bO3hCt0Ns8Z",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-16T16:33:59.495Z",
+  "versionId": "a4b68e96-d08c-42d7-ae60-cd6369a7ac8c"
+}
