@@ -281,7 +281,13 @@
         224
       ],
       "id": "a32125aa-f707-4fd7-82e4-f660aaff99bd",
-      "name": "Generate Image"
+      "name": "Generate Image",
+      "credentials": {
+        "openAiApi": {
+          "id": "mdSO9YkBfKgrkvfQ",
+          "name": "OpenAi account"
+        }
+      }
     },
     {
       "parameters": {
@@ -344,7 +350,13 @@
         224
       ],
       "id": "23d6ca9b-4df2-4ab5-8dc3-ab8e491b709f",
-      "name": "Upload Image"
+      "name": "Upload Image",
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      }
     },
     {
       "parameters": {
@@ -959,6 +971,15 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-15T13:39:19.880Z",
+      "updatedAt": "2025-07-15T13:39:19.880Z",
+      "role": "workflow:owner",
+      "workflowId": "7xOaVIQt9n4sDopq",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
@@ -969,6 +990,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-07-15T13:39:19.880Z",
-  "versionId": "927dde98-6050-4f85-b121-fbf4daf8f1d0"
+  "updatedAt": "2025-08-15T19:44:18.445Z",
+  "versionId": "da69ce36-a959-493d-999a-861df86d59b0"
 }
