@@ -318,6 +318,15 @@
     "saveManualExecutions": true,
     "saveExecutionProgress": true
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-21T21:48:53.384Z",
+      "updatedAt": "2025-07-21T21:48:53.384Z",
+      "role": "workflow:owner",
+      "workflowId": "Y77ch3yqYk5NtvCj",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
