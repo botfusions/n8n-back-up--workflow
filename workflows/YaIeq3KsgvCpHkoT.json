@@ -1,0 +1,747 @@
+{
+  "active": false,
+  "connections": {
+    "2. IF Node": {
+      "main": [
+        [
+          {
+            "node": "Add 'Fragile' Handling",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add 'Standard' Handling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Bin": {
+      "main": [
+        [
+          {
+            "node": "Final Sorted Packages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Merge Node": {
+      "main": [
+        [
+          {
+            "node": "2. IF Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Letter": {
+      "main": [
+        [
+          {
+            "node": "1. Merge Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Parcel": {
+      "main": [
+        [
+          {
+            "node": "1. Merge Node",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Start Sorting": {
+      "main": [
+        [
+          {
+            "node": "Create Parcel",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create 2nd Letter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Letter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Switch Node": {
+      "main": [
+        [
+          {
+            "node": "Send to London Bin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send to New York Bin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send to Tokyo Bin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Default Bin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create 2nd Letter": {
+      "main": [
+        [
+          {
+            "node": "1. Merge Node",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Send to Tokyo Bin": {
+      "main": [
+        [
+          {
+            "node": "Final Sorted Packages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to London Bin": {
+      "main": [
+        [
+          {
+            "node": "Final Sorted Packages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to New York Bin": {
+      "main": [
+        [
+          {
+            "node": "Final Sorted Packages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Re-group All Packages": {
+      "main": [
+        [
+          {
+            "node": "3. Switch Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add 'Fragile' Handling": {
+      "main": [
+        [
+          {
+            "node": "Re-group All Packages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add 'Standard' Handling": {
+      "main": [
+        [
+          {
+            "node": "Re-group All Packages",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-12T16:33:10.752Z",
+  "id": "YaIeq3KsgvCpHkoT",
+  "isArchived": false,
+  "meta": null,
+  "name": "Learn Workflow Logic with Merge, IF & Switchlow 18",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3b8d4a50-6410-4cad-8686-23f2a0b9ae9b",
+      "name": "Start Sorting",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        112
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Eğitim: Mantık Üçlüsü (Merge, IF, Switch)\n\nHoş geldiniz!\nBu iş akışı, verilerinizin akışını kontrol etmenizi sağlayan en önemli üç düğümü öğretecek.\n\nBenzetme: Bir Paket Ayırma Merkezi\n\t•\tVeri Öğeleri: Bunları bir konveyör bandında hareket eden paketler gibi düşünün.\n\t•\tMerge Düğümü: Birden fazla konveyör bandının tek bir hatta birleştiği nokta.\n\t•\tIF Düğümü: İki yola sahip basit bir ayırma kapısı (ör. “Kırılabilir” veya “Kırılmaz”).\n\t•\tSwitch Düğümü: Birden fazla yola sahip gelişmiş bir ayırma makinesi (ör. varış şehrine göre ayırma).\n\nBu eğitimi nasıl kullanacaksınız:\n\t1.\t“Execute Workflow” butonuna tıklayın.\n\t2.\tAkışı soldan sağa takip edin, her düğüme tıklayarak çıktısını görün.\n\t3.\tHer düğümün ne yaptığını anlamak için notları okuyun.",
+        "height": 868,
+        "width": 624
+      },
+      "id": "558db067-be0d-45f2-81aa-f104c5d737f2",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -352,
+        -576
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### 1. Merge Düğümü\n\nBenzetme: Farklı yükleme alanlarından (Set düğümleri) gelen paketlerin birleştiği bir konveyör bandı.\n\nNe yapar: Merge düğümü, birden fazla veri akışını tek bir akışta birleştirir.\n\nBurada Append modunda ayarlanmıştır, ki bu en yaygın olanıdır. Tüm gelen verileri bekler ve ardından hepsini birlikte iletir.\n\n➡️ Çıktıya bakın. Artık hem mektup hem de koli tek bir listede, bir sonraki adım için hazır!",
+        "height": 1116,
+        "width": 448,
+        "color": 4
+      },
+      "id": "aed7aaf8-6804-4ec4-8b31-d91385f3c362",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        544,
+        -656
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### 2. IF Düğümü\n\nBenzetme: İki yolu olan basit bir ayırma kapısı: bir “doğru” yolu ve bir “yanlış” yolu.\n\nNe yapar: IF düğümü, belirli bir koşulun karşılanıp karşılanmadığını kontrol eder.\nKoşul doğruysa veri üst çıkıştan, yanlışsa alt çıkıştan devam eder.\n\nBurada basit bir soru soruyoruz: “Bu pakette is_fragile özelliği var mı?”\n\n➡️ Koli “doğru” yoluna gidecek, bu özelliğe sahip olmayan mektuplar ise “yanlış” yoluna gidecek.",
+        "height": 1092,
+        "width": 464,
+        "color": 4
+      },
+      "id": "6b9d85cf-7903-40b4-88f9-396475a5fd27",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1008,
+        -640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "handling_instructions",
+              "type": "string",
+              "value": "Handle with care!"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "051c2858-227b-4f5c-9929-13e9c340da7f",
+      "name": "Add 'Fragile' Handling",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1504,
+        16
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "handling_instructions",
+              "type": "string",
+              "value": "Standard handling"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "0a8c7805-3ff7-4e82-a5e2-9ae26b448d1c",
+      "name": "Add 'Standard' Handling",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1504,
+        208
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "### Tekrar Merge?\n\nNeden burada başka bir Merge düğümüne ihtiyacımız var?\n\nIF düğümünden sonra verilerimiz iki farklı yola ayrıldı.\nTüm paketler üzerinde bir sonraki ayırma adımını uygulamadan önce, onları tekrar aynı konveyör bandına getirmemiz gerekiyor.\n\nBu, n8n’de çok yaygın ve önemli bir desendir:\nAyır → İşle → Birleştir.",
+        "height": 1032,
+        "width": 384,
+        "color": 5
+      },
+      "id": "8afa345e-5729-4597-9a7f-d6c3f4f2f94d",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1648,
+        -640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Switch Düğümü\n\nBenzetme: Paketleri birçok farklı varış noktasına gönderebilen gelişmiş bir ayırma makinesi.\n\nNe yapar: Switch düğümü, birden fazla kapısı olan IF düğümüne benzer.\nTek bir alanın (bu durumda destination) değerini kontrol eder ve bu değere uyan yola veriyi gönderir.\n\t•\tEğer varış noktası “London” ise 0. çıkışa gider.\n\t•\t“New York” ise 1. çıkışa gider.\n\t•\tBaşka bir şeyse varsayılan çıkışa gider.\n\n➡️ Bu yöntem, birbiri ardına zincirlenmiş birçok IF düğümü kullanmaktan çok daha temizdir!",
+        "height": 1000,
+        "width": 400,
+        "color": 4
+      },
+      "id": "86de81d9-1a30-4c32-9c90-84f4ac146aa9",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2064,
+        -640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "sorting_bin",
+              "type": "string",
+              "value": "A1 (London)"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "1c06816f-0a4a-4619-8e6b-04e20e089bc4",
+      "name": "Send to London Bin",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2656,
+        -176
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "sorting_bin",
+              "type": "string",
+              "value": "B2 (New York)"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "326bdaf8-e1be-45a1-a757-7fa61cd7aa79",
+      "name": "Send to New York Bin",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2656,
+        16
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "sorting_bin",
+              "type": "string",
+              "value": "C3 (Tokyo)"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "232b82ee-e026-495d-9a27-da98229a1596",
+      "name": "Send to Tokyo Bin",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2656,
+        208
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "sorting_bin",
+              "type": "string",
+              "value": "Return to Sender"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "bbb1c2b2-d646-4c08-abf1-b8a803ba1037",
+      "name": "Default Bin",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2656,
+        400
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {},
+      "id": "88decd01-281f-4d5a-891f-163690b64081",
+      "name": "Final Sorted Packages",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3040,
+        128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Tüm Paketler Ayrıldı!\n\nTebrikler! Paketlerinizi ayırmak için üç mantık düğümünü başarıyla kullandınız.\n\nŞunları öğrendiniz:\n\t•\tFarklı kaynaklardaki verileri Merge ile birleştirmeyi.\n\t•\tBasit doğru/yanlış kararlar için IF kullanmayı.\n\t•\tKarmaşık, çok yollu yönlendirmeler için Switch kullanmayı.\n\nBu üç düğümde ustalaşmak, n8n’de güçlü ve akıllı iş akışları oluşturmanın anahtarıdır.",
+        "height": 1056,
+        "width": 368,
+        "color": 6
+      },
+      "id": "913e04dc-48de-4d6f-bb2a-17914bd65957",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2896,
+        -624
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "8d43cde4-027a-4ca7-a24c-6f74f12d6238",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.destination }}",
+                    "rightValue": "London"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "London"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "399a0fbd-6be5-48e9-9f66-04cf385cb418",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.destination }}",
+                    "rightValue": "New York"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "New York"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "a69d387d-a174-42b3-bc5f-c8b46b7c2375",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.destination }}",
+                    "rightValue": "Tokyo"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Tokyo"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Default"
+        }
+      },
+      "id": "a3a1d127-5bd3-4698-af8c-2ebc9f049e64",
+      "name": "3. Switch Node",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        2272,
+        80
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "package_id",
+              "type": "string",
+              "value": "L-001"
+            },
+            {
+              "id": "67890",
+              "name": "type",
+              "type": "string",
+              "value": "letter"
+            },
+            {
+              "id": "abcde",
+              "name": "destination",
+              "type": "string",
+              "value": "London"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7187a2f8-c3e1-4623-91f7-ca7f347538fd",
+      "name": "Create Letter",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        384,
+        -80
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "id": "449bcb58-2807-4b83-8cb6-81adae4d3e59",
+      "name": "1. Merge Node",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        752,
+        96
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "loose"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "a68aad83-1d09-4ebe-9732-aaedc407bb4b",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.is_fragile }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "a647620e-81ee-4127-975d-b920a8f1df09",
+      "name": "2. IF Node",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1152,
+        112
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {},
+      "id": "a2820b1d-64db-403b-8c5d-ba832b9d344f",
+      "name": "Re-group All Packages",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        1840,
+        112
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "package_id",
+              "type": "string",
+              "value": "L-002"
+            },
+            {
+              "id": "67890",
+              "name": "type",
+              "type": "string",
+              "value": "letter"
+            },
+            {
+              "id": "abcde",
+              "name": "destination",
+              "type": "string",
+              "value": "Tokyo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a3196f4b-8087-42ad-afb5-c683fd69d713",
+      "name": "Create 2nd Letter",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        384,
+        112
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345",
+              "name": "package_id",
+              "type": "string",
+              "value": "P-001"
+            },
+            {
+              "id": "67890",
+              "name": "type",
+              "type": "string",
+              "value": "parcel"
+            },
+            {
+              "id": "abcde",
+              "name": "destination",
+              "type": "string",
+              "value": "New York"
+            },
+            {
+              "id": "fghij",
+              "name": "is_fragile",
+              "type": "boolean",
+              "value": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "46fae10d-66ab-450e-8361-4479a0103841",
+      "name": "Create Parcel",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        384,
+        304
+      ],
+      "typeVersion": 3.4
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-12T16:33:10.752Z",
+      "updatedAt": "2025-08-12T16:33:10.752Z",
+      "role": "workflow:owner",
+      "workflowId": "YaIeq3KsgvCpHkoT",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-12T16:39:49.645Z",
+  "versionId": "32d3018f-b31f-449e-bb23-525b0ab01aef"
+}
