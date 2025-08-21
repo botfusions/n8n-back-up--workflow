@@ -1,0 +1,154 @@
+{
+  "active": false,
+  "connections": {
+    "Restaurant GetSlots": {
+      "main": [
+        [
+          {
+            "node": "Restaurant Security & Validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restaurant Security & Validation": {
+      "main": [
+        [
+          {
+            "node": "Restaurant Input Arguments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restaurant Input Arguments": {
+      "main": [
+        [
+          {
+            "node": "Restaurant Response to Berna",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-21T17:43:44.259Z",
+  "id": "sZwrqCMAiH6RMJB3",
+  "isArchived": false,
+  "meta": null,
+  "name": "Restaurant VAPI - Berna Rezervasyon Sistemi",
+  "nodes": [
+    {
+      "id": "restaurant-getslots-webhook",
+      "name": "Restaurant GetSlots",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        1104,
+        624
+      ],
+      "typeVersion": 2,
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "restaurant-getslots",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "restaurant-security-validation",
+      "name": "Restaurant Security & Validation",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1232,
+        624
+      ],
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "// RESTAURANT SECURITY & VALIDATION\nconst signature = $request.headers['x-vapi-signature'];\nconst secret = $vars.VAPI_SECRET || 'restaurant-webhook-secret';\n\n// Webhook signature verification\nif (signature && secret) {\n  const crypto = require('crypto');\n  const payload = JSON.stringify($json);\n  const expectedSignature = 'sha256=' + crypto.createHmac('sha256', secret)\n    .update(payload).digest('hex');\n    \n  if (signature !== expectedSignature) {\n    throw new Error('Invalid webhook signature');\n  }\n}\n\n// RESTAURANT SPECIFIC VALIDATION\nconst validateRestaurantInput = (data) => {\n  const errors = [];\n  \n  if (!data.starttime) errors.push('Rezervasyon tarihi gerekli');\n  if (!data.endtime) errors.push('Rezervasyon bitiş saati gerekli');\n  \n  // Turkish date validation\n  if (data.starttime) {\n    const startDate = new Date(data.starttime);\n    const now = new Date();\n    \n    if (startDate < now) {\n      errors.push('Geçmiş tarih için rezervasyon alamam');\n    }\n    \n    // Restaurant hours check (11:00-23:00)\n    const hour = startDate.getHours();\n    if (hour < 11 || hour >= 23) {\n      errors.push('Restoranımız 11:00-23:00 saatleri arasında hizmet vermektedir');\n    }\n  }\n  \n  return errors;\n};\n\nconst args = $json.body.message.toolCalls[0].function.arguments;\nconst validationErrors = validateRestaurantInput(args);\n\nif (validationErrors.length > 0) {\n  $input.item.json.validation_error = validationErrors.join(', ');\n  $input.item.json.is_valid = false;\n} else {\n  $input.item.json.is_valid = true;\n}\n\n// LOGGING: Restaurant request\nconsole.log('Restaurant reservation check:', {\n  timestamp: new Date().toISOString(),\n  customer: $json.body.message.call.customer.number,\n  starttime: args.starttime,\n  endtime: args.endtime,\n  timezone: 'Europe/Istanbul'\n});\n\nreturn $input.item;"
+      }
+    },
+    {
+      "id": "restaurant-input-args",
+      "name": "Restaurant Input Arguments",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1360,
+        624
+      ],
+      "typeVersion": 3.3,
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "timezone-tr",
+              "name": "timeZone",
+              "type": "string",
+              "value": "=Europe/Istanbul"
+            },
+            {
+              "id": "endtime-tr",
+              "name": "endtime",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].function.arguments.endtime }}"
+            },
+            {
+              "id": "starttime-tr",
+              "name": "starttime",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].function.arguments.starttime }}"
+            },
+            {
+              "id": "toolcall-id-tr",
+              "name": "body.message.toolCalls[0].id",
+              "type": "string",
+              "value": "={{ $json.body.message.toolCalls[0].id }}"
+            },
+            {
+              "id": "customer-number-tr",
+              "name": "customer.number",
+              "type": "string",
+              "value": "={{ $json.body.message.call.customer.number }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "restaurant-final-response",
+      "name": "Restaurant Response to Berna",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        1600,
+        624
+      ],
+      "typeVersion": 1.1,
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\":[\n        {\n            \"toolCallId\":\"{{ $('Restaurant GetSlots').first().json.body.message.toolCalls[0].id }}\",\n            \"result\":\"Restaurant müsaitlik kontrolü tamamlandı. Test başarılı!\"\n        }\n    ]\n}",
+        "options": {}
+      }
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-21T17:43:44.259Z",
+      "updatedAt": "2025-08-21T17:43:44.259Z",
+      "role": "workflow:owner",
+      "workflowId": "sZwrqCMAiH6RMJB3",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-21T17:43:57.228Z",
+  "versionId": "53f61772-9ea0-456f-bc32-af75adbb5246"
+}
