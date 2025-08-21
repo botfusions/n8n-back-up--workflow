@@ -3,9 +3,69 @@
   "connections": {
     "When clicking ‘Execute workflow’": {
       "main": [
+        []
+      ]
+    },
+    "Wait": {
+      "main": [
         [
           {
-            "node": "Create a row",
+            "node": "Delete cenk org",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create N8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Cenk Org",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Delete a row1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create N8n": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cenk Org": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
             "type": "main",
             "index": 0
           }
@@ -26,26 +86,189 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -560,
-        -16
+        -1680,
+        -288
       ],
       "id": "84ccb0a7-68b4-431f-be31-653a45c530b5",
       "name": "When clicking ‘Execute workflow’"
     },
     {
-      "parameters": {},
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -528,
+        -240
+      ],
+      "id": "c3b3f179-264c-471a-adde-5ea673205db4",
+      "name": "Wait",
+      "webhookId": "63a32e9e-ba22-4e0e-99aa-9c1f7095a294"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "deneme",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "name",
+              "condition": "fullText",
+              "searchFunction": "fts",
+              "keyValue": "={{ $json.name }}"
+            }
+          ]
+        }
+      },
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -288,
-        -16
+        -240,
+        16
       ],
-      "id": "f8ba6625-77ff-48e0-ac12-bd7ba9d68322",
-      "name": "Create a row",
+      "id": "94ae188b-817b-421d-95b2-f64c07a94e06",
+      "name": "Delete a row1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "2n650rLu7BYkpMGI",
+          "name": "Supabase  cenk org"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "contacts",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "name",
+              "condition": "fullText",
+              "searchFunction": "fts",
+              "keyValue": "={{ $('Create N8n').item.json.name }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -240
+      ],
+      "id": "25be39c7-0a67-4537-9fe9-1f4eef3f9ce9",
+      "name": "Delete cenk org",
       "credentials": {
         "supabaseApi": {
           "id": "e0HjmER5VIjllq7z",
           "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1216,
+        -240
+      ],
+      "id": "2d6ecb83-ab18-4d55-a131-c30419df365d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1200,
+        16
+      ],
+      "id": "518052da-1a65-4917-9009-c6fc8aa7c273",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -528,
+        16
+      ],
+      "id": "42137f8e-fab9-4970-b50c-d95f4d8b1f74",
+      "name": "Wait1",
+      "webhookId": "ba46ff0d-0f4c-49fd-9cc6-f84a287e7297"
+    },
+    {
+      "parameters": {
+        "tableId": "contacts",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "name",
+              "fieldValue": "n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -816,
+        -240
+      ],
+      "id": "f8ba6625-77ff-48e0-ac12-bd7ba9d68322",
+      "name": "Create N8n",
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "deneme",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "name",
+              "fieldValue": "cenk"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        16
+      ],
+      "id": "42015cf6-823d-4680-9164-663433987c9c",
+      "name": "Cenk Org",
+      "credentials": {
+        "supabaseApi": {
+          "id": "2n650rLu7BYkpMGI",
+          "name": "Supabase  cenk org"
         }
       }
     }
@@ -54,9 +277,25 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "shared": [
+    {
+      "createdAt": "2025-08-04T18:24:48.906Z",
+      "updatedAt": "2025-08-04T18:24:48.906Z",
+      "role": "workflow:owner",
+      "workflowId": "GnNMvATt9EffT1jg",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger1": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-08-04T18:24:48.906Z",
-  "versionId": "48052c16-a7b2-4850-a5f0-6258d6bcb0da"
+  "triggerCount": 2,
+  "updatedAt": "2025-08-20T17:37:01.148Z",
+  "versionId": "014e8b1c-f742-453f-b805-44c9ed53ecf8"
 }
