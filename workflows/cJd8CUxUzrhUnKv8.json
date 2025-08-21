@@ -1,0 +1,480 @@
+{
+  "active": false,
+  "connections": {
+    "Mistral Upload": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral DOC OCR": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "Get a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a row": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-18T18:04:13.085Z",
+  "id": "cJd8CUxUzrhUnKv8",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "fiş fatura",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "57c7bd7c-3398-462d-b9c9-ef721932eb82",
+      "name": "Mistral Upload",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        224,
+        0
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "mPvYM3m3HrMi9nKg",
+          "name": "Mistral Cloud account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "24"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dfe5026c-87c6-4cca-a6d9-fd205040e807",
+      "name": "Mistral Signed URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        448,
+        0
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "mPvYM3m3HrMi9nKg",
+          "name": "Mistral Cloud account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"type\": \"document_url\",\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"include_image_base64\": true\n}",
+        "options": {}
+      },
+      "id": "002f3c3d-eb9d-433d-b919-36cfd394e256",
+      "name": "Mistral DOC OCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        672,
+        0
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "mistralCloudApi": {
+          "id": "mPvYM3m3HrMi9nKg",
+          "name": "Mistral Cloud account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.pages[0].markdown }}",
+        "schemaType": "fromJson",
+        "jsonSchemaExample": "{\n  \"fis_no\": \"0249\",\n  \"tarih_saat\": \"YYYY/MM/DD HH:mm\",\n  \"items\": [{\n    \"name\": \"Taç & Toka\",\n    \"quantity\": \"2\",\n    \"unit_price\": \"2.45\",\n    \"kdv\": \"2\",\n    \"total\": \"4.90\"\n  }, {\n    \"name\": \"Su 5 LT\",\n    \"quantity\": \"1\",\n    \"unit_price\": \"5\",\n    \"kdv\": \"0\",\n    \"total\" : \"5\"\n  }],\n  \"total_kdv\": \"4.90\",\n  \"total\": \"9.90\"\n}",
+        "options": {
+          "systemPromptTemplate": "- Fiş tarih formatı daima \"YYYY/MM/DD HH:mm\" formatında olmalı.\n- Fiyat küsüratlarında \".\" kullan\n- KDV için KDV Tutarı kullan, KDV oran değil\n- fis_no genelde \"#<fis_no>\" bu formattadır. \"#\" olmadan fis_no çıkart."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        880,
+        0
+      ],
+      "id": "963e1cc3-b88c-41ce-8f6f-2d8cc8fee323",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        944,
+        208
+      ],
+      "id": "4111df31-4121-4ac8-a798-6d8cd2c9ff47",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "TleQLEpwAGvafRyO",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dabd9821-a87d-48c1-ab60-3c6c6841c5f3",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "71ae4ff5-cd2b-491c-b87e-219c95326106",
+      "name": "Webhook",
+      "webhookId": "dabd9821-a87d-48c1-ab60-3c6c6841c5f3"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"upload\": \"success\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        672,
+        304
+      ],
+      "id": "c4c95988-1949-4ee8-bab8-1ce32b8cfada",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "tableId": "invoices",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "fis_no",
+              "fieldValue": "={{ $('Information Extractor').item.json.output.fis_no }}"
+            },
+            {
+              "fieldId": "tarih_saat",
+              "fieldValue": "={{ $('Information Extractor').item.json.output.tarih_saat }}"
+            },
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $('Information Extractor').item.json.output.items }}"
+            },
+            {
+              "fieldId": "total",
+              "fieldValue": "={{ $('Information Extractor').item.json.output.total }}"
+            },
+            {
+              "fieldId": "total_kdv",
+              "fieldValue": "={{ $('Information Extractor').item.json.output.total_kdv }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        448,
+        224
+      ],
+      "id": "81b8a13f-4fae-4b62-9bfb-e44b8be1cc5f",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "invoices",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "fis_no",
+              "keyValue": "={{ $json.output.fis_no }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        0,
+        320
+      ],
+      "id": "8fdd2583-fec8-4546-8883-83fc2d02a1d9",
+      "name": "Get a row",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d37673c-2932-41da-93c4-f385493510ad",
+              "leftValue": "={{ $json.fis_no }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        320
+      ],
+      "id": "eac8e1c1-360c-41dc-9791-7cebeed168ea",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "invoices",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "fis_no",
+              "condition": "eq",
+              "keyValue": "={{ $json.fis_no }}"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "tarih_saat",
+              "fieldValue": "={{ $json.tarih_saat }}"
+            },
+            {
+              "fieldId": "total",
+              "fieldValue": "={{ $json.total }}"
+            },
+            {
+              "fieldId": "total_kdv",
+              "fieldValue": "={{ $json.total_kdv }}"
+            },
+            {
+              "fieldId": "items",
+              "fieldValue": "={{ $json.items }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        448,
+        432
+      ],
+      "id": "a3e8d4eb-0473-489f-9ac5-36c5fe3c5f3c",
+      "name": "Update a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "e0HjmER5VIjllq7z",
+          "name": "Supabase account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-18T18:04:13.085Z",
+      "updatedAt": "2025-08-18T18:04:13.085Z",
+      "role": "workflow:owner",
+      "workflowId": "cJd8CUxUzrhUnKv8",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-19T18:02:36.932Z",
+  "versionId": "87304ef8-77f1-4dcc-94e9-dbcd289ee6d8"
+}
