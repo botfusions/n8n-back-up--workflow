@@ -1,0 +1,795 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Context Window",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "User Graph",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "User Graph": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Context Window": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "AI Agent 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent 2": {
+      "main": [
+        [
+          {
+            "node": "Add Memory",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Memory": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger2": {
+      "main": [
+        [
+          {
+            "node": "User Graph1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Graph1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent 3",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1 mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1 mini1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent 2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1 mini2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent 3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent 3": {
+      "main": [
+        [
+          {
+            "node": "Add Memory1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zep": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Memory1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-16T22:42:03.628Z",
+  "id": "pP5ZP4w46tBJKIsj",
+  "isArchived": false,
+  "meta": null,
+  "name": "Zep ai yollar",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1152,
+        144
+      ],
+      "id": "9ab44ff7-009d-46f3-b95a-2e40d3c6eab8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        928,
+        144
+      ],
+      "id": "01c5f02b-9022-4d0b-9722-a9d09a78c975",
+      "name": "Telegram Trigger",
+      "webhookId": "a34c3482-9875-488f-bbc5-a2f1e13d4c2b",
+      "credentials": {
+        "telegramApi": {
+          "id": "OXGMc7LNlHEuEaOm",
+          "name": "Nctk_Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1504,
+        144
+      ],
+      "id": "a23e5689-83fc-42a4-a685-2d372085a3d4",
+      "name": "Send a text message",
+      "webhookId": "75cc86ae-39ba-4d05-a857-25695ce4ea6f"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        912,
+        704
+      ],
+      "id": "ae40182a-6cbc-4511-ac3d-74794573b8b4",
+      "name": "Telegram Trigger1",
+      "webhookId": "a34c3482-9875-488f-bbc5-a2f1e13d4c2b",
+      "credentials": {
+        "telegramApi": {
+          "id": "OXGMc7LNlHEuEaOm",
+          "name": "Nctk_Bot"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger1').item.json.message.chat.id }}",
+        "text": "={{ $('AI Agent 2').item.json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2064,
+        704
+      ],
+      "id": "4961aa1b-db88-4957-8f4a-ba32ef1523ef",
+      "name": "Send a text message1",
+      "webhookId": "75cc86ae-39ba-4d05-a857-25695ce4ea6f"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code Node\n// This code extracts all facts from the JSON structure\n\n// Get the input data\nconst items = $input.all();\nconst facts = [];\n\n// Process each item\nfor (const item of items) {\n  try {\n    // Parse the data string if it exists\n    if (item.json.data) {\n      const parsedData = JSON.parse(item.json.data);\n      \n      // Check if edges array exists\n      if (parsedData.edges && Array.isArray(parsedData.edges)) {\n        // Extract facts from each edge\n        parsedData.edges.forEach(edge => {\n          if (edge.fact) {\n            facts.push(edge.fact);\n          }\n        });\n      }\n    }\n  } catch (error) {\n    // Handle parsing errors\n    console.error('Error parsing data:', error);\n  }\n}\n\n// Return all facts as an array in a single item\nreturn [{\n  json: {\n    facts: facts\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        784
+      ],
+      "id": "f0641f67-de24-4694-966d-d1cfcb394c63",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Telegram Trigger1').item.json.message.text }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant.\n\nHere is some additional information about Nate:\n{{ $json.facts.join(\"\\n\") }}\n\n5 most recent interactions with Nate:\n{{ $json.conversations.join(\"\\n\\n\")}}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        704
+      ],
+      "id": "083ad1d9-a14d-44f4-bbe2-b16e13e47af7",
+      "name": "AI Agent 2"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.getzep.com/api/v2/sessions/{{ $json.message.chat.id }}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "zepApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1088,
+        624
+      ],
+      "id": "90f9b857-bb0a-4fc9-8225-fcb004d20252",
+      "name": "Context Window",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.getzep.com/api/v2/graph/search",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "zepApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_id\": \"zep_addc747569b3b9f5e2946c890fd214cc4346c69fe42f71ecd670ede9209e5940\",\n  \"query\": \"{{ $json.message.text }}\",\n  \"scope\": \"edges\",\n  \"limit\": 3,\n  \"search_filters\": {\n    \"min_relevance\": 0.7\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1088,
+        784
+      ],
+      "id": "8be73c39-3d23-4073-8cd2-284dd830f13a",
+      "name": "User Graph",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop through each item\nfor (const item of $input.all()) {\n  // Parse the JSON data\n  const jsonData = JSON.parse(item.json.data);\n  const messages = jsonData.messages;\n  \n  // Array to store formatted message pairs\n  const messagePairs = [];\n  \n  // Process messages in pairs (Human followed by AI)\n  for (let i = 0; i < messages.length; i++) {\n    const message = messages[i];\n    \n    // Look for Human messages\n    if (message.role === \"Human\" && message.role_type === \"user\") {\n      // Check if there's a corresponding AI response\n      if (i + 1 < messages.length && messages[i + 1].role === \"AI\" && messages[i + 1].role_type === \"assistant\") {\n        // Format the pair\n        const pair = `Human: ${message.content}\\nAI: ${messages[i + 1].content}`;\n        messagePairs.push(pair);\n        \n        // Skip the AI message in the next iteration since we've already processed it\n        i++;\n      } else {\n        // If no AI response, just add the human message\n        messagePairs.push(`Human: ${message.content}`);\n      }\n    } else if (message.role === \"AI\" && message.role_type === \"assistant\") {\n      // Handle standalone AI messages (shouldn't happen in normal conversation flow)\n      messagePairs.push(`AI: ${message.content}`);\n    }\n  }\n  \n  // Return all pairs as a single array\n  return [{\n    json: {\n      conversations: messagePairs\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        624
+      ],
+      "id": "253f2755-6977-4549-b352-2ceaff5ba0f6",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1392,
+        704
+      ],
+      "id": "d51f9bf7-4a63-4d97-a7d1-8a61b43cd4d3",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.getzep.com/api/v2/sessions/{{ $('Telegram Trigger1').item.json.message.chat.id }}/memory",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "zepApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_id\": \"zep_addc747569b3b9f5e2946c890fd214cc4346c69fe42f71ecd670ede9209e5940\",\n  \"session_id\": \"{{ $('Telegram Trigger1').item.json.message.chat.id }}\",\n  \"messages\": [\n    {\n      \"role_type\": \"user\",\n      \"content\": \"{{ $('Telegram Trigger1').item.json.message.text }}\"\n    },\n    {\n      \"role_type\": \"assistant\",\n      \"content\": \"{{ $json.output.replace(/\\n/g, '').replace(/\"/g, '') }}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1872,
+        704
+      ],
+      "id": "bf07ca66-dedd-44b8-abf1-1719387cfec0",
+      "name": "Add Memory",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        912,
+        1184
+      ],
+      "id": "fd86f62b-7760-4c0c-972c-78a22867324d",
+      "name": "Telegram Trigger2",
+      "webhookId": "a34c3482-9875-488f-bbc5-a2f1e13d4c2b",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger2').item.json.message.chat.id }}",
+        "text": "={{ $('AI Agent 3').item.json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1920,
+        1184
+      ],
+      "id": "08966f9e-ab99-4837-950a-8ce4b59a1a4c",
+      "name": "Send a text message2",
+      "webhookId": "75cc86ae-39ba-4d05-a857-25695ce4ea6f"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code Node\n// This code extracts all facts from the JSON structure\n\n// Get the input data\nconst items = $input.all();\nconst facts = [];\n\n// Process each item\nfor (const item of items) {\n  try {\n    // Parse the data string if it exists\n    if (item.json.data) {\n      const parsedData = JSON.parse(item.json.data);\n      \n      // Check if edges array exists\n      if (parsedData.edges && Array.isArray(parsedData.edges)) {\n        // Extract facts from each edge\n        parsedData.edges.forEach(edge => {\n          if (edge.fact) {\n            facts.push(edge.fact);\n          }\n        });\n      }\n    }\n  } catch (error) {\n    // Handle parsing errors\n    console.error('Error parsing data:', error);\n  }\n}\n\n// Return all facts as an array in a single item\nreturn [{\n  json: {\n    facts: facts\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        1184
+      ],
+      "id": "aa100ad0-bd21-4662-a993-ab5ef339390e",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.getzep.com/api/v2/graph/search",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "zepApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_id\": \"zep_addc747569b3b9f5e2946c890fd214cc4346c69fe42f71ecd670ede9209e5940\",\n  \"query\": \"{{ $json.message.text }}\",\n  \"scope\": \"edges\",\n  \"limit\": 3,\n  \"search_filters\": {\n    \"min_relevance\": 0.7\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1072,
+        1184
+      ],
+      "id": "6b3bacba-42d4-4d72-9fcd-201af8a0d97d",
+      "name": "User Graph1",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger2').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        1504,
+        1392
+      ],
+      "id": "c0cbf985-1553-46b6-b7f3-5fbd134d9c15",
+      "name": "Postgres Chat Memory"
+    },
+    {
+      "parameters": {
+        "content": "# Zep Memory\nContext & User Graph\n",
+        "height": 500,
+        "width": 940,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        0
+      ],
+      "id": "4e0f91f6-3320-4dc5-ae38-428a4a6fc01e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        320
+      ],
+      "id": "bb309e45-6ab9-47d8-8db8-a24a64926c97",
+      "name": "GPT 4.1 mini"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        880
+      ],
+      "id": "c79e0329-3070-4baf-bf1c-cfd5f08c4269",
+      "name": "GPT 4.1 mini1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "lyptynmFlWtLZQez",
+          "name": "31072025 openrouter"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        1392
+      ],
+      "id": "b99384d1-2300-4c1c-8125-3b22249b7d87",
+      "name": "GPT 4.1 mini2",
+      "credentials": {
+        "openRouterApi": {
+          "id": "lyptynmFlWtLZQez",
+          "name": "31072025 openrouter"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Telegram Trigger2').item.json.message.text }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant.\n\nHere is some additional information about Nate:\n{{ $json.facts.join(\"\\n\") }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        1184
+      ],
+      "id": "3ffa1922-44bb-4501-8c80-898f3cec2215",
+      "name": "AI Agent 3"
+    },
+    {
+      "parameters": {
+        "content": "# Zep Memory (HTTP)\nContext & User Graph\n",
+        "height": 500,
+        "width": 1480,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        528
+      ],
+      "id": "b173c6f1-1bc6-48b7-9226-587720028a2d",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Zep & Postgres Hybrid\nContext & User Graph\n",
+        "height": 500,
+        "width": 1360,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1040
+      ],
+      "id": "b3a291dd-01bb-4212-8594-09643f9b6196",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=1"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryZep",
+      "typeVersion": 1.3,
+      "position": [
+        1328,
+        320
+      ],
+      "id": "77f04543-69b7-4c5e-b1db-d3b6dc9bbc4b",
+      "name": "Zep",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1872,
+        320
+      ],
+      "id": "ca205b11-ff15-4c77-a851-0dfddcd2605d",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.getzep.com/api/v2/sessions/{{ $('Telegram Trigger2').item.json.message.chat.id }}/memory",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "zepApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_id\": \"zep_addc747569b3b9f5e2946c890fd214cc4346c69fe42f71ecd670ede9209e5940\",\n  \"session_id\": \"{{ $('Telegram Trigger2').item.json.message.chat.id }}\",\n  \"messages\": [\n    {\n      \"role_type\": \"user\",\n      \"content\": \"{{ $('Telegram Trigger2').item.json.message.text }}\"\n    },\n    {\n      \"role_type\": \"assistant\",\n      \"content\": \"{{ $json.output.replace(/\\n/g, '').replace(/\"/g, '') }}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1744,
+        1184
+      ],
+      "id": "b91112ec-6921-4df4-b9a9-e86b8ab95407",
+      "name": "Add Memory1",
+      "credentials": {
+        "zepApi": {
+          "id": "ujQpseDfGxgs7GVC",
+          "name": "Zep Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🛠️ Setup Guide  \n**Author:** [Nate Herk](https://www.youtube.com/@nateherk)\n\nFollow the steps below to get this workflow up and running:\n\n### ✅ Step 1: Set Up Your [ZEP](https://www.getzep.com/) Account  \nHead to [ZEP](https://www.getzep.com/) and create a free account. This gives you access to your API key.  \nOnce you have your key:  \n- Plug it into the ZEP Memory Module in n8n.  \n- You can also reuse this credential in HTTP Request nodes that call ZEP’s API.\n\n### ✅ Step 2: Connect a Chat Model  \nHook up a chat model to your AI agents to power conversations.  \nOptions include:  \n- [OpenRouter](https://openrouter.ai/) – connect your OpenRouter API key.  \n- Or use any other model provider of your choice.\n\n### ✅ Step 3: Connect Telegram (Optional)  \nWant to chat with your agents via Telegram?  \n- Add your Telegram credentials in n8n so your agents can send/receive messages there.\n\n### ✅ Step 4: Add Your Postgres Credential  \nIn hybrid workflows that combine ZEP + Postgres, plug in your Postgres credentials.  \n- This helps maintain a solid context window across memory systems.\n\n### 💡 Final Step: Start Testing & Exploring  \n- Check token usage.  \n- Explore your user graph in ZEP.  \n- Fine-tune your agents.  \n- Happy automating!\n",
+        "height": 780,
+        "width": 780
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "11eca40e-8fda-487f-a768-bb0d2eb6895b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Ew... simple memory",
+        "height": 300,
+        "width": 300,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        208
+      ],
+      "id": "efbb558b-fe98-47dc-b35a-84f0eb3e2f26",
+      "name": "Sticky Note4"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-16T22:42:03.628Z",
+      "updatedAt": "2025-08-16T22:42:03.628Z",
+      "role": "workflow:owner",
+      "workflowId": "pP5ZP4w46tBJKIsj",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-19T18:12:29.370Z",
+  "versionId": "8cd8bb7b-cb12-42e1-b1fe-443ec436b3b0"
+}
