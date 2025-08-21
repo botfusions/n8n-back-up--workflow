@@ -1,0 +1,2595 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Set Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Text": {
+      "main": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Change Name": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "Creative Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "Creative Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Up": {
+      "main": [
+        [
+          {
+            "node": "Update Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Log": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Posting Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Draft": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Reply": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Labels": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Unread": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event with Attendee": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Events": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Contacts": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add or Update Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Social Media Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "Social Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "Social Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creative Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram Post": {
+      "ai_tool": [
+        [
+          {
+            "node": "Posting Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Share with Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Share Anyone": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "X Post": {
+      "ai_tool": [
+        [
+          {
+            "node": "Posting Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Media": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Up1": {
+      "main": [
+        [
+          {
+            "node": "Update Log1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Log1": {
+      "main": [
+        [
+          {
+            "node": "Error Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultimate Media Agent": {
+      "main": [
+        [
+          {
+            "node": "Clean Up",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Clean Up1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5-mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallback": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "GPT 5-mini1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5-mini2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Posting Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5-mini3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Social Media Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 5-mini4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Creative Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Doc": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Docs": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Drive Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "Web Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Perplexity": {
+      "ai_tool": [
+        [
+          {
+            "node": "Web Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenWeatherMap": {
+      "ai_tool": [
+        [
+          {
+            "node": "Web Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Web Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ultimate Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Video": {
+      "ai_tool": [
+        [
+          {
+            "node": "Creative Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TikTok Post": {
+      "ai_tool": [
+        [
+          {
+            "node": "Posting Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TikTok Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "Social Media Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image to Video": {
+      "ai_tool": [
+        [
+          {
+            "node": "Creative Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-19T15:56:28.354Z",
+  "id": "LIbnZJpLArgZkSQq",
+  "isArchived": false,
+  "meta": null,
+  "name": "Ultimeta  multi agents",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        2160,
+        0
+      ],
+      "id": "2cb969d6-1260-476d-8063-354ed66c8871",
+      "name": "Telegram Trigger",
+      "webhookId": "bea4843e-25e4-4d89-b3f6-4237798e9b42"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e7211e46-0f49-46a0-9cb7-e83fed150efd",
+                    "leftValue": "={{ $json.message.photo }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Photo"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "85edf561-8f5e-4215-9e19-78ff0392068e"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2288,
+        0
+      ],
+      "id": "de2c68ca-9bdc-462c-8b5a-c4aba2f5b3c0",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger').item.json.message.photo[1].file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2464,
+        -128
+      ],
+      "id": "6a52823c-0244-4afd-ad11-64b01f4ba40c",
+      "name": "Download File",
+      "webhookId": "fb18f65f-c1cf-4473-b59d-d59d6b96e9ea"
+    },
+    {
+      "parameters": {
+        "name": "={{ $now.format('yyyy-MM-dd') }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1Fm7PN1nMICKnAZpf6-3YYrSJlBEQ7Xbe",
+          "mode": "list",
+          "cachedResultName": "Pictures",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1Fm7PN1nMICKnAZpf6-3YYrSJlBEQ7Xbe"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2592,
+        -128
+      ],
+      "id": "3339401f-1ace-4bbb-a0c8-2d78bb7c3cab",
+      "name": "Upload file"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "53de4eb0-6684-48f5-a5b5-2b3bedaff817",
+              "name": "message.text",
+              "value": "=The user just submitted a picture. Here is the ID of that file in Google Drive: {{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2736,
+        -128
+      ],
+      "id": "5257b3b0-4664-4738-b7e5-288753ba9fc8",
+      "name": "Set Text"
+    },
+    {
+      "parameters": {
+        "toolDescription": "An AI Agent that handles all tasks in Google Drive",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are an AI agent in charge of Google Drive actions. \n\n## Tools\n- Change Name: use this tool to change the name of a file. For this tool, you need the file ID and the new name. \n\n- Search Media: use this tool to search through the available pictures/videos. This tool helps you find information like the file ID and the new name. \n\n- Search Docs: use this tool to search through the available media analysis docs.\n\n- Share with Email: use this tool to share a file to an email address.\n\n- Share Anyone: use this tool to share a file with anyone as a viewer."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        2880,
+        288
+      ],
+      "id": "b3ca0da1-e08a-4a8d-8b82-262fc14fb043",
+      "name": "Google Drive Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2224,
+        416
+      ],
+      "id": "d5f7c93d-00ed-403c-911d-5dc5a4ff1ba4",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('File_to_Update', ``, 'string') }}"
+        },
+        "newUpdatedFileName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('New_Updated_File_Name', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        3056,
+        464
+      ],
+      "id": "0b06f4b1-a91e-4212-86fb-6d8f0e2ef73e",
+      "name": "Change Name"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $('Ultimate Media Agent').item.json.output }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3632,
+        -128
+      ],
+      "id": "45b05e5f-a87b-4f12-aaf8-a6f86acdb244",
+      "name": "Send a text message",
+      "webhookId": "d02f02ff-0ddf-4e07-b4ad-fe0e2c18f168"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to edit an image. The fields to send to this tool are:\n- the image name\n- the image edit request\n- the file ID",
+        "workflowId": {
+          "__rl": true,
+          "value": "wTYnNm3wbeV7m7ce",
+          "mode": "list",
+          "cachedResultName": "Edit Image Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', ``, 'string') }}",
+            "request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request', ``, 'string') }}",
+            "chatID": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+            "pictureID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('pictureID', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "request",
+              "displayName": "request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "pictureID",
+              "displayName": "pictureID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3328,
+        464
+      ],
+      "id": "5375fcdf-921c-4fe8-8d7c-1c303662fc38",
+      "name": "Edit Image"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to create an image. The fields to send to this tool are:\n1. Image name\n2. Image prompt",
+        "workflowId": {
+          "__rl": true,
+          "value": "JF2N60jiLK3NSZS8",
+          "mode": "list",
+          "cachedResultName": "Create Image Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', ``, 'string') }}",
+            "prompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('prompt', ``, 'string') }}",
+            "chatID": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "prompt",
+              "displayName": "prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3440,
+        464
+      ],
+      "id": "05ae7394-b36b-40bb-bd37-a5d790bcb54d",
+      "name": "Create Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Initialize the output arrays\nconst steps = [];\nconst tokens = [];\nlet totalTokens = 0;\n\n// Process each item in the input\nfor (const item of $input.all()) {\n  let data = item.json;\n  \n  // Check if the data is an array itself (like your example JSON)\n  if (Array.isArray(data)) {\n    // Process each object in the array\n    for (const obj of data) {\n      // Extract steps information\n      if (obj.intermediateSteps && Array.isArray(obj.intermediateSteps)) {\n        for (const step of obj.intermediateSteps) {\n          if (step.action) {\n            steps.push({\n              tool: step.action.tool,\n              toolInput: step.action.toolInput,\n              observation: step.observation\n            });\n          }\n        }\n      }\n      \n      // Extract token information - FIXED PATH\n      if (obj.intermediateSteps && Array.isArray(obj.intermediateSteps)) {\n        for (const step of obj.intermediateSteps) {\n          if (step.action && step.action.messageLog && Array.isArray(step.action.messageLog)) {\n            for (const message of step.action.messageLog) {\n              // Fixed: tokenUsage instead of usage, and camelCase field names\n              if (message.kwargs && message.kwargs.response_metadata && message.kwargs.response_metadata.tokenUsage) {\n                const tokenUsage = message.kwargs.response_metadata.tokenUsage;\n                tokens.push({\n                  prompt_tokens: tokenUsage.promptTokens,\n                  completion_tokens: tokenUsage.completionTokens,\n                  total_tokens: tokenUsage.totalTokens,\n                  model_name: message.kwargs.response_metadata.model_name\n                });\n                \n                // Add the tokens to our running total\n                if (typeof tokenUsage.totalTokens === 'number') {\n                  totalTokens += tokenUsage.totalTokens;\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  } else {\n    // If data is not an array, process it as a single object\n    // Extract steps information\n    if (data.intermediateSteps && Array.isArray(data.intermediateSteps)) {\n      for (const step of data.intermediateSteps) {\n        if (step.action) {\n          steps.push({\n            tool: step.action.tool,\n            toolInput: step.action.toolInput,\n            observation: step.observation\n          });\n        }\n      }\n    }\n    \n    // Extract token information - FIXED PATH\n    if (data.intermediateSteps && Array.isArray(data.intermediateSteps)) {\n      for (const step of data.intermediateSteps) {\n        if (step.action && step.action.messageLog && Array.isArray(step.action.messageLog)) {\n          for (const message of step.action.messageLog) {\n            // Fixed: tokenUsage instead of usage, and camelCase field names\n            if (message.kwargs && message.kwargs.response_metadata && message.kwargs.response_metadata.tokenUsage) {\n              const tokenUsage = message.kwargs.response_metadata.tokenUsage;\n              tokens.push({\n                prompt_tokens: tokenUsage.promptTokens,\n                completion_tokens: tokenUsage.completionTokens,\n                total_tokens: tokenUsage.totalTokens,\n                model_name: message.kwargs.response_metadata.model_name\n              });\n              \n              // Add the tokens to our running total\n              if (typeof tokenUsage.totalTokens === 'number') {\n                totalTokens += tokenUsage.totalTokens;\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// Return the processed data with total_tokens included\nreturn [{\n  json: {\n    steps: steps,\n    tokens: tokens,\n    total_tokens: totalTokens\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3328,
+        -128
+      ],
+      "id": "c78ac1ea-1e6a-4e9f-889f-bf6dcc70fef8",
+      "name": "Clean Up"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1ji6qJCv8YfrHVtgdCZmN9UZtHd3Ay9c_MjqKnad-_mw",
+          "mode": "list",
+          "cachedResultName": "Media Agent Logs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ji6qJCv8YfrHVtgdCZmN9UZtHd3Ay9c_MjqKnad-_mw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/144h5vN3d_SsZMNkZncQAKMrwJ3wkceUEq47dO7FwLyA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $now.format('yyyy-MM-dd hh:m a') }}",
+            "Workflow": "={{ $workflow.name }}",
+            "Input": "={{ $('Telegram Trigger').item.json.message.text }}",
+            "Output": "={{ $('Ultimate Media Agent').item.json.output }}",
+            "Actions": "={{ JSON.stringify($json.steps, null, 2) }}",
+            "Tokens": "={{ JSON.stringify($json.tokens, null, 2) }}",
+            "Total Tokens": "={{ $json.total_tokens }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workflow",
+              "displayName": "Workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Output",
+              "displayName": "Output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Actions",
+              "displayName": "Actions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tokens",
+              "displayName": "Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Tokens",
+              "displayName": "Total Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3472,
+        -128
+      ],
+      "id": "6a3a5b04-b2ff-451e-928b-61920fa9d555",
+      "name": "Update Log"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $('Ultimate Media Agent').item.json.output }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3632,
+        32
+      ],
+      "id": "cbe8c634-a7a9-4898-bec3-6150fb4c3a3d",
+      "name": "Error Message",
+      "webhookId": "d02f02ff-0ddf-4e07-b4ad-fe0e2c18f168"
+    },
+    {
+      "parameters": {
+        "toolDescription": "This agent can post images on different social platforms",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        3584,
+        288
+      ],
+      "id": "14927c3b-258c-4d4c-921a-23c5283c5769",
+      "name": "Posting Agent"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2688,
+        608
+      ],
+      "id": "02e9b801-9288-468a-82a9-a132c39d619d",
+      "name": "Send Email",
+      "webhookId": "86c8c4b1-13bb-4ebe-acb9-30e1d7082d55"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', `how many emails the user wants`, 'number') }}",
+        "simple": false,
+        "filters": {
+          "sender": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sender', `who the emails are from`, 'string') }}"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2352,
+        608
+      ],
+      "id": "e20279f1-436d-45da-b870-21af63b87800",
+      "name": "Get Emails",
+      "webhookId": "af4b3298-9037-44b0-aa12-2acbfbb5e66f"
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "html",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "threadId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Thread_ID', `The ID of the email thread`, 'string') }}",
+          "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To_Email', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2688,
+        464
+      ],
+      "id": "25c6d557-7d3a-4e6f-9f86-edcb64e71e12",
+      "name": "Create Draft",
+      "webhookId": "17016bce-d7d7-428a-a56c-f6ea122db8be"
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', `the message ID`, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2464,
+        464
+      ],
+      "id": "e49b731b-52da-4f92-8a1b-cfc61723ef99",
+      "name": "Email Reply",
+      "webhookId": "114785e6-a859-432b-81b4-c490c1c35b1c"
+    },
+    {
+      "parameters": {
+        "resource": "label",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2464,
+        608
+      ],
+      "id": "39708f67-857f-4ff6-8754-f10fbbfc185d",
+      "name": "Get Labels",
+      "webhookId": "9e08b59e-792d-4566-83f1-9263c9ad86ae"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', `the ID of the message`, 'string') }}",
+        "labelIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Label_Names_or_IDs', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2576,
+        464
+      ],
+      "id": "9aa10dae-c0cb-446e-90f0-f989a0dacb39",
+      "name": "Label Emails",
+      "webhookId": "0e951529-2e6d-40bf-ac40-fc0947e242e2"
+    },
+    {
+      "parameters": {
+        "operation": "markAsUnread",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', `the ID of the message`, 'string') }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2576,
+        608
+      ],
+      "id": "a8779624-d1ea-4fe4-b175-eac89e3c633c",
+      "name": "Mark Unread",
+      "webhookId": "a35af9d8-f67d-4ff9-803f-59ec6356e795"
+    },
+    {
+      "parameters": {
+        "toolDescription": "An email agent for all email actions",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are an email management assistant. All emails must be formatted professionally in HTML and signed off as \"Nate.\" \n\n**Email Management Tools**   \n   - Use \"Send Email\" to send emails.  \n   - Use \"Create Draft\" if the user asks for a draft.  \n   - Use \"Get Emails\" to retrieve emails when requested.\n   - Use \"Get Labels\" to retrieve labels.\n   - Use \"Mark Unread\" to mark an email as unread. You must use \"Get Emails\" first so you have the message ID of the email to flag.\n   - Use \"Label Email\" to flag an email. You must use \"Get Emails\" first so you have the message ID of the email to flag. Then you must use \"Get Labels\" so you have the label ID.\n   - Use \"Email Reply\" to reply to an email. You must use \"Get Emails\" first so you have the message ID of the email to reply to.\n\n## Final Notes\n- Here is the current date/time: {{ $now }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        2448,
+        288
+      ],
+      "id": "e94c56b4-83a0-46ec-abdf-9caf0b6e4510",
+      "name": "Email Agent"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "nateherk88@gmail.com",
+          "mode": "list",
+          "cachedResultName": "nateherk88@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('attendees0_Attendees', `email of the attendee`, 'string') }}"
+          ],
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `event title`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2928,
+        928
+      ],
+      "id": "40b4dff0-69cf-48e9-90e6-f207d71bc6dc",
+      "name": "Create Event with Attendee"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "nateherk88@gmail.com",
+          "mode": "list",
+          "cachedResultName": "nateherk88@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "attendees": [],
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `event title`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2704,
+        928
+      ],
+      "id": "022feab4-ab1b-40a8-9013-e1d21c46b40f",
+      "name": "Create Event"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "nateherk88@gmail.com",
+          "mode": "list",
+          "cachedResultName": "nateherk88@gmail.com"
+        },
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', `the day before the date the user requested`, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', `the day after the date the user requested`, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2592,
+        928
+      ],
+      "id": "dc06561c-b423-4cf3-be29-4cc45aef749d",
+      "name": "Get Events"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "nateherk88@gmail.com",
+          "mode": "list",
+          "cachedResultName": "nateherk88@gmail.com"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2480,
+        928
+      ],
+      "id": "e7d8d357-1c4f-45b7-adaa-9f668cac2ca1",
+      "name": "Delete Event"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "nateherk88@gmail.com",
+          "mode": "list",
+          "cachedResultName": "nateherk88@gmail.com"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "updateFields": {
+          "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+          "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2816,
+        928
+      ],
+      "id": "ecac1390-76ad-45cf-abe6-a96856d7556d",
+      "name": "Update Event"
+    },
+    {
+      "parameters": {
+        "toolDescription": "A calendar agent for all calendar actions",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a calendar assistant. Your responsibilities include creating, getting, and deleting events in the user's calendar.\n\n**Calendar Management Tools**  \n   - Use \"Create Event with Attendee\" when an event includes a participant.  \n   - Use \"Create Event\" for solo events.   \n   - Use \"Get Events\" to fetch calendar schedules when requested.\n   - Use \"Delete Event\" to delete an event. You must use \"Get Events\" first to get the ID of the event to delete.\n   - Use \"Update Event\" to update an event. You must use \"Get Events\" first to get the ID of the event to update.\n\n## Final Notes\nHere is the current date/time: {{ $now }}\nIf a duration for an event isn't specified, assume it will be one hour."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        2544,
+        784
+      ],
+      "id": "f6a813d0-e36c-4e0e-902d-1f279142fb56",
+      "name": "Calendar Agent"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appK0rbtvf9e7vt6w",
+          "mode": "list",
+          "cachedResultName": "Contacts",
+          "cachedResultUrl": "https://airtable.com/appK0rbtvf9e7vt6w"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl08JGCfUK1RhXsG",
+          "mode": "list",
+          "cachedResultName": "Contacts",
+          "cachedResultUrl": "https://airtable.com/appK0rbtvf9e7vt6w/tbl08JGCfUK1RhXsG"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2032,
+        1056
+      ],
+      "id": "ad51e49e-b96e-4e4f-b4fb-2a9de0055802",
+      "name": "Get Contacts",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "VgzZOZrxyzRuh3Tu",
+          "name": "bookin -airtable"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "base": {
+          "__rl": true,
+          "value": "appK0rbtvf9e7vt6w",
+          "mode": "list",
+          "cachedResultName": "Contacts",
+          "cachedResultUrl": "https://airtable.com/appK0rbtvf9e7vt6w"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl08JGCfUK1RhXsG",
+          "mode": "list",
+          "cachedResultName": "Contacts",
+          "cachedResultUrl": "https://airtable.com/appK0rbtvf9e7vt6w/tbl08JGCfUK1RhXsG"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('name__using_to_match_', ``, 'string') }}",
+            "email": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('email', ``, 'string') }}",
+            "phoneNumber": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('phoneNumber', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "name"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "phoneNumber",
+              "displayName": "phoneNumber",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Personal",
+                  "value": "Personal"
+                },
+                {
+                  "name": "Business",
+                  "value": "Business"
+                },
+                {
+                  "name": "Home",
+                  "value": "Home"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2192,
+        928
+      ],
+      "id": "6b421222-2f5b-4060-b5f1-be22cc2e1c66",
+      "name": "Add or Update Contact"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Contact agent for all contact actions, like getting contacts",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a contact management assistant. Your responsibilities include looking up contacts, adding new contacts, or updating a contact's information.\n\n**Contact Management**  \n   - Use \"Get Contacts\" to retrieve contact information. \n   - Use \"Add or Update Contact\" to store new contact information or modify existing entries. "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        2000,
+        784
+      ],
+      "id": "67dedee4-80a5-4376-8296-048b4e5649f6",
+      "name": "Contact Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2352,
+        464
+      ],
+      "id": "838c1ebc-2037-4b9e-8a1e-523c74ba31d0",
+      "name": "GPT 4.1-mini1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2368,
+        928
+      ],
+      "id": "d66ae912-7f41-4a0c-ab2d-afe380dc8b86",
+      "name": "GPT 4.1-mini2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1952,
+        928
+      ],
+      "id": "e9ce9bc2-cea6-4f5b-9cd2-4edca1c19140",
+      "name": "GPT 4.1-mini3"
+    },
+    {
+      "parameters": {
+        "toolDescription": "This agent can search through different social platforms",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a social media search agent. Your job is to use the correct tool to search on the right platform. The fields to send to each tool are:\n- How many videos\n- The search query for those videos\n\n## Tools\n- Instagram Search: use this to search Instagram\n- YouTube Search: use this to search YouTube\n- TikTok Search: use this to search TikTok\n\n## Instructions\nWhen searching, the search query should just be one word or one term. It shouldn't be an array of search terms. "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        3616,
+        784
+      ],
+      "id": "887a89ae-9cfe-480e-9596-d596370fbcdb",
+      "name": "Social Media Agent"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/apify~instagram-hashtag-scraper/run-sync-get-dataset-items",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "apifyApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"hashtags\": [\n        \"{{ $fromAI(\"searchTerm\") }}\"\n    ],\n    \"resultsLimit\": {{ $fromAI(\"results\") }},\n    \"resultsType\": \"posts\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3840,
+        928
+      ],
+      "id": "2b5a890e-19af-4feb-84bc-fe01c63ae245",
+      "name": "Instagram Search"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this tool to find high-performing YouTube videos",
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/streamers~youtube-scraper/run-sync-get-dataset-items",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "apifyApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"dateFilter\": \"month\",\n    \"downloadSubtitles\": false,\n    \"hasCC\": false,\n    \"hasLocation\": false,\n    \"hasSubtitles\": false,\n    \"is360\": false,\n    \"is3D\": false,\n    \"is4K\": false,\n    \"isBought\": false,\n    \"isHD\": false,\n    \"isHDR\": false,\n    \"isLive\": false,\n    \"isVR180\": false,\n    \"maxResultStreams\": 0,\n    \"maxResults\": {{$fromAI(\"maxResults\",\"how many videos the user wants, if not specified, default to 3\",\"number\",3)}},\n    \"maxResultsShorts\": 0,\n    \"oldestPostDate\": \"6 months\",\n    \"preferAutoGeneratedSubtitles\": false,\n    \"saveSubsToKVS\": false,\n    \"searchQueries\": [\n        \"{{$fromAI(\"searchTerm\",\"The topic of the video to search for\")}}\"\n    ],\n    \"sortVideosBy\": \"POPULAR\",\n    \"sortingOrder\": \"views\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3696,
+        928
+      ],
+      "id": "54a8205e-fc7e-4bda-af53-fab394b7d686",
+      "name": "YouTube Search"
+    },
+    {
+      "parameters": {
+        "toolDescription": "An agent that can create images and videos and edit images",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a creative agent. Use your tools to take action as requested. \n\nYou are an expert AI image/video prompt generator\n\n## Tools\n- Edit Image: Use this tool to edit an image\n- Create Image: Use this tool to create an image\n- Image to Video: Use this tool to turn an image into a video\n- Create Video: Use this tool to create a video from text\n\n## Instructions\n- Image prompts should be detailed and stylized\n- Video prompts should be concise, energetic, and should be one seamless video with no cuts. Explain the sounds in the video or any dialogue."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        3248,
+        288
+      ],
+      "id": "030fc460-72a3-440c-aab8-d96e29c2e567",
+      "name": "Creative Agent"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to post a file on Instagram. The fields needed are:\n1. the Google Drive file ID\n2. the text for the post",
+        "workflowId": {
+          "__rl": true,
+          "value": "nrU0CVm0F9Yuiqqh",
+          "mode": "list",
+          "cachedResultName": "Instagram Post"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fileID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fileID', ``, 'string') }}",
+            "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('text', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fileID",
+              "displayName": "fileID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "text",
+              "displayName": "text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3744,
+        608
+      ],
+      "id": "529d61ed-68b6-4520-8b6b-7c59bbf469d0",
+      "name": "Instagram Post"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        2128,
+        416
+      ],
+      "id": "faa7ea75-e1ac-4a7b-95f6-76c0bfc588e8",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('File', ``, 'string') }}"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "user",
+            "emailAddress": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Email_Address', ``, 'string') }}"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        3056,
+        608
+      ],
+      "id": "e3cdf948-388e-4c2b-ad15-d47497fe98e8",
+      "name": "Share with Email"
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('File', ``, 'string') }}"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        2944,
+        608
+      ],
+      "id": "63211eb0-b030-44f5-b4dd-768be7fff53a",
+      "name": "Share Anyone"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to post a file on X. The fields needed are:\n1. the Google Drive file ID\n2. the text for the post",
+        "workflowId": {
+          "__rl": true,
+          "value": "XVDzyGSsC8apv1Xd",
+          "mode": "list",
+          "cachedResultName": "X Post"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fileID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fileID', ``, 'string') }}",
+            "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('text', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fileID",
+              "displayName": "fileID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "text",
+              "displayName": "text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3744,
+        464
+      ],
+      "id": "5a9aaf49-0a30-4520-a3e6-cafb679e1355",
+      "name": "X Post"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1Fm7PN1nMICKnAZpf6-3YYrSJlBEQ7Xbe",
+            "mode": "list",
+            "cachedResultName": "Media",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1Fm7PN1nMICKnAZpf6-3YYrSJlBEQ7Xbe"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        2944,
+        464
+      ],
+      "id": "2749dc7a-1608-4722-b2cf-29d81f309aa9",
+      "name": "Search Media"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Initialize the output arrays\nconst steps = [];\nconst tokens = [];\nlet totalTokens = 0;\n\n// Process each item in the input\nfor (const item of $input.all()) {\n  let data = item.json;\n  \n  // Check if the data is an array itself (like your example JSON)\n  if (Array.isArray(data)) {\n    // Process each object in the array\n    for (const obj of data) {\n      // Extract steps information\n      if (obj.intermediateSteps && Array.isArray(obj.intermediateSteps)) {\n        for (const step of obj.intermediateSteps) {\n          if (step.action) {\n            steps.push({\n              tool: step.action.tool,\n              toolInput: step.action.toolInput,\n              observation: step.observation\n            });\n          }\n        }\n      }\n      \n      // Extract token information - FIXED PATH\n      if (obj.intermediateSteps && Array.isArray(obj.intermediateSteps)) {\n        for (const step of obj.intermediateSteps) {\n          if (step.action && step.action.messageLog && Array.isArray(step.action.messageLog)) {\n            for (const message of step.action.messageLog) {\n              // Fixed: tokenUsage instead of usage, and camelCase field names\n              if (message.kwargs && message.kwargs.response_metadata && message.kwargs.response_metadata.tokenUsage) {\n                const tokenUsage = message.kwargs.response_metadata.tokenUsage;\n                tokens.push({\n                  prompt_tokens: tokenUsage.promptTokens,\n                  completion_tokens: tokenUsage.completionTokens,\n                  total_tokens: tokenUsage.totalTokens,\n                  model_name: message.kwargs.response_metadata.model_name\n                });\n                \n                // Add the tokens to our running total\n                if (typeof tokenUsage.totalTokens === 'number') {\n                  totalTokens += tokenUsage.totalTokens;\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  } else {\n    // If data is not an array, process it as a single object\n    // Extract steps information\n    if (data.intermediateSteps && Array.isArray(data.intermediateSteps)) {\n      for (const step of data.intermediateSteps) {\n        if (step.action) {\n          steps.push({\n            tool: step.action.tool,\n            toolInput: step.action.toolInput,\n            observation: step.observation\n          });\n        }\n      }\n    }\n    \n    // Extract token information - FIXED PATH\n    if (data.intermediateSteps && Array.isArray(data.intermediateSteps)) {\n      for (const step of data.intermediateSteps) {\n        if (step.action && step.action.messageLog && Array.isArray(step.action.messageLog)) {\n          for (const message of step.action.messageLog) {\n            // Fixed: tokenUsage instead of usage, and camelCase field names\n            if (message.kwargs && message.kwargs.response_metadata && message.kwargs.response_metadata.tokenUsage) {\n              const tokenUsage = message.kwargs.response_metadata.tokenUsage;\n              tokens.push({\n                prompt_tokens: tokenUsage.promptTokens,\n                completion_tokens: tokenUsage.completionTokens,\n                total_tokens: tokenUsage.totalTokens,\n                model_name: message.kwargs.response_metadata.model_name\n              });\n              \n              // Add the tokens to our running total\n              if (typeof tokenUsage.totalTokens === 'number') {\n                totalTokens += tokenUsage.totalTokens;\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n// Return the processed data with total_tokens included\nreturn [{\n  json: {\n    steps: steps,\n    tokens: tokens,\n    total_tokens: totalTokens\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3328,
+        32
+      ],
+      "id": "dd1bd543-276a-4994-a0b1-24190262e43d",
+      "name": "Clean Up1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1ji6qJCv8YfrHVtgdCZmN9UZtHd3Ay9c_MjqKnad-_mw",
+          "mode": "list",
+          "cachedResultName": "Media Agent Logs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ji6qJCv8YfrHVtgdCZmN9UZtHd3Ay9c_MjqKnad-_mw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/144h5vN3d_SsZMNkZncQAKMrwJ3wkceUEq47dO7FwLyA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $now.format('yyyy-MM-dd hh:m a') }}",
+            "Workflow": "={{ $workflow.name }}",
+            "Input": "={{ $('Telegram Trigger').item.json.message.text }}",
+            "Output": "=Error Execution:{{ $execution.id }}",
+            "Actions": "={{ JSON.stringify($json.steps, null, 2) }}",
+            "Tokens": "={{ JSON.stringify($json.tokens, null, 2) }}",
+            "Total Tokens": "={{ $json.total_tokens }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workflow",
+              "displayName": "Workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Output",
+              "displayName": "Output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Actions",
+              "displayName": "Actions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tokens",
+              "displayName": "Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Tokens",
+              "displayName": "Total Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3472,
+        32
+      ],
+      "id": "b5a2b128-1ab3-44a8-9ea9-abb5d313cd49",
+      "name": "Update Log1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "=# Overview\nYou are the ultimate manager agent. Your job is to help the user out with the task by using your tools to delegate the task to the correct tool. You should never be writing emails or creating summaries — your sole responsibility is to call the correct tool.\n\n## Tools\n- Google Drive Agent: Use this tool to take action in Google drive\n- Email Agent: Use this tool to take action in email\n- Calendar Agent: Use this tool to take action in calendar\n- Contact Agent: Use this tool to take action with contacts\n- Social Media Agent: Use this agent to search for posts on a social platform\n- Creative Agent: Use this agent to create images, edit images, turn images to video, and create videos\n- Posting Agent: Use this agent to post on social media. You must send the fileID and the post caption\n- Web Agent: Use this agent to search the web for anything\n- Create Doc: Use this tool to create a google doc, always send the user the link to the finished doc once it has been created.\n- Think: Use this when you feel stuck and need to think about what to do next.\n\n## Instructions\n1) If the user submits a photo, ask them what to call that photo, then change it's name in google drive.\n2) Some actions require you to look up contact information first. For the following actions, you must get contact information and send that to the agent who needs it:\n  - sending emails\n  - drafting emails\n  - creating calendar event with attendee\n3) Images/videos are found in the database, use the Google Drive Agent to get those\n4) Before asking follow up questions, use your think tool to figure out what to do next\n5) Before posting anything, the file must be shared to anyone in Google drive\n6) When creating videos, don't ask how long they should be\n7) Always output a message back to the user, never say nothing",
+          "returnIntermediateSteps": true
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2896,
+        16
+      ],
+      "id": "3236ef2a-15ef-459b-a3e4-bb10c84c84b2",
+      "name": "Ultimate Media Agent",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        304
+      ],
+      "id": "39fa58a2-00db-4157-acf3-63421a760baa",
+      "name": "GPT 5-mini"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2128,
+        304
+      ],
+      "id": "628644c6-77bb-4ce1-adce-a37e56bd001e",
+      "name": "Fallback"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2832,
+        464
+      ],
+      "id": "d8bc90e7-0515-438c-8b2c-06380aa4ae93",
+      "name": "GPT 5-mini1"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        464
+      ],
+      "id": "70e2d962-95ed-4a0f-8583-c921c028c6de",
+      "name": "GPT 5-mini2"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3568,
+        928
+      ],
+      "id": "6e855a04-48b4-491e-8097-1af6c7b31b6b",
+      "name": "GPT 5-mini3"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3216,
+        464
+      ],
+      "id": "575ab734-ea92-43fc-9bd8-9ff9d4baed00",
+      "name": "GPT 5-mini4"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to create a Google Doc. The fields to send over are:\n1. The title of the doc\n2. The content for the doc",
+        "workflowId": {
+          "__rl": true,
+          "value": "KWsy9aPUNkLxzMPV",
+          "mode": "list",
+          "cachedResultName": "Create Doc Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('title', ``, 'string') }}",
+            "content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('content', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "content",
+              "displayName": "content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3920,
+        288
+      ],
+      "id": "99261011-e812-4134-8a67-2761bda1111f",
+      "name": "Create Doc"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1dgxFHKKunJbtvJl7nDjqSddlG2UROu3E",
+            "mode": "list",
+            "cachedResultName": "Media Analysis",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1dgxFHKKunJbtvJl7nDjqSddlG2UROu3E"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTool",
+      "typeVersion": 3,
+      "position": [
+        2832,
+        608
+      ],
+      "id": "4e4397ae-64a8-4c11-84bc-d219b6a1556c",
+      "name": "Search Docs"
+    },
+    {
+      "parameters": {
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        3184,
+        928
+      ],
+      "id": "1c01c39c-29aa-45d0-9c0c-00157f779f00",
+      "name": "Tavily"
+    },
+    {
+      "parameters": {
+        "model": "sonar",
+        "messages": {
+          "message": [
+            {
+              "content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message0_Text', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.perplexityTool",
+      "typeVersion": 1,
+      "position": [
+        3296,
+        928
+      ],
+      "id": "b56f3d4e-2afc-4e6e-a751-dd8bda87109e",
+      "name": "Perplexity"
+    },
+    {
+      "parameters": {
+        "format": "imperial",
+        "cityName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('City', `City name, no state`, 'string') }}",
+        "language": "en"
+      },
+      "type": "n8n-nodes-base.openWeatherMapTool",
+      "typeVersion": 1,
+      "position": [
+        3408,
+        928
+      ],
+      "id": "193e98b8-3fca-4624-861e-d4db521e0e82",
+      "name": "OpenWeatherMap"
+    },
+    {
+      "parameters": {
+        "toolDescription": "A research agent for all research actions",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a web research assistant. Your responsibilities include conducting quick web searches, performing deeper research, and retrieving current weather information. \n\n## Web Search & Research \n   - Use Tavily for quick factual lookups, recent news, or verifying specific pieces of information.  \n   - Use Perplexity when a question requires deeper research, multiple perspectives, or synthesized answers from various sources.  \n\n## Weather Information  \n   - Use Open Weather Map to retrieve current weather data, including temperature, conditions, and forecasts for a given location.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        3136,
+        784
+      ],
+      "id": "25d11022-982e-4d05-98ed-01a255ccbe83",
+      "name": "Web Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        928
+      ],
+      "id": "16341d87-e7ef-4e88-ac7f-7ce91386e940",
+      "name": "GPT 4.1-mini4"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to create a video from a text prompt. The fields to pass over are:\n1. Video prompt\n2. Video title\n3. aspect ratio (Possible enum values: 16:9, 9:16, 1:1)",
+        "workflowId": {
+          "__rl": true,
+          "value": "dDlwPUmRvgVXyClB",
+          "mode": "list",
+          "cachedResultName": "Create Video Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chatID": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+            "prompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('prompt', ``, 'string') }}",
+            "videoTitle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('videoTitle', ``, 'string') }}",
+            "aspectRatio": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('aspectRatio', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "prompt",
+              "displayName": "prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "videoTitle",
+              "displayName": "videoTitle",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "aspectRatio",
+              "displayName": "aspectRatio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3392,
+        608
+      ],
+      "id": "54734550-26c2-4143-a7b3-7f2ab50c2801",
+      "name": "Create Video"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to post a file on TikTok. The fields needed are:\n1. the Google Drive file ID\n2. the text for the post",
+        "workflowId": {
+          "__rl": true,
+          "value": "HCSEx2GqMubEs0wQ",
+          "mode": "list",
+          "cachedResultName": "TikTok Post Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fileID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fileID', ``, 'string') }}",
+            "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('text', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fileID",
+              "displayName": "fileID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "text",
+              "displayName": "text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3600,
+        608
+      ],
+      "id": "a4ac0d45-683f-42b7-8933-625fb0edb111",
+      "name": "TikTok Post"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this tool to search TikTok for posts",
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/clockworks~tiktok-scraper/run-sync-get-dataset-items",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "apifyApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"excludePinnedPosts\": false,\n    \"hashtags\": [\n        \"{{ $fromAI(\"searchTerm\") }}\"\n    ],\n    \"proxyCountryCode\": \"None\",\n    \"resultsPerPage\": {{ $fromAI(\"numberResults\",\"how many results to get\",\"number\") }},\n    \"scrapeRelatedVideos\": false,\n    \"shouldDownloadAvatars\": false,\n    \"shouldDownloadCovers\": false,\n    \"shouldDownloadMusicCovers\": false,\n    \"shouldDownloadSlideshowImages\": false,\n    \"shouldDownloadSubtitles\": false,\n    \"shouldDownloadVideos\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3968,
+        928
+      ],
+      "id": "9c22602c-ee19-47c7-ac40-303ca7609d24",
+      "name": "TikTok Search"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to create a video ad from a picture. The fields to pass over are:\n1. Google Drive file ID of the image\n2. Video prompt\n3. Name of the image\n4. aspect ratio (Possible enum values: 16:9, 9:16, 1:1)",
+        "workflowId": {
+          "__rl": true,
+          "value": "5821tlVzSOLDaDTb",
+          "mode": "list",
+          "cachedResultName": "Image to Video Tool"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fileID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fileID', ``, 'string') }}",
+            "videoPrompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('videoPrompt', ``, 'string') }}",
+            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', ``, 'string') }}",
+            "chatID": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fileID",
+              "displayName": "fileID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "videoPrompt",
+              "displayName": "videoPrompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        3280,
+        608
+      ],
+      "id": "c7a67c25-78f2-44f2-bf6f-005e3f5e009d",
+      "name": "Image to Video"
+    },
+    {
+      "parameters": {
+        "content": "# 🛠️ Setup Guide  \n**Author:** [Nate Herk](https://www.youtube.com/@nateherk)\n\nFollow the instructions below to get your full media automation suite up and running in n8n.\n\n📄 [Cost breakdown doc](https://docs.google.com/document/u/1/d/1A-qGcg8ga1daJsU7AqOvPLSba1yKSaVMMlCfCTERv48/copy) shown in the full YouTube video.\n---\n\n### 📦 JSON Workflows to Download (8 Files)\n\n#### 🎨 Creative Agent (4 Workflows)\n- Edit Image  \n- Create an Image  \n- Image to Video  \n- Create Video\n\n#### 📣 Posting Agent (3 Workflows)\n- X Post  \n- TikTok Post  \n- Instagram Post\n\n> ⚠️ **Note:** These three posting workflows are currently set up to handle **Google Drive files**.  \nIf you store your files elsewhere (e.g., Dropbox, S3), you'll need to rework these flows.  \n🎥 Watch my [full video on Blotato here](https://youtu.be/QovlUE_VlWQ?si=I4usfgP-JtLUJDwt) where I explain how this works.\n\n#### 🧰 Utility Tool\n- Create Doc Tool\n\n> ✅ *The rest of the subagents should integrate seamlessly — no need to fetch a bunch of subflows.*\n\n🧩 Once downloaded, **make sure to link each of these workflows properly** in your environment.  \nYour current master workflow must connect correctly to the relevant agent tools (e.g., Edit Image, Create Video, etc.) via **\"Call n8n Workflow Tools\"**.\n\n---\n\n### 📁 Google Environment Setup\n\n**Google Drive Folders:**\n- 📂 `Media Analysis` — Holds generated documents  \n- 🖼️ `Media` — Stores all media files  \n\n---\n\n**Google Drive Agent Connections:**\n- 🔍 **Search Docs tool** – pointed to `Media Analysis` folder  \n- 🎞️ **Search Media tool** – pointed to `Media` folder\n\n---\n\n### 📊 Google Sheets Integration\n- 📋 Make a copy of the **[provided template Google Sheet](https://docs.google.com/spreadsheets/u/2/d/1ji6qJCv8YfrHVtgdCZmN9UZtHd3Ay9c_MjqKnad-_mw/copy)**  \n- 🔗 Link it inside the two Google Sheet nodes to log the agent’s actions/tokens\n\n---\n\n### 🔐 Credential Configuration\nConnect your required credentials (click any name to go straight to their API/dashboard):\n\n- 🧠 [OpenRouter](https://openrouter.ai/) (chat model)  \n- 🎨 [OpenAI](https://platform.openai.com/) (image generation/edits)  \n- 🎬 [Fal.ai](https://fal.ai/) (video creation)  \n- 🔗 [ImgBB](https://imgbb.com/) (public URL for files)\n- ✉️ Gmail  \n- 📇 Airtable  \n- 📆 Google Calendar  \n- 🗂️ [Google Drive](https://drive.google.com/)  \n- 📄 Google Docs  \n- 📊 Google Sheets  \n- 📲 Telegram  \n- 🔎 [Tavily](https://tavily.com/)  \n- 🧭 [Perplexity](https://www.perplexity.ai/)  \n- 🌦️ [OpenWeatherMap](https://openweathermap.org/api)  \n- 🕷️ [Apify](https://www.apify.com/?fpr=nate)  \n- 🥔 [Blotato](https://blotato.com/?ref=nate)\n\n> 💡 *These ensure the workflows run end-to-end with full integration.*\n\n---\n\n### 💸 Discounts\n\n#### 🥔 [Blotato](https://blotato.com/?ref=nate) (if used for posting)\n- 🆓 **Free trial:** 7 days  \n- 💵 **Standard plan:** $29/month  \n- 🔐 **Promo Code:** `NATE30`  \n  - 30% off for 6 months → ~$20.30/month\n\n#### 🕷️ [Apify](https://www.apify.com/?fpr=nate) Scrapers\n- 🆓 **Free tier:** $5 usage credits/month  \n- ⚙️ **Starter:** $39/month (includes $39 in store credit)  \n- 🔐 **Promo Code:** `30NATEHHERK`  \n  - 30% off first 3 months → ~$27.30/month (effective)\n\n---\n\n### ✅ Final Step: Test & Go\nOnce folders, links, workflows, and credentials are connected, you're ready to go with minimal setup!\n",
+        "height": 2432,
+        "width": 1632
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        624,
+        0
+      ],
+      "id": "a07a59a8-e88c-4350-95f1-4e68e3f852d1",
+      "name": "Sticky Note1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-19T15:56:28.354Z",
+      "updatedAt": "2025-08-19T15:56:28.354Z",
+      "role": "workflow:owner",
+      "workflowId": "LIbnZJpLArgZkSQq",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-19T16:14:37.332Z",
+  "versionId": "f4c6c567-7664-4a8e-a9d0-7f14abf2f4cc"
+}
