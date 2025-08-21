@@ -1,0 +1,173 @@
+{
+  "active": false,
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "Check Project1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Project2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Project1": {
+      "main": [
+        []
+      ]
+    },
+    "IF Project1 Fail": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-10T18:50:29.900Z",
+  "id": "ZkCL8wzFm8FGiQ8b",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 16",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -896,
+        16
+      ],
+      "id": "bc0fcde0-7381-407c-8bdd-39856dcd1e10"
+    },
+    {
+      "parameters": {
+        "url": "https://mnptiupmohnerevzolms.supabase.co/rest/v1/images",
+        "options": {},
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ucHRpdXBtb2huZXJldnpvbG1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyNDM0MDIsImV4cCI6MjA2OTgxOTQwMn0.-dEv7dlQ5g_WMe0bx3NKiVTTrBPMa9LXd8RFmdfZcFc"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ucHRpdXBtb2huZXJldnpvbG1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyNDM0MDIsImV4cCI6MjA2OTgxOTQwMn0.-dEv7dlQ5g_WMe0bx3NKiVTTrBPMa9LXd8RFmdfZcFc"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "Check Project1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -656,
+        -112
+      ],
+      "id": "af1d7f34-c0af-4aca-a2dd-3cb61bec48f8"
+    },
+    {
+      "parameters": {
+        "url": "https://rodlwiaugpoocugifiab.supabase.co/rest/v1/images",
+        "options": {},
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "apikey",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvZGx3aWF1Z3Bvb2N1Z2lmaWFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyNTAwODYsImV4cCI6MjA2OTgyNjA4Nn0.vORiEd3N8PDkzvk1-SH81J0nDVNeHf0hai8F_GZ4az8"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvZGx3aWF1Z3Bvb2N1Z2lmaWFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQyNTAwODYsImV4cCI6MjA2OTgyNjA4Nn0.vORiEd3N8PDkzvk1-SH81J0nDVNeHf0hai8F_GZ4az8"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "Check Project2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -656,
+        160
+      ],
+      "id": "3026dade-c139-42cd-8669-3b1e1cb5bf5b"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [],
+          "number": [
+            {
+              "value1": "={{ $json[\"statusCode\"] }}",
+              "operation": "notEqual",
+              "value2": 200
+            }
+          ]
+        }
+      },
+      "name": "IF Project1 Fail",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -288
+      ],
+      "id": "1ee8f681-2fee-4b90-893c-109796b3e199"
+    },
+    {
+      "parameters": {
+        "chatId": "631",
+        "text": "⚠ Proje1 hata veriyor veya durdu!",
+        "additionalFields": {}
+      },
+      "name": "Telegram Alert P1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        16,
+        -80
+      ],
+      "id": "b28f7df7-87fb-45a7-9562-9f3dd8223692",
+      "webhookId": "474391e9-747b-40dd-8867-17dbcb8c495e",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-10T18:50:29.900Z",
+      "updatedAt": "2025-08-10T18:50:29.900Z",
+      "role": "workflow:owner",
+      "workflowId": "ZkCL8wzFm8FGiQ8b",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-10T22:33:31.545Z",
+  "versionId": "9e03f8f3-9e59-4ae5-a1e5-afad4c41be50"
+}
