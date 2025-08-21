@@ -85,6 +85,44 @@
     },
     "Aggregate": {
       "main": [
+        []
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Receive the File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Receive the File": {
+      "main": [
+        [
+          {
+            "node": "convert the image file to base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Base64 String to Binary File2": {
+      "main": [
+        [
+          {
+            "node": "Telegram send the text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "convert the image file to base64": {
+      "main": [
         [
           {
             "node": "HTTP Request1",
@@ -150,16 +188,32 @@
         "url": "https://api.openai.com/v1/images/edits",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "data",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1152,
-        -160
+        544,
+        -512
       ],
       "id": "eedcd0e8-c64b-49ef-8f4f-913d10e93344",
-      "name": "HTTP Request1"
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4DF6kW0ApqqXgYMq",
+          "name": "Header Auth account"
+        }
+      }
     },
     {
       "parameters": {
@@ -170,8 +224,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        1360,
-        -160
+        800,
+        -512
       ],
       "id": "a553788b-bff8-424d-9cee-d602ad86bed4",
       "name": "Convert Base64 String to Binary File2"
@@ -244,15 +298,101 @@
       ],
       "id": "f80c1c63-5da8-42cf-93f4-e6f32fe6db01",
       "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "id": "70a605a1-718b-4e5b-aece-7c99a862e61d",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        -208,
+        -512
+      ],
+      "webhookId": "6021108f-f0e8-4d7a-918b-f49baa28ba85",
+      "typeVersion": 1.1,
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.choices[0].message.content }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "411fb2b9-643c-4b0b-aff4-08d206213d9b",
+      "name": "Telegram send the text",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1056,
+        -512
+      ],
+      "typeVersion": 1.2,
+      "webhookId": "18102774-d809-4722-b4b8-cfbe705577d7"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "id": "a7a66192-25ed-4265-a08d-fedfbbeb7c18",
+      "name": "convert the image file to base64",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        336,
+        -512
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.photo[0].file_id }}",
+        "additionalFields": {}
+      },
+      "id": "f45ebe5b-d5b7-4659-afa7-437664564e0d",
+      "name": "Receive the File",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        80,
+        -512
+      ],
+      "typeVersion": 1.2,
+      "webhookId": "052d3407-3fbf-4524-aa76-520bffb49773",
+      "credentials": {
+        "telegramApi": {
+          "id": "HUdGoFwFzsUDSVqU",
+          "name": "BİLMİŞ"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-15T13:43:55.218Z",
+      "updatedAt": "2025-07-15T13:43:55.218Z",
+      "role": "workflow:owner",
+      "workflowId": "rTAsrusbE4b4PNhg",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-15T13:43:55.218Z",
-  "versionId": "35154352-7e7e-4fad-b7d0-16eda727a56f"
+  "updatedAt": "2025-08-16T17:25:56.677Z",
+  "versionId": "ef13a78c-32db-40d2-95be-1c933e2c13ad"
 }
