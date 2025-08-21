@@ -107,7 +107,7 @@
       "main": [
         [
           {
-            "node": "Generate audio",
+            "node": "Convert text to speech",
             "type": "main",
             "index": 0
           }
@@ -202,17 +202,6 @@
         ]
       ]
     },
-    "Zep": {
-      "ai_memory": [
-        [
-          {
-            "node": "Supervisor AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Weather_Tool": {
       "ai_tool": [
         [
@@ -237,10 +226,26 @@
     },
     "Generate audio": {
       "main": [
+        []
+      ]
+    },
+    "Convert text to speech": {
+      "main": [
         [
           {
             "node": "Telegram1",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Supervisor AI Agent",
+            "type": "ai_memory",
             "index": 0
           }
         ]
@@ -347,7 +352,8 @@
     {
       "parameters": {
         "resource": "file",
-        "fileId": "={{ $json.message.voice.file_id }}"
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
       },
       "id": "1747213f-975e-4a2c-b07e-b1b1a4eccf47",
       "name": "download a file",
@@ -555,8 +561,8 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        432,
-        0
+        352,
+        -240
       ],
       "credentials": {
         "openAiApi": {
@@ -630,9 +636,9 @@
         "description": "use this tool for all related actions {{ $('Edit Fields').item.json.text }}",
         "workflowId": {
           "__rl": true,
-          "value": "sOpQdCZ6eLoelTaJ",
+          "value": "8pig125F6yu3MJoU",
           "mode": "list",
-          "cachedResultName": "Contacts_Agent"
+          "cachedResultName": "Contanct_Agent"
         }
       },
       "id": "f3628884-6b41-464b-8845-e6cbbeef500f",
@@ -742,26 +748,6 @@
     },
     {
       "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{$('Telegram Trigger'). item. json.message. from.id }}"
-      },
-      "type": "@n8n/n8n-nodes-langchain.memoryZep",
-      "typeVersion": 1.3,
-      "position": [
-        -1216,
-        928
-      ],
-      "id": "75201478-de30-4818-acb4-8cdf69d6a96f",
-      "name": "Zep",
-      "credentials": {
-        "zepApi": {
-          "id": "FSqIbPoe5PldrXUz",
-          "name": "Zep Api account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "operation": "5DayForecast",
         "cityName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('City', ``, 'string') }}",
         "language": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Language', ``, 'string') }}"
@@ -789,8 +775,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
       "typeVersion": 1,
       "position": [
-        -304,
-        112
+        0,
+        192
       ],
       "id": "b1ce01dd-012b-47cd-86e8-2f7a90b0fcb5",
       "name": "OpenRouter Chat Model",
@@ -800,12 +786,64 @@
           "name": "OpenRouter account"
         }
       }
+    },
+    {
+      "parameters": {
+        "resource": "speech",
+        "voice": {
+          "__rl": true,
+          "value": "KAGDtM2gzDrjWlUp2KNe",
+          "mode": "list",
+          "cachedResultName": "Deniz"
+        },
+        "text": "={{ $json.text }}",
+        "additionalOptions": {},
+        "requestOptions": {}
+      },
+      "type": "@elevenlabs/n8n-nodes-elevenlabs.elevenLabs",
+      "typeVersion": 1,
+      "position": [
+        464,
+        0
+      ],
+      "id": "e081fc41-99b7-4c09-aa72-eb98cfc82a32",
+      "name": "Convert text to speech",
+      "credentials": {
+        "elevenLabsApi": {
+          "id": "5216DVSZ1S3Ex7XC",
+          "name": "ElevenLabs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "9999",
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1216,
+        928
+      ],
+      "id": "d1da62ba-221b-480f-9a53-efad04748efc",
+      "name": "Simple Memory"
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-15T16:51:34.976Z",
+      "updatedAt": "2025-07-15T16:51:34.976Z",
+      "role": "workflow:owner",
+      "workflowId": "jzcjifPcxWtEPx7B",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
@@ -816,6 +854,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-08-02T15:50:38.935Z",
-  "versionId": "064585c3-b530-4910-a539-3fbaaf9b31dc"
+  "updatedAt": "2025-08-17T23:20:52.797Z",
+  "versionId": "9609b1f3-1cbc-49e3-9833-ef8c423290be"
 }
