@@ -1227,7 +1227,7 @@
           "__rl": true,
           "value": "tblelqZDaewisoBpE",
           "mode": "list",
-          "cachedResultName": "Table 1",
+          "cachedResultName": "İletişim",
           "cachedResultUrl": "https://airtable.com/appOEBzIdqX1w8QHU/tblelqZDaewisoBpE"
         },
         "filterByFormula": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Filter_By_Formula', ``, 'string') }}",
@@ -1237,7 +1237,7 @@
       "typeVersion": 2.1,
       "position": [
         912,
-        864
+        912
       ],
       "id": "eeb65196-fb22-4a0c-bbd4-76aeb8b8a836",
       "name": "Search records in Airtable2",
@@ -2187,6 +2187,15 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-08-01T13:54:21.800Z",
+      "updatedAt": "2025-08-01T13:54:21.800Z",
+      "role": "workflow:owner",
+      "workflowId": "jCzuopLIHou9z5i1",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": {
     "node:Cal.com Trigger": {},
     "node:Gmail Trigger": {
@@ -2215,6 +2224,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2025-08-02T17:52:54.900Z",
-  "versionId": "ccc01d52-3e6d-47e7-b94e-c63ef564c0eb"
+  "updatedAt": "2025-08-04T22:39:31.406Z",
+  "versionId": "c68630d5-224e-40d5-a756-a76c43e5fd12"
 }
