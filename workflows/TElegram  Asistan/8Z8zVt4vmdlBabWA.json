@@ -133,6 +133,7 @@
     },
     {
       "parameters": {
+        "model": "openai/gpt-oss-120b",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
@@ -183,6 +184,15 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-16T19:47:58.489Z",
+      "updatedAt": "2025-07-16T19:47:58.489Z",
+      "role": "workflow:owner",
+      "workflowId": "8Z8zVt4vmdlBabWA",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
@@ -193,6 +203,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-07-16T19:48:59.252Z",
-  "versionId": "8901f242-d843-47d8-8bde-a905f5bf1af3"
+  "updatedAt": "2025-08-08T09:15:22.641Z",
+  "versionId": "d0c6ea82-27aa-4a43-8d52-830a1a895a0c"
 }
