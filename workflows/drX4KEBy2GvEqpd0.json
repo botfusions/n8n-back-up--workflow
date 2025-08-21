@@ -1,0 +1,78 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-08T15:37:34.402Z",
+  "id": "drX4KEBy2GvEqpd0",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow 14",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -704,
+        -112
+      ],
+      "id": "9d452f39-a4aa-463c-a7cb-40344ecc1d1c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://borsa-mcp.botfusions/maestro/analyze",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"provider\": \"openrouter\",\n  \"model\": \"openai/gpt-oss-120b\",\n  \"prompt\": \"BIST100 endeksi hakkında kısa bir piyasai değerlendirme yap.\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -496,
+        -112
+      ],
+      "id": "7ec1a065-4fdc-45eb-93fe-9b0e2d59b2e5",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-08T15:37:34.402Z",
+      "updatedAt": "2025-08-08T15:37:34.402Z",
+      "role": "workflow:owner",
+      "workflowId": "drX4KEBy2GvEqpd0",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-10T22:33:59.390Z",
+  "versionId": "6ebe8b15-c085-4c34-a719-79e0e648fc7e"
+}
