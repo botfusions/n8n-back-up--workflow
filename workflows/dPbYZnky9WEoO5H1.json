@@ -397,6 +397,15 @@
     "saveDataErrorExecution": "all",
     "saveDataSuccessExecution": "none"
   },
+  "shared": [
+    {
+      "createdAt": "2025-07-24T22:12:32.590Z",
+      "updatedAt": "2025-07-24T22:12:32.590Z",
+      "role": "workflow:owner",
+      "workflowId": "dPbYZnky9WEoO5H1",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
