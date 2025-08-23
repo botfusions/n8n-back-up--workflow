@@ -1,0 +1,1486 @@
+{
+  "active": false,
+  "connections": {
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get audio binary": {
+      "main": [
+        [
+          {
+            "node": "Extract url from binary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract url from binary": {
+      "main": [
+        [
+          {
+            "node": "Download audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Get audio binary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get image binary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract url from binary1": {
+      "main": [
+        [
+          {
+            "node": "Download image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get image binary": {
+      "main": [
+        [
+          {
+            "node": "Extract url from binary1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download image": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Image Analyser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Analyser": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract url from binary2": {
+      "main": [
+        [
+          {
+            "node": "Download document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get document": {
+      "main": [
+        [
+          {
+            "node": "Extract url from binary2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download document": {
+      "main": [
+        [
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "OpenAI2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI2": {
+      "main": [
+        [
+          {
+            "node": "Initial Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "OpenAI3",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Continue Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Cloud1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initial Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenAI3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Continue Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenAI3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download audio": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Transcribe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Transcribe": {
+      "main": [
+        [
+          {
+            "node": "OpenAI4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI4": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-22T18:44:17.665Z",
+  "id": "qTuq8J3y2SbtBbC1",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 23",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {}
+      },
+      "id": "709b42da-54c3-40e4-8cc3-c16ea75313d8",
+      "name": "WhatsApp Trigger",
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        544
+      ],
+      "webhookId": "1a250de0-2013-4012-b645-d631cd4e1e29"
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.messages[0].audio.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer "
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "05250029-ecd0-4617-8b81-bef6f5424bcb",
+      "name": "Get audio binary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "id": "8c9ede17-ed12-458c-81b2-21302a05dbeb",
+      "name": "Extract url from binary",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        272,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "06bd9887-77bc-433d-a981-1536ceaae611",
+      "name": "Download audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "=audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "13ac9ebb-b647-43f5-a790-b1ece51ac914",
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "13b0f80b-63ee-40b7-ac10-a9a3cea7d8da",
+                    "leftValue": "={{ $json.messages[0].type }}",
+                    "rightValue": "document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "document"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -176,
+        528
+      ],
+      "id": "d4d8ce40-ff2d-4266-9ec2-483774a190e8",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "id": "c8c1e75a-6440-4844-a492-6b313295ffc3",
+      "name": "Extract url from binary1",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        272,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.messages[0].image.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "2b42c7b6-1c49-464c-aa2e-a11cd284ac00",
+      "name": "Get image binary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e002a860-7385-4eaf-9306-5e15cc049669",
+      "name": "Download image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        528
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "text": "Could you extract the following information from the invoice?\n\n{\n\"Entry Number\": \"\",\n\"Expense Date\": \"\",\n\"Vendor\": \"\",\n\"Expense Type\": \"\", (Housing, Transportation, Food, etc...)\n\"Expense Description\": \"\",\n\"Expense Amount\": \"\",\n\"Customer Name\": \"\",\n\"Reference#\": \"\"\n}\n\nreturn in JSON format, only return the JSON without other text.",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        624,
+        528
+      ],
+      "id": "1f499af7-b606-4da0-8afc-180affae7738",
+      "name": "Image Analyser"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst parsedItems = items.map((item) => {\n  let content = item.json.content;\n  content = content.replace(\"```json\", \"\").replace(\"```\", \"\");\n  const parsedContent = JSON.parse(content);\n  return parsedContent;\n});\nreturn parsedItems[0];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        784,
+        528
+      ],
+      "id": "205a7657-14c9-4947-bc31-5afae9b82ed4",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1V-M7GnCYV-LqnJL0wJhOZjn21fbPGoSAV7sGlZVt5xA",
+          "mode": "list",
+          "cachedResultName": "Accountant Spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1V-M7GnCYV-LqnJL0wJhOZjn21fbPGoSAV7sGlZVt5xA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1V-M7GnCYV-LqnJL0wJhOZjn21fbPGoSAV7sGlZVt5xA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Entry Number",
+              "displayName": "Entry Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Date",
+              "displayName": "Expense Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Vendor",
+              "displayName": "Vendor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Type",
+              "displayName": "Expense Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Description",
+              "displayName": "Expense Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Amount",
+              "displayName": "Expense Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer Name",
+              "displayName": "Customer Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reference#",
+              "displayName": "Reference#",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        784,
+        752
+      ],
+      "id": "717e0e6f-e30d-4ca9-822b-3afde83f8f77",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YezGuTnX2KrN8nof",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "={{ $('WhatsApp Trigger').first().json.metadata.phone_number_id }}",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').first().json.messages[0].from }}",
+        "textBody": "={{ $json.message.content }}",
+        "additionalFields": {}
+      },
+      "id": "6f796cdb-2d10-44ae-8890-a3baf2d39183",
+      "name": "WhatsApp Business Cloud",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        528
+      ],
+      "webhookId": "b21fa0d3-3bdc-4459-83f4-09ac6c10cbc1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4",
+          "mode": "list",
+          "cachedResultName": "GPT-4"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=We just analysed an invoice and got following response:\n\n {{ $('Image Analyser').item.json.content }}\n\nPlease make a summary and send it back to user, and tell him we sucessfully recorded into the google sheet.\n\nThe reply is just a whatsapp message, dont put greeting and footer but keep the point form."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        944,
+        528
+      ],
+      "id": "a9991709-ec54-4399-9aad-11c1e9eb2dc2",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "name": "={{ 'invoice-' + $now.format('yyyy-MM-dd_HHmmii') + '.' + $binary.data.fileExtension }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1EUGI89KhD6UQxF6080SZ-hXZp12JJbLO",
+          "mode": "list",
+          "cachedResultName": "Accountant Test",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1EUGI89KhD6UQxF6080SZ-hXZp12JJbLO"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        448,
+        752
+      ],
+      "id": "301e567c-2109-4773-bdc3-ce9b4bc14805",
+      "name": "Google Drive"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "options": {}
+      },
+      "id": "9b57142d-4c6a-402a-afad-2426cc30845f",
+      "name": "Extract url from binary2",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        272,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.messages[0].document.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "b8d85466-cc1a-4f32-aa90-8cd192fad741",
+      "name": "Get document",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        112,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e22ebac0-01ec-4e50-a4f3-5476f481ac8f",
+      "name": "Download document",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "options": {}
+      },
+      "id": "e18f2269-c313-4619-9ad3-7b3e44a83b7f",
+      "name": "OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        608,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "operation": "create",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "name": "File Assistant",
+        "instructions": "You are a file assistant and will answer user question",
+        "knowledgeRetrieval": true,
+        "file_ids": "={{ $json.id }}",
+        "options": {}
+      },
+      "id": "507021a3-f767-4f88-ac1a-37cba35cbaef",
+      "name": "OpenAI2",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        768,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "assistantId": {
+          "__rl": true,
+          "value": "={{ $('OpenAI2').item.json.id }}",
+          "mode": "id"
+        },
+        "prompt": "define",
+        "text": "={{ $json.prompt }}",
+        "options": {
+          "maxRetries": 20
+        }
+      },
+      "id": "c6155ebd-5239-4760-a3af-a5bcf32c0ce0",
+      "name": "OpenAI3",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        1200,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst parsedItems = items.map((item) => {\n  let content = item.json.content;\n  content = content.replace(\"```json\", \"\").replace(\"```\", \"\");\n  const parsedContent = JSON.parse(content);\n  return parsedContent;\n});\nreturn parsedItems[0];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1712,
+        1088
+      ],
+      "id": "af013227-a1a8-4f6f-89a2-6ecd389a192e",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3d17a157-9b6e-4bad-908b-a5fad338ed29",
+              "name": "content",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1520,
+        1088
+      ],
+      "id": "c9f58d01-ac32-4e52-b3c9-cd9086bc82ca",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "1",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [
+        1344,
+        1312
+      ],
+      "id": "97f644de-640c-4f96-af63-8d79c7ea9b35",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "45dcfff0-4e08-4f43-84cc-90ffaba9cbd2",
+              "leftValue": "={{ $json.more_rows }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1952,
+        1008
+      ],
+      "id": "ff928760-1258-41bf-bc1a-da2c83c05874",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e5ab4c48-c5c5-46d0-94da-f1c7e6ef750d",
+              "name": "prompt",
+              "value": "=You are an account assitant, base on user uploaded file, categorise that as an invoice or bank statement, if it is invoice, return the following object:  \n\n{\n  \"Type\": \"invoice\",\n  \"Entry Number\": \"\",\n  \"Expense Date\": \"\",\n  \"Vendor\": \"\",\n  \"Expense Type\": \"\", (Housing, Transportation, Food, etc...)\n  \"Expense Description\": \"\",\n  \"Expense Amount\": \"\",\n  \"Customer Name\": \"\",\n  \"Reference#\": \"\"\n}\n\nif it is a bank statement, return following object:\n\n{\n  \"type\": \"statement\",\n  \"transactions\": {\n    \"Transaction Date\": \"\", (use YYYY-MM-DD format)\n    \"Description\": \"\",\n    \"Vendor\": \"\",\n    \"Amount\": \"\",\n  }[],\n  \"more_rows\": true / false\n}\n\n\nreturn in JSON format, only return the JSON without other text, DONT PUT ANY NON JSON TEXT IN RESPONSE!",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        1168
+      ],
+      "id": "9d3a86d1-77fd-47dc-877a-9f2d5494729b",
+      "name": "Initial Prompt"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7c9de453-9ecd-4de8-849f-6f34a9a8aaf5",
+              "name": "prompt",
+              "value": "next rows",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        1008
+      ],
+      "id": "52cc51a2-5acf-4aa3-a39d-4a84e739c419",
+      "name": "Continue Prompt"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "GOOGLE_SHEET_ID",
+          "mode": "list",
+          "cachedResultName": "n8n test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/GOOGLE_SHEET_ID/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 930183302,
+          "mode": "list",
+          "cachedResultName": "statement",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/GOOGLE_SHEET_ID/edit#gid=930183302"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Transaction Date",
+              "displayName": "Transaction Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Vendor",
+              "displayName": "Vendor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Amount",
+              "displayName": "Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2352,
+        1184
+      ],
+      "id": "2680ed4d-ae14-4799-99b4-6efd921f895c",
+      "name": "Google Sheets1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b6a5251d-19d7-4ef5-9c2e-7ebcf6e6442e",
+              "name": "transactions",
+              "value": "={{ $json.transactions }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1952,
+        1184
+      ],
+      "id": "f55de3da-5ca0-4395-9460-ccfdfcc81ae4",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "={{ $('WhatsApp Trigger').first().json.metadata.phone_number_id }}",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').first().json.messages[0].from }}",
+        "textBody": "=All transaction add to Google Sheet.",
+        "additionalFields": {}
+      },
+      "id": "d0c46ee6-386e-4230-9ea1-924cc692002d",
+      "name": "WhatsApp Business Cloud1",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2144,
+        1008
+      ],
+      "webhookId": "632e2c1a-a4d0-4ee4-b27d-0c6d174484a1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "transactions",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2144,
+        1184
+      ],
+      "id": "05da64a2-6754-4152-b698-a5c169737952",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "503e5c07-381b-444e-94d6-ca899d772dc2",
+      "name": "OpenAI Transcribe",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        608,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Voice transaction recording",
+        "height": 440,
+        "width": 1580,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -16
+      ],
+      "id": "89e32fa3-67b7-42c9-a423-4b20db416c0e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4",
+          "mode": "list",
+          "cachedResultName": "GPT-4"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Could you extract the following information from the invoice?\n\n{\n\"Entry Number\": \"\",\n\"Expense Date\": \"\", (use today date)\n\"Vendor\": \"\",\n\"Expense Type\": \"\", (Housing, Transportation, Food, etc...)\n\"Expense Description\": \"\",\n\"Expense Amount\": \"\",\n\"Customer Name\": \"\",\n\"Reference#\": \"\"\n}\n\nreturn in JSON format, only return the JSON without other text.\n\nToday is: {{ $now.format('dd/MM/yyyy') }}\nInput message: {{ $json.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        784,
+        144
+      ],
+      "id": "3bc12654-e554-49b0-8176-6b074ddad23d",
+      "name": "OpenAI4"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst parsedItems = items.map((item) => {\n  let content = item.json.message.content;\n  content = content.replace(\"```json\", \"\").replace(\"```\", \"\");\n  const parsedContent = JSON.parse(content);\n  return parsedContent;\n});\nreturn parsedItems[0];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1104,
+        144
+      ],
+      "id": "d775e6c1-adfb-4b0e-be02-9852d3ddb066",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "GOOGLE_SHEET_ID",
+          "mode": "list",
+          "cachedResultName": "n8n test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/GOOGLE_SHEET_ID/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "invoice",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/GOOGLE_SHEET_ID/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Entry Number",
+              "displayName": "Entry Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Date",
+              "displayName": "Expense Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Account",
+              "displayName": "Expense Account",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Vendor",
+              "displayName": "Vendor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Description",
+              "displayName": "Expense Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Expense Amount",
+              "displayName": "Expense Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer Name",
+              "displayName": "Customer Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reference#",
+              "displayName": "Reference#",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1280,
+        240
+      ],
+      "id": "1e70957e-ebdb-405c-9893-c994dfb21d8e",
+      "name": "Google Sheets2"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "={{ $('WhatsApp Trigger').first().json.metadata.phone_number_id }}",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').first().json.messages[0].from }}",
+        "textBody": "=All transaction add to Google Sheet:\n\n{{ JSON.stringify($json, null, 4) }}",
+        "additionalFields": {}
+      },
+      "id": "616f0362-7e8d-49e8-a3dc-de7f13480865",
+      "name": "WhatsApp Business Cloud2",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        48
+      ],
+      "webhookId": "dba3aece-f4b3-446d-b668-e3b3109ad744"
+    },
+    {
+      "parameters": {
+        "name": "={{ 'statement-' + $now.format('yyyy-MM-dd_HHmmii') + '.' + $binary.data.fileExtension }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "14xViFOnaq1NuEabvAh9xku7Z47p3RFt9",
+          "mode": "list",
+          "cachedResultName": "n8n-demo",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/14xViFOnaq1NuEabvAh9xku7Z47p3RFt9"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        448,
+        1280
+      ],
+      "id": "c9ac4d69-9790-4146-874b-a8d6e44182de",
+      "name": "Google Drive1"
+    },
+    {
+      "parameters": {
+        "content": "## Image transaction recording",
+        "height": 440,
+        "width": 1580,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        464
+      ],
+      "id": "33188b7a-ebb0-44b9-95b7-cf7c8ab882a7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Document transaction recording",
+        "height": 560,
+        "width": 2560,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        928
+      ],
+      "id": "356a3b0e-a757-4f4a-86ce-61290902986e",
+      "name": "Sticky Note2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-22T18:44:17.665Z",
+      "updatedAt": "2025-08-22T18:44:17.665Z",
+      "role": "workflow:owner",
+      "workflowId": "qTuq8J3y2SbtBbC1",
+      "projectId": "O3f0VXsCOyNYdqZx"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-22T18:44:17.665Z",
+  "versionId": "94a3c71f-026d-4e91-96a8-a7e9d00656c5"
+}
