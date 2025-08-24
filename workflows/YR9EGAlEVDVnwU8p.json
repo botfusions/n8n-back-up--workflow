@@ -122,7 +122,7 @@
     },
     {
       "parameters": {
-        "model": "openrouter/horizon-beta",
+        "model": "openai/gpt-5-mini",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
@@ -205,6 +205,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-08-03T16:11:28.896Z",
-  "versionId": "16008dd2-36ad-45e9-af55-ddee17ed630c"
+  "updatedAt": "2025-08-23T11:03:43.024Z",
+  "versionId": "7f6f6ae4-439b-420e-95d3-4da3ccbf9266"
 }
